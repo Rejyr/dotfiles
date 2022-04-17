@@ -1,8 +1,6 @@
 "
 " Plugins
 "
-" bootstrap packer
-lua require('bootstrap')
 lua require('plugins')
 
 " Line Numbers

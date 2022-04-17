@@ -1,10 +1,15 @@
--- auto packer compile
-vim.cmd [[
-  augroup packer_user_config
-	autocmd!
-	autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]]
+-- Install packer
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+end
+
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd(
+    'BufWritePost',
+    { command = 'source <afile> | PackerCompile', group = packer_group, pattern = 'plugins.lua' }
+)
 
 return require('packer').startup(function(use)
     -- package manager - packer
@@ -67,6 +72,82 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- fancy wildmenu
+    use {
+        'gelguy/wilder.nvim',
+        enable = false,
+        config = function()
+            local wilder = require 'wilder'
+            wilder.setup { modes = { ':', '/', '?' } }
+
+            -- fuzzy finding
+            wilder.set_option('pipeline', {
+                wilder.branch(
+                    wilder.cmdline_pipeline {
+                        -- sets the language to use, 'vim' and 'python' are supported
+                        language = 'python',
+                        -- 0 turns off fuzzy matching
+                        -- 1 turns on fuzzy matching
+                        -- 2 partial fuzzy matching (match does not have to begin with the same first letter)
+                        fuzzy = 1,
+                    },
+                    wilder.python_search_pipeline {
+                        -- can be set to wilder#python_fuzzy_delimiter_pattern() for stricter fuzzy matching
+                        pattern = wilder.python_fuzzy_pattern(),
+                        -- omit to get results in the order they appear in the buffer
+                        sorter = wilder.python_difflib_sorter(),
+                        -- can be set to 're2' for performance, requires pyre2 to be installed
+                        -- see :h wilder#python_search() for more details
+                        engine = 're',
+                    }
+                ),
+            })
+
+            -- file filnding
+            wilder.set_option('pipeline', {
+                wilder.branch(
+                    wilder.python_file_finder_pipeline {
+                        -- to use ripgrep : {'rg', '--files'}
+                        -- to use fd      : {'fd', '-tf'}
+                        file_command = { 'find', '.', '-type', 'f', '-printf', '%P\n' },
+                        -- to use fd      : {'fd', '-td'}
+                        dir_command = { 'find', '.', '-type', 'd', '-printf', '%P\n' },
+                        -- use {'cpsm_filter'} for performance, requires cpsm vim plugin
+                        -- found at https://github.com/nixprime/cpsm
+                        filters = { 'fuzzy_filter', 'difflib_sorter' },
+                    },
+                    wilder.cmdline_pipeline(),
+                    wilder.python_search_pipeline()
+                ),
+            })
+
+            -- fancy popmenu
+            wilder.set_option(
+                'renderer',
+                wilder.popupmenu_renderer(wilder.popupmenu_border_theme {
+                    highlights = {
+                        border = 'Normal', -- highlight to use for the border
+                    },
+                    -- 'single', 'double', 'rounded' or 'solid'
+                    -- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
+                    border = 'rounded',
+                    left = {
+                        ' ',
+                        wilder.popupmenu_devicons(),
+                        wilder.popupmenu_buffer_flags {
+                            flags = ' a + ',
+                            icons = { ['+'] = '', a = '', h = '' },
+                        },
+                    },
+                    right = {
+                        ' ',
+                        wilder.popupmenu_scrollbar(),
+                    },
+                })
+            )
+        end,
+    }
+
     -- display marks
     use 'kshenoy/vim-signature'
 
@@ -76,9 +157,9 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim',
         config = function()
             require('todo-comments').setup()
-            vim.api.nvim_set_keymap('n', '<leader>tq', '<cmd>TodoQuickFix<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>TodoTrouble<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>tq', '<cmd>TodoQuickFix<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>tt', '<cmd>TodoTrouble<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { silent = true })
         end,
     }
 
@@ -87,18 +168,9 @@ return require('packer').startup(function(use)
         'folke/which-key.nvim',
         config = function()
             require('which-key').setup()
-            vim.cmd [[set timeoutlen=500]]
+            vim.opt.timeoutlen = 500
         end,
     }
-
-    -- -- command/search completion
-    -- use {
-    -- 	'gelguy/wilder.nvim',
-    -- 	run = ':UpdateRemotePlugins',
-    -- 	config = function()
-    -- 		vim.cmd [[call wilder#setup({'modes': [':', '/', '?']})]]
-    -- 	end,
-    -- }
 
     -- show indent
     use {
@@ -134,7 +206,7 @@ return require('packer').startup(function(use)
             vim.g.symbols_outline = {
                 width = 50,
             }
-            vim.api.nvim_set_keymap('n', '<leader>so', '<cmd>SymbolsOutline<cr>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>so', '<cmd>SymbolsOutline<cr>', { silent = true })
         end,
     }
 
@@ -142,18 +214,9 @@ return require('packer').startup(function(use)
     use {
         'numToStr/FTerm.nvim',
         config = function()
-            vim.api.nvim_set_keymap(
-                'n',
-                '<A-i>',
-                '<CMD>lua require("FTerm").toggle()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                't',
-                '<A-i>',
-                '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>',
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<A-i>', function()
+                require('FTerm').toggle()
+            end)
         end,
     }
 
@@ -163,7 +226,7 @@ return require('packer').startup(function(use)
         branch = 'chad',
         run = 'python3 -m chadtree deps',
         config = function()
-            vim.api.nvim_set_keymap('n', '<Leader>v', '<cmd>CHADopen<CR>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<Leader>v', '<cmd>CHADopen<CR>', { silent = true })
         end,
     }
 
@@ -226,8 +289,8 @@ return require('packer').startup(function(use)
             require('bufferline').setup {}
 
             -- keybinds
-            vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { silent = true })
         end,
     }
 
@@ -378,7 +441,7 @@ return require('packer').startup(function(use)
         config = function()
             require('neoclip').setup()
             require('telescope').load_extension 'neoclip'
-            vim.api.nvim_set_keymap('n', '<leader>c', '<cmd>Telescope neoclip<cr>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>c', '<cmd>Telescope neoclip<cr>', { silent = true })
         end,
     }
 
@@ -417,24 +480,12 @@ return require('packer').startup(function(use)
         nequires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('renamer').setup {
-                vim.api.nvim_set_keymap(
-                    'i',
-                    '<F2>',
-                    '<cmd>lua require("renamer").rename()<CR>',
-                    { noremap = true, silent = true }
-                ),
-                vim.api.nvim_set_keymap(
-                    'n',
-                    '<Leader>rn',
-                    '<cmd>lua require("renamer").rename()<CR>',
-                    { noremap = true, silent = true }
-                ),
-                vim.api.nvim_set_keymap(
-                    'v',
-                    '<Leader>rn',
-                    '<cmd>lua require("renamer").rename()<CR>',
-                    { noremap = true, silent = true }
-                ),
+                vim.keymap.set('i', '<F2>', function()
+                    require('renamer').rename()
+                end, { silent = true }),
+                vim.keymap.set({ 'n', 'v' }, '<leader>rn', function()
+                    require('renamer').rename()
+                end),
             }
         end,
     }
@@ -444,7 +495,7 @@ return require('packer').startup(function(use)
         'mhartington/formatter.nvim',
         config = function()
             -- keybind
-            vim.api.nvim_set_keymap('n', '<Leader>f', [[<cmd>Format<CR>]], { noremap = true, silent = true })
+            vim.keymap.set('n', '<Leader>f', [[<cmd>Format<CR>]], { silent = true })
             require('formatter').setup {
                 filetype = {
                     lua = {
@@ -481,11 +532,11 @@ return require('packer').startup(function(use)
         config = function()
             require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
             -- keybinds
-            vim.api.nvim_set_keymap('n', '<leader>jw', '<cmd>HopWord<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>jp', '<cmd>HopPattern<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>j2', '<cmd>HopChar2<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>j', '<cmd>HopChar1<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>jl', '<cmd>HopLine<cr>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>jw', '<cmd>HopWord<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>jp', '<cmd>HopPattern<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>j2', '<cmd>HopChar2<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>j', '<cmd>HopChar1<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>jl', '<cmd>HopLine<cr>', { silent = true })
         end,
     }
 
@@ -494,31 +545,11 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function()
-            vim.api.nvim_set_keymap(
-                'n',
-                '<leader>ff',
-                '<cmd>Telescope find_files<cr>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<leader>ffh',
-                '<cmd>Telescope find_files hidden=true<cr>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<leader>fg',
-                '<cmd>Telescope live_grep<cr>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap(
-                'n',
-                '<leader>fh',
-                '<cmd>Telescope help_tags<cr>',
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>ffh', '<cmd>Telescope find_files hidden=true<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { silent = true })
         end,
     }
 
@@ -575,139 +606,77 @@ return require('packer').startup(function(use)
             dap.configurations.c = dap.configurations.cpp
             dap.configurations.rust = dap.configurations.cpp
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F4>',
-                "<cmd>lua require('dapui').toggle()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F5>',
-                "<cmd>lua require('dap').toggle_breakpoint()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F9>',
-                "<cmd>lua require('dap').continue()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<F4>', function()
+                require('dapui').toggle()
+            end, { silent = true })
+            vim.keymap.set('n', '<F5>', function()
+                require('dap').toggle_breakpoint()
+            end, { silent = true })
+            vim.keymap.set('n', '<F9>', function()
+                require('dap').continue()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F1>',
-                "<cmd>lua require('dap').step_over()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F2>',
-                "<cmd>lua require('dap').step_into()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<F3>',
-                "<cmd>lua require('dap').step_out()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<F1>', function()
+                require('dap').step_over()
+            end, { silent = true })
+            vim.keymap.set('n', '<F2>', function()
+                require('dap').step_into()
+            end, { silent = true })
+            vim.keymap.set('n', '<F3>', function()
+                require('dap').step_out()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dsc',
-                "<cmd>lua require('dap').continue()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dsv',
-                "<cmd>lua require('dap').step_over()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dsi',
-                "<cmd>lua require('dap').step_into()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dso',
-                "<cmd>lua require('dap').step_out()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>dsc', function()
+                require('dap').continue()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>dsv', function()
+                require('dap').step_over()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>dsi', function()
+                require('dap').step_into()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>dso', function()
+                require('dap').step_out()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dhh',
-                "<cmd>lua require('dap.ui.variables').hover()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'v',
-                '<Leader>dhv',
-                "<cmd>lua require('dap.ui.variables').visual_hover()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>dhh', function()
+                require('dap.ui.variables').hover()
+            end, { silent = true })
+            vim.keymap.set('v', '<Leader>dhv', function()
+                require('dap.ui.variables').visual_hover()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>duh',
-                "<cmd>lua require('dap.ui.widgets').hover()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>duf',
-                "<cmd>lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>duh', function()
+                require('dap.ui.widgets').hover()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>duf', function()
+                local widgets = require 'dap.ui.widgets'
+                widgets.centered_float(widgets.scopes)
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dro',
-                "<cmd>lua require('dap').repl.open()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>drl',
-                "<cmd>lua require('dap').repl.run_last()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>dro', function()
+                require('dap').repl.open()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>drl', function()
+                require('dap').repl.run_last()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dbc',
-                "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dbm',
-                "<cmd>lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dbt',
-                "<cmd>lua require('dap').toggle_breakpoint()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>dbc', function()
+                require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>dbm', function()
+                require('dap').set_breakpoint { nil, nil, vim.fn.input 'Log point message: ' }
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>dbt', function()
+                require('dap').toggle_breakpoint()
+            end, { silent = true })
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>dc',
-                "<cmd>lua require('dap.ui.variables').scopes()<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<Leader>di',
-                "<cmd>lua require('dapui').toggle()<CR>",
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<Leader>dc', function()
+                require('dap.ui.variables').scopes()
+            end, { silent = true })
+            vim.keymap.set('n', '<Leader>di', function()
+                require('dapui').toggle()
+            end, { silent = true })
         end,
     }
 
@@ -731,7 +700,7 @@ return require('packer').startup(function(use)
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
-            vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>TroubleToggle<cr>', { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>t', '<cmd>TroubleToggle<cr>', { silent = true })
             require('trouble').setup()
         end,
     }
@@ -794,73 +763,18 @@ return require('packer').startup(function(use)
         'neovim/nvim-lspconfig',
         config = function()
             -- keybinds
-            vim.api.nvim_set_keymap(
-                'n',
-                '<c-j>',
-                '<cmd>lua vim.lsp.buf.definition()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap(
-                'n',
-                'gD',
-                '<cmd>lua vim.lsp.buf.implementation()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                '<c-k>',
-                '<cmd>lua vim.lsp.buf.signature_help()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'gD',
-                '<cmd>lua vim.lsp.buf.type_definition()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'gr',
-                '<cmd>lua vim.lsp.buf.references()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'g0',
-                '<cmd>lua vim.lsp.buf.document_symbol()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'gW',
-                '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'gd',
-                '<cmd>lua vim.lsp.buf.definition()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'ga',
-                '<cmd>lua vim.lsp.buf.code_action()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'g[',
-                '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap(
-                'n',
-                'g]',
-                '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
-                { noremap = true, silent = true }
-            )
+            vim.keymap.set('n', '<c-j>', vim.lsp.buf.definition, { silent = true })
+            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
+            vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, { silent = true })
+            vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
+            vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, { silent = true })
+            vim.keymap.set('n', 'gr', vim.lsp.buf.references, { silent = true })
+            vim.keymap.set('n', 'g0', vim.lsp.buf.document_symbol, { silent = true })
+            vim.keymap.set('n', 'gW', vim.lsp.buf.workspace_symbol, { silent = true })
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { silent = true })
+            vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { silent = true })
+            vim.keymap.set('n', 'g[', vim.lsp.diagnostic.goto_prev, { silent = true })
+            vim.keymap.set('n', 'g]', vim.lsp.diagnostic.goto_next, { silent = true })
         end,
     }
 
@@ -941,8 +855,8 @@ return require('packer').startup(function(use)
         requires = { 'neovim/nvim-lspconfig' },
         ft = 'rust',
         config = function()
-            vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>RustRun<cr>', { noremap = true })
-            vim.api.nvim_set_keymap('n', '<leader>rrr', '<cmd>RustRunnables<cr>', { noremap = true })
+            vim.keymap.set('n', '<leader>rr', '<cmd>RustRun<cr>')
+            vim.keymap.set('n', '<leader>rrr', '<cmd>RustRunnables<cr>')
             --
             require('rust-tools').setup {
                 {
