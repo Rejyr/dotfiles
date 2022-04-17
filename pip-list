@@ -1,5 +1,5 @@
 appdirs==1.4.4
-auto-cpufreq==1.9.2
+auto-cpufreq==1.9.3
 beautifulsoup4==4.10.0
 btrfsutil==5.16.2
 CacheControl==0.12.6
@@ -36,11 +36,11 @@ Pygments==2.11.2
 pyOpenSSL==22.0.0
 pyparsing==3.0.8
 PyQt5==5.15.6
-PyQt5-sip==12.9.1
+PyQt5-sip==12.10.1
 PySocks==1.7.1
 pytube==11.0.2
 pywal==3.3.0
-rapidfuzz==2.0.7
+rapidfuzz==2.0.9
 rapidfuzz-capi==1.0.5
 requests==2.27.1
 resolvelib==0.5.5
@@ -49,7 +49,7 @@ rich @ file:///build/python-rich/src/rich-12.2.0/dist/rich-12.2.0-py3-none-any.w
 scikit-build==0.13.1
 six==1.16.0
 soupsieve==2.3.1
-spotdl==3.9.4
+spotdl==3.9.5
 spotipy==2.19.0
 team==1.0
 toml==0.10.2
