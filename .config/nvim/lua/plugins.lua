@@ -75,7 +75,6 @@ return require('packer').startup(function(use)
     -- fancy wildmenu
     use {
         'gelguy/wilder.nvim',
-        enable = false,
         config = function()
             local wilder = require 'wilder'
             wilder.setup { modes = { ':', '/', '?' } }
