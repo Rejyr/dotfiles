@@ -117,11 +117,9 @@ for_window [instance="MultiMC"] border normal
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
     # Start a terminal and attach to a zellij session
-    bindsym $mod+Shift+Return exec ~/.config/sway/attach-zellij.sh
+    bindsym $mod+Return exec ~/.config/sway/attach-zellij.sh
+    # bindsym $mod+Return exec $term
 
     # Start a the browser
     bindsym $mod+Alt+Return exec $browser
