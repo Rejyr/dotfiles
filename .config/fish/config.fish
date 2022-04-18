@@ -10,6 +10,8 @@ end
 zoxide init fish | source
 
 sway_startup
+# colorscheme
+kanagawa
 
 # setup bobthefish prompt
 set -g theme_powerline_fonts yes
