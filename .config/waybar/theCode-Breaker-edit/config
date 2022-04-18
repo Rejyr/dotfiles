@@ -2,9 +2,9 @@
 	"layer": "top",
         "position": "bottom", // Waybar position (top|bottom|left|right)
         "height": 25,
-	"modules-left": ["custom/launcher","cpu","temperature","memory","disk","network","custom/keyboard-layout","tray","sway/mode"],
+	"modules-left": ["custom/launcher","cpu","temperature","memory","disk","network","custom/keyboard-layout","custom/updates","tray","sway/mode"],
 	"modules-center": ["sway/workspaces"],
-	"modules-right": ["custom/weather","custom/updates","backlight","pulseaudio","clock","battery","custom/power"],
+	"modules-right": ["custom/weather","backlight","pulseaudio","clock","battery","custom/power"],
 
 	"pulseaudio": {
 		"tooltip": false,
@@ -131,6 +131,7 @@
         },
         "custom/updates":{
             "format": " {}",
+            /* "format": "{} Update(s)", */
             "interval": 7200,                     // every two hours
             "exec": "checkupdates | wc -l",
             "exec-if": "exit 0",                  // always run; consider advanced run conditions

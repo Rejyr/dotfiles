@@ -78,8 +78,7 @@ window#waybar.hidden {
 }
 
 #network {
-	margin-bottom: 12px;
-	background: #bd93f9;
+	background: #C183EB;
 }
 
 #pulseaudio {
@@ -146,7 +145,8 @@ window#waybar.hidden {
 }
 
 #custom-weather {
-	background: #F793BF;
+	/* background: #F793BF; */
+	background: #E8A2AF;
 }
 
 #custom-launcher {
@@ -176,7 +176,7 @@ window#waybar.hidden {
 }
 
 #custom-updates {
-	background: #E8A2AF;
+	background: #9BA5E6;
 }
 
 #custom-media {
@@ -184,5 +184,5 @@ window#waybar.hidden {
 }
 
 #custom-keyboard-layout {
-	background: #A9A9Eb;
+	background: #BA9BE6;
 }
