@@ -124,6 +124,9 @@ for_window [instance="MultiMC"] border normal
     # Run a command
     bindsym $mod+Shift+Return exec ~/.config/sway/wofi-run.sh
 
+    # Run a command in a terminal
+    bindsym $mod+Control+Return exec ~/.config/sway/wofi-run-in-term.sh
+
     # Start a the browser
     bindsym $mod+Alt+Return exec $browser
 
