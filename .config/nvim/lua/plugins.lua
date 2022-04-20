@@ -419,6 +419,18 @@ return require('packer').startup(function(use)
     -- browser markdown preview
     use 'davidgranstrom/nvim-markdown-preview'
 
+    -- latex editing
+    use {
+        'lervag/vimtex',
+        config = function()
+            vim.api.nvim_set_var('tex_flavor', 'latex')
+            vim.api.nvim_set_var('vimtex_view_method', 'zathura')
+            vim.api.nvim_set_var('vimtex_quickfix_mode', 0)
+            vim.o.conceallevel = 1
+            vim.api.nvim_set_var('tex_conceal', 'abdmg')
+        end,
+    }
+
     -- open file at last place
     use {
         'ethanholz/nvim-lastplace',
@@ -599,6 +611,13 @@ return require('packer').startup(function(use)
                     -- But you should be aware of the implications:
                     -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
                     runInTerminal = false,
+
+                    -- 💀
+                    -- If you use `runInTerminal = true` and resize the terminal window,
+                    -- lldb-vscode will receive a `SIGWINCH` signal which can cause problems
+                    -- To avoid that uncomment the following option
+                    -- See https://github.com/mfussenegger/nvim-dap/issues/236#issuecomment-1066306073
+                    postRunCommands = { 'process handle -p true -s false -n false SIGWINCH' },
                 },
             }
 
