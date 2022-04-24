@@ -17,7 +17,7 @@ for_window [class="Audacious"] move scratchpad
 exec vivaldi-stable
 
 workspace 2
-exec $term
+exec ~/.config/sway/attach-zellij.sh
 
 # gaps
 gaps inner 10

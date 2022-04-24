@@ -13,4 +13,4 @@ done
 geoip=$(curl -s https://freegeoip.app/csv/)
 country_code=$(echo $geoip | cut -d, -f 2)
 location=$(echo $geoip | cut -d, -f 6)
-ansiweather -l $location,$country_code -u imperial -s true -f 1 -a false | cut -d' ' -f7,8-
+ansiweather -l $location,$country_code -u metric -s true -f 1 -a false | cut -d' ' -f7,8-

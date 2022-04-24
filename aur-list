@@ -15,12 +15,15 @@ multimc-bin
 nodejs-live-server
 pipes-rs-git
 python-jarowinkler
+python-playsound
 python-pytube
 python-rapidfuzz
 python-rapidfuzz-capi
 python-spotdl
 python-spotipy
+python-textual
 python-ytmusicapi
+termtyper-git
 tint-git
 tty-clock-git
 yay
