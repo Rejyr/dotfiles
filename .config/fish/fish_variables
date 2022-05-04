@@ -31,6 +31,7 @@ SETUVAR _fish_abbr_cf:cargo\x20fmt
 SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_clf:clear\x3b\x20neofetch
 SETUVAR _fish_abbr_clg:clear\x3b\x20fish_greeting
+SETUVAR _fish_abbr_cln:clear\x3b\x20neofetch
 SETUVAR _fish_abbr_clt:clear\x3b\x20todo
 SETUVAR _fish_abbr_cpustat:auto\x2dcpufreq\x20\x2d\x2dstats
 SETUVAR _fish_abbr_cr:cargo\x20run

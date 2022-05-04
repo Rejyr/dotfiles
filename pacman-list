@@ -22,6 +22,7 @@ dhcpcd
 dialog
 discord
 dunst
+dust
 efibootmgr
 eog
 exa
@@ -32,6 +33,7 @@ findutils
 fish
 fisher
 flex
+fortune-mod
 fzf
 gawk
 gcc
@@ -47,6 +49,7 @@ grub
 gzip
 hdparm
 htop
+hyperfine
 ifplugd
 jdk8-openjdk
 jq
