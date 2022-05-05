@@ -36,7 +36,7 @@ keyring==23.4.0
 lark-parser==0.12.0
 lockfile==0.12.2
 louis==3.21.0
-more-itertools==8.10.0
+more-itertools==8.12.0
 msgpack==1.0.3
 mutagen==1.45.1
 numpy==1.22.3
