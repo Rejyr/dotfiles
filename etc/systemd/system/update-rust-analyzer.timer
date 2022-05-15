@@ -1,9 +1,0 @@
-[Unit]
-Description=Update rust-analyzer weekly
-
-[Timer]
-OnBootSec=15min
-OnUnitActiveSec=1w
-
-[Install]
-WantedBy=timers.target

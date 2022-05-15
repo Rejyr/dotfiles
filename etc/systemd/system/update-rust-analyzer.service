@@ -1,9 +1,0 @@
-[Unit]
-Description=A job to update rust-analyzer
-
-[Service]
-Type=simple
-ExecStart=/home/rejyr/dotfiles/bin/update-rust-analyzer.sh
-
-[Install]
-WantedBy=default.target

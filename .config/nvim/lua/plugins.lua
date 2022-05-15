@@ -761,6 +761,7 @@ return require('packer').startup(function(use)
         'williamboman/nvim-lsp-installer',
         requires = { 'neovim/nvim-lspconfig' },
         config = function()
+            require('nvim-lsp-installer').setup {}
             local lsp_installer = require 'nvim-lsp-installer'
             local servers = {
                 'clangd',
@@ -768,6 +769,7 @@ return require('packer').startup(function(use)
                 'grammarly',
                 'ltex',
                 'pyright',
+                'rust_analyzer',
                 'sumneko_lua',
                 'zeta_note',
             }
@@ -779,9 +781,19 @@ return require('packer').startup(function(use)
                     if not server:is_installed() then
                         print('Installing ' .. name)
                         server:install()
+                        print('Installed ' .. name)
                     end
                 end
             end
+
+            local lspconfig = require('lspconfig')
+            lspconfig.clangd.setup {}
+            lspconfig.cssls.setup {}
+            lspconfig.grammarly.setup {}
+            lspconfig.ltex.setup {}
+            lspconfig.pyright.setup {}
+            lspconfig.sumneko_lua.setup {}
+            lspconfig.zeta_note.setup {}
         end,
     }
 
