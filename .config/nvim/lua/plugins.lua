@@ -732,7 +732,7 @@ return require('packer').startup(function(use)
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
-            vim.keymap.set('n', '<leader>t', '<cmd>TroubleToggle<cr>', { silent = true })
+            vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true })
             require('trouble').setup()
         end,
     }
@@ -762,31 +762,26 @@ return require('packer').startup(function(use)
         requires = { 'neovim/nvim-lspconfig' },
         config = function()
             local lsp_installer = require 'nvim-lsp-installer'
-            lsp_installer.on_server_ready(function(server)
-                local servers = {
-                    'clangd',
-                    'cssls',
-                    'grammarly',
-                    'ltex',
-                    'pyright',
-                    'sumneko_lua',
-                    'zeta_note',
-                }
+            local servers = {
+                'clangd',
+                'cssls',
+                'grammarly',
+                'ltex',
+                'pyright',
+                'sumneko_lua',
+                'zeta_note',
+            }
 
-                -- install servers
-                for _, name in pairs(servers) do
-                    local server_is_found, server = lsp_installer.get_server(name)
-                    if server_is_found then
-                        if not server:is_installed() then
-                            print('Installing ' .. name)
-                            server:install()
-                        end
+            -- install servers
+            for _, name in pairs(servers) do
+                local server_is_found, server = lsp_installer.get_server(name)
+                if server_is_found then
+                    if not server:is_installed() then
+                        print('Installing ' .. name)
+                        server:install()
                     end
                 end
-
-                local opts = {}
-                server:setup(opts)
-            end)
+            end
         end,
     }
 

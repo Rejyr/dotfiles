@@ -157,7 +157,7 @@ for_window [instance="MultiMC"] border normal
 # screenshot monitor to ~/Pictures/Screenshots
 bindsym Print exec grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
 # screenshot selected application to ~/Pictures/Screenshots
-bindsym Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+# bindsym Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
 # screenshot slurp selection to clipboard
 bindsym Shift+Control+Print exec grim -g "$(slurp)" - | wl-copy
 #

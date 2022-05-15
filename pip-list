@@ -1,6 +1,7 @@
 appdirs==1.4.4
 attrs==21.4.0
 auto-cpufreq==1.9.3
+autokey==0.95.10
 beautifulsoup4==4.10.0
 Brotli==1.0.9
 btrfsutil==5.17
@@ -17,7 +18,7 @@ colorama==0.4.4
 commonmark==0.9.1
 contextlib2==0.6.0.post1
 crashtest==0.3.1
-cryptography==36.0.2
+cryptography==37.0.0
 distlib==0.3.4
 distro==1.7.0
 docutils==0.16
@@ -31,6 +32,7 @@ importlib-metadata==4.8.1
 installer==0.5.1
 jarowinkler==1.0.2
 jeepney==0.7.1
+joblib==1.1.0
 jsonschema==3.2.0
 keyring==23.4.0
 lark-parser==0.12.0
@@ -58,6 +60,8 @@ pycparser==2.21
 pycryptodomex==3.12.0
 pyfiglet==0.8.post1
 Pygments==2.12.0
+PyGObject==3.42.1
+pyinotify==0.9.6
 pylev==1.4.0
 pyOpenSSL==22.0.0
 pyparsing==3.0.8
@@ -65,25 +69,29 @@ PyQt5==5.15.6
 PyQt5-sip==12.10.1
 pyrsistent==0.18.1
 PySocks==1.7.1
-pytube==12.0.0
+python-xlib==0.31
+pytube==12.1.0
 pywal==3.3.0
-rapidfuzz==2.0.9
+rapidfuzz==2.0.11
 rapidfuzz-capi==1.0.5
 requests==2.27.1
 requests-toolbelt==0.9.1
 resolvelib==0.5.5
 retrying==1.3.3
-rich @ file:///build/python-rich/src/rich-12.3.0/dist/rich-12.3.0-py3-none-any.whl
+rich @ file:///build/python-rich/src/rich-12.4.1/dist/rich-12.4.1-py3-none-any.whl
 scikit-build==0.13.1
+scikit-learn==1.1.0
+scipy==1.8.0
 SecretStorage==3.3.1
 shellingham==1.4.0
 six==1.16.0
 soupsieve==2.3.1
-spotdl==3.9.5
+spotdl==3.9.6
 spotipy==2.19.0
 team==1.0
 termtyper==1.0.1
 textual @ file:///home/rejyr/.cache/yay/python-textual/src/textual-0.1.17/dist/textual-0.1.16-py3-none-any.whl
+threadpoolctl==3.1.0
 toml==0.10.2
 tomli==2.0.1
 tomlkit==0.10.2
@@ -94,8 +102,8 @@ Unidecode==1.3.4
 urllib3==1.26.9
 virtualenv==20.11.0
 webencodings==0.5.1
-websockets==10.2
+websockets==10.3
 youtube-dl==2021.12.17
 yt-dlp==2022.4.8
-ytmusicapi==0.21.0
+ytmusicapi==0.22.0
 zipp==3.8.0

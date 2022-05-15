@@ -1,5 +1,7 @@
 ansiweather
 auto-cpufreq
+autokey-common
+autokey-gtk
 cava
 cbonsai
 clion
@@ -7,6 +9,8 @@ clion-cmake
 clion-gdb
 clion-jre
 clion-lldb
+cpp-taskflow
+jarowinkler-cpp
 laptop-mode-tools
 libcs50
 logiops-git
@@ -23,6 +27,7 @@ python-spotdl
 python-spotipy
 python-textual
 python-ytmusicapi
+rapidfuzz-cpp
 termtyper-git
 tint-git
 tty-clock-git
