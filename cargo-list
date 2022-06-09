@@ -1,5 +1,6 @@
 bacon
 cargo-edit
 cargo-nextest
+flamegraph
 toipe
 typeracer

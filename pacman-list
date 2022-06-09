@@ -1,6 +1,7 @@
 acpid
 adobe-source-han-sans-jp-fonts
 alacritty
+android-tools
 asciiquarium
 astyle
 audacious
@@ -20,7 +21,6 @@ cowsay
 cups
 dhcpcd
 dialog
-discord
 dunst
 dust
 efibootmgr
@@ -55,7 +55,6 @@ ifplugd
 jdk8-openjdk
 jq
 jre-openjdk
-libreoffice-fresh
 libtool
 linux
 linux-firmware
@@ -85,6 +84,7 @@ pacman-contrib
 pandoc
 patch
 pavucontrol
+perf
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
@@ -115,6 +115,7 @@ upower
 vivaldi
 waybar
 wf-recorder
+wget
 which
 wl-clipboard
 wmname

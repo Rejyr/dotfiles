@@ -36,6 +36,7 @@ SETUVAR _fish_abbr_cln:clear\x3b\x20neofetch
 SETUVAR _fish_abbr_clt:clear\x3b\x20todo
 SETUVAR _fish_abbr_cpustat:auto\x2dcpufreq\x20\x2d\x2dstats
 SETUVAR _fish_abbr_cr:cargo\x20run
+SETUVAR _fish_abbr_crr:cargo\x20run\x20\x2d\x2drelease
 SETUVAR _fish_abbr_ct:cargo\x20nextest\x20run
 SETUVAR _fish_abbr_ctn:cargo\x20nextest\x20run\x20\x2d\x2dno\x2ddefault\x2dfeatures
 SETUVAR _fish_abbr_cto:cargo\x20test\x20\x2d\x2d\x20\x2d\x2dshow\x2doutput
@@ -58,7 +59,7 @@ SETUVAR _fish_abbr_systop:systemctl\x20stop
 SETUVAR _fish_abbr_systrt:systemctl\x20start
 SETUVAR _fish_abbr_t:todo
 SETUVAR _fish_abbr_tree:exa\x20\x2dFT
-SETUVAR _fish_abbr_ts:todo\x20show\x20\x2dtD
+SETUVAR _fish_abbr_ts:todo\x20show\x20\x2dTD
 SETUVAR _fish_abbr_tsd:todo\x20show\x20\x2dtDu
 SETUVAR _fish_abbr_tsf:todo\x20show\x20\x2dfuD
 SETUVAR _fish_abbr_update:yay
@@ -70,6 +71,7 @@ SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_extract_files:/home/rejyr/\x2econf
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_bobthefish_files:/home/rejyr/\x2econfig/fish/functions/__bobthefish_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__bobthefish_display_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__bobthefish_glyphs\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/bobthefish_display_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_greeting\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_right_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_title\x2efish
 SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/plugin\x2dextract\x1ejethrokuan/fzf\x1eoh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejorgebucaran/fisher
 SETUVAR base16_theme:tomorrow\x2dnight\x2deighties
+SETUVAR dry_count:\x1d
 SETUVAR fish_color_autosuggestion:747369
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:99cc99
