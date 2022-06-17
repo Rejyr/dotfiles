@@ -12,8 +12,6 @@ client.focused $color0 $background $foreground $color7 $background
 
 # Startup
 workspace 1
-exec audacious
-for_window [class="Audacious"] move scratchpad
 exec vivaldi-stable
 
 workspace 2
@@ -169,9 +167,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec "playerctl play-pause; mpc toggle"
+bindsym XF86AudioNext exec "playerctl next; mpc next"
+bindsym XF86AudioPrev exec "playerctl previous; mpc prev"
 bindsym XF86Search exec bemenu-run
 #
 # Moving around:

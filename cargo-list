@@ -1,6 +1,6 @@
 bacon
 cargo-edit
 cargo-nextest
+cargo-watch
 flamegraph
 toipe
-typeracer

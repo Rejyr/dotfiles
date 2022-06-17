@@ -4,7 +4,6 @@ alacritty
 android-tools
 asciiquarium
 astyle
-audacious
 autoconf
 automake
 base
@@ -63,9 +62,11 @@ lolcat
 m4
 make
 man-db
+mpc
 mpd
 mpv
 nautilus
+ncmpcpp
 neofetch
 neovim
 networkmanager

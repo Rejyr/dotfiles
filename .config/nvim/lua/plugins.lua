@@ -757,7 +757,6 @@ return require('packer').startup(function(use)
                 'pyright',
                 'rust_analyzer',
                 'sumneko_lua',
-                'zeta_note',
             }
 
             -- install servers
@@ -779,7 +778,6 @@ return require('packer').startup(function(use)
             lspconfig.ltex.setup {}
             lspconfig.pyright.setup {}
             lspconfig.sumneko_lua.setup {}
-            lspconfig.zeta_note.setup {}
         end,
     }
 

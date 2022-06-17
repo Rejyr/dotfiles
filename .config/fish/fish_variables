@@ -5,12 +5,6 @@ SETUVAR --export CC:gcc
 SETUVAR --export CFLAGS:\x2dfsanitize\x3dsigned\x2dinteger\x2doverflow\x1e\x2dfsanitize\x3dundefined\x1e\x2dggdb3\x1e\x2dO0\x1e\x2dstd\x3dc11\x1e\x2dWall\x1e\x2dWerror\x1e\x2dWextra\x1e\x2dWno\x2dsign\x2dcompare\x1e\x2dWno\x2dunused\x2dparameter\x1e\x2dWno\x2dunused\x2dvariable\x1e\x2dWshadow
 SETUVAR --export DOTFILES:/home/rejyr/dotfiles/
 SETUVAR --export EDITOR:nvim
-SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
-SETUVAR FZF_DISABLE_KEYBINDINGS:0
-SETUVAR FZF_LEGACY_KEYBINDINGS:1
-SETUVAR FZF_PREVIEW_DIR_CMD:ls
-SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
-SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export LDLIBS:\x2dlcrypt\x1e\x2dlcs50\x1e\x2dlm
 SETUVAR --export --path PATH:/home/rejyr/Programming/RustProjects/todo/target/debug\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
@@ -45,6 +39,7 @@ SETUVAR _fish_abbr_ll:exa\x20\x2dFalh
 SETUVAR _fish_abbr_ls:exa\x20\x2dF
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dp
 SETUVAR _fish_abbr_n:nvim
+SETUVAR _fish_abbr_nc:ncmpcpp
 SETUVAR _fish_abbr_nf:nvim\x20\x28fzf\x29
 SETUVAR _fish_abbr_nfet:neofetch
 SETUVAR _fish_abbr_pac:pacman
@@ -65,11 +60,11 @@ SETUVAR _fish_abbr_tsf:todo\x20show\x20\x2dfuD
 SETUVAR _fish_abbr_update:yay
 SETUVAR _fish_abbr_yeet:yay\x20\x2dRsn
 SETUVAR _fish_abbr_yoink:yay\x20\x2dS
-SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/rejyr/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/rejyr/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/home/rejyr/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/home/rejyr/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/home/rejyr/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/rejyr/\x2econfig/fish/functions/fisher\x2efish\x1e/home/rejyr/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_extract_files:/home/rejyr/\x2econfig/fish/functions/extract\x2efish
 SETUVAR _fisher_oh_2D_my_2D_fish_2F_theme_2D_bobthefish_files:/home/rejyr/\x2econfig/fish/functions/__bobthefish_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__bobthefish_display_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/__bobthefish_glyphs\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/bobthefish_display_colors\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_greeting\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_mode_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_right_prompt\x2efish\x1e/home/rejyr/\x2econfig/fish/functions/fish_title\x2efish
-SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/plugin\x2dextract\x1ejethrokuan/fzf\x1eoh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejorgebucaran/fisher
+SETUVAR _fisher_plugins:oh\x2dmy\x2dfish/plugin\x2dextract\x1eoh\x2dmy\x2dfish/theme\x2dbobthefish\x1ejorgebucaran/fisher\x1ePatrickF1/fzf\x2efish
 SETUVAR base16_theme:tomorrow\x2dnight\x2deighties
 SETUVAR dry_count:\x1d
 SETUVAR fish_color_autosuggestion:747369
