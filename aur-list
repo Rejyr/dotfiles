@@ -19,6 +19,7 @@ lunar-client
 nodejs-live-server
 pipes-rs-git
 plover-git
+plover_plugins_manager
 polymc-bin
 python-jarowinkler
 python-playsound
@@ -26,6 +27,8 @@ python-plover_stroke
 python-pytube
 python-rapidfuzz
 python-rapidfuzz-capi
+python-requests-cache
+python-requests-futures
 python-rtf_tokenize
 python-spotdl
 python-spotipy

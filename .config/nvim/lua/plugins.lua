@@ -72,6 +72,23 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- fold code
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+        config = function()
+            vim.wo.foldcolumn = '1'
+            vim.wo.foldlevel = 99 -- feel free to decrease the value
+            vim.wo.foldenable = true
+
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+            }
+        end,
+    }
+
     -- fancy wildmenu
     use {
         'gelguy/wilder.nvim',
@@ -753,10 +770,12 @@ return require('packer').startup(function(use)
                 'clangd',
                 'cssls',
                 'grammarly',
+                'html',
                 'ltex',
                 'pyright',
                 'rust_analyzer',
                 'sumneko_lua',
+                'tailwindcss',
             }
 
             -- install servers
@@ -771,13 +790,15 @@ return require('packer').startup(function(use)
                 end
             end
 
-            local lspconfig = require('lspconfig')
+            local lspconfig = require 'lspconfig'
             lspconfig.clangd.setup {}
             lspconfig.cssls.setup {}
             lspconfig.grammarly.setup {}
+            lspconfig.html.setup {}
             lspconfig.ltex.setup {}
             lspconfig.pyright.setup {}
             lspconfig.sumneko_lua.setup {}
+            lspconfig.tailwindcss.setup {}
         end,
     }
 
