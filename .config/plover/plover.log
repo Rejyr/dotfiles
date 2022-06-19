@@ -1,0 +1,912 @@
+2022-05-26 11:14:00,953 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-05-26 11:14:00,957 [MainThread] INFO: 42 custom mappings(s)
+2022-05-26 11:14:01,057 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-05-26 11:14:01,058 [Dummy-1] INFO: loading system: English Stenotype
+2022-05-26 11:14:01,223 [Dummy-1] INFO: setting machine: Keyboard
+2022-05-26 11:14:01,228 [Dummy-1] INFO: XInput devices: 9
+2022-05-26 11:14:01,229 [Dummy-1] INFO: recreating /home/rejyr/.config/plover/user.json from asset:plover:assets/user.json
+2022-05-26 11:14:01,229 [Dummy-1] INFO: recreating /home/rejyr/.config/plover/commands.json from asset:plover:assets/commands.json
+2022-05-26 11:14:01,229 [Dummy-1] INFO: recreating /home/rejyr/.config/plover/main.json from asset:plover:assets/main.json
+2022-05-26 11:14:01,235 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-05-26 11:14:01,236 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-05-26 11:14:01,236 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-05-26 11:14:01,699 [Dummy-1] INFO: loaded 3 dictionaries in 0.463s
+2022-05-26 11:14:55,527 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-05-26 11:14:55,531 [MainThread] INFO: 42 custom mappings(s)
+2022-05-26 11:14:55,617 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-05-26 11:14:55,618 [Dummy-1] INFO: loading system: English Stenotype
+2022-05-26 11:14:55,843 [Dummy-1] INFO: setting machine: Keyboard
+2022-05-26 11:14:55,857 [Dummy-1] INFO: XInput devices: 9
+2022-05-26 11:14:55,858 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-05-26 11:14:55,858 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-05-26 11:14:55,859 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-05-26 11:14:56,323 [Dummy-1] INFO: loaded 3 dictionaries in 0.465s
+2022-05-30 16:30:24,868 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-05-30 16:30:24,873 [MainThread] INFO: 42 custom mappings(s)
+2022-05-30 16:30:24,942 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-05-30 16:30:24,943 [Dummy-1] INFO: loading system: English Stenotype
+2022-05-30 16:30:25,058 [Dummy-1] INFO: setting machine: Keyboard
+2022-05-30 16:30:25,063 [Dummy-1] INFO: XInput devices: 9
+2022-05-30 16:30:25,064 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-05-30 16:30:25,064 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-05-30 16:30:25,064 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-05-30 16:30:25,428 [Dummy-1] INFO: loaded 3 dictionaries in 0.364s
+2022-05-30 16:33:54,060 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-05-30 16:33:54,065 [MainThread] INFO: 42 custom mappings(s)
+2022-05-30 16:33:54,126 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-05-30 16:33:54,127 [Dummy-1] INFO: loading system: English Stenotype
+2022-05-30 16:33:54,234 [Dummy-1] INFO: setting machine: Keyboard
+2022-05-30 16:33:54,239 [Dummy-1] INFO: XInput devices: 9
+2022-05-30 16:33:54,240 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-05-30 16:33:54,240 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-05-30 16:33:54,241 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-05-30 16:33:54,597 [Dummy-1] INFO: loaded 3 dictionaries in 0.357s
+2022-06-02 15:14:57,890 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:14:57,894 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:14:57,949 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:14:57,949 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:14:58,048 [Dummy-1] INFO: setting machine: Keyboard
+2022-06-02 15:14:58,052 [Dummy-1] INFO: XInput devices: 9
+2022-06-02 15:14:58,053 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:14:58,053 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:14:58,053 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:14:58,316 [Dummy-1] INFO: loaded 3 dictionaries in 0.263s
+2022-06-02 15:16:50,902 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:16:50,902 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:16:50,903 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:16:53,195 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:17:12,285 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:17:12,286 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:17:12,286 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:17:20,778 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:17:20,778 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:17:20,779 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:19:53,045 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:19:54,834 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:19:54,835 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:19:54,836 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:20:12,047 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:20:12,048 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:20:12,048 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:20:17,448 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:20:17,448 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:20:17,449 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:23:52,776 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:23:52,777 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:23:52,778 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:04,935 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:04,935 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:04,936 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:06,037 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:06,037 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:06,038 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:06,431 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:06,431 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:06,432 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:06,634 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:06,634 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:06,635 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:06,813 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:06,814 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:06,815 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:07,027 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:07,028 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:07,028 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:09,378 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:09,379 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:09,380 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:10,650 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:10,650 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:10,654 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:10,819 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:10,819 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:10,820 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:10,976 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:10,977 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:10,978 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:11,145 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:11,145 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:11,146 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:11,314 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:11,314 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:11,315 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:25:11,482 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:25:11,482 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:25:11,483 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:29:26,590 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:29:26,594 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:29:26,645 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:29:26,645 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:29:26,723 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:26,724 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:26,724 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:29:26,725 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:29:26,725 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:29:26,983 [Dummy-1] INFO: loaded 3 dictionaries in 0.259s
+2022-06-02 15:29:46,087 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:29:46,091 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:29:46,143 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:29:46,143 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:29:46,223 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:46,224 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:46,225 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:29:46,225 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:29:46,225 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:29:46,479 [Dummy-1] INFO: loaded 3 dictionaries in 0.254s
+2022-06-02 15:29:49,944 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:49,944 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:49,945 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:29:51,992 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:51,992 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:51,993 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:29:52,352 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:52,352 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:52,353 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:29:55,996 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:29:55,997 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:29:55,997 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:32:21,438 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:32:21,441 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:32:21,493 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:32:21,493 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:32:21,569 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:32:21,569 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:32:21,570 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:32:21,570 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:32:21,571 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:32:21,823 [Dummy-1] INFO: loaded 3 dictionaries in 0.253s
+2022-06-02 15:32:27,849 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:32:27,850 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:32:27,850 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:38:56,820 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:38:56,823 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:38:56,873 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:38:56,873 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:38:56,953 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:38:56,954 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:38:56,954 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:38:56,955 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:38:56,956 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:38:57,276 [Dummy-1] INFO: loaded 3 dictionaries in 0.322s
+2022-06-02 15:42:37,388 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:42:37,393 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:42:37,457 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:42:37,457 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:42:37,556 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:42:37,557 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:42:37,558 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:42:37,559 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:42:37,560 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:42:37,898 [Dummy-1] INFO: loaded 3 dictionaries in 0.340s
+2022-06-02 15:43:10,015 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:43:12,424 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:43:12,424 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+PermissionError: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 13] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 13] Permission denied: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-02 15:43:12,425 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:50:12,102 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:50:12,106 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:50:12,165 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:50:12,165 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:50:12,258 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:50:12,260 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:50:12,260 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:50:12,260 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:50:12,518 [Dummy-1] INFO: loaded 3 dictionaries in 0.258s
+2022-06-02 15:50:15,084 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:50:15,085 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-02 15:50:46,585 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-02 15:50:46,589 [MainThread] INFO: 42 custom mappings(s)
+2022-06-02 15:50:46,646 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-02 15:50:46,646 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-02 15:50:46,725 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-02 15:50:46,726 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-02 15:50:46,727 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-02 15:50:46,727 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-02 15:50:47,010 [Dummy-1] INFO: loaded 3 dictionaries in 0.283s
+2022-06-03 06:19:59,150 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-03 06:19:59,158 [MainThread] INFO: 42 custom mappings(s)
+2022-06-03 06:19:59,230 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-03 06:19:59,231 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-03 06:19:59,355 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-03 06:19:59,357 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-03 06:19:59,357 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-03 06:19:59,358 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-03 06:19:59,833 [Dummy-1] INFO: loaded 3 dictionaries in 0.476s
+2022-06-03 07:35:48,865 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-03 07:35:48,868 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-03 10:54:19,992 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-03 10:54:19,995 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-03 15:45:10,431 [Dummy-1] INFO: loaded 3 dictionaries in 0.001s
+2022-06-03 15:45:22,823 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-03 15:45:22,828 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-05 12:57:23,660 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-05 12:57:23,666 [MainThread] INFO: 42 custom mappings(s)
+2022-06-05 12:57:23,791 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-05 12:57:23,791 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-05 12:57:23,933 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-05 12:57:23,935 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-05 12:57:23,936 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-05 12:57:23,936 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-05 12:57:24,389 [Dummy-1] INFO: loaded 3 dictionaries in 0.454s
+2022-06-07 07:34:46,354 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-07 07:34:46,361 [MainThread] INFO: 42 custom mappings(s)
+2022-06-07 07:34:46,464 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-07 07:34:46,464 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-07 07:34:46,683 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-07 07:34:46,684 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-07 07:34:46,686 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-07 07:34:46,686 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-07 07:34:46,687 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-07 07:34:47,268 [Dummy-1] INFO: loaded 3 dictionaries in 0.582s
+2022-06-07 07:35:05,410 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-07 07:35:05,413 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-07 07:37:03,712 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-07 07:37:03,717 [MainThread] INFO: 42 custom mappings(s)
+2022-06-07 07:37:03,796 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-07 07:37:03,797 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-07 07:37:03,998 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-07 07:37:04,000 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-07 07:37:04,002 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-07 07:37:04,002 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-07 07:37:04,574 [Dummy-1] INFO: loaded 3 dictionaries in 0.574s
+2022-06-07 07:37:08,351 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-07 07:37:08,355 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-07 07:37:09,360 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-07 07:37:09,363 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-09 16:37:04,752 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-09 16:37:04,766 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-10 10:48:25,288 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-10 10:48:25,293 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-11 19:57:53,307 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-11 19:57:53,315 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-17 11:13:56,029 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-17 11:13:56,034 [MainThread] INFO: 42 custom mappings(s)
+2022-06-17 11:13:56,096 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-17 11:13:56,096 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-17 11:13:56,192 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-17 11:13:56,196 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-17 11:13:56,197 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-17 11:13:56,197 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-17 11:13:56,470 [Dummy-1] INFO: loaded 3 dictionaries in 0.273s
+2022-06-17 11:14:05,676 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-17 11:14:05,677 [Dummy-1] INFO: loaded 3 dictionaries in 0.000s
+2022-06-17 11:15:54,752 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-17 11:15:54,758 [MainThread] INFO: 42 custom mappings(s)
+2022-06-17 11:15:54,823 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-17 11:15:54,824 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-17 11:15:54,930 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-17 11:15:54,932 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-17 11:15:54,932 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-17 11:15:54,933 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-17 11:15:55,287 [Dummy-1] INFO: loaded 3 dictionaries in 0.355s
+2022-06-18 11:19:21,251 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 11:19:21,259 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 11:19:21,327 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 11:19:21,328 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 11:19:21,430 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 11:19:21,432 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 11:19:21,432 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 11:19:21,433 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 11:19:21,792 [Dummy-1] INFO: loaded 3 dictionaries in 0.360s
+2022-06-18 11:20:52,852 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 11:20:52,856 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 11:20:52,923 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 11:20:52,923 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 11:20:53,027 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 11:20:53,029 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 11:20:53,029 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 11:20:53,029 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 11:20:53,387 [Dummy-1] INFO: loaded 3 dictionaries in 0.358s
+2022-06-18 11:21:40,252 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 11:21:40,253 [Dummy-1] INFO: loaded 4 dictionaries in 0.002s
+2022-06-18 11:23:03,194 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 11:23:03,196 [Dummy-1] INFO: loaded 5 dictionaries in 0.002s
+2022-06-18 12:18:20,367 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 12:18:20,374 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 12:18:20,463 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 12:18:20,463 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 12:18:20,561 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 12:18:20,565 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 12:18:20,566 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 12:18:20,566 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 12:18:20,568 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 12:18:20,568 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 12:18:20,942 [Dummy-1] INFO: loaded 5 dictionaries in 0.377s
+2022-06-18 12:18:28,181 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 12:18:28,182 [Dummy-1] INFO: loaded 5 dictionaries in 0.000s
+2022-06-18 13:42:06,814 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 13:42:06,819 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 13:42:06,883 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 13:42:06,884 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 13:42:06,982 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:42:06,983 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 13:42:06,984 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 13:42:06,986 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 13:42:06,986 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 13:42:06,987 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 13:42:07,290 [Dummy-1] INFO: loaded 5 dictionaries in 0.307s
+2022-06-18 13:42:41,327 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:42:41,328 [Dummy-1] INFO: loaded 5 dictionaries in 0.000s
+2022-06-18 13:42:54,946 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 13:42:54,951 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 13:42:55,016 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 13:42:55,016 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 13:42:55,115 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:42:55,117 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 13:42:55,117 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 13:42:55,119 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 13:42:55,120 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 13:42:55,121 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 13:42:55,484 [Dummy-1] INFO: loaded 5 dictionaries in 0.367s
+2022-06-18 13:42:58,324 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:42:58,326 [Dummy-1] INFO: loaded 5 dictionaries in 0.000s
+2022-06-18 13:43:29,605 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 13:43:29,610 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 13:43:29,675 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 13:43:29,676 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 13:43:29,777 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:43:29,779 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 13:43:29,779 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 13:43:29,781 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 13:43:29,782 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 13:43:29,783 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 13:43:30,153 [Dummy-1] INFO: loaded 5 dictionaries in 0.374s
+2022-06-18 13:43:48,393 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-18 13:43:48,397 [MainThread] INFO: 42 custom mappings(s)
+2022-06-18 13:43:48,462 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-18 13:43:48,462 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-18 13:43:48,560 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-18 13:43:48,562 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-18 13:43:48,566 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-18 13:43:48,567 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-18 13:43:48,567 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-18 13:43:48,568 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-18 13:43:48,872 [Dummy-1] INFO: loaded 5 dictionaries in 0.310s
+2022-06-19 09:18:07,002 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 09:18:07,007 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 09:18:07,096 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-19 09:18:07,096 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 09:18:07,196 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:18:07,198 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-19 09:18:07,198 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-19 09:18:07,199 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-19 09:18:07,201 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-19 09:18:07,201 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-19 09:18:07,549 [Dummy-1] INFO: loaded 5 dictionaries in 0.351s
+2022-06-19 09:22:10,226 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 09:22:10,231 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 09:22:10,319 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-19 09:22:10,319 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 09:22:10,419 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:22:10,421 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-19 09:22:10,422 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-19 09:22:10,423 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-19 09:22:10,424 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-19 09:22:10,425 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-19 09:22:10,774 [Dummy-1] INFO: loaded 5 dictionaries in 0.353s
+2022-06-19 09:22:27,444 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/movement.json
+2022-06-19 09:22:27,444 [Dummy-1] INFO: loaded 6 dictionaries in 0.001s
+2022-06-19 09:22:38,067 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:22:38,068 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 09:29:54,128 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 09:29:54,132 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 09:29:54,221 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-19 09:29:54,221 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 09:29:54,321 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:29:54,323 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/movement.json
+2022-06-19 09:29:54,323 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-19 09:29:54,323 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-19 09:29:54,325 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-19 09:29:54,325 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-19 09:29:54,326 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-19 09:29:54,682 [Dummy-1] INFO: loaded 6 dictionaries in 0.359s
+2022-06-19 09:33:06,462 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:33:06,463 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 09:40:18,565 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 09:40:18,568 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 09:40:18,641 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-19 09:40:18,641 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 09:40:18,721 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 09:40:18,722 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/movement.json
+2022-06-19 09:40:18,723 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-19 09:40:18,723 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-19 09:40:18,725 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-19 09:40:18,725 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-19 09:40:18,726 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-19 09:40:19,016 [Dummy-1] INFO: loaded 6 dictionaries in 0.294s
+2022-06-19 09:41:10,825 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-19 09:41:10,826 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 10:17:43,664 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-19 10:17:48,761 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 10:17:48,766 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 10:17:48,840 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/.config/plover/strokes.log)
+2022-06-19 10:17:48,840 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 10:17:48,920 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 10:17:48,922 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-19 10:17:48,922 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/movement.json
+2022-06-19 10:17:48,923 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-modifiers.py
+2022-06-19 10:17:48,923 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/emily-symbols.py
+2022-06-19 10:17:48,924 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/user.json
+2022-06-19 10:17:48,925 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/commands.json
+2022-06-19 10:17:48,926 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
+2022-06-19 10:17:49,235 [Dummy-1] INFO: loaded 6 dictionaries in 0.313s
+2022-06-19 10:18:31,215 [Dummy-1] INFO: stopping `plover_tapey_tape` extension

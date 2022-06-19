@@ -84,8 +84,8 @@ pyinotify==0.9.6
 pylev==1.4.0
 pyOpenSSL==22.0.0
 pyparsing==3.0.9
-PyQt5==5.15.6
-PyQt5-sip==12.10.1
+PyQt5==5.15.7
+PyQt5-sip==12.11.0
 pyrsistent==0.18.1
 pyserial==3.5
 PySocks==1.7.1
