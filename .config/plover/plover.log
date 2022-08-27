@@ -910,3 +910,1582 @@ serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-
 2022-06-19 10:17:48,926 [Dummy-1] INFO: loading dictionary: /home/rejyr/.config/plover/main.json
 2022-06-19 10:17:49,235 [Dummy-1] INFO: loaded 6 dictionaries in 0.313s
 2022-06-19 10:18:31,215 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-19 10:39:09,948 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 10:39:09,954 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 10:39:10,040 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-19 10:39:10,041 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 10:39:10,141 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 10:39:10,142 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-19 10:39:10,143 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-19 10:39:10,143 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-19 10:39:10,143 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-19 10:39:10,145 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-19 10:39:10,145 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-19 10:39:10,146 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-19 10:39:10,497 [Dummy-1] INFO: loaded 6 dictionaries in 0.354s
+2022-06-19 10:48:23,817 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 10:48:25,155 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 10:48:26,842 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 10:54:02,672 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 10:54:02,675 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-19 10:55:39,315 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-19 10:55:41,999 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-19 10:55:42,003 [MainThread] INFO: 42 custom mappings(s)
+2022-06-19 10:55:42,080 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-19 10:55:42,080 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-19 10:55:42,169 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-19 10:55:42,171 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-19 10:55:42,171 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-19 10:55:42,171 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-19 10:55:42,172 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-19 10:55:42,172 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-19 10:55:42,172 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-19 10:55:42,174 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-19 10:55:42,503 [Dummy-1] INFO: loaded 6 dictionaries in 0.332s
+2022-06-19 14:19:46,204 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:46,969 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:47,261 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:47,706 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:47,953 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:48,224 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:48,614 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:48,868 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:19:49,140 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:34,634 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:35,765 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:36,113 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:36,460 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:38,035 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-19 14:20:38,333 [Dummy-1] ERROR: engine on_stroked failed
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 148, in run
+    if func(*args, **kwargs):
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 383, in _on_stroked
+    self._translator.translate(stroke)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 205, in translate
+    self.flush()
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 261, in flush
+    self._output(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/translation.py", line 266, in _output
+    callback(undo, do, prev)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 450, in format
+    self.spaces_after).render(last_action, old, new)
+  File "/usr/lib/python3.10/site-packages/plover/formatting.py", line 565, in render
+    self.output.send_key_combination(action.combo)
+  File "/usr/lib/python3.10/site-packages/plover/engine.py", line 406, in _send_key_combination
+    self._keyboard_emulation.send_key_combination(c)
+  File "/usr/lib/python3.10/site-packages/plover/oslayer/linux/keyboardcontrol_x11.py", line 1239, in send_key_combination
+    in parse_key_combo(combo, self._get_keycode_from_keystring)
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 177, in parse_key_combo
+    _raise_error(ValueError, 'unknown key')
+  File "/usr/lib/python3.10/site-packages/plover/key_combo.py", line 157, in _raise_error
+    raise exception(msg)
+ValueError: unknown key in "[Shfit(]Tab)"
+2022-06-21 10:11:36,367 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-21 10:11:37,260 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-21 10:11:37,266 [MainThread] INFO: 42 custom mappings(s)
+2022-06-21 10:11:37,350 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-21 10:11:37,350 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-21 10:11:37,442 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-21 10:11:37,443 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-21 10:11:37,444 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-21 10:11:37,444 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-21 10:11:37,444 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-21 10:11:37,445 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-21 10:11:37,445 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-21 10:11:37,446 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-21 10:11:37,740 [Dummy-1] INFO: loaded 6 dictionaries in 0.296s
+2022-06-22 19:46:53,763 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:46:53,770 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:46:53,772 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:47:00,456 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 19:47:03,282 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 19:47:03,287 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 19:47:03,366 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 19:47:03,366 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 19:47:03,456 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:47:03,456 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:47:03,457 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 19:47:03,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 19:47:03,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 19:47:03,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 19:47:03,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 19:47:03,460 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 19:47:03,460 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 19:47:03,810 [Dummy-1] INFO: loaded 6 dictionaries in 0.352s
+2022-06-22 19:47:19,266 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 19:47:21,903 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 19:47:21,907 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 19:47:21,980 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 19:47:21,980 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 19:47:22,073 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:47:22,073 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:47:22,074 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 19:47:22,074 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 19:47:22,074 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 19:47:22,074 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 19:47:22,075 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 19:47:22,075 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 19:47:22,076 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 19:47:22,381 [Dummy-1] INFO: loaded 6 dictionaries in 0.307s
+2022-06-22 19:48:02,724 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:02,724 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:02,725 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:48:03,601 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:03,602 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:03,602 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:48:03,758 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:03,759 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:03,759 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:48:03,905 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:03,906 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:03,906 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:48:04,063 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:04,063 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:04,064 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:48:04,231 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:48:04,232 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:48:04,233 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:54:14,788 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:54:14,788 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:54:14,789 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:54:15,969 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:54:15,970 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:54:15,971 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:54:16,161 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:54:16,161 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:54:16,162 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:54:16,340 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:54:16,341 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:54:16,342 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 19:56:08,302 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 19:56:08,916 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 19:56:08,943 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 19:56:09,012 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 19:56:09,012 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 19:56:09,113 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:56:09,114 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:56:09,115 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 19:56:09,115 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 19:56:09,116 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 19:56:09,116 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 19:56:09,116 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 19:56:09,119 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 19:56:09,119 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 19:56:09,472 [Dummy-1] INFO: loaded 6 dictionaries in 0.357s
+2022-06-22 19:56:19,823 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 19:56:20,388 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 19:56:20,392 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 19:56:20,465 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 19:56:20,465 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 19:56:20,545 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 19:56:20,546 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-06-22 19:56:20,546 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 19:56:20,547 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 19:56:20,547 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 19:56:20,547 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 19:56:20,549 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 19:56:20,549 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 19:56:20,549 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 19:56:20,844 [Dummy-1] INFO: loaded 6 dictionaries in 0.297s
+2022-06-22 20:00:55,085 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 20:00:55,108 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 20:00:55,186 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 20:00:55,187 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 20:00:55,267 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 20:00:55,271 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 20:00:55,272 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 20:00:55,272 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 20:00:55,272 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 20:00:55,272 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 20:00:55,274 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 20:00:55,276 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 20:00:55,551 [Dummy-1] INFO: loaded 6 dictionaries in 0.280s
+2022-06-22 20:01:06,041 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 20:01:06,042 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 20:01:13,103 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 20:01:24,687 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 20:01:24,691 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 20:01:24,762 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 20:01:24,762 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 20:01:24,843 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 20:01:24,845 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 20:01:24,845 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 20:01:24,846 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 20:01:24,846 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 20:01:24,846 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 20:01:24,847 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 20:01:24,847 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 20:01:25,192 [Dummy-1] INFO: loaded 6 dictionaries in 0.347s
+2022-06-22 20:01:48,578 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 20:01:48,580 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-06-22 20:01:55,074 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-22 20:02:02,629 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-22 20:02:02,649 [MainThread] INFO: 42 custom mappings(s)
+2022-06-22 20:02:02,704 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-22 20:02:02,705 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-22 20:02:02,788 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-22 20:02:02,789 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-22 20:02:02,790 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-22 20:02:02,790 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-22 20:02:02,790 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-22 20:02:02,791 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-22 20:02:02,792 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-22 20:02:02,792 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-22 20:02:03,138 [Dummy-1] INFO: loaded 6 dictionaries in 0.348s
+2022-06-27 06:03:49,139 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-06-27 06:03:52,787 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-06-27 06:03:52,811 [MainThread] INFO: 42 custom mappings(s)
+2022-06-27 06:03:52,875 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-06-27 06:03:52,875 [Dummy-1] INFO: loading system: English Stenotype
+2022-06-27 06:03:52,959 [Dummy-1] INFO: setting machine: Gemini PR
+2022-06-27 06:03:52,961 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-06-27 06:03:52,962 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-06-27 06:03:52,962 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-06-27 06:03:52,962 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-06-27 06:03:52,963 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-06-27 06:03:52,963 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-06-27 06:03:52,965 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-06-27 06:03:53,270 [Dummy-1] INFO: loaded 6 dictionaries in 0.309s
+2022-07-04 19:42:47,558 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-04 19:42:47,565 [MainThread] INFO: 42 custom mappings(s)
+2022-07-04 19:42:47,644 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-04 19:42:47,645 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-04 19:42:47,765 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-04 19:42:47,769 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-04 19:42:47,770 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-04 19:42:47,770 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-04 19:42:47,770 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-04 19:42:47,770 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-04 19:42:47,771 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-04 19:42:47,771 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-04 19:42:48,257 [Dummy-1] INFO: loaded 6 dictionaries in 0.487s
+2022-07-05 21:11:46,807 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,814 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,817 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,817 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,817 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,818 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,818 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,819 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,819 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,820 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,820 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,820 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,821 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,821 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,822 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,822 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,823 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,823 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:46,823 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:46,824 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+OSError: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 19] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 19] No such device: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:46,824 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:11:51,228 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-07-05 21:11:56,482 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-05 21:11:56,488 [MainThread] INFO: 42 custom mappings(s)
+2022-07-05 21:11:56,557 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-05 21:11:56,557 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-05 21:11:56,658 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:11:56,659 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:11:56,660 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-05 21:11:56,660 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-05 21:11:56,660 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-05 21:11:56,660 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-05 21:11:56,661 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-05 21:11:56,661 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-05 21:11:56,661 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-05 21:11:57,027 [Dummy-1] INFO: loaded 6 dictionaries in 0.367s
+2022-07-05 21:12:03,348 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:03,349 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:03,350 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:03,934 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:03,935 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:03,936 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:04,113 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:04,114 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:04,114 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:04,293 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:04,293 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:04,294 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:04,507 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:04,507 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:04,511 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:04,642 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:04,642 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:04,643 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:04,833 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:04,834 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:04,835 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:13,945 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:13,946 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:13,946 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:14,362 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:14,362 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:14,363 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:15,374 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:15,375 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:15,375 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:15,543 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:15,544 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:15,545 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:15,734 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:15,735 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:15,736 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:15,892 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:15,893 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:15,894 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:19,739 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:19,740 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:19,740 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:12:20,246 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:12:20,246 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-05 21:12:20,247 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-05 21:17:42,960 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-05 21:17:42,968 [MainThread] INFO: 42 custom mappings(s)
+2022-07-05 21:17:43,052 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-05 21:17:43,052 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-05 21:17:43,174 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-05 21:17:43,177 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-05 21:17:43,178 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-05 21:17:43,178 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-05 21:17:43,179 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-05 21:17:43,179 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-05 21:17:43,180 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-05 21:17:43,182 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-05 21:17:43,576 [Dummy-1] INFO: loaded 6 dictionaries in 0.398s
+2022-07-08 11:07:30,723 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-08 11:07:30,730 [MainThread] INFO: 42 custom mappings(s)
+2022-07-08 11:07:30,807 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-08 11:07:30,807 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-08 11:07:30,921 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-08 11:07:30,924 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-08 11:07:30,925 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-08 11:07:30,925 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-08 11:07:30,926 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-08 11:07:30,926 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-08 11:07:30,927 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-08 11:07:30,927 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-08 11:07:31,326 [Dummy-1] INFO: loaded 6 dictionaries in 0.401s
+2022-07-10 20:28:44,576 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-10 20:28:44,582 [MainThread] INFO: 42 custom mappings(s)
+2022-07-10 20:28:44,675 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-10 20:28:44,675 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-10 20:28:44,784 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-10 20:28:44,788 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-10 20:28:44,789 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-10 20:28:44,789 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-10 20:28:44,789 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-10 20:28:44,789 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-10 20:28:44,790 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-10 20:28:44,790 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-10 20:28:45,201 [Dummy-1] INFO: loaded 6 dictionaries in 0.413s
+2022-07-17 20:51:39,919 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-17 20:51:39,931 [MainThread] INFO: 42 custom mappings(s)
+2022-07-17 20:51:40,038 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-17 20:51:40,038 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-17 20:51:40,143 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-17 20:51:40,143 [Dummy-1] WARNING: Can't open serial port
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 322, in open
+    self.fd = os.open(self.portstr, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
+FileNotFoundError: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/site-packages/plover/machine/base.py", line 215, in start_capture
+    self.serial_port = serial.Serial(**self.serial_params)
+  File "/usr/lib/python3.10/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/usr/lib/python3.10/site-packages/serial/serialposix.py", line 325, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-id/usb-stenokeyboards_The_Uni-if02: [Errno 2] No such file or directory: '/dev/serial/by-id/usb-stenokeyboards_The_Uni-if02'
+2022-07-17 20:51:40,145 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-17 20:51:40,145 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-17 20:51:40,145 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-17 20:51:40,146 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-17 20:51:40,146 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-17 20:51:40,147 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-17 20:51:40,148 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-17 20:51:40,705 [Dummy-1] INFO: loaded 6 dictionaries in 0.560s
+2022-07-17 20:52:00,107 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-17 20:52:00,113 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-17 20:52:43,881 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000000100'
+2022-07-17 20:54:12,739 [Thread-10-machine] ERROR: discarding invalid packet: b'804000000080'
+2022-07-17 20:54:12,893 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:54:13,056 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:54:13,234 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:54:14,036 [Thread-10-machine] ERROR: discarding incomplete packet: b'0040000000'
+2022-07-17 20:55:15,187 [Thread-10-machine] ERROR: discarding incomplete packet: b'8030190000'
+2022-07-17 20:55:31,476 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000200000'
+2022-07-17 20:56:01,954 [Thread-10-machine] ERROR: discarding invalid packet: b'804000000080'
+2022-07-17 20:56:02,112 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:56:02,286 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:56:02,678 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 20:56:02,839 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 20:56:02,999 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 20:56:03,801 [Thread-10-machine] ERROR: discarding incomplete packet: b'0000010000'
+2022-07-17 20:56:18,998 [Thread-10-machine] ERROR: discarding incomplete packet: b'80700c7000'
+2022-07-17 20:57:00,370 [Thread-10-machine] ERROR: discarding invalid packet: b'800020000080'
+2022-07-17 20:57:00,669 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 20:57:01,472 [Thread-10-machine] ERROR: discarding incomplete packet: b'0000200000'
+2022-07-17 20:58:33,254 [Thread-10-machine] ERROR: discarding incomplete packet: b'8020010100'
+2022-07-17 20:58:44,708 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000000000'
+2022-07-17 20:59:03,302 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000005000'
+2022-07-17 21:00:08,183 [Thread-10-machine] ERROR: discarding invalid packet: b'800000280080'
+2022-07-17 21:00:08,985 [Thread-10-machine] ERROR: discarding incomplete packet: b'2c00000000'
+2022-07-17 21:00:28,125 [Thread-10-machine] ERROR: discarding invalid packet: b'800001000080'
+2022-07-17 21:00:28,402 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:28,620 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:29,235 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:29,431 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:29,643 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,120 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,373 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,416 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,459 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,502 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,545 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,588 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,632 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,675 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,718 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,761 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,804 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,848 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,890 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:30,941 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:31,183 [Thread-10-machine] ERROR: discarding invalid packet: b'000000000080'
+2022-07-17 21:00:31,519 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:32,149 [Thread-10-machine] ERROR: discarding invalid packet: b'350001000080'
+2022-07-17 21:00:32,535 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,025 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:00:33,187 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,348 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,506 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,673 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,837 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:33,997 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:34,165 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:34,346 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:34,577 [Thread-10-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-07-17 21:00:34,807 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:34,995 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:35,169 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:35,337 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:35,506 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:35,677 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:35,856 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:00:36,658 [Thread-10-machine] ERROR: discarding incomplete packet: b'0040000000'
+2022-07-17 21:01:29,648 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000026800'
+2022-07-17 21:02:21,162 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000000000'
+2022-07-17 21:02:59,693 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000200000'
+2022-07-17 21:03:34,104 [Thread-10-machine] ERROR: discarding incomplete packet: b'8020041000'
+2022-07-17 21:03:52,566 [Thread-10-machine] ERROR: discarding incomplete packet: b'8000004000'
+2022-07-17 21:04:59,661 [Thread-10-machine] ERROR: discarding invalid packet: b'800000500080'
+2022-07-17 21:05:00,295 [Thread-10-machine] ERROR: discarding invalid packet: b'020008000080'
+2022-07-17 21:05:00,454 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:05:00,640 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:05:01,442 [Thread-10-machine] ERROR: discarding incomplete packet: b'0040000000'
+2022-07-17 21:05:07,756 [Thread-10-machine] ERROR: discarding invalid packet: b'800020000080'
+2022-07-17 21:05:07,783 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,810 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,837 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,865 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,892 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,919 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,946 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:07,973 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,000 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,027 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,054 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,082 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,108 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,136 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,163 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,190 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,204 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,431 [Thread-10-machine] ERROR: discarding invalid packet: b'000000000080'
+2022-07-17 21:05:08,600 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,705 [Thread-10-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:08,878 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:05:09,680 [Thread-10-machine] ERROR: discarding incomplete packet: b'0040000000'
+2022-07-17 21:05:15,367 [Thread-10-machine] ERROR: discarding invalid packet: b'804000000080'
+2022-07-17 21:05:16,031 [Thread-10-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:05:16,190 [Thread-10-machine] ERROR: discarding invalid packet: b'010000000080'
+2022-07-17 21:05:16,360 [Thread-10-machine] ERROR: discarding invalid packet: b'010000000080'
+2022-07-17 21:05:16,534 [Thread-10-machine] ERROR: discarding invalid packet: b'010000000080'
+2022-07-17 21:05:16,732 [Thread-10-machine] ERROR: discarding invalid packet: b'010000000080'
+2022-07-17 21:05:17,048 [Thread-10-machine] ERROR: discarding invalid packet: b'010000000080'
+2022-07-17 21:05:17,221 [Thread-10-machine] ERROR: discarding invalid packet: b'000800000080'
+2022-07-17 21:05:17,410 [Thread-10-machine] ERROR: discarding invalid packet: b'000800000080'
+2022-07-17 21:05:18,212 [Thread-10-machine] ERROR: discarding incomplete packet: b'0008000000'
+2022-07-17 21:05:22,734 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-07-17 21:05:25,373 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-07-17 21:05:25,378 [MainThread] INFO: 42 custom mappings(s)
+2022-07-17 21:05:25,449 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-07-17 21:05:25,449 [Dummy-1] INFO: loading system: English Stenotype
+2022-07-17 21:05:25,614 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-17 21:05:25,731 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-07-17 21:05:25,732 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-07-17 21:05:25,734 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-07-17 21:05:25,734 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-07-17 21:05:25,735 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-07-17 21:05:25,735 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-07-17 21:05:25,738 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-07-17 21:05:26,185 [Dummy-1] INFO: loaded 6 dictionaries in 0.452s
+2022-07-17 21:05:33,732 [Thread-2-machine] ERROR: discarding invalid packet: b'800020000080'
+2022-07-17 21:05:33,912 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:34,060 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:34,212 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:34,369 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:05:35,171 [Thread-2-machine] ERROR: discarding incomplete packet: b'0000200000'
+2022-07-17 21:05:40,380 [Thread-2-machine] ERROR: discarding incomplete packet: b'8000200000'
+2022-07-17 21:05:55,868 [Thread-2-machine] ERROR: discarding invalid packet: b'804000000080'
+2022-07-17 21:05:56,045 [Thread-2-machine] ERROR: discarding invalid packet: b'004000000080'
+2022-07-17 21:05:56,848 [Thread-2-machine] ERROR: discarding incomplete packet: b'0040000000'
+2022-07-17 21:06:59,752 [Thread-2-machine] ERROR: discarding incomplete packet: b'8000005000'
+2022-07-17 21:07:15,802 [Thread-2-machine] ERROR: discarding invalid packet: b'80000c000080'
+2022-07-17 21:07:16,604 [Thread-2-machine] ERROR: discarding incomplete packet: b'0140000200'
+2022-07-17 21:07:27,761 [Thread-2-machine] ERROR: discarding invalid packet: b'806002400080'
+2022-07-17 21:07:28,563 [Thread-2-machine] ERROR: discarding incomplete packet: b'00000c2800'
+2022-07-17 21:07:40,181 [Thread-2-machine] ERROR: discarding incomplete packet: b'8020040000'
+2022-07-17 21:08:02,934 [Thread-2-machine] ERROR: discarding incomplete packet: b'8000041200'
+2022-07-17 21:08:25,642 [Thread-2-machine] ERROR: discarding invalid packet: b'800000280080'
+2022-07-17 21:08:26,445 [Thread-2-machine] ERROR: discarding incomplete packet: b'2c00000000'
+2022-07-17 21:08:44,716 [Thread-2-machine] ERROR: discarding incomplete packet: b'8000080000'
+2022-07-17 21:08:53,409 [Thread-2-machine] ERROR: discarding invalid packet: b'800020000080'
+2022-07-17 21:08:54,022 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:54,242 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:54,696 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,025 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,219 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,395 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,566 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,729 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:55,888 [Thread-2-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-07-17 21:08:56,691 [Thread-2-machine] ERROR: discarding incomplete packet: b'0000200000'
+2022-07-17 21:09:37,569 [Thread-2-machine] ERROR: discarding incomplete packet: b'8040000000'
+2022-07-17 21:10:02,639 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-17 21:10:02,644 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-19 17:51:58,143 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-19 17:51:58,147 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-07-19 19:14:28,665 [Thread-11-machine] ERROR: discarding incomplete packet: b'8000000400'
+2022-07-21 15:40:58,818 [Dummy-1] INFO: setting machine: Gemini PR
+2022-07-21 15:40:58,822 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-02 09:11:00,633 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-08-02 09:11:00,641 [MainThread] INFO: 42 custom mappings(s)
+2022-08-02 09:11:00,793 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-08-02 09:11:00,794 [Dummy-1] INFO: loading system: English Stenotype
+2022-08-02 09:11:00,942 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-02 09:11:00,946 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-08-02 09:11:00,946 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-08-02 09:11:00,947 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-08-02 09:11:00,947 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-08-02 09:11:00,947 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-08-02 09:11:00,948 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-08-02 09:11:00,948 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-08-02 09:11:01,403 [Dummy-1] INFO: loaded 6 dictionaries in 0.457s
+2022-08-02 09:11:03,771 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-02 09:11:03,772 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-02 09:11:05,376 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-02 09:11:05,378 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-02 09:11:05,780 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-02 09:11:05,781 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-02 09:11:06,183 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-02 09:11:06,185 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:10,280 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-08-07 17:17:10,289 [MainThread] INFO: 42 custom mappings(s)
+2022-08-07 17:17:10,403 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-08-07 17:17:10,403 [Dummy-1] INFO: loading system: English Stenotype
+2022-08-07 17:17:10,556 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:10,677 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-08-07 17:17:10,678 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-08-07 17:17:10,679 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-08-07 17:17:10,679 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-08-07 17:17:10,680 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-08-07 17:17:10,683 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-08-07 17:17:10,683 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-08-07 17:17:11,261 [Dummy-1] INFO: loaded 6 dictionaries in 0.583s
+2022-08-07 17:17:12,287 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:12,289 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:12,692 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:12,695 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:13,097 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:13,100 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:13,503 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:13,505 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:13,908 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:13,910 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:14,314 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:14,316 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:14,719 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:14,722 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:17:51,006 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:17:51,276 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 17:18:04,402 [Thread-17-machine] ERROR: discarding incomplete packet: b'8020280400'
+2022-08-07 17:18:12,415 [Thread-17-machine] ERROR: discarding incomplete packet: b'8020280400'
+2022-08-07 17:18:20,670 [Thread-17-machine] ERROR: discarding invalid packet: b'800020000080'
+2022-08-07 17:18:20,842 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:21,291 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:21,448 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:21,602 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:21,746 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:21,895 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:22,046 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:22,370 [Thread-17-machine] ERROR: discarding invalid packet: b'000020000080'
+2022-08-07 17:18:22,586 [Thread-17-machine] ERROR: discarding invalid packet: b'000001000080'
+2022-08-07 17:18:22,748 [Thread-17-machine] ERROR: discarding invalid packet: b'000010000080'
+2022-08-07 17:18:22,897 [Thread-17-machine] ERROR: discarding invalid packet: b'000010000080'
+2022-08-07 17:18:23,045 [Thread-17-machine] ERROR: discarding invalid packet: b'000010000080'
+2022-08-07 17:18:23,202 [Thread-17-machine] ERROR: discarding invalid packet: b'000010000080'
+2022-08-07 17:18:24,004 [Thread-17-machine] ERROR: discarding incomplete packet: b'0000100000'
+2022-08-07 17:19:00,489 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 17:19:00,493 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-07 21:38:46,463 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-07 21:38:46,468 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-09 17:39:53,635 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-08-09 17:39:53,643 [MainThread] INFO: 42 custom mappings(s)
+2022-08-09 17:39:53,739 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-08-09 17:39:53,739 [Dummy-1] INFO: loading system: English Stenotype
+2022-08-09 17:39:53,850 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-09 17:39:53,854 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-08-09 17:39:53,854 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-08-09 17:39:53,854 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-08-09 17:39:53,855 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-08-09 17:39:53,855 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-08-09 17:39:53,856 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-08-09 17:39:53,856 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-08-09 17:39:54,198 [Dummy-1] INFO: loaded 6 dictionaries in 0.344s
+2022-08-15 11:50:43,318 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-08-15 11:50:43,325 [MainThread] INFO: 42 custom mappings(s)
+2022-08-15 11:50:43,451 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-08-15 11:50:43,452 [Dummy-1] INFO: loading system: English Stenotype
+2022-08-15 11:50:43,560 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-15 11:50:43,565 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-08-15 11:50:43,566 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-08-15 11:50:43,567 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-08-15 11:50:43,567 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-08-15 11:50:43,567 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-08-15 11:50:43,569 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-08-15 11:50:43,571 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-08-15 11:50:43,926 [Dummy-1] INFO: loaded 6 dictionaries in 0.360s
+2022-08-15 11:50:46,371 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-15 11:50:46,372 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-15 11:50:46,774 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-15 11:50:46,775 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-15 11:50:47,178 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-15 11:50:47,179 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-15 11:50:47,582 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-15 11:50:47,583 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-25 20:09:42,876 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-25 20:09:42,884 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-26 21:35:51,428 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-26 21:35:51,433 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s

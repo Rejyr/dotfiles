@@ -72,6 +72,22 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- prettier notifications
+    use {
+        'rcarriga/nvim-notify',
+        config = function()
+            vim.notify = require 'notify'
+        end,
+    }
+
+    -- lsp status
+    use {
+        'j-hui/fidget.nvim',
+        config = function()
+            require('fidget').setup {}
+        end,
+    }
+
     -- fold code
     use {
         'kevinhwang91/nvim-ufo',
@@ -339,9 +355,9 @@ return require('packer').startup(function(use)
     --
     -- smooth scrolling
     use {
-        'karb94/neoscroll.nvim',
+        'declancm/cinnamon.nvim',
         config = function()
-            require('neoscroll').setup()
+            require('cinnamon').setup()
         end,
     }
 
@@ -806,6 +822,31 @@ return require('packer').startup(function(use)
             lspconfig.pyright.setup {}
             lspconfig.sumneko_lua.setup {}
             lspconfig.tailwindcss.setup {}
+            lspconfig.rust_analyzer.setup {
+                on_init = function(client)
+                    local path = client.workspace_folders[1].name
+
+                    if path == os.getenv 'HOME' .. 'rust' then
+                        local rust_analyzer = client.config.settings['rust-analyzer']
+                        rust_analyzer.checkOnSave.overrideCommand = { 'x', 'check', '--json-output' }
+                        rust_analyzer.rustfmt.overrideCommand = { './build/x86_64-unknown-linux-gnu/stage0/bin/rustfmt', '--edition=2021' }
+                        rust_analyzer.procMacro.enable = true
+                        rust_analyzer.cargo.buildScripts.enable = true
+                        rust_analyzer.cargo.buildScripts.overrideCommand = { 'x', 'check', '--json-output' }
+                        rust_analyzer.rustc.source = './Cargo.toml'
+                    end
+
+                    client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+                    return true
+                end,
+                settings = {
+                    checkOnSave = { overrideCommand = {} },
+                    rustfmt = { overrideCommand = {} },
+                    procMacro = { enable = false },
+                    cargo = { buildScripts = { enable = false, overrideCommand = {} } },
+                    rustc = { source = '' }
+                },
+            }
         end,
     }
 
@@ -824,8 +865,8 @@ return require('packer').startup(function(use)
             vim.keymap.set('n', 'gW', vim.lsp.buf.workspace_symbol, { silent = true })
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { silent = true })
             vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { silent = true })
-            vim.keymap.set('n', 'g[', vim.lsp.diagnostic.goto_prev, { silent = true })
-            vim.keymap.set('n', 'g]', vim.lsp.diagnostic.goto_next, { silent = true })
+            vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, { silent = true })
+            vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, { silent = true })
         end,
     }
 

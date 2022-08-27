@@ -10,10 +10,17 @@ include "$HOME/.cache/wal/colors-sway"
 # set wal colors
 client.focused $color0 $background $foreground $color7 $background
 
-# Startup
+### Startup
+# start notifications (dunst)
+exec dunst
+# start mpd
+exec mpd
+
+# workspace 1
 workspace 1
 exec vivaldi-stable
 
+# workspace 2
 workspace 2
 exec ~/.config/sway/attach-zellij.sh
 
@@ -23,9 +30,6 @@ gaps outer 5
 
 # disable window titlebar
 default_border pixel 2
-
-# start notifications (dunst)
-exec dunst
 
 # xdg_desktop_portal setup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -106,12 +110,18 @@ input type:touchpad {
 # Enable floating
 for_window [class="SpeedCrunch"] floating enable
 for_window [instance="MultiMC"] floating enable
-for_window [title="tapey_tape"] floating enable
+for_window [title="Plover: Strokes Meter"] floating enable
+for_window [title="Plover: WPM Meter"] floating enable
 
 # Enable title bar
 for_window [class="SpeedCrunch"] border normal
 for_window [instance="MultiMC"] border normal
-for_window [title="tapey_tape"] border normal
+for_window [title="Plover: Strokes Meter"] border normal
+for_window [title="Plover: WPM Meter"] border normal
+
+# Resize
+for_window [title="Plover: Strokes Meter"] width 181 height 148
+for_window [title="Plover: WPM Meter"] width 181 height 148
 
 ### Key bindings
 #
@@ -154,12 +164,26 @@ for_window [title="tapey_tape"] border normal
 #
 # Screencapture
 #
-# screenshot monitor to ~/Pictures/Screenshots
-bindsym Print exec grim -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
-# screenshot selected application to ~/Pictures/Screenshots
-# bindsym Shift+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
-# screenshot slurp selection to clipboard
-bindsym Shift+Control+Print exec grim -g "$(slurp)" - | wl-copy
+
+## screenshot monitor
+# to ~/Pictures/Screenshots
+bindsym Print exec grimshot --notify save output $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+# to clipboard
+bindsym Print+Alt exec grimshot --notify copy output
+
+## screenshot active window
+# to ~/Pictures/Screenshots
+bindsym Print+Shift exec grimshot --notify save active $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+# to clipboard
+bindsym Print+Shift+Alt exec grimshot --notify copy active
+
+## screenshot selection
+# to ~/Pictures/Screenshots
+bindsym Print+Control exec grimshot --notify save area $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+# to clipboard
+bindsym Print+Control+Alt exec grimshot --notify copy area
+
+
 #
 # Control volume, monitor brightness, media players
 #
