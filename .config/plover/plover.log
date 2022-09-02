@@ -2489,3 +2489,35 @@ serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-
 2022-08-25 20:09:42,884 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
 2022-08-26 21:35:51,428 [Dummy-1] INFO: setting machine: Gemini PR
 2022-08-26 21:35:51,433 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-27 15:38:56,988 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-27 15:38:56,995 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-27 19:17:39,330 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-27 19:17:39,338 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-29 19:54:37,266 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-08-29 19:54:37,273 [MainThread] INFO: 42 custom mappings(s)
+2022-08-29 19:54:37,357 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-08-29 19:54:37,357 [Dummy-1] INFO: loading system: English Stenotype
+2022-08-29 19:54:37,453 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-29 19:54:37,456 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-08-29 19:54:37,457 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-08-29 19:54:37,457 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-08-29 19:54:37,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-08-29 19:54:37,458 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-08-29 19:54:37,459 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-08-29 19:54:37,459 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-08-29 19:54:37,820 [Dummy-1] INFO: loaded 6 dictionaries in 0.363s
+2022-08-29 19:54:40,663 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-29 19:54:40,664 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-29 19:54:41,067 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-29 19:54:41,069 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-29 19:54:41,471 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-29 19:54:41,472 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-29 19:54:41,874 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-29 19:54:41,875 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-08-29 19:54:42,481 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-08-29 19:54:42,481 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-08-30 20:58:12,599 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-08-31 20:38:10,073 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-08-31 20:54:46,694 [Dummy-1] INFO: setting machine: Gemini PR
+2022-08-31 20:54:46,698 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-02 03:22:45,282 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()

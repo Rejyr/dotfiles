@@ -123,7 +123,7 @@ torbrowser-launcher
 tree
 ttc-iosevka
 ttf-linux-libertine
-ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-2048-em
 unzip
 upower
 usbutils
@@ -137,7 +137,5 @@ wmname
 wofi
 xdg-desktop-portal-wlr
 youtube-dl
-zathura
-zathura-pdf-poppler
 zellij
 zoxide

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "2022/8, August/27, Saturday.md",
+            "file": "2022/9, September/02, Friday.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2022/8, August/27, Saturday.md",
+                "file": "2022/9, September/02, Friday.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "434f24ed9e45106e",
+  "active": "2b4fdd8ba4a9c0a9",
   "lastOpenFiles": [
-    "2022/8, August/26, Friday.md",
+    "2022/9, September/01, Thursday.md",
+    "2022/9, September/02, Friday.md",
+    "2022/8, August/Untitled.md",
+    "2022/8, August/31, Wednesday.md",
+    "2022/8, August/30, Tuesday.md",
+    "2022/8, August/29, Monday.md",
+    "2022/8, August/28, Sunday.md",
+    "2022/8, August/27, Saturday.md",
     "2022/8, August/25, Thursday.md",
-    "2022/8, August/24, Wednesday.md",
-    "2022/8, August/23, Tuesday.md",
-    "2022/8, August/23, Tuesday, Attachments/Pasted image 20220823190426.png",
-    "2022/8, August/22, Monday.md",
-    "2022/8, August/21, Sunday.md",
-    "2022/8, August/20, Sunday.md",
-    "2022/8, August/19, Friday.md",
-    "2022/8, August/18, Thursday.md"
+    "2022/8, August/26, Friday.md"
   ]
 }
