@@ -2521,3 +2521,121 @@ serial.serialutil.SerialException: [Errno 2] could not open port /dev/serial/by-
 2022-08-31 20:54:46,694 [Dummy-1] INFO: setting machine: Gemini PR
 2022-08-31 20:54:46,698 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
 2022-09-02 03:22:45,282 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-02 21:03:09,945 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-03 12:16:35,875 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-04 16:54:25,314 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-04 16:54:28,781 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-04 18:13:22,559 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-04 18:13:37,635 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-04 18:13:40,999 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-05 19:38:58,543 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-06 18:50:34,076 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-06 20:09:06,574 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-08 19:14:09,985 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-09-08 19:14:09,991 [MainThread] INFO: 44 custom mappings(s)
+2022-09-08 19:14:10,066 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-09-08 19:14:10,066 [Dummy-1] INFO: loading system: English Stenotype
+2022-09-08 19:14:10,151 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-08 19:14:10,154 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-09-08 19:14:10,155 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-09-08 19:14:10,155 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-09-08 19:14:10,155 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-09-08 19:14:10,156 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-09-08 19:14:10,156 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-09-08 19:14:10,159 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-09-08 19:14:10,447 [Dummy-1] INFO: loaded 6 dictionaries in 0.292s
+2022-09-08 19:14:14,966 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-08 19:14:14,967 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-08 19:14:15,370 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-08 19:14:15,371 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-08 19:14:15,774 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-08 19:14:15,776 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-08 19:14:16,179 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-08 19:14:16,180 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-08 19:14:16,711 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-08 19:14:16,714 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-08 19:14:16,989 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-10 11:51:42,218 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-10 11:51:42,224 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-10 11:51:45,721 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-11 19:39:19,011 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-09-11 19:39:19,020 [MainThread] INFO: 44 custom mappings(s)
+2022-09-11 19:39:19,109 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-09-11 19:39:19,109 [Dummy-1] INFO: loading system: English Stenotype
+2022-09-11 19:39:19,213 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-11 19:39:19,216 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-09-11 19:39:19,217 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-09-11 19:39:19,217 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-09-11 19:39:19,217 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-09-11 19:39:19,218 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-09-11 19:39:19,218 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-09-11 19:39:19,222 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-09-11 19:39:19,624 [Dummy-1] INFO: loaded 6 dictionaries in 0.407s
+2022-09-11 19:39:22,830 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-11 19:39:22,832 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-11 19:39:23,234 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-11 19:39:23,236 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-11 19:39:23,637 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-11 19:39:23,639 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-11 19:39:24,042 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-11 19:39:24,043 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-11 19:39:25,194 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-11 19:39:25,195 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-11 19:39:25,556 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-11 19:39:26,105 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 06:07:14,063 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 06:07:25,336 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-12 06:07:25,341 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-12 17:38:57,203 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:39:10,074 [Dummy-1] INFO: stopping `plover_tapey_tape` extension
+2022-09-12 17:39:15,358 [MainThread] INFO: setting language to: en_US.UTF-8
+2022-09-12 17:39:15,365 [MainThread] INFO: 44 custom mappings(s)
+2022-09-12 17:39:15,424 [Dummy-1] INFO: set_stroke_filename(/home/rejyr/dotfiles/.config/plover/strokes.log)
+2022-09-12 17:39:15,424 [Dummy-1] INFO: loading system: English Stenotype
+2022-09-12 17:39:15,507 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-12 17:39:15,509 [Dummy-1] INFO: starting `plover_tapey_tape` extension
+2022-09-12 17:39:15,510 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/user.json
+2022-09-12 17:39:15,510 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/movement.json
+2022-09-12 17:39:15,510 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-modifiers.py
+2022-09-12 17:39:15,511 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/emily-symbols.py
+2022-09-12 17:39:15,511 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/commands.json
+2022-09-12 17:39:15,512 [Dummy-1] INFO: loading dictionary: /home/rejyr/dotfiles/.config/plover/main.json
+2022-09-12 17:39:15,821 [Dummy-1] INFO: loaded 6 dictionaries in 0.311s
+2022-09-12 17:39:18,717 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-12 17:39:18,721 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-12 17:39:19,123 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-12 17:39:19,126 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-12 17:39:19,528 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-12 17:39:19,529 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-12 17:39:27,808 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:39:27,808 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:39:28,190 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:43:42,186 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:44:05,959 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:44:14,410 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:49:52,598 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 17:49:55,238 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 18:11:25,811 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-12 18:16:53,860 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-14 16:13:58,474 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-15 18:38:49,853 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-15 22:54:24,074 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-18 16:29:28,960 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-18 16:29:28,979 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-18 16:34:40,635 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-18 16:50:56,827 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-18 17:35:57,594 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-19 19:03:57,488 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-19 19:03:57,491 [Dummy-1] INFO: loaded 6 dictionaries in 0.000s
+2022-09-20 16:40:34,084 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-20 16:41:05,802 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-24 10:51:53,890 [Dummy-1] INFO: setting machine: Gemini PR
+2022-09-24 10:51:53,917 [Dummy-1] INFO: loaded 6 dictionaries in 0.001s
+2022-09-24 10:53:43,162 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-24 11:30:19,958 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-24 11:30:57,060 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-24 18:17:27,292 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-25 10:14:57,281 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-25 10:33:06,203 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-29 21:36:59,293 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()
+2022-09-30 06:20:51,454 [MainThread] WARNING: Qt: Wayland does not support QWindow::requestActivate()

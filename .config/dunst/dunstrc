@@ -32,7 +32,7 @@
     ### Text ###
 
     # Set font of notifications
-    font = Iosevka 12
+    font = Iosevka
     # Spacing between lines
     line-height = 0
     # Markup parsing
@@ -64,7 +64,7 @@
     # Hide number of duplicate notifications
     hide_duplicate_count = true
     # Show indicatiors  for urls and actions
-    show_indicators = no
+    show_indicators = yes
 
     ### Icons ###
 

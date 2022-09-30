@@ -11,6 +11,7 @@ electron13
 jarowinkler-cpp
 laptop-mode-tools
 libcs50
+libvterm01
 logiops-git
 lunar-client
 nodejs-live-server
@@ -25,7 +26,6 @@ python-playsound
 python-plover_stroke
 python-pytube
 python-requests-cache
-python-requests-futures
 python-rtf_tokenize
 python-soundcloud-v2
 python-spotdl
