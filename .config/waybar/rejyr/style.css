@@ -1,0 +1,374 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+	70% {
+		color: @light;
+	}
+
+	to {
+		color: @light;
+		background-color: @warning;
+	}
+}
+
+@keyframes blink-critical {
+	70% {
+		color: @light;
+	}
+
+	to {
+		color: @light;
+		background-color: @critical;
+	}
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Styles
+ * -------------------------------------------------------------------------- */
+
+/* COLORS */
+
+@define-color nord0 #2E3440;
+@define-color nord1 #3B4252;
+@define-color nord2 #434C5E;
+@define-color nord3 #4C566A;
+@define-color nord4 #D8DEE9;
+@define-color nord5 #E5E9F0;
+@define-color nord6 #ECEFF4;
+@define-color nord7 #8FBCBB;
+@define-color nord8 #88C0D0;
+@define-color nord9 #81A1C1;
+@define-color nord10 #5E81AC;
+@define-color nord11 #BF616A;
+@define-color nord12 #D08770;
+@define-color nord13 #EBCB8B;
+@define-color nord14 #A3BE8C;
+@define-color nord15 #B48EAD;
+
+/* Nord */
+@define-color light @nord6;
+@define-color dark @nord0;
+@define-color warning @nord13;
+@define-color critical @nord12;
+
+@define-color mode @nord3;
+
+@define-color cpu @nord5;
+@define-color memory @nord2;
+@define-color temp @nord5;
+@define-color disk @nord3;
+@define-color network @nord10;
+@define-color keyboard-layout @nord9;
+@define-color updates @nord8;
+
+@define-color workspaces @nord10;
+@define-color workspacesfocused @nord9;
+
+@define-color weather @nord8;
+@define-color backlight @nord9;
+@define-color sound @nord10;
+@define-color date @nord1;
+@define-color time @nord6;
+@define-color battery @nord8;
+
+/* Gruvbox */
+/* @define-color light #ebdbb2; */
+/* @define-color dark #282828; */
+/* @define-color warning #fabd2f; */
+/* @define-color critical #cc241d; */
+/* @define-color mode #a89984; */
+/* @define-color workspaces #458588; */
+/* @define-color workspacesfocused #83a598; */
+/* @define-color sound #d3869b; */
+/* @define-color network #b16286; */
+/* @define-color memory #8ec07c; */
+/* @define-color cpu #98971a; */
+/* @define-color temp #b8bb26; */
+/* @define-color layout #689d6a; */
+/* @define-color battery #fabd2f; */
+/* @define-color date #282828; */
+/* @define-color time #ebdbb2; */
+
+/* Reset all styles */
+* {
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+	background: @dark;
+	color: @light;
+	font-family: Iosevka;
+	font-size: 15pt;
+	/*font-weight: bold;*/
+}
+
+/* Each module */
+#clock,
+#battery,
+#temperature,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#backlight,
+#disk,
+#custom-updates,
+#custom-weather,
+#custom-keyboard-layout,
+#tray {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Each module that should blink */
+#mode,
+#memory,
+#temperature,
+#battery {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#disk.critical,
+#battery.critical {
+	color: @critical;
+}
+
+/* Each critical that should blink */
+#mode,
+#memory.critical,
+#temperature.critical,
+#battery.critical.discharging {
+	animation-name: blink-critical;
+	animation-duration: 2s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#disk.warning,
+#battery.warning {
+	color: @warning;
+}
+
+/* Each warning that should blink */
+#battery.warning.discharging {
+	animation-name: blink-warning;
+	animation-duration: 3s;
+}
+
+
+
+/* And now modules themselves in their respective order */
+
+
+
+#mode { /* Shown current Sway mode (resize etc.) */
+	color: @light;
+	background: @mode;
+}
+
+#cpu {
+	background: @cpu;
+	color: @dark;
+}
+
+#custom-rarrow1 {
+        color: @cpu;
+        background: @memory;
+}
+
+#memory {
+	background: @memory;
+	color: @light;
+}
+
+#custom-rarrow2 {
+        color: @memory;
+        background: @temp;
+}
+
+#temperature {
+	background: @temp;
+	color: @dark;
+}
+
+#custom-rarrow3 {
+        color: @temp;
+        background: @disk;
+}
+
+#disk {
+        background: @disk;
+        color: @light;
+}
+
+#custom-rarrow4 {
+        color: @disk;
+        background: @network;
+}
+
+#network {
+	background: @network;
+	color: @dark;
+}
+
+#custom-rarrow5 {
+        color: @network;
+        background: @keyboard-layout;
+}
+
+#custom-keyboard-layout {
+        background: @keyboard-layout;
+        color: @dark;
+}
+
+#custom-rarrow6 {
+        color: @keyboard-layout;
+        background: @updates;
+}
+
+#custom-updates {
+        background: @updates;
+        color: @dark;
+}
+
+#custom-rarrow7 {
+        color: @updates;
+}
+
+
+
+/* Workspaces stuff */
+#workspaces button {
+	/*font-weight: bold;*/
+	padding-left: 4px;
+	padding-right: 4px;
+	color: @dark;
+	background: @workspaces;
+}
+
+#workspaces button.focused {
+	background: @workspacesfocused;
+}
+
+/*#workspaces button.urgent {
+	border-color: #c9545d;
+	color: #c9545d;
+}*/
+
+#custom-crarrow,
+#custom-clarrow {
+        background: @background;
+        color: @workspaces;
+}
+
+
+
+#custom-larrow6 {
+        color: @weather;
+}
+
+#custom-weather {
+        background: @weather;
+        color: @dark;
+}
+
+#custom-larrow5 {
+        background: @weather;
+        color: @backlight;
+}
+
+#backlight {
+        background: @backlight;
+        color: @dark;
+}
+
+#custom-larrow4 {
+        background: @backlight;
+        color: @sound;
+}
+
+#pulseaudio {
+	background: @sound;
+	color: @dark;
+}
+
+#custom-larrow3 {
+        background: @sound;
+        color: @date;
+}
+
+#tray {
+	background: @date;
+        /* padding-right: 0px; */
+}
+
+#clock.date {
+	background: @date;
+	color: @light;
+}
+
+#custom-larrow2 {
+        background: @date;
+        color: @time;
+}
+
+#clock.time {
+	background: @time;
+	color: @dark;
+}
+
+#custom-larrow1 {
+        background: @time;
+        color: @battery;
+}
+
+#battery {
+	background: @battery;
+	color: @dark;
+}
+
+#custom-rarrow1,
+#custom-rarrow2,
+#custom-rarrow3,
+#custom-rarrow4,
+#custom-rarrow5,
+#custom-rarrow6,
+#custom-rarrow7,
+
+#custom-clarrow,
+#custom-crarrow,
+
+#custom-larrow6,
+#custom-larrow5,
+#custom-larrow4,
+#custom-larrow3,
+#custom-larrow2,
+#custom-larrow1 {
+        font-size: 16px;
+}

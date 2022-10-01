@@ -23,7 +23,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- color setup
-vim.cmd 'colorscheme kanagawa'
+vim.cmd 'colorscheme nord'
 vim.cmd 'set background=dark'
 
 --

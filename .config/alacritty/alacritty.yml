@@ -185,7 +185,7 @@ draw_bold_text_with_bright_colors: false
 
 # Colors
 import:
-  - ~/.config/alacritty/colors/kanagawa.yml
+  - ~/.config/alacritty/colors/base16-nord-256.yml
 
 # Colors (Tomorrow Night)
 # colors:

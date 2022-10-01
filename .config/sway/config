@@ -4,11 +4,35 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# include wal colors
-include "$HOME/.cache/wal/colors-sway"
+### Colors
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+set $nord4 #D8DEE9
+set $nord5 #E5E9F0
+set $nord6 #ECEFF4
+set $nord7 #8FBCBB
+set $nord8 #88C0D0
+set $nord9 #81A1C1
+set $nord10 #5E81AC
+set $nord11 #BF616A
+set $nord12 #D08770
+set $nord13 #EBCB8B
+set $nord14 #A3BE8C
+set $nord15 #B48EAD
 
-# set wal colors
-client.focused $color0 $background $foreground $color7 $background
+set $background $nord0
+set $foreground $nord5
+set $border $nord2
+
+# client.<class> border background text indicator child_border
+client.focused $nord2 $nord0 $nord5 $nord5 $nord2
+client.focused_inactive $nord1 $nord3 $nord4 $nord4 $nord1
+client.focused_tab_title $nord1 $nord3 $nord4 $nord4 $nord1
+client.unfocused $nord1 $nord3 $nord4 $nord4 $nord1
+client.urgent $nord1 $nord11 $foreground $background $nord11
+
 
 ### Startup
 # start notifications (dunst)
@@ -25,11 +49,12 @@ workspace 2
 exec ~/.config/sway/attach-zellij.sh
 
 # gaps
-gaps inner 10
-gaps outer 5
+# gaps inner 10
+# gaps outer 5
+smart_gaps off
 
 # disable window titlebar
-default_border pixel 2
+# default_border pixel 2
 
 # xdg_desktop_portal setup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -57,7 +82,7 @@ font pango: Iosevka Medium 12
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $wallpaper fill
+output * bg ~/dotfiles/wallpapers/wallpaper.jpg fill
 #
 # Example configuration:
 

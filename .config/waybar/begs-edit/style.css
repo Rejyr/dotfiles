@@ -221,6 +221,7 @@
 
 #tray {
 	background: @date;
+        padding-right: 0px;
 }
 
 #clock.date {

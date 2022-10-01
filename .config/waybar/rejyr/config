@@ -1,0 +1,248 @@
+{
+	"layer": "top",
+        "position": "bottom", // Waybar position (top|bottom|left|right)
+        "height": 25,
+        
+
+	"modules-left": [
+            "sway/mode",
+            "cpu",
+            "custom/rarrow1",
+            "memory",
+            "custom/rarrow2",
+            "temperature",
+            "custom/rarrow3",
+            "disk",
+            "custom/rarrow4",
+            "network",
+            "custom/rarrow5",
+            "custom/keyboard-layout",
+            "custom/rarrow6",
+            "custom/updates",
+            "custom/rarrow7",
+        ],
+	"modules-center": [
+            "custom/clarrow",
+            "sway/workspaces",
+            "custom/crarrow"
+        ],
+	"modules-right": [
+            "custom/larrow6",
+            "custom/weather",
+            "custom/larrow5",
+            "backlight",
+            "custom/larrow4",
+            "pulseaudio",
+            "custom/larrow3",
+            "tray",
+            "clock#date",
+            "custom/larrow2",
+            "clock#time",
+            "custom/larrow1",
+            "battery",
+        ],
+
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+                "on-click": "pavucontrol",
+                "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format": "{icon} {volume}%",
+                "format-muted":"muted ",
+		"format-icons": {
+                    "headphones": "",
+                    "handsfree": "",
+                    "headset": "",
+                    "phone": "",
+                    "portable": "",
+                    "car": "",
+		    "default": ["", "", ""]
+		}
+	},
+
+        "sway/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": false,
+            "format": "{icon}",
+            "format-icons": {
+    		"3": "3",
+    		"4": "4",
+    		"5": "5",
+    		"6": "6",
+    		"7": "7",
+    		"8": "8",
+    		"9": "9",
+    		"10": "10",
+            }
+        },
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        },
+	"network": {
+                "format": "⚠ Disabled",
+                "format-wifi": " {essid}",
+                "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+                "format-disconnected": "⚠ Disconnected",
+                "on-click": "alacritty -e nmcli",
+		"tooltip": false,
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval":1,
+                "on-scroll-up": "light -A 5",
+		"on-scroll-down": "light -U 5"
+	},
+        "battery": {
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+	"tray":{
+		"icon-size":18,
+		"spacing": 10
+	},
+        "clock#time": {
+            "interval": 1,
+            "format": " {:%H:%M}",
+            "format-alt": " {:%H:%M:%S}",
+            "tooltip-format": "{:%H:%M:%S}",
+        },
+        "clock#date": {
+            "interval": 60,
+            "format": " {:%m-%d-%Y}",
+            "format-alt": " {:%A %B %d %Y}",
+            "tooltip-format": "{:%A %B %d %Y}",
+        },
+        // "clock": {
+        //     "tooltip-format": "{:%A %B %d %Y | %H:%M}",
+        //     // "format": " {:%a %d %b  %I:%M %p}",	//12 hour format
+        //     // "format": " {:%a %d %b  %H:%M}",	//24 hour format
+        //     "format": " {:%H:%M  %m-%d-%Y}",	//24 hour format
+        //     "format-alt": " {:%H:%M:%S  %m-%d-%Y}",	//24 hour format
+        //     // "format-alt": " {:%m-%d-%Y  %H:%M:%S}",
+        //     // "timezones": [ "Kolkata" ],
+        //     // "max-length": 200
+        //     "interval": 1
+        // },
+        "cpu": {
+            "interval": 15,
+            "format": " {usage}%",
+            "max-length": 10,
+            "on-click": "alacritty -e btop",
+        },
+        "memory": {
+            "interval": 30,
+            "format": " {}%",
+            "max-length": 10,
+            "on-click": "alacritty -e btop",
+        },
+        "disk": {
+            "interval": 5,
+            "format": "  {percentage_used:2}%",
+            "path": "/",
+            "on-click": "alacritty -e btop",
+        },
+        "temperature": {
+            // "thermal-zone": 2,
+            // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+            "critical-threshold": 80,
+            // "format-critical": "{temperatureC}°C ",
+            "format": "{temperatureC}°C ",
+            "on-click": "alacritty -e btop",
+        },
+        "custom/weather":{
+            "format": "{}",
+            "interval": 14400, // 4 hours
+            "exec": "~/dotfiles/.config/waybar/weather.sh",
+            "tooltip": false,
+        },
+        "custom/updates":{
+            "format": " {}",
+            /* "format": "{} Update(s)", */
+            "interval": 7200,                     // every two hours
+            "exec": "checkupdates | wc -l",
+            "exec-if": "exit 0",                  // always run; consider advanced run conditions
+            "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar",
+	    "tooltip": false,
+        },
+        "custom/keyboard-layout":{
+            "exec": "~/.config/waybar/keyboard-layout.sh",
+            // Interval set only as a fallback, as te value is updated by signal
+            "interval": 30,
+            "format": "  {}", // Icon: keyboard
+            // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+            "signal": 1, // SIGHUP
+            "on-click": "~/.config/waybar/toggle-keyboard-layout.sh",
+            "tooltip": false,
+        },
+        "custom/rarrow1":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow2":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow3":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow4":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow5":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow6":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/rarrow7":{
+            "format": "",
+            "tooltip": false,
+        },
+
+        "custom/clarrow":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/crarrow":{
+            "format": "",
+            "tooltip": false,
+        },
+
+        "custom/larrow6":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/larrow5":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/larrow4":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/larrow3":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/larrow2":{
+            "format": "",
+            "tooltip": false,
+        },
+        "custom/larrow1":{
+            "format": "",
+            "tooltip": false,
+        },
+}

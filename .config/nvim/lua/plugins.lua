@@ -344,8 +344,9 @@ return require('packer').startup(function(use)
 
     -- colorschemes
     -- use 'RRethy/nvim-base16'
+    use 'shaunsingh/nord.nvim'
     -- use 'folke/tokyonight.nvim'
-    use 'rebelot/kanagawa.nvim'
+    -- use 'rebelot/kanagawa.nvim'
     -- use 'catppuccin/nvim'
 
     --
@@ -416,7 +417,7 @@ return require('packer').startup(function(use)
     use 'airblade/vim-rooter'
 
     -- autosave
-    use 'Pocco81/AutoSave.nvim'
+    -- use 'Pocco81/auto-save.nvim'
 
     -- tidy whitespace
     use {

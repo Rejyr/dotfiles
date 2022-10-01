@@ -1,7 +1,7 @@
 ignore-empty-password
 show-failed-attempts
 daemonize
-image=~/dotfiles/wallpapers/Mountains, Moon and the Violet night.jpg
+image=~/dotfiles/wallpapers/wallpaper.jpg
 scaling=fill
 indicator-caps-lock
 font=Iosevka
