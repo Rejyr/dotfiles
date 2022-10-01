@@ -10,6 +10,7 @@ SETUVAR --export LDLIBS:\x2dlcrypt\x1e\x2dlcs50\x1e\x2dlm
 SETUVAR --export --path PATH:/home/rejyr/Programming/RustProjects/todo/target/debug\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR --export --path PYTHONPATH:\x1d
 SETUVAR --export QT_QPA_PLATFORM:wayland
+SETUVAR --export QT_STYLE_OVERRIDE:kvantum
 SETUVAR --export TMUX:\x1d
 SETUVAR --export XDG_CURRENT_DESKTOP:sway
 SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1

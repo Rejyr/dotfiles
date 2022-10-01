@@ -75,7 +75,7 @@ set $browser vivaldi-stable
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi --show drun -I
+set $menu QT_STYLE_OVERRIDE=kvantum wofi --show drun -I
 # font
 font pango: Iosevka Medium 12
 
