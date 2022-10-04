@@ -75,7 +75,7 @@ set $browser vivaldi-stable
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu QT_STYLE_OVERRIDE=kvantum wofi --show drun -I
+set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 # font
 font pango: Iosevka Medium 12
 
@@ -157,10 +157,10 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
     # bindsym $mod+Return exec $term
 
     # Run a command
-    bindsym $mod+Shift+Return exec ~/.config/sway/wofi-run.sh
+    bindsym $mod+Shift+Return exec ~/.config/sway/run.sh
 
     # Run a command in a terminal
-    bindsym $mod+Control+Return exec ~/.config/sway/wofi-run-in-term.sh
+    bindsym $mod+Control+Return exec ~/.config/sway/run-in-term.sh
 
     # Start a the browser
     bindsym $mod+Alt+Return exec $browser

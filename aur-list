@@ -35,6 +35,7 @@ python-textual
 python-timeout-decorator
 python-url-normalize
 python-ytmusicapi
+rofi-lbonn-wayland
 sioyek
 soundcloud-dl
 tailwind-css

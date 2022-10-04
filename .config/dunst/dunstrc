@@ -79,7 +79,7 @@
     ### Misc ###
 
     # Dmenu path
-    dmenu = /usr/bin/wofi --dmenu:
+    dmenu = /usr/bin/rofi -dmenu -theme ~/.config/rofi/dmenu.rasi:
     # Browser
     browser = /usr/bin/vivaldi-stable -new-tab
     # Always run scripts

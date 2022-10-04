@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "2022/10, October/01, Saturday.md",
+            "file": "2022/10, October/02, Sunday.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2022/10, October/01, Saturday.md",
+                "file": "2022/10, October/02, Sunday.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "434f24ed9e45106e",
   "lastOpenFiles": [
-    "2022/9, September/30, Friday.md",
-    "2022/9, September/29, Thursday.md",
-    "2022/9, September/28, Wednesday.md",
-    "2022/9, September/27, Tuesday.md",
-    "2022/9, September/26, Monday.md",
-    "2022/9, September/25, Sunday.md",
-    "2022/9, September/24, Saturday.md",
-    "2022/9, September/22, Thursday.md",
-    "2022/9, September/21, Wednesday.md",
-    "2022/9, September/23, Friday.md"
+    "2022/10, October/01, Saturday.md",
+    "2022/7, July/15, Friday.md",
+    "2022/7, July/16, Saturday.md",
+    "2022/7, July/17, Sunday.md",
+    "2022/7, July/18, Monday.md",
+    "2022/7, July/19, Tuesday.md",
+    "2022/7, July/20, Wednesday.md",
+    "2022/7, July/10, Sunday.md",
+    "2022/7, July/12, Tuesday.md",
+    "2022/7, July/13, Wednesday.md"
   ]
 }

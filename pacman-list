@@ -56,7 +56,6 @@ jq
 jre-openjdk
 kvantum
 libtool
-libxdg-basedir
 linux
 linux-firmware
 lldb
@@ -102,7 +101,6 @@ sed
 sl
 slurp
 speedcrunch
-startup-notification
 steam
 stylua
 sudo
@@ -138,8 +136,6 @@ wget
 which
 wl-clipboard
 wmname
-wofi
-xcb-util-xrm
 xdg-desktop-portal-wlr
 youtube-dl
 zellij
