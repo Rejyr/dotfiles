@@ -235,6 +235,7 @@ return require('packer').startup(function(use)
     use {
         'simrat39/symbols-outline.nvim',
         config = function()
+            require('symbols-outline').setup()
             vim.g.symbols_outline = {
                 width = 50,
             }
