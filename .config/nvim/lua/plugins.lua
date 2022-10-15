@@ -247,9 +247,8 @@ return require('packer').startup(function(use)
     use {
         'numToStr/FTerm.nvim',
         config = function()
-            vim.keymap.set('n', '<A-i>', function()
-                require('FTerm').toggle()
-            end)
+            vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+            vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
         end,
     }
 
@@ -877,7 +876,7 @@ return require('packer').startup(function(use)
             lspconfig.sumneko_lua.setup {}
             lspconfig.tailwindcss.setup {}
             lspconfig.rust_analyzer.setup {
-                on_init = function(client)
+                on_attach = function(client)
                     local path = client.workspace_folders[1].name
 
                     if path == os.getenv 'HOME' .. 'rust' then
@@ -900,6 +899,9 @@ return require('packer').startup(function(use)
                     procMacro = { enable = false },
                     cargo = { buildScripts = { enable = false, overrideCommand = {} } },
                     rustc = { source = '' },
+                    ['rust-analyzer'] = {
+                        linkedProjects = '~/Programming/Competitive/GoogleKickStart/rust-project.json',
+                    },
                 },
             }
         end,
@@ -1024,16 +1026,17 @@ return require('packer').startup(function(use)
                     -- these override the defaults set by rust-tools.nvim
                     -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
                     server = {
-                        -- on_attach is a callback called when the language server attachs to the buffer
-                        -- on_attach = on_attach,
+                        standalone = true,
                         settings = {
-                            -- to enable rust-analyzer settings visit:
-                            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
                             ['rust-analyzer'] = {
                                 -- enable clippy on save
                                 checkOnSave = {
                                     command = 'clippy',
                                 },
+
+                                -- linkedProjects = {
+                                --     [[{"sysroot_src": "/home/rejyr/.rustup/toolchains/1.41.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"}]],
+                                -- },
                             },
                         },
                     },
