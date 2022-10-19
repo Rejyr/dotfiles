@@ -3,5 +3,6 @@
   "textFontFamily": "Cantarell",
   "monospaceFontFamily": "Iosevka",
   "interfaceFontFamily": "Iosevka",
-  "baseFontSize": 20
+  "baseFontSize": 20,
+  "accentColor": ""
 }

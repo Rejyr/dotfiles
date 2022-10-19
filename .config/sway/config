@@ -192,13 +192,13 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
 
 ## screenshot monitor
 # to ~/Pictures/Screenshots
-bindsym Print exec grimshot --notify save output $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+bindsym Print exec grimshot --notify save output $HOME/Pictures/Screenshots/$(date +%+Y-%+m-%+d_%+H:%+M:%+S).png
 # to clipboard
 bindsym Print+Alt exec grimshot --notify copy output
 
 ## screenshot active window
 # to ~/Pictures/Screenshots
-bindsym Print+Shift exec grimshot --notify save active $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+bindsym Print+Shift exec grimshot --notify save active $HOME/Pictures/Screenshots/$(date +%+Y-%+m-%+d_%+H:%+M:%+S).png
 # to clipboard
 bindsym Print+Shift+Alt exec grimshot --notify copy active
 
