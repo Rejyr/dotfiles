@@ -41,6 +41,7 @@ ghostscript
 git
 git-delta
 github-cli
+gitui
 gnome-multi-writer
 grep
 grim
@@ -55,7 +56,6 @@ jdk8-openjdk
 jq
 jre-openjdk
 kvantum
-lazygit
 libtool
 linux
 linux-firmware

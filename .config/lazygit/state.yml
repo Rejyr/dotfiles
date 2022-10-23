@@ -1,8 +1,0 @@
-lastupdatecheck: 0
-recentrepos:
-- /home/rejyr/dotfiles
-- /home/rejyr/rust
-startuppopupversion: 5
-customcommandshistory:
-- git pull upstream master
-hidecommandlog: false
