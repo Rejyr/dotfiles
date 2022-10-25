@@ -23,7 +23,9 @@ pipes-rs-git
 plover-git
 plover_plugins_manager
 prismlauncher-bin
+python-colored
 python-dacite
+python-install
 python-pathvalidate
 python-playsound
 python-plover_stroke
