@@ -1,15 +1,23 @@
 -- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
-local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
-vim.api.nvim_create_autocmd(
-    'BufWritePost',
-    { command = 'source <afile> | PackerCompile', group = packer_group, pattern = 'plugins.lua' }
-)
+local packer_bootstrap = ensure_packer()
+
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]]
 
 return require('packer').startup(function(use)
     -- package manager - packer
@@ -24,6 +32,32 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require('nvim-treesitter.configs').setup {
+                ensure_installed = {
+                    'bash',
+                    'c',
+                    'cmake',
+                    'cpp',
+                    'css',
+                    'fish',
+                    'gitignore',
+                    'go',
+                    'help',
+                    'html',
+                    -- 'java',
+                    -- 'javascript',
+                    'json',
+                    'latex',
+                    'lua',
+                    'markdown',
+                    'markdown_inline',
+                    'python',
+                    'regex',
+                    'rust',
+                    'toml',
+                    'typescript',
+                    'vim',
+                    -- 'yaml'
+                },
                 rainbow = {
                     enable = true,
                     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
@@ -67,6 +101,14 @@ return require('packer').startup(function(use)
         event = 'VimEnter',
         config = function()
             require('noice').setup {
+                lsp = {
+                    override = {
+                        ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+                        ['vim.lsp.util.stylize_markdown'] = true,
+                        ['cmp.entry.get_documentation'] = true,
+                        ['vim.lsp.handlers["textDocument/signatureHelp"]'] = false,
+                    },
+                },
                 views = {
                     cmdline_popup = {
                         position = {
@@ -82,10 +124,10 @@ return require('packer').startup(function(use)
                         relative = 'editor',
                         position = {
                             row = 18,
-                            col = '51%',
+                            col = '50%',
                         },
                         size = {
-                            width = 82,
+                            width = 80,
                             height = 10,
                         },
                         border = {
@@ -780,12 +822,12 @@ return require('packer').startup(function(use)
     }
 
     -- show function signature
-    use {
-        'ray-x/lsp_signature.nvim',
-        config = function()
-            require('lsp_signature').setup()
-        end,
-    }
+    -- use {
+    --     'ray-x/lsp_signature.nvim',
+    --     config = function()
+    --         require('lsp_signature').setup()
+    --     end,
+    -- }
 
     -- fish editing
     use 'dag/vim-fish'
@@ -891,15 +933,51 @@ return require('packer').startup(function(use)
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-calc',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'hrsh7th/cmp-cmdline',
+            'dmitmel/cmp-cmdline-history',
             -- luasnip
             'saadparwaiz1/cmp_luasnip',
             'L3MON4D3/LuaSnip',
-            -- ultisnips
-            -- 'SirVer/ultisnips',
-            -- 'quangnguyen30192/cmp-nvim-ultisnips',
+            'onsails/lspkind.nvim',
         },
         config = function()
+            vim.o.completeopt = 'menuone,noselect'
+            local has_words_before = function()
+                local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+                return col ~= 0
+                    and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
+            end
+
             local cmp = require 'cmp'
+            local luasnip = require 'luasnip'
+            local cmp_kinds = {
+                Text = '  ',
+                Method = '  ',
+                Function = '  ',
+                Constructor = '  ',
+                Field = '  ',
+                Variable = '  ',
+                Class = '  ',
+                Interface = '  ',
+                Module = '  ',
+                Property = '  ',
+                Unit = '  ',
+                Value = '  ',
+                Enum = '  ',
+                Keyword = '  ',
+                Snippet = '  ',
+                Color = '  ',
+                File = '  ',
+                Reference = '  ',
+                Folder = '  ',
+                EnumMember = '  ',
+                Constant = '  ',
+                Struct = '  ',
+                Event = '  ',
+                Operator = '  ',
+                TypeParameter = '  ',
+            }
             cmp.setup {
                 snippet = {
                     expand = function(args)
@@ -909,12 +987,40 @@ return require('packer').startup(function(use)
                         -- vim.fn['UltiSnips#Anon'](args.body)
                     end,
                 },
+                completion = {
+                    completeopt = 'menu,menuone,noinsert',
+                },
+                formatting = {
+                    format = function(_, vim_item)
+                        vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+                        return vim_item
+                    end,
+                },
                 mapping = {
                     ['<C-p>'] = cmp.mapping.select_prev_item(),
                     ['<C-n>'] = cmp.mapping.select_next_item(),
                     -- Add tab support
-                    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-                    ['<Tab>'] = cmp.mapping.select_next_item(),
+                    ['<Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        elseif has_words_before() then
+                            cmp.complete()
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
+
+                    ['<S-Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
                     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
                     ['<C-Space>'] = cmp.mapping.complete(),
@@ -924,7 +1030,6 @@ return require('packer').startup(function(use)
                         select = true,
                     },
                 },
-
                 -- Installed sources
                 sources = {
                     { name = 'nvim_lsp' },
@@ -934,8 +1039,19 @@ return require('packer').startup(function(use)
                     { name = 'buffer' },
                     { name = 'calc' },
                     { name = 'crates' },
+                    { name = 'nvim_lsp_signature_help' },
                 },
             }
+
+            cmp.setup.cmdline(':', {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources {
+                    { name = 'noice_popupmenu' },
+                    { name = 'path' },
+                    { name = 'cmdline' },
+                    { name = 'cmdline_history' },
+                },
+            })
         end,
     }
 
@@ -999,4 +1115,8 @@ return require('packer').startup(function(use)
             }
         end,
     }
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)

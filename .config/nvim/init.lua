@@ -3,7 +3,7 @@
 --
 require('plugins')
 
--- Sav undo history
+-- Save undo history
 vim.o.undofile = true
 
 -- Line Numbers
