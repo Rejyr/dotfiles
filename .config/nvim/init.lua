@@ -1,7 +1,7 @@
 --
 -- Plugins
 --
-require('plugins')
+require 'plugins'
 
 -- Save undo history
 vim.o.undofile = true
@@ -25,7 +25,6 @@ vim.g.maplocalleader = ' '
 -- color setup
 vim.cmd 'colorscheme nord'
 vim.cmd 'set background=dark'
-
 --
 -- LSP/Rust setup
 --

@@ -108,7 +108,7 @@ return require('packer').startup(function(use)
             require('true-zen').setup {
                 integrations = {
                     lualine = true,
-                }
+                },
             }
         end,
     }
@@ -116,6 +116,17 @@ return require('packer').startup(function(use)
         'folke/twilight.nvim',
         config = function()
             require('twilight').setup {}
+        end,
+    }
+
+    -- screensaver
+    use {
+        'folke/drop.nvim',
+        event = 'VimEnter',
+        config = function()
+            require('drop').setup()
+            vim.cmd [[:command DropShow lua require('drop').show()]]
+            vim.cmd [[:command DropHide lua require('drop').hide()]]
         end,
     }
 
@@ -165,6 +176,9 @@ return require('packer').startup(function(use)
                 },
             }
             require('telescope').load_extension 'noice'
+            require('notify').setup {
+                background_colour = '#1a1b26',
+            }
         end,
         requires = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
@@ -309,6 +323,7 @@ return require('packer').startup(function(use)
             require('lualine').setup {
                 options = {
                     globalstatus = true,
+                    theme = 'nord',
                 },
             }
         end,
@@ -325,7 +340,16 @@ return require('packer').startup(function(use)
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
-            require('bufferline').setup {}
+            require('bufferline').setup {
+                options = {
+                    separator_style = 'thick',
+                },
+                highlights = require('nord').bufferline.highlights {
+                    underline = true,
+                    italic = true,
+                    bold = true,
+                },
+            }
 
             -- keybinds
             vim.keymap.set('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { silent = true })
