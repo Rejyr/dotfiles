@@ -86,6 +86,12 @@ return require('packer').startup(function(use)
             require('mini.surround').setup()
             -- starting screen
             require('mini.starter').setup()
+            -- auto-pair
+            require('mini.pairs').setup()
+            -- underline words
+            require('mini.cursorword').setup()
+            -- comment
+            require('mini.comment').setup()
         end,
     }
 
@@ -94,6 +100,24 @@ return require('packer').startup(function(use)
     -- GUI
     --
     --
+
+    -- Zen mode
+    use {
+        'Pocco81/true-zen.nvim',
+        config = function()
+            require('true-zen').setup {
+                integrations = {
+                    lualine = true,
+                }
+            }
+        end,
+    }
+    use {
+        'folke/twilight.nvim',
+        config = function()
+            require('twilight').setup {}
+        end,
+    }
 
     -- pretty stuff
     use {
@@ -263,16 +287,6 @@ return require('packer').startup(function(use)
     -- git
     --
 
-    -- use {
-    -- 	'tanvirtin/vgit.nvim',
-    -- 	event = 'BufWinEnter',
-    -- 	requires = {
-    -- 		'nvim-lua/plenary.nvim',
-    -- 	},
-    -- 	config = function()
-    -- 		require('vgit').setup()
-    -- 	end,
-    -- }
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -282,10 +296,6 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end,
         -- tag = 'release' -- To use the latest release
-    }
-    use {
-        'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim',
     }
 
     --
@@ -375,7 +385,6 @@ return require('packer').startup(function(use)
     -- transparent neovim
     use {
         'xiyaowong/nvim-transparent',
-        disable = true,
         config = function()
             require('transparent').setup {
                 enable = true,
@@ -415,9 +424,6 @@ return require('packer').startup(function(use)
     -- highlight range in command
     use 'winston0410/cmd-parser.nvim'
 
-    -- underline words/lines on cursor
-    use 'yamatsum/nvim-cursorline'
-
     --
     --
     -- Editor
@@ -442,81 +448,12 @@ return require('packer').startup(function(use)
             require('nvim-treesitter.configs').setup {
                 matchup = {
                     enable = true, -- mandatory, false will disable the whole extension
-                    disable = { 'c', 'ruby' }, -- optional, list of language that will be disabled
-                    -- [options]
                 },
             }
         end,
     }
 
-    -- comment
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end,
-    }
-
-    -- auto-pair
-    use 'jiangmiao/auto-pairs'
-
-    -- browser markdown preview
-    use 'davidgranstrom/nvim-markdown-preview'
-
-    -- latex preview
-    use {
-        'frabjous/knap',
-        config = function()
-            -- set shorter name for keymap function
-            local kmap = vim.keymap.set
-
-            -- F5 processes the document once, and refreshes the view
-            kmap('i', '<F5>', function()
-                require('knap').process_once()
-            end)
-            kmap('v', '<F5>', function()
-                require('knap').process_once()
-            end)
-            kmap('n', '<F5>', function()
-                require('knap').process_once()
-            end)
-
-            -- F6 closes the viewer application, and allows settings to be reset
-            kmap('i', '<F6>', function()
-                require('knap').close_viewer()
-            end)
-            kmap('v', '<F6>', function()
-                require('knap').close_viewer()
-            end)
-            kmap('n', '<F6>', function()
-                require('knap').close_viewer()
-            end)
-
-            -- F7 toggles the auto-processing on and off
-            kmap('i', '<F7>', function()
-                require('knap').toggle_autopreviewing()
-            end)
-            kmap('v', '<F7>', function()
-                require('knap').toggle_autopreviewing()
-            end)
-            kmap('n', '<F7>', function()
-                require('knap').toggle_autopreviewing()
-            end)
-
-            -- F8 invokes a SyncTeX forward search, or similar, where appropriate
-            kmap('i', '<F8>', function()
-                require('knap').forward_jump()
-            end)
-            kmap('v', '<F8>', function()
-                require('knap').forward_jump()
-            end)
-            kmap('n', '<F8>', function()
-                require('knap').forward_jump()
-            end)
-        end,
-    }
-
-    -- latex editing
+    -- latex editing and preview
     use {
         'lervag/vimtex',
         config = function()
@@ -661,148 +598,6 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- debugging
-    use {
-        'mfussenegger/nvim-dap',
-        requires = {
-            'rcarriga/nvim-dap-ui',
-            'Pocco81/DAPInstall.nvim',
-            'theHamsta/nvim-dap-virtual-text',
-            'nvim-telescope/telescope-dap.nvim',
-            'theHamsta/nvim-dap-virtual-text',
-        },
-        config = function()
-            require('telescope').load_extension 'dap'
-
-            local dap = require 'dap'
-
-            dap.adapters.lldb = {
-                type = 'executable',
-                attach = { pidProperty = 'pid', pidSelect = 'ask' },
-                command = 'lldb-vscode',
-                name = 'lldb',
-                env = { LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY = 'YES' },
-            }
-
-            dap.configurations.cpp = {
-                {
-                    name = 'Launch',
-                    type = 'lldb',
-                    request = 'launch',
-                    program = function()
-                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                    end,
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    args = {},
-
-                    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-                    --
-                    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-                    --
-                    -- Otherwise you might get the following error:
-                    --
-                    --    Error on launch: Failed to attach to the target process
-                    --
-                    -- But you should be aware of the implications:
-                    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-                    runInTerminal = false,
-
-                    -- 💀
-                    -- If you use `runInTerminal = true` and resize the terminal window,
-                    -- lldb-vscode will receive a `SIGWINCH` signal which can cause problems
-                    -- To avoid that uncomment the following option
-                    -- See https://github.com/mfussenegger/nvim-dap/issues/236#issuecomment-1066306073
-                    postRunCommands = { 'process handle -p true -s false -n false SIGWINCH' },
-                },
-            }
-
-            dap.configurations.c = dap.configurations.cpp
-            dap.configurations.rust = dap.configurations.cpp
-
-            vim.keymap.set('n', '<F4>', function()
-                require('dapui').toggle()
-            end, { silent = true })
-            vim.keymap.set('n', '<F5>', function()
-                require('dap').toggle_breakpoint()
-            end, { silent = true })
-            vim.keymap.set('n', '<F9>', function()
-                require('dap').continue()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<F1>', function()
-                require('dap').step_over()
-            end, { silent = true })
-            vim.keymap.set('n', '<F2>', function()
-                require('dap').step_into()
-            end, { silent = true })
-            vim.keymap.set('n', '<F3>', function()
-                require('dap').step_out()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>dsc', function()
-                require('dap').continue()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>dsv', function()
-                require('dap').step_over()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>dsi', function()
-                require('dap').step_into()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>dso', function()
-                require('dap').step_out()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>dhh', function()
-                require('dap.ui.variables').hover()
-            end, { silent = true })
-            vim.keymap.set('v', '<Leader>dhv', function()
-                require('dap.ui.variables').visual_hover()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>duh', function()
-                require('dap.ui.widgets').hover()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>duf', function()
-                local widgets = require 'dap.ui.widgets'
-                widgets.centered_float(widgets.scopes)
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>dro', function()
-                require('dap').repl.open()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>drl', function()
-                require('dap').repl.run_last()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>dbc', function()
-                require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>dbm', function()
-                require('dap').set_breakpoint { nil, nil, vim.fn.input 'Log point message: ' }
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>dbt', function()
-                require('dap').toggle_breakpoint()
-            end, { silent = true })
-
-            vim.keymap.set('n', '<Leader>dc', function()
-                require('dap.ui.variables').scopes()
-            end, { silent = true })
-            vim.keymap.set('n', '<Leader>di', function()
-                require('dapui').toggle()
-            end, { silent = true })
-        end,
-    }
-
-    use {
-        'nvim-neotest/neotest',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-treesitter/nvim-treesitter',
-            'antoinemadec/FixCursorHold.nvim',
-        },
-    }
-
     --
     --
     -- lsp/language
@@ -833,14 +628,6 @@ return require('packer').startup(function(use)
             require('spellsitter').setup()
         end,
     }
-
-    -- show function signature
-    -- use {
-    --     'ray-x/lsp_signature.nvim',
-    --     config = function()
-    --         require('lsp_signature').setup()
-    --     end,
-    -- }
 
     -- fish editing
     use 'dag/vim-fish'
