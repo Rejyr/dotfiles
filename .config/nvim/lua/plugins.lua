@@ -353,9 +353,22 @@ return require('packer').startup(function(use)
     --
     -- smooth scrolling
     use {
-        'declancm/cinnamon.nvim',
+        'karb94/neoscroll.nvim',
         config = function()
-            require('cinnamon').setup()
+            require('neoscroll').setup()
+            local t = {}
+            -- Syntax: t[keys] = {function, {function arguments}}
+            t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '80' } }
+            t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '80' } }
+            t['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '250' } }
+            t['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '250' } }
+            t['<C-y>'] = { 'scroll', { '-0.10', 'false', '80' } }
+            t['<C-e>'] = { 'scroll', { '0.10', 'false', '80' } }
+            t['zt'] = { 'zt', { '150' } }
+            t['zz'] = { 'zz', { '150' } }
+            t['zb'] = { 'zb', { '150' } }
+
+            require('neoscroll.config').set_mappings(t)
         end,
     }
 
@@ -507,11 +520,11 @@ return require('packer').startup(function(use)
     use {
         'lervag/vimtex',
         config = function()
-            vim.api.nvim_set_var('tex_flavor', 'latex')
-            vim.api.nvim_set_var('vimtex_view_method', 'zathura')
-            vim.api.nvim_set_var('vimtex_quickfix_mode', 0)
-            vim.o.conceallevel = 1
-            vim.api.nvim_set_var('tex_conceal', 'abdmg')
+            vim.g.tex_flavor = 'latex'
+            vim.g.vimtex_view_method = 'sioyek'
+            vim.g.vimtex_quickfix_mode = 0
+            vim.g.conceallevel = 1
+            vim.g.tex_conceal = 'abdmg'
         end,
     }
 

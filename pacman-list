@@ -8,6 +8,7 @@ autoconf
 automake
 base
 bat
+biber
 binutils
 bison
 bluez
