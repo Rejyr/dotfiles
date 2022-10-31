@@ -47,4 +47,10 @@ vim.wo.signcolumn = 'yes'
 -- 300ms of no cursor movement to trigger CursorHold
 vim.o.updatetime = 300
 -- Show diagnostic popup on cursor hover
-vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]]
+local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+   vim.diagnostic.open_float(nil, { focusable = false })
+  end,
+  group = diag_float_grp,
+})
