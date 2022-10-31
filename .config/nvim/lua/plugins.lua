@@ -247,10 +247,25 @@ return require('packer').startup(function(use)
             -- vim.opt.listchars:append 'space:⋅'
             vim.opt.listchars:append 'eol:↴'
 
+            vim.cmd [[highlight IndentBlanklineContextChar guifg=#BF616A gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent1 guifg=#5E81AC gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent2 guifg=#81A1C1 gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent3 guifg=#88C0D0 gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent4 guifg=#8FBCBB gui=nocombine]]
+            vim.cmd [[highlight IndentBlanklineIndent5 guifg=#A3BE8C gui=nocombine]]
+
             require('indent_blankline').setup {
+                use_treesitter_scope = true,
                 -- space_char_blankline = ' ',
                 show_current_context = true,
                 show_current_context_start = true,
+                char_highlight_list = {
+                    'IndentBlanklineIndent1',
+                    'IndentBlanklineIndent2',
+                    'IndentBlanklineIndent3',
+                    'IndentBlanklineIndent4',
+                    'IndentBlanklineIndent5',
+                },
             }
         end,
     }
@@ -668,6 +683,7 @@ return require('packer').startup(function(use)
                 'cssls',
                 'grammarly',
                 'html',
+                'jsonls',
                 'ltex',
                 'pyright',
                 'rust_analyzer',
@@ -692,38 +708,35 @@ return require('packer').startup(function(use)
             lspconfig.cssls.setup {}
             lspconfig.grammarly.setup {}
             lspconfig.html.setup {}
+            lspconfig.jsonls.setup {}
             lspconfig.ltex.setup {}
             lspconfig.pyright.setup {}
-            lspconfig.sumneko_lua.setup {}
-            lspconfig.tailwindcss.setup {}
-            lspconfig.rust_analyzer.setup {
-                on_attach = function(client)
-                    local path = client.workspace_folders[1].name
-
-                    if path == os.getenv 'HOME' .. 'rust' then
-                        local rust_analyzer = client.config.settings['rust-analyzer']
-                        rust_analyzer.checkOnSave.overrideCommand = { 'x', 'check', '--json-output' }
-                        rust_analyzer.rustfmt.overrideCommand =
-                            { './build/x86_64-unknown-linux-gnu/stage0/bin/rustfmt', '--edition=2021' }
-                        rust_analyzer.procMacro.enable = true
-                        rust_analyzer.cargo.buildScripts.enable = true
-                        rust_analyzer.cargo.buildScripts.overrideCommand = { 'x', 'check', '--json-output' }
-                        rust_analyzer.rustc.source = './Cargo.toml'
-                    end
-
-                    client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
-                    return true
-                end,
+            lspconfig.sumneko_lua.setup {
                 settings = {
-                    checkOnSave = { overrideCommand = {} },
-                    rustfmt = { overrideCommand = {} },
-                    procMacro = { enable = false },
-                    cargo = { buildScripts = { enable = false, overrideCommand = {} } },
-                    rustc = { source = '' },
-                    ['rust-analyzer'] = {
-                        linkedProjects = '~/Programming/Competitive/GoogleKickStart/rust-project.json',
+                    Lua = {
+                        diagnostics = {
+                            -- Get the language server to recognize the `vim` global
+                            globals = { 'vim' },
+                        },
                     },
                 },
+            }
+            lspconfig.tailwindcss.setup {}
+            lspconfig.rust_analyzer.setup {}
+        end,
+    }
+
+    use {
+        'klen/nvim-config-local',
+        config = function()
+            require('config-local').setup {
+                -- Default configuration (optional)
+                config_files = { '.vimrc.lua', '.vimrc' }, -- Config file patterns to load (lua supported)
+                hashfile = vim.fn.stdpath 'data' .. '/config-local', -- Where the plugin keeps files data
+                autocommands_create = true, -- Create autocommands (VimEnter, DirectoryChanged)
+                commands_create = true, -- Create commands (ConfigSource, ConfigEdit, ConfigTrust, ConfigIgnore)
+                silent = false, -- Disable plugin messages (Config loaded/ignored)
+                lookup_parents = false, -- Lookup config files in parent directories
             }
         end,
     }
