@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
                     'toml',
                     'typescript',
                     'vim',
-                    -- 'yaml'
+                    'yaml',
                 },
                 rainbow = {
                     enable = true,
@@ -673,56 +673,44 @@ return require('packer').startup(function(use)
 
     -- install lsp servers
     use {
-        'williamboman/nvim-lsp-installer',
-        requires = { 'neovim/nvim-lspconfig' },
+        'williamboman/mason.nvim',
+        requires = { 'neovim/nvim-lspconfig', 'williamboman/mason-lspconfig.nvim' },
         config = function()
-            require('nvim-lsp-installer').setup {}
-            local lsp_installer = require 'nvim-lsp-installer'
-            local servers = {
-                'clangd',
-                'cssls',
-                'grammarly',
-                'html',
-                'jsonls',
-                'ltex',
-                'pyright',
-                'rust_analyzer',
-                'sumneko_lua',
-                'tailwindcss',
+            require('mason').setup {
+                providers = { 'mason.providers.client' },
             }
-
-            -- install servers
-            for _, name in pairs(servers) do
-                local server_is_found, server = lsp_installer.get_server(name)
-                if server_is_found then
-                    if not server:is_installed() then
-                        print('Installing ' .. name)
-                        server:install()
-                        print('Installed ' .. name)
-                    end
-                end
-            end
-
-            local lspconfig = require 'lspconfig'
-            lspconfig.clangd.setup {}
-            lspconfig.cssls.setup {}
-            lspconfig.grammarly.setup {}
-            lspconfig.html.setup {}
-            lspconfig.jsonls.setup {}
-            lspconfig.ltex.setup {}
-            lspconfig.pyright.setup {}
-            lspconfig.sumneko_lua.setup {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            -- Get the language server to recognize the `vim` global
-                            globals = { 'vim' },
-                        },
-                    },
+            require('mason-lspconfig').setup {
+                ensure_installed = {
+                    'clangd',
+                    'cssls',
+                    'grammarly',
+                    'html',
+                    'jsonls',
+                    'ltex',
+                    'pyright',
+                    'rust_analyzer',
+                    'sumneko_lua',
+                    'texlab',
                 },
+                automatic_installation = true,
             }
-            lspconfig.tailwindcss.setup {}
-            lspconfig.rust_analyzer.setup {}
+            require('mason-lspconfig').setup_handlers {
+                function(server_name)
+                    require('lspconfig')[server_name].setup {}
+                end,
+                ['sumneko_lua'] = function()
+                    require('lspconfig').sumneko_lua.setup {
+                        settings = {
+                            Lua = {
+                                diagnostics = {
+                                    -- Get the language server to recognize the `vim` global
+                                    globals = { 'vim' },
+                                },
+                            },
+                        },
+                    }
+                end,
+            }
         end,
     }
 
