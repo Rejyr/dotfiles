@@ -3,6 +3,9 @@
 --
 require 'plugins'
 
+-- termgui colors
+vim.opt.termguicolors = true
+
 -- Save undo history
 vim.o.undofile = true
 

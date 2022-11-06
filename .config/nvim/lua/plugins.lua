@@ -302,13 +302,15 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- CHAD filesystem
+    -- filesystem
     use {
-        'ms-jpq/chadtree',
-        branch = 'chad',
-        run = 'python3 -m chadtree deps',
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
         config = function()
-            vim.keymap.set('n', '<Leader>v', '<cmd>CHADopen<CR>', { silent = true })
+            require('nvim-tree').setup()
+            vim.keymap.set('n', '<Leader>v', '<cmd>NvimTreeToggle<CR>', { silent = true })
         end,
     }
 
@@ -333,7 +335,7 @@ return require('packer').startup(function(use)
     -- statusline
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function()
             require('lualine').setup {
                 options = {
@@ -343,17 +345,11 @@ return require('packer').startup(function(use)
             }
         end,
     }
-    -- use {
-    -- 	'feline-nvim/feline.nvim',
-    -- 	config = function()
-    -- 		require('feline').setup {}
-    -- 	end,
-    -- }
 
     -- tabline
     use {
         'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
+        requires = 'nvim-tree/nvim-web-devicons',
         config = function()
             require('bufferline').setup {
                 options = {
@@ -383,10 +379,7 @@ return require('packer').startup(function(use)
     use 'folke/lsp-colors.nvim'
 
     -- icons
-    use 'ryanoasis/vim-devicons'
-    use 'adelarsq/vim-devicons-emoji'
-    use 'adelarsq/vim-emoji-icon-theme'
-    use 'kyazdani42/nvim-web-devicons'
+    use 'nvim-tree/nvim-web-devicons'
 
     -- colorschemes
     -- use 'RRethy/nvim-base16'
@@ -764,7 +757,6 @@ return require('packer').startup(function(use)
             -- luasnip
             'saadparwaiz1/cmp_luasnip',
             'L3MON4D3/LuaSnip',
-            'onsails/lspkind.nvim',
         },
         config = function()
             vim.o.completeopt = 'menuone,noselect'
@@ -808,8 +800,6 @@ return require('packer').startup(function(use)
                     expand = function(args)
                         -- luasnip
                         require('luasnip').lsp_expand(args.body)
-                        -- ultisnips
-                        -- vim.fn['UltiSnips#Anon'](args.body)
                     end,
                 },
                 completion = {
