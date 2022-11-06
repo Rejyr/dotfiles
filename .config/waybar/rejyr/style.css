@@ -11,27 +11,26 @@
  * -------------------------------------------------------------------------- */
 
 @keyframes blink-warning {
-	70% {
-		color: @light;
-	}
+  70% {
+    color: @light;
+  }
 
-	to {
-		color: @light;
-		background-color: @warning;
-	}
+  to {
+    color: @light;
+    background-color: @warning;
+  }
 }
 
 @keyframes blink-critical {
-	70% {
-		color: @light;
-	}
+  70% {
+    color: @light;
+  }
 
-	to {
-		color: @light;
-		background-color: @critical;
-	}
+  to {
+    color: @light;
+    background-color: @critical;
+  }
 }
-
 
 /* -----------------------------------------------------------------------------
  * Styles
@@ -102,20 +101,28 @@
 
 /* Reset all styles */
 * {
-	border: none;
-	border-radius: 0;
-	min-height: 0;
-	margin: 0;
-	padding: 0;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* The whole bar */
 #waybar {
-	background: @dark;
-	color: @light;
-	font-family: Iosevka;
-	font-size: 15pt;
-	/*font-weight: bold;*/
+  background: @dark;
+  color: @light;
+  font-family: Iosevka;
+  font-size: 15pt;
+  /*font-weight: bold;*/
+}
+
+/* Fix modules without "on-click" being gray */
+label:disabled,
+button:disabled {
+  all: unset;
+  color: inherit;
+  background-image: none;
 }
 
 /* Each module */
@@ -133,8 +140,8 @@
 #custom-weather,
 #custom-keyboard-layout,
 #tray {
-	padding-left: 10px;
-	padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Each module that should blink */
@@ -142,9 +149,9 @@
 #memory,
 #temperature,
 #battery {
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 /* Each critical module */
@@ -153,7 +160,7 @@
 #temperature.critical,
 #disk.critical,
 #battery.critical {
-	color: @critical;
+  color: @critical;
 }
 
 /* Each critical that should blink */
@@ -161,8 +168,8 @@
 #memory.critical,
 #temperature.critical,
 #battery.critical.discharging {
-	animation-name: blink-critical;
-	animation-duration: 2s;
+  animation-name: blink-critical;
+  animation-duration: 2s;
 }
 
 /* Each warning */
@@ -172,108 +179,103 @@
 #temperature.warning,
 #disk.warning,
 #battery.warning {
-	color: @warning;
+  color: @warning;
 }
 
 /* Each warning that should blink */
 #battery.warning.discharging {
-	animation-name: blink-warning;
-	animation-duration: 3s;
+  animation-name: blink-warning;
+  animation-duration: 3s;
 }
-
-
 
 /* And now modules themselves in their respective order */
 
-
-
-#mode { /* Shown current Sway mode (resize etc.) */
-	color: @light;
-	background: @mode;
+#mode {
+  /* Shown current Sway mode (resize etc.) */
+  color: @light;
+  background: @mode;
 }
 
 #cpu {
-	background: @cpu;
-	color: @dark;
+  background: @cpu;
+  color: @dark;
 }
 
 #custom-rarrow1 {
-        color: @cpu;
-        background: @memory;
+  color: @cpu;
+  background: @memory;
 }
 
 #memory {
-	background: @memory;
-	color: @light;
+  background: @memory;
+  color: @light;
 }
 
 #custom-rarrow2 {
-        color: @memory;
-        background: @temp;
+  color: @memory;
+  background: @temp;
 }
 
 #temperature {
-	background: @temp;
-	color: @dark;
+  background: @temp;
+  color: @dark;
 }
 
 #custom-rarrow3 {
-        color: @temp;
-        background: @disk;
+  color: @temp;
+  background: @disk;
 }
 
 #disk {
-        background: @disk;
-        color: @light;
+  background: @disk;
+  color: @light;
 }
 
 #custom-rarrow4 {
-        color: @disk;
-        background: @network;
+  color: @disk;
+  background: @network;
 }
 
 #network {
-	background: @network;
-	color: @dark;
+  background: @network;
+  color: @dark;
 }
 
 #custom-rarrow5 {
-        color: @network;
-        background: @keyboard-layout;
+  color: @network;
+  background: @keyboard-layout;
 }
 
 #custom-keyboard-layout {
-        background: @keyboard-layout;
-        color: @dark;
+  background: @keyboard-layout;
+  color: @dark;
 }
 
 #custom-rarrow6 {
-        color: @keyboard-layout;
-        background: @updates;
+  color: @keyboard-layout;
+  background: @updates;
 }
 
 #custom-updates {
-        background: @updates;
-        color: @dark;
+  background: @updates;
+  color: @dark;
 }
 
 #custom-rarrow7 {
-        color: @updates;
+  color: @updates;
 }
-
-
 
 /* Workspaces stuff */
 #workspaces button {
-	/*font-weight: bold;*/
-	padding-left: 4px;
-	padding-right: 4px;
-	color: @dark;
-	background: @workspaces;
+  /*font-weight: bold;*/
+  padding-left: 4px;
+  padding-right: 4px;
+  color: @dark;
+  background: @workspaces;
 }
 
 #workspaces button.focused {
-	background: @workspacesfocused;
+  background: @workspacesfocused;
 }
 
 /*#workspaces button.urgent {
@@ -283,74 +285,72 @@
 
 #custom-crarrow,
 #custom-clarrow {
-        background: @background;
-        color: @workspaces;
+  background: @background;
+  color: @workspaces;
 }
 
-
-
 #custom-larrow6 {
-        color: @weather;
+  color: @weather;
 }
 
 #custom-weather {
-        background: @weather;
-        color: @dark;
+  background: @weather;
+  color: @dark;
 }
 
 #custom-larrow5 {
-        background: @weather;
-        color: @backlight;
+  background: @weather;
+  color: @backlight;
 }
 
 #backlight {
-        background: @backlight;
-        color: @dark;
+  background: @backlight;
+  color: @dark;
 }
 
 #custom-larrow4 {
-        background: @backlight;
-        color: @sound;
+  background: @backlight;
+  color: @sound;
 }
 
 #pulseaudio {
-	background: @sound;
-	color: @dark;
+  background: @sound;
+  color: @dark;
 }
 
 #custom-larrow3 {
-        background: @sound;
-        color: @date;
+  background: @sound;
+  color: @date;
 }
 
 #tray {
-	background: @date;
-        /* padding-right: 0px; */
+  background: @date;
+  /* padding-right: 0px; */
 }
 
 #clock.date {
-	background: @date;
-	color: @light;
+  background: @date;
+  color: @light;
 }
 
 #custom-larrow2 {
-        background: @date;
-        color: @time;
+  background: @date;
+  color: @time;
 }
 
 #clock.time {
-	background: @time;
-	color: @dark;
+  background: @time;
+  color: @dark;
 }
 
 #custom-larrow1 {
-        background: @time;
-        color: @battery;
+  background: @time;
+  color: @battery;
 }
 
 #battery {
-	background: @battery;
-	color: @dark;
+  background: @battery;
+  color: @dark;
 }
 
 #custom-rarrow1,
@@ -360,15 +360,13 @@
 #custom-rarrow5,
 #custom-rarrow6,
 #custom-rarrow7,
-
 #custom-clarrow,
 #custom-crarrow,
-
 #custom-larrow6,
 #custom-larrow5,
 #custom-larrow4,
 #custom-larrow3,
 #custom-larrow2,
 #custom-larrow1 {
-        font-size: 20px;
+  font-size: 20px;
 }

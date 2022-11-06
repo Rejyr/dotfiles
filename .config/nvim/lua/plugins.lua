@@ -573,8 +573,22 @@ return require('packer').startup(function(use)
         config = function()
             -- keybind
             vim.keymap.set('n', '<Leader>f', [[<cmd>Format<CR>]], { silent = true })
+            local util = require 'formatter.util'
             require('formatter').setup {
                 filetype = {
+                    css = {
+                        function()
+                            return {
+                                exe = 'prettier',
+                                args = {
+                                    '--stdin-filepath',
+                                    util.escape_path(util.get_current_buffer_file_path()),
+                                },
+                                stdin = true,
+                                try_node_modules = true,
+                            }
+                        end,
+                    },
                     lua = {
                         function()
                             return {
@@ -667,10 +681,20 @@ return require('packer').startup(function(use)
     -- install lsp servers
     use {
         'williamboman/mason.nvim',
-        requires = { 'neovim/nvim-lspconfig', 'williamboman/mason-lspconfig.nvim' },
+        requires = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason-lspconfig.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
+        },
         config = function()
             require('mason').setup {
                 providers = { 'mason.providers.client' },
+            }
+            require('mason-tool-installer').setup {
+                ensure_installed = {
+                    'prettier',
+                    'stylua',
+                },
             }
             require('mason-lspconfig').setup {
                 ensure_installed = {
