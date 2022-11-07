@@ -27,7 +27,6 @@ python-colored
 python-dacite
 python-install
 python-pathvalidate
-python-playsound
 python-plover_stroke
 python-pytube
 python-requests-cache
@@ -35,7 +34,6 @@ python-rtf_tokenize
 python-soundcloud-v2
 python-spotdl
 python-spotipy
-python-textual
 python-timeout-decorator
 python-url-normalize
 python-ytmusicapi
@@ -43,7 +41,6 @@ rofi-lbonn-wayland
 sioyek
 soundcloud-dl
 tailwind-css
-termtyper-git
 tint-git
 tllocalmgr-git
 trunk-bin

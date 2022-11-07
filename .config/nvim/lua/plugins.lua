@@ -792,6 +792,13 @@ return require('packer').startup(function(use)
 
             local cmp = require 'cmp'
             local luasnip = require 'luasnip'
+
+            require('luasnip.loaders.from_lua').load { paths = '~/.config/nvim/lua/snippets' }
+            luasnip.config.set_config {
+                enable_autosnippets = true,
+                store_selection_keys = '<Tab>',
+            }
+
             local cmp_kinds = {
                 Text = '  ',
                 Method = '  ',
@@ -875,7 +882,7 @@ return require('packer').startup(function(use)
                     { name = 'nvim_lua' },
                     { name = 'luasnip' },
                     { name = 'path' },
-                    { name = 'buffer' },
+                    -- { name = 'buffer' },
                     { name = 'calc' },
                     { name = 'crates' },
                     { name = 'nvim_lsp_signature_help' },

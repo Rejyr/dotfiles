@@ -204,7 +204,7 @@ bindsym Print+Shift+Alt exec grimshot --notify copy active
 
 ## screenshot selection
 # to ~/Pictures/Screenshots
-bindsym Print+Control exec grimshot --notify save area $HOME/Pictures/Screenshots/$(date +%+m:%+d:%+Y_%+H:%+M:%+S).png
+bindsym Print+Control exec grimshot --notify save area $HOME/Pictures/Screenshots/$(date +%+Y-%+m-%+d_%+H:%+M:%+S).png
 # to clipboard
 bindsym Print+Control+Alt exec grimshot --notify copy area
 
