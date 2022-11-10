@@ -63,7 +63,7 @@ SETUVAR _fish_abbr_ts:todo\x20show\x20\x2d\x2dall
 SETUVAR _fish_abbr_tsf:todo\x20show\x20\x2df
 SETUVAR _fish_abbr_update:yay
 SETUVAR _fish_abbr_xbu:x\x20build\x20\x2di\x20\x2d\x2djobs\x208
-SETUVAR _fish_abbr_xch:x\x20check\x20\x2di\x20\x2d\x2djobs\x208
+SETUVAR _fish_abbr_xch:x\x20check\x20\x2di\x20\x2d\x2djobs\x208\x20compiler
 SETUVAR _fish_abbr_xtestui:x\x20test\x20src/test/ui\x20\x2di\x20\x2d\x2djobs\x208
 SETUVAR _fish_abbr_xtestuilint:x\x20test\x20src/test/ui/lint\x20\x2di\x20\x2d\x2djobs\x208
 SETUVAR _fish_abbr_xti:x\x20tidy

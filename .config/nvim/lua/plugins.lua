@@ -601,6 +601,15 @@ return require('packer').startup(function(use)
                             }
                         end,
                     },
+                    python = {
+                        function()
+                            return {
+                                exe = 'autopep8',
+                                args = { '-' },
+                                stdin = 1,
+                            }
+                        end,
+                    },
                     rust = {
                         -- Rustfmt
                         function()
@@ -694,6 +703,7 @@ return require('packer').startup(function(use)
                 ensure_installed = {
                     'prettier',
                     'stylua',
+                    'autopep8',
                 },
             }
             require('mason-lspconfig').setup {
