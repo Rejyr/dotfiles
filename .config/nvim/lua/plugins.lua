@@ -708,6 +708,7 @@ return require('packer').startup(function(use)
             }
             require('mason-lspconfig').setup {
                 ensure_installed = {
+                    'bashls',
                     'clangd',
                     'cssls',
                     'grammarly',
