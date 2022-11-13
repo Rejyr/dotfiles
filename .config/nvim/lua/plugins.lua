@@ -202,6 +202,12 @@ return require('packer').startup(function(use)
             'rcarriga/nvim-notify',
         },
     }
+    use {
+        'stevearc/dressing.nvim',
+        config = function()
+            require('dressing').setup()
+        end,
+    }
 
     -- highlight colors
     use {
