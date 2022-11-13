@@ -130,6 +130,19 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- colorful windows separator
+    use {
+        'nvim-zh/colorful-winsep.nvim',
+        config = function()
+            require('colorful-winsep').setup {
+                highlight = {
+                    guibg = '#2E3440',
+                    guifg = '#5E81AC',
+                },
+            }
+        end,
+    }
+
     -- pretty stuff
     use {
         'folke/noice.nvim',
@@ -384,9 +397,6 @@ return require('packer').startup(function(use)
     -- colorschemes
     -- use 'RRethy/nvim-base16'
     use 'shaunsingh/nord.nvim'
-    -- use 'folke/tokyonight.nvim'
-    -- use 'rebelot/kanagawa.nvim'
-    -- use 'catppuccin/nvim'
 
     --
     --
