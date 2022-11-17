@@ -525,28 +525,17 @@ return require('packer').startup(function(use)
     use {
         'Shatur/neovim-session-manager',
         requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+        config = function ()
+            require('session_manager').setup{
+                autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir,
+                autosave_last_session = false,
+            }
+            vim.keymap.set('n', '<leader>sl', '<cmd>SessionManager load_session<CR>')
+            vim.keymap.set('n', '<leader>slc', '<cmd>SessionManager load_current_dir_session<CR>')
+            vim.keymap.set('n', '<leader>ss', '<cmd>SessionManager save_current_session<CR>')
+            vim.keymap.set('n', '<leader>sd', '<cmd>SessionManager delete_session<CR>')
+        end
     }
-    -- use {
-    --     'gnikdroy/projections.nvim',
-    --     config = function()
-    --         require('projections').setup {}
-    --
-    --         -- Bind <leader>p to Telescope find_projects
-    --         -- on select, switch to project's root and attempt to load project's session
-    --         local Session = require 'projections.session'
-    --         require('telescope').load_extension 'projections'
-    --         vim.keymap.set('n', '<leader>fp', function()
-    --             local find_projects = require('telescope').extensions.projections.projections
-    --             find_projects {
-    --                 action = function(selection)
-    --                     -- chdir is required since there might not be a session file
-    --                     vim.fn.chdir(selection.value)
-    --                     Session.restore(selection.value)
-    --                 end,
-    --             }
-    --         end, { desc = 'Find projects' })
-    --     end,
-    -- }
 
     -- better registers
     use {
