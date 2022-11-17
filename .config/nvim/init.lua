@@ -25,6 +25,14 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- set proper paste keybind
+vim.keymap.set(
+    'i',
+    '<C-r>',
+    '<C-r><C-o>',
+    { desc = 'Insert contents of named register. Inserts text literally, not as if you typed it.' }
+)
+
 -- color setup
 vim.cmd 'colorscheme nord'
 vim.cmd 'set background=dark'
@@ -50,10 +58,10 @@ vim.wo.signcolumn = 'yes'
 -- 300ms of no cursor movement to trigger CursorHold
 vim.o.updatetime = 300
 -- Show diagnostic popup on cursor hover
-local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-   vim.diagnostic.open_float(nil, { focusable = false })
-  end,
-  group = diag_float_grp,
+local diag_float_grp = vim.api.nvim_create_augroup('DiagnosticFloat', { clear = true })
+vim.api.nvim_create_autocmd('CursorHold', {
+    callback = function()
+        vim.diagnostic.open_float(nil, { focusable = false })
+    end,
+    group = diag_float_grp,
 })
