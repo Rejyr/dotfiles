@@ -525,8 +525,8 @@ return require('packer').startup(function(use)
     use {
         'Shatur/neovim-session-manager',
         requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
-        config = function ()
-            require('session_manager').setup{
+        config = function()
+            require('session_manager').setup {
                 autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir,
                 autosave_last_session = false,
             }
@@ -534,7 +534,7 @@ return require('packer').startup(function(use)
             vim.keymap.set('n', '<leader>slc', '<cmd>SessionManager load_current_dir_session<CR>')
             vim.keymap.set('n', '<leader>ss', '<cmd>SessionManager save_current_session<CR>')
             vim.keymap.set('n', '<leader>sd', '<cmd>SessionManager delete_session<CR>')
-        end
+        end,
     }
 
     -- better registers
@@ -800,6 +800,23 @@ return require('packer').startup(function(use)
             vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { silent = true })
             vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, { silent = true })
             vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, { silent = true })
+        end,
+    }
+
+    -- lsp virtual text
+    use {
+        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+        config = function()
+            local lsp_lines = require 'lsp_lines'
+            lsp_lines.setup()
+            vim.diagnostic.config {
+                virtual_text = false,
+            }
+            vim.keymap.set('', '<Leader>l', function()
+                vim.diagnostic.config {
+                    virtual_text = not lsp_lines.toggle(),
+                }
+            end, { desc = 'Toggle lsp_lines' })
         end,
     }
 
