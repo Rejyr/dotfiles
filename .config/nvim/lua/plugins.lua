@@ -523,14 +523,18 @@ return require('packer').startup(function(use)
 
     -- session management
     use {
-        'olimorris/persisted.nvim',
+        'rmagatti/auto-session',
+        requires = { 'rmagatti/session-lens' },
         config = function()
-            require('persisted').setup()
-            require('telescope').load_extension 'persisted'
-            vim.keymap.set('n', '<leader>sl', '<cmd>SessionLoad<CR>')
-            vim.keymap.set('n', '<leader>slc', '<cmd>SessionLoadLast<CR>')
-            vim.keymap.set('n', '<leader>ss', '<cmd>SessionSave<CR>')
-            vim.keymap.set('n', '<leader>st', '<cmd>Telescope persisted<CR>')
+            vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+            require('auto-session').setup {
+                log_level = 'error',
+                auto_session_suppress_dirs = { '~/', '~/Downloads', '/' },
+            }
+            require('session-lens').setup { theme_conf = { winblend = nil } }
+            vim.keymap.set('n', '<leader>sl', '<cmd>RestoreSession<CR>')
+            vim.keymap.set('n', '<leader>ss', '<cmd>SaveSession<CR>')
+            vim.keymap.set('n', '<leader>st', '<cmd>SearchSession<CR>')
         end,
     }
 
@@ -784,7 +788,7 @@ return require('packer').startup(function(use)
     use {
         'neovim/nvim-lspconfig',
         config = function()
-            local telescope = require('telescope.builtin')
+            local telescope = require 'telescope.builtin'
             -- keybinds
             vim.keymap.set('n', '<c-]>', telescope.lsp_definitions, { silent = true })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
