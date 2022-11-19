@@ -523,17 +523,14 @@ return require('packer').startup(function(use)
 
     -- session management
     use {
-        'Shatur/neovim-session-manager',
-        requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+        'olimorris/persisted.nvim',
         config = function()
-            require('session_manager').setup {
-                autoload_mode = require('session_manager.config').AutoloadMode.CurrentDir,
-                autosave_last_session = false,
-            }
-            vim.keymap.set('n', '<leader>sl', '<cmd>SessionManager load_session<CR>')
-            vim.keymap.set('n', '<leader>slc', '<cmd>SessionManager load_current_dir_session<CR>')
-            vim.keymap.set('n', '<leader>ss', '<cmd>SessionManager save_current_session<CR>')
-            vim.keymap.set('n', '<leader>sd', '<cmd>SessionManager delete_session<CR>')
+            require('persisted').setup()
+            require('telescope').load_extension 'persisted'
+            vim.keymap.set('n', '<leader>sl', '<cmd>SessionLoad<CR>')
+            vim.keymap.set('n', '<leader>slc', '<cmd>SessionLoadLast<CR>')
+            vim.keymap.set('n', '<leader>ss', '<cmd>SessionSave<CR>')
+            vim.keymap.set('n', '<leader>st', '<cmd>Telescope persisted<CR>')
         end,
     }
 
