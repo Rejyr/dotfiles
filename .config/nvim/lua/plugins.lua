@@ -24,8 +24,18 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- speed up loading time
-    use 'lewis6991/impatient.nvim'
-    use 'nathom/filetype.nvim'
+    use {
+        'lewis6991/impatient.nvim',
+        config = function()
+            require 'impatient'
+        end,
+    }
+    use {
+        'nathom/filetype.nvim',
+        config = function()
+            require 'filetype'
+        end,
+    }
 
     -- treesitter
     use {
@@ -222,15 +232,49 @@ return require('packer').startup(function(use)
         'kevinhwang91/nvim-ufo',
         requires = 'kevinhwang91/promise-async',
         config = function()
-            vim.wo.foldcolumn = '1'
             vim.wo.foldlevel = 99 -- feel free to decrease the value
             vim.wo.foldenable = true
 
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.textDocument.foldingRange = {
-                dynamicRegistration = false,
-                lineFoldingOnly = true,
+            local handler = function(virtText, lnum, endLnum, width, truncate)
+                local newVirtText = {}
+                local suffix = ('  %d '):format(endLnum - lnum)
+                local sufWidth = vim.fn.strdisplaywidth(suffix)
+                local targetWidth = width - sufWidth
+                local curWidth = 0
+                for _, chunk in ipairs(virtText) do
+                    local chunkText = chunk[1]
+                    local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                    if targetWidth > curWidth + chunkWidth then
+                        table.insert(newVirtText, chunk)
+                    else
+                        chunkText = truncate(chunkText, targetWidth - curWidth)
+                        local hlGroup = chunk[2]
+                        table.insert(newVirtText, { chunkText, hlGroup })
+                        chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                        -- str width returned from truncate() may less than 2nd argument, need padding
+                        if curWidth + chunkWidth < targetWidth then
+                            suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+                        end
+                        break
+                    end
+                    curWidth = curWidth + chunkWidth
+                end
+                table.insert(newVirtText, { suffix, 'MoreMsg' })
+                return newVirtText
+            end
+
+            -- global handler
+            require('ufo').setup {
+                fold_virt_text_handler = handler,
+                provider_selector = function(_, _, _)
+                    return { 'treesitter', 'indent' }
+                end,
             }
+
+            -- buffer scope handler
+            -- will override global handler if it is existed
+            local bufnr = vim.api.nvim_get_current_buf()
+            require('ufo').setFoldVirtTextHandler(bufnr, handler)
         end,
     }
 
@@ -266,12 +310,13 @@ return require('packer').startup(function(use)
             -- vim.opt.listchars:append 'space:⋅'
             vim.opt.listchars:append 'eol:↴'
 
-            vim.cmd [[highlight IndentBlanklineContextChar guifg=#BF616A gui=nocombine]]
-            vim.cmd [[highlight IndentBlanklineIndent1 guifg=#5E81AC gui=nocombine]]
-            vim.cmd [[highlight IndentBlanklineIndent2 guifg=#81A1C1 gui=nocombine]]
-            vim.cmd [[highlight IndentBlanklineIndent3 guifg=#88C0D0 gui=nocombine]]
-            vim.cmd [[highlight IndentBlanklineIndent4 guifg=#8FBCBB gui=nocombine]]
-            vim.cmd [[highlight IndentBlanklineIndent5 guifg=#A3BE8C gui=nocombine]]
+            local nord = require 'nord.named_colors'
+            vim.api.nvim_set_hl(0, 'IndentBlanklineContextChar', { fg = nord.red, nocombine = false })
+            vim.api.nvim_set_hl(0, 'IndentBlanklineIndent1', { fg = nord.blue, nocombine = false })
+            vim.api.nvim_set_hl(0, 'IndentBlanklineIndent2', { fg = nord.glacier, nocombine = false })
+            vim.api.nvim_set_hl(0, 'IndentBlanklineIndent3', { fg = nord.off_blue, nocombine = false })
+            vim.api.nvim_set_hl(0, 'IndentBlanklineIndent4', { fg = nord.teal, nocombine = false })
+            vim.api.nvim_set_hl(0, 'IndentBlanklineIndent5', { fg = nord.green, nocombine = false })
 
             require('indent_blankline').setup {
                 use_treesitter_scope = true,
@@ -360,6 +405,14 @@ return require('packer').startup(function(use)
                 options = {
                     globalstatus = true,
                     theme = 'nord',
+                },
+                sections = {
+                    lualine_b = {
+                        'branch',
+                        'grapple',
+                        'diff',
+                        'diagnostics',
+                    },
                 },
             }
         end,
@@ -535,6 +588,54 @@ return require('packer').startup(function(use)
             vim.keymap.set('n', '<leader>sl', '<cmd>RestoreSession<CR>')
             vim.keymap.set('n', '<leader>ss', '<cmd>SaveSession<CR>')
             vim.keymap.set('n', '<leader>st', '<cmd>SearchSession<CR>')
+        end,
+    }
+
+    -- navigation
+    use {
+        'cbochs/grapple.nvim',
+        config = function()
+            local grapple = require 'grapple'
+            grapple.setup {}
+
+            local nord = require 'nord.named_colors'
+            vim.api.nvim_set_hl(0, 'LualineGrappleTagActive', { fg = nord.off_blue, bg = nord.gray, nocombine = false })
+            vim.api.nvim_set_hl(
+                0,
+                'LualineGrappleTagInactive',
+                { fg = nord.glacier, bg = nord.gray, nocombine = false }
+            )
+
+            vim.keymap.set('n', '<leader>m', grapple.toggle, {})
+            vim.keymap.set('n', '<leader>gp', grapple.popup_tags)
+            vim.keymap.set('n', '<leader>g1', function()
+                grapple.select { key = 1 }
+            end, {})
+            vim.keymap.set('n', '<leader>g2', function()
+                grapple.select { key = 2 }
+            end, {})
+            vim.keymap.set('n', '<leader>g3', function()
+                grapple.select { key = 3 }
+            end, {})
+            vim.keymap.set('n', '<leader>g4', function()
+                grapple.select { key = 4 }
+            end, {})
+        end,
+    }
+    use {
+        'cbochs/portal.nvim',
+        requires = {
+            'cbochs/grapple.nvim', -- Optional: provides the "grapple" query item
+        },
+        config = function()
+            require('portal').setup {
+                query = { 'grapple', 'modified', 'different' },
+                integrations = {
+                    grapple = true,
+                },
+            }
+            vim.keymap.set('n', '<leader>o', require('portal').jump_backward, {})
+            vim.keymap.set('n', '<leader>i', require('portal').jump_forward, {})
         end,
     }
 
