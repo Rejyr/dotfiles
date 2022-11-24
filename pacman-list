@@ -21,6 +21,7 @@ cowsay
 cups
 dhcpcd
 dialog
+difftastic
 dunst
 dust
 efibootmgr
@@ -96,6 +97,7 @@ pkgconf
 playerctl
 python-pip
 python-pywal
+qbittorrent
 qt5-wayland
 qt6-wayland
 ripgrep

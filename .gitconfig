@@ -9,6 +9,9 @@
 [core]
     pager = delta
 
+[alias]
+    dft = difftool
+
 [interactive]
     diffFilter = delta --color-only
 [add.interactive]
@@ -24,3 +27,13 @@
 
 [diff]
     colorMoved = default
+    tool = difftastic
+
+[pager]
+    difftool = true
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"

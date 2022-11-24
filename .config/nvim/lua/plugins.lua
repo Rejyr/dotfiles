@@ -596,7 +596,9 @@ return require('packer').startup(function(use)
         'cbochs/grapple.nvim',
         config = function()
             local grapple = require 'grapple'
-            grapple.setup {}
+            grapple.setup {
+                scope = 'directory',
+            }
 
             local nord = require 'nord.named_colors'
             vim.api.nvim_set_hl(0, 'LualineGrappleTagActive', { fg = nord.off_blue, bg = nord.gray, nocombine = false })
@@ -888,18 +890,20 @@ return require('packer').startup(function(use)
     -- Collection of common configurations for the Nvim LSP client
     use {
         'neovim/nvim-lspconfig',
+        requires = { 'dnlhc/glance.nvim' },
         config = function()
             local telescope = require 'telescope.builtin'
+            require('glance').setup()
             -- keybinds
-            vim.keymap.set('n', '<c-]>', telescope.lsp_definitions, { silent = true })
+            vim.keymap.set('n', '<c-]>', '<CMD>Glance definitions<CR>', { silent = true })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
-            vim.keymap.set('n', 'gD', telescope.lsp_implementations, { silent = true })
+            vim.keymap.set('n', 'gD', '<CMD>Glance implementations<CR>', { silent = true })
             vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
-            vim.keymap.set('n', 'gD', telescope.lsp_type_definitions, { silent = true })
-            vim.keymap.set('n', 'gr', telescope.lsp_references, { silent = true })
+            vim.keymap.set('n', 'gD', '<CMD>Glance type_definitions<CR>', { silent = true })
+            vim.keymap.set('n', 'gr', '<CMD>Glance references<CR>', { silent = true })
             vim.keymap.set('n', 'g0', telescope.lsp_document_symbols, { silent = true })
             vim.keymap.set('n', 'gW', telescope.lsp_workspace_symbols, { silent = true })
-            vim.keymap.set('n', 'gd', telescope.lsp_definitions, { silent = true })
+            vim.keymap.set('n', 'gd', '<CMD>Glance definitions<CR>', { silent = true })
             vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { silent = true })
             vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, { silent = true })
             vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, { silent = true })
