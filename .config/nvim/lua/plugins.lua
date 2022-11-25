@@ -1,3 +1,29 @@
+-- disable built in plugins
+local disabled_built_ins = {
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "spellfile_plugin",
+    "matchit"
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
+
 -- Install packer
 local ensure_packer = function()
     local fn = vim.fn
@@ -92,10 +118,19 @@ return require('packer').startup(function(use)
         'echasnovski/mini.nvim',
         branch = 'stable',
         config = function()
+            -- starting screen
+            local starter = require 'mini.starter'
+            starter.setup {
+                footer = os.date(),
+                items = {
+                    { name = 'Select Session', action = 'SearchSession', section = 'Session Manager' },
+                    { name = 'Restore Session', action = 'RestoreSession', section = 'Session Manager' },
+                    starter.sections.recent_files(5, false, false),
+                    starter.sections.builtin_actions(),
+                },
+            }
             -- surround
             require('mini.surround').setup()
-            -- starting screen
-            require('mini.starter').setup()
             -- auto-pair
             require('mini.pairs').setup()
             -- underline words
@@ -111,32 +146,14 @@ return require('packer').startup(function(use)
     --
     --
 
-    -- Zen mode
-    use {
-        'Pocco81/true-zen.nvim',
-        config = function()
-            require('true-zen').setup {
-                integrations = {
-                    lualine = true,
-                },
-            }
-        end,
-    }
-    use {
-        'folke/twilight.nvim',
-        config = function()
-            require('twilight').setup {}
-        end,
-    }
-
     -- screensaver
     use {
         'folke/drop.nvim',
         event = 'VimEnter',
         config = function()
-            require('drop').setup()
-            vim.cmd [[:command DropShow lua require('drop').show()]]
-            vim.cmd [[:command DropHide lua require('drop').hide()]]
+            require('drop').setup {
+                theme = 'snow',
+            }
         end,
     }
 
@@ -337,6 +354,7 @@ return require('packer').startup(function(use)
     -- function signature context
     use {
         'romgrk/nvim-treesitter-context',
+        after = 'nvim-treesitter',
         requires = {
             'nvim-treesitter/nvim-treesitter',
         },
@@ -404,7 +422,6 @@ return require('packer').startup(function(use)
             require('lualine').setup {
                 options = {
                     globalstatus = true,
-                    theme = 'nord',
                 },
                 sections = {
                     lualine_b = {
@@ -425,18 +442,19 @@ return require('packer').startup(function(use)
         config = function()
             require('bufferline').setup {
                 options = {
+                    diagnostics = 'nvim_lsp',
+                    diagnostics_indicator = function(count, level, _, _)
+                        local icon = level:match 'error' and ' ' or ' '
+                        return ' ' .. icon .. count
+                    end,
                     separator_style = 'thick',
-                },
-                highlights = require('nord').bufferline.highlights {
-                    underline = true,
-                    italic = true,
-                    bold = true,
                 },
             }
 
             -- keybinds
             vim.keymap.set('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { silent = true })
             vim.keymap.set('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { silent = true })
+            vim.keymap.set('n', '<leader>b', '<cmd>BufferLinePick<CR>', { silent = true })
         end,
     }
 
@@ -447,14 +465,13 @@ return require('packer').startup(function(use)
     --
 
     -- compatibility
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'folke/lsp-colors.nvim'
 
     -- icons
     use 'nvim-tree/nvim-web-devicons'
 
     -- colorschemes
-    -- use 'RRethy/nvim-base16'
+    use 'RRethy/nvim-base16'
     use 'shaunsingh/nord.nvim'
 
     --
@@ -480,19 +497,6 @@ return require('packer').startup(function(use)
             t['zb'] = { 'zb', { '150' } }
 
             require('neoscroll.config').set_mappings(t)
-        end,
-    }
-
-    -- transparent neovim
-    use {
-        'xiyaowong/nvim-transparent',
-        config = function()
-            require('transparent').setup {
-                enable = true,
-                exclude = {
-                    SignColumn,
-                },
-            }
         end,
     }
 
@@ -522,9 +526,6 @@ return require('packer').startup(function(use)
     -- highlight yank
     use 'machakann/vim-highlightedyank'
 
-    -- highlight range in command
-    use 'winston0410/cmd-parser.nvim'
-
     --
     --
     -- Editor
@@ -532,9 +533,6 @@ return require('packer').startup(function(use)
     --
     -- move to directory
     use 'airblade/vim-rooter'
-
-    -- autosave
-    -- use 'Pocco81/auto-save.nvim'
 
     -- tidy whitespace
     use {
@@ -557,6 +555,7 @@ return require('packer').startup(function(use)
     -- latex editing and preview
     use {
         'lervag/vimtex',
+        ft = 'tex',
         config = function()
             vim.g.tex_flavor = 'latex'
             vim.g.vimtex_view_method = 'sioyek'
@@ -582,7 +581,9 @@ return require('packer').startup(function(use)
             vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
             require('auto-session').setup {
                 log_level = 'error',
-                auto_session_suppress_dirs = { '~/', '~/Downloads', '/' },
+                auto_session_suppress_dirs = { '~/', '~/Downloads', '/', '/tmp' },
+                pre_save_cmds = { 'NvimTreeClose', 'cclose' },
+                post_restore_cmds = { 'NvimTreeRefresh' },
             }
             require('session-lens').setup { theme_conf = { winblend = nil } }
             vim.keymap.set('n', '<leader>sl', '<cmd>RestoreSession<CR>')
@@ -597,7 +598,7 @@ return require('packer').startup(function(use)
         config = function()
             local grapple = require 'grapple'
             grapple.setup {
-                scope = 'directory',
+                scope = require('grapple.scope').root { 'git' },
             }
 
             local nord = require 'nord.named_colors'
@@ -806,36 +807,23 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- spellcheck
-    use {
-        'lewis6991/spellsitter.nvim',
-        config = function()
-            require('spellsitter').setup()
-        end,
-    }
-
-    -- fish editing
-    use 'dag/vim-fish'
-
     -- install lsp servers
     use {
         'williamboman/mason.nvim',
+        after = 'nvim-lspconfig',
         requires = {
             'neovim/nvim-lspconfig',
-            'williamboman/mason-lspconfig.nvim',
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
         },
         config = function()
             require('mason').setup {
                 providers = { 'mason.providers.client' },
             }
-            require('mason-tool-installer').setup {
-                ensure_installed = {
-                    'prettier',
-                    'stylua',
-                    'autopep8',
-                },
-            }
+        end,
+    }
+    use {
+        'williamboman/mason-lspconfig.nvim',
+        after = 'mason-tool-installer.nvim',
+        config = function()
             require('mason-lspconfig').setup {
                 ensure_installed = {
                     'bashls',
@@ -871,6 +859,19 @@ return require('packer').startup(function(use)
             }
         end,
     }
+    use {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        after = 'mason.nvim',
+        config = function()
+            require('mason-tool-installer').setup {
+                ensure_installed = {
+                    'prettier',
+                    'stylua',
+                    'autopep8',
+                },
+            }
+        end,
+    }
 
     use {
         'klen/nvim-config-local',
@@ -890,7 +891,7 @@ return require('packer').startup(function(use)
     -- Collection of common configurations for the Nvim LSP client
     use {
         'neovim/nvim-lspconfig',
-        requires = { 'dnlhc/glance.nvim' },
+        after = 'LuaSnip',
         config = function()
             local telescope = require 'telescope.builtin'
             require('glance').setup()
@@ -927,25 +928,48 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- inlay hints
+    use {
+        'lvimuser/lsp-inlayhints.nvim',
+        config = function()
+            require('lsp-inlayhints').setup()
+            vim.api.nvim_create_augroup('LspAttach_inlayhints', {})
+            vim.api.nvim_create_autocmd('LspAttach', {
+                group = 'LspAttach_inlayhints',
+                callback = function(args)
+                    if not (args.data and args.data.client_id) then
+                        return
+                    end
+
+                    local bufnr = args.buf
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    require('lsp-inlayhints').on_attach(client, bufnr)
+                end,
+            })
+        end,
+    }
+
     -- Autocompletion framework
     use {
         'hrsh7th/nvim-cmp',
+        after = 'nvim-lspconfig',
         requires = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-calc',
-            'hrsh7th/cmp-nvim-lsp-signature-help',
-            'hrsh7th/cmp-cmdline',
-            'dmitmel/cmp-cmdline-history',
+            { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-calc', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp-signature-help', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' },
+            { 'dmitmel/cmp-cmdline-history', after = 'nvim-cmp' },
             -- luasnip
-            'saadparwaiz1/cmp_luasnip',
-            'L3MON4D3/LuaSnip',
+            { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+            { 'L3MON4D3/LuaSnip' },
         },
         config = function()
             vim.o.completeopt = 'menuone,noselect'
             local has_words_before = function()
+                ---@diagnostic disable-next-line: deprecated
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
                 return col ~= 0
                     and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
@@ -998,8 +1022,10 @@ return require('packer').startup(function(use)
                     completeopt = 'menu,menuone,noinsert',
                 },
                 formatting = {
-                    format = function(_, vim_item)
-                        vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+                    fields = { 'kind', 'abbr', 'menu' },
+                    format = function(entry, vim_item)
+                        vim_item.kind = (cmp_kinds[vim_item.kind] or '')
+                        vim_item.menu = entry:get_completion_item().detail
                         return vim_item
                     end,
                 },
@@ -1094,6 +1120,7 @@ return require('packer').startup(function(use)
                             use_telescope = true,
                         },
                         inlay_hints = {
+                            auto = false,
                             show_parameter_hints = false,
                             parameter_hints_prefix = '',
                             other_hints_prefix = '',
