@@ -37,6 +37,18 @@ return require('packer').startup(function(use)
         end,
     }
 
+    --
+    --
+    -- Games
+    --
+    --
+
+    use { 'alec-gibson/nvim-tetris', command = 'Tetris' }
+    use { 'ThePrimeagen/vim-be-good', command = 'VimBeGood' }
+    use { 'seandewar/nvimesweeper', command = 'Nvimesweeper' }
+    -- use { 'seandewar/killersheep.nvim', command = 'KillKillKill' }
+    -- use { 'rktjmp/shenzhen-solitaire.nvim', command = 'ShenzhenSolitaireNewGame' }
+
     -- treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -80,9 +92,6 @@ return require('packer').startup(function(use)
         end,
         run = ':TSUpdate',
     }
-
-    -- tetris lmao
-    use 'alec-gibson/nvim-tetris'
 
     -- time tracking
     use 'wakatime/vim-wakatime'
