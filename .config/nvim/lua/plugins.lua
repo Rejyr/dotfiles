@@ -267,19 +267,13 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim',
         config = function()
             require('todo-comments').setup()
-            vim.keymap.set('n', '<leader>tq', '<cmd>TodoQuickFix<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>tt', '<cmd>TodoTrouble<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<cr>', { silent = true })
         end,
     }
 
     -- which key for commands
     use {
         'folke/which-key.nvim',
-        config = function()
-            require('which-key').setup()
-            vim.opt.timeoutlen = 500
-        end,
+        module = 'which-key',
     }
 
     -- show indent
@@ -334,31 +328,26 @@ return require('packer').startup(function(use)
             vim.g.symbols_outline = {
                 width = 50,
             }
-            vim.keymap.set('n', '<leader>so', '<cmd>SymbolsOutline<cr>', { silent = true })
         end,
     }
 
     -- floating terminal
     use {
         'numToStr/FTerm.nvim',
-        config = function()
-            vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
-            vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
-        end,
+        config = function() end,
     }
 
     -- filesystem
     use {
         'nvim-tree/nvim-tree.lua',
         command = {
-            'NvimTreeToggle'
+            'NvimTreeToggle',
         },
         requires = {
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
             require('nvim-tree').setup()
-            vim.keymap.set('n', '<Leader>v', '<cmd>NvimTreeToggle<CR>', { silent = true })
         end,
     }
 
@@ -416,11 +405,6 @@ return require('packer').startup(function(use)
                     separator_style = 'thick',
                 },
             }
-
-            -- keybinds
-            vim.keymap.set('n', '<leader>]', '<cmd>BufferLineCycleNext<CR>', { silent = true })
-            vim.keymap.set('n', '<leader>[', '<cmd>BufferLineCyclePrev<CR>', { silent = true })
-            vim.keymap.set('n', '<leader>b', '<cmd>BufferLinePick<CR>', { silent = true })
         end,
     }
 
@@ -500,6 +484,17 @@ return require('packer').startup(function(use)
     -- move to directory
     use 'airblade/vim-rooter'
 
+    -- neoroot
+    use {
+        'nyngwang/NeoRoot.lua',
+        config = function()
+            require('neo-root').setup {
+                CUR_MODE = 2, -- 1 for file/buffer mode, 2 for proj-mode
+            }
+            vim.cmd 'au BufEnter * NeoRoot'
+        end,
+    }
+
     -- tidy whitespace
     use {
         'McAuleyPenney/tidy.nvim',
@@ -552,9 +547,6 @@ return require('packer').startup(function(use)
                 post_restore_cmds = { 'NvimTreeRefresh' },
             }
             require('session-lens').setup { theme_conf = { winblend = nil } }
-            vim.keymap.set('n', '<leader>sl', '<cmd>RestoreSession<CR>')
-            vim.keymap.set('n', '<leader>ss', '<cmd>SaveSession<CR>')
-            vim.keymap.set('n', '<leader>st', '<cmd>SearchSession<CR>')
         end,
     }
 
@@ -574,37 +566,6 @@ return require('packer').startup(function(use)
                 'LualineGrappleTagInactive',
                 { fg = nord.glacier, bg = nord.gray, nocombine = false }
             )
-
-            vim.keymap.set('n', '<leader>m', grapple.toggle, {})
-            vim.keymap.set('n', '<leader>gp', grapple.popup_tags)
-            vim.keymap.set('n', '<leader>g1', function()
-                grapple.select { key = 1 }
-            end, {})
-            vim.keymap.set('n', '<leader>g2', function()
-                grapple.select { key = 2 }
-            end, {})
-            vim.keymap.set('n', '<leader>g3', function()
-                grapple.select { key = 3 }
-            end, {})
-            vim.keymap.set('n', '<leader>g4', function()
-                grapple.select { key = 4 }
-            end, {})
-        end,
-    }
-    use {
-        'cbochs/portal.nvim',
-        requires = {
-            'cbochs/grapple.nvim', -- Optional: provides the "grapple" query item
-        },
-        config = function()
-            require('portal').setup {
-                query = { 'grapple', 'modified', 'different' },
-                integrations = {
-                    grapple = true,
-                },
-            }
-            vim.keymap.set('n', '<leader>o', require('portal').jump_backward, {})
-            vim.keymap.set('n', '<leader>i', require('portal').jump_forward, {})
         end,
     }
 
@@ -615,7 +576,6 @@ return require('packer').startup(function(use)
         config = function()
             require('neoclip').setup()
             require('telescope').load_extension 'neoclip'
-            vim.keymap.set('n', '<leader>c', '<cmd>Telescope neoclip<cr>', { silent = true })
         end,
     }
 
@@ -653,14 +613,7 @@ return require('packer').startup(function(use)
         branch = 'master',
         nequires = { 'nvim-lua/plenary.nvim' },
         config = function()
-            require('renamer').setup {
-                vim.keymap.set('i', '<F2>', function()
-                    require('renamer').rename()
-                end, { silent = true }),
-                vim.keymap.set({ 'n', 'v' }, '<leader>rn', function()
-                    require('renamer').rename()
-                end),
-            }
+            require('renamer').setup {}
         end,
     }
 
@@ -669,7 +622,6 @@ return require('packer').startup(function(use)
         'mhartington/formatter.nvim',
         config = function()
             -- keybind
-            vim.keymap.set('n', '<Leader>f', [[<cmd>Format<CR>]], { silent = true })
             local util = require 'formatter.util'
             require('formatter').setup {
                 filetype = {
@@ -728,26 +680,14 @@ return require('packer').startup(function(use)
         branch = 'v1', -- optional but strongly recommended
         config = function()
             require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-            -- keybinds
-            vim.keymap.set('n', '<leader>jw', '<cmd>HopWord<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>jp', '<cmd>HopPattern<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>j2', '<cmd>HopChar2<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>j', '<cmd>HopChar1<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>jl', '<cmd>HopLine<cr>', { silent = true })
         end,
     }
 
     -- Fuzzy Finder
     use {
         'nvim-telescope/telescope.nvim',
+        module = 'telescope',
         requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>ffh', '<cmd>Telescope find_files hidden=true<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { silent = true })
-            vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { silent = true })
-        end,
     }
 
     --
@@ -768,7 +708,6 @@ return require('packer').startup(function(use)
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
-            vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { silent = true })
             require('trouble').setup()
         end,
     }
@@ -857,24 +796,9 @@ return require('packer').startup(function(use)
     -- Collection of common configurations for the Nvim LSP client
     use {
         'neovim/nvim-lspconfig',
-        after = 'LuaSnip',
-        config = function()
-            local telescope = require 'telescope.builtin'
-            require('glance').setup()
-            -- keybinds
-            vim.keymap.set('n', '<c-]>', '<CMD>Glance definitions<CR>', { silent = true })
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, { silent = true })
-            vim.keymap.set('n', 'gD', '<CMD>Glance implementations<CR>', { silent = true })
-            vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
-            vim.keymap.set('n', 'gD', '<CMD>Glance type_definitions<CR>', { silent = true })
-            vim.keymap.set('n', 'gr', '<CMD>Glance references<CR>', { silent = true })
-            vim.keymap.set('n', 'g0', telescope.lsp_document_symbols, { silent = true })
-            vim.keymap.set('n', 'gW', telescope.lsp_workspace_symbols, { silent = true })
-            vim.keymap.set('n', 'gd', '<CMD>Glance definitions<CR>', { silent = true })
-            vim.keymap.set('n', 'ga', vim.lsp.buf.code_action, { silent = true })
-            vim.keymap.set('n', 'g[', vim.diagnostic.goto_prev, { silent = true })
-            vim.keymap.set('n', 'g]', vim.diagnostic.goto_next, { silent = true })
-        end,
+        requires = {
+            { 'DNLHC/glance.nvim', module = 'glance' },
+        },
     }
 
     -- lsp virtual text
@@ -886,11 +810,6 @@ return require('packer').startup(function(use)
             vim.diagnostic.config {
                 virtual_text = false,
             }
-            vim.keymap.set('', '<Leader>l', function()
-                vim.diagnostic.config {
-                    virtual_text = not lsp_lines.toggle(),
-                }
-            end, { desc = 'Toggle lsp_lines' })
         end,
     }
 
@@ -1074,9 +993,6 @@ return require('packer').startup(function(use)
         requires = { 'neovim/nvim-lspconfig' },
         ft = 'rust',
         config = function()
-            vim.keymap.set('n', '<leader>rr', '<cmd>RustRun<cr>')
-            vim.keymap.set('n', '<leader>rrr', '<cmd>RustRunnables<cr>')
-            --
             require('rust-tools').setup {
                 {
                     tools = {

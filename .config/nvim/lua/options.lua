@@ -51,14 +51,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- set proper paste keybind
-vim.keymap.set(
-    'i',
-    '<C-r>',
-    '<C-r><C-o>',
-    { desc = 'Insert contents of named register. Inserts text literally, not as if you typed it.' }
-)
-
 --
 -- LSP/Rust setup
 --
