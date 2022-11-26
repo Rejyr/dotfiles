@@ -3,6 +3,7 @@ aiosignal==1.2.0
 alabaster==0.7.12
 anki @ file:///home/rejyr/.cache/yay/anki-bin/src/anki-2.1.54-cp39-abi3-manylinux_2_28_x86_64.whl
 anyio==3.6.2
+anytree==2.8.0
 apipkg==3.0.1
 appdirs==1.4.4
 aqt @ file:///home/rejyr/.cache/yay/anki-bin/src/aqt-2.1.54-py3-none-any.whl
@@ -84,6 +85,8 @@ lark==1.1.4
 libtorrent==2.0.8
 lockfile==0.12.2
 louis==3.23.0
+lxml==4.9.1
+Mako==1.2.4
 Markdown==3.4.1
 MarkupSafe==2.1.1
 meson==0.64.1

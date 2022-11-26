@@ -35,8 +35,8 @@ client.urgent $nord1 $nord11 $foreground $background $nord11
 
 
 ### Startup
-# start notifications (dunst)
-exec dunst
+# start notifications
+exec swaync
 # start mpd
 exec mpd
 
