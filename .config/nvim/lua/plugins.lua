@@ -1,29 +1,3 @@
--- disable built in plugins
-local disabled_built_ins = {
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin",
-    "getscript",
-    "getscriptPlugin",
-    "vimball",
-    "vimballPlugin",
-    "2html_plugin",
-    "logipat",
-    "rrhelper",
-    "spellfile_plugin",
-    "matchit"
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-    vim.g["loaded_" .. plugin] = 1
-end
-
 -- Install packer
 local ensure_packer = function()
     local fn = vim.fn
@@ -118,17 +92,6 @@ return require('packer').startup(function(use)
         'echasnovski/mini.nvim',
         branch = 'stable',
         config = function()
-            -- starting screen
-            local starter = require 'mini.starter'
-            starter.setup {
-                footer = os.date(),
-                items = {
-                    { name = 'Select Session', action = 'SearchSession', section = 'Session Manager' },
-                    { name = 'Restore Session', action = 'RestoreSession', section = 'Session Manager' },
-                    starter.sections.recent_files(5, false, false),
-                    starter.sections.builtin_actions(),
-                },
-            }
             -- surround
             require('mini.surround').setup()
             -- auto-pair
@@ -387,6 +350,9 @@ return require('packer').startup(function(use)
     -- filesystem
     use {
         'nvim-tree/nvim-tree.lua',
+        command = {
+            'NvimTreeToggle'
+        },
         requires = {
             'nvim-tree/nvim-web-devicons',
         },

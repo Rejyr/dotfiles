@@ -1,3 +1,7 @@
+require 'dashboard'
 require 'options'
-require 'plugins'
 require 'theme'
+
+vim.defer_fn(function()
+    require 'plugins'
+end, 100)
