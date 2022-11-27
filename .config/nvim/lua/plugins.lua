@@ -652,7 +652,6 @@ return require('packer').startup(function(use)
                             return {
                                 exe = 'stylua',
                                 args = {
-                                    '--config-path ' .. os.getenv 'HOME' .. '/.config/stylua/stylua.toml',
                                     '-',
                                 },
                                 stdin = true,
