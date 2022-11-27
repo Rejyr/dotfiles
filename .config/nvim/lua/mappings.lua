@@ -16,6 +16,7 @@ local map = vim.keymap.set
 local telescope = require 'telescope.builtin'
 local packer = require 'packer'
 local grapple = require 'grapple'
+require('glance').setup()
 
 --
 --
@@ -24,7 +25,7 @@ local grapple = require 'grapple'
 --
 
 -- set proper paste keybind
-vim.keymap.set(
+map(
     'i',
     '<C-r>',
     '<C-r><C-o>',
@@ -56,12 +57,28 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 
 -- lsp
-vim.keymap.set('n', '<c-]>', '<CMD>Glance definitions<CR>', { silent = true })
-vim.keymap.set('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
+map('n', '<c-]>', '<CMD>Glance definitions<CR>', { silent = true })
+map('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
 
 -- FTerm
-vim.keymap.set('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+local non_leader = {
+    g = {
+        name = '+lsp',
+        a = { vim.lsp.buf.code_action, 'Code Action' },
+        d = { '<CMD>Glance definitions<CR>', 'Definition' },
+        D = { '<CMD>Glance type_definitions<CR>', 'Type Definition' },
+        i = { '<CMD>Glance implementations<CR>', 'Implementation' },
+        r = { '<CMD>Glance references<CR>', 'References' },
+        W = { telescope.lsp_workspace_symbols, 'Workspace Symbols' },
+        ['0'] = { telescope.lsp_document_symbols, 'Document Symbols' },
+        ['['] = { vim.diagnostic.goto_prev, 'Goto Previous Diagnostic' },
+        [']'] = { vim.diagnostic.goto_next, 'Goto Next Diagnostic' },
+    },
+    K = { vim.lsp.buf.hover, 'Lsp Hover' },
+}
 
 local leader = {
     b = {
@@ -84,18 +101,6 @@ local leader = {
         h = { '<cmd>Telescope find_files hidden=true<cr>', 'Find Hidden File' },
     },
     g = {
-        name = '+lsp',
-        a = { vim.lsp.buf.code_action, 'Code Action' },
-        d = { '<CMD>Glance definitions<CR>', 'Definition' },
-        D = { '<CMD>Glance type_definitions<CR>', 'Type Definition' },
-        i = { '<CMD>Glance implementations<CR>', 'Implementation' },
-        r = { '<CMD>Glance references<CR>', 'References' },
-        W = { telescope.lsp_workspace_symbols, 'Workspace Symbols' },
-        ['0'] = { telescope.lsp_document_symbols, 'Document Symbols' },
-        ['['] = { vim.diagnostic.goto_prev, 'Goto Previous Diagnostic' },
-        [']'] = { vim.diagnostic.goto_next, 'Goto Next Diagnostic' },
-    },
-    gg = {
         name = '+git',
         g = {
             function()
@@ -126,7 +131,6 @@ local leader = {
         j = { '<cmd>HopChar1<cr>', 'Hop to 1 Char' },
         ['2'] = { '<cmd>HopChar2<cr>', 'Hop to 2 Chars' },
     },
-    K = { vim.lsp.buf.hover, 'Lsp Hover' },
     l = {
         function()
             vim.diagnostic.config {
@@ -185,8 +189,7 @@ local leader = {
         s = { '<cmd>SaveSession<CR>', 'Save Session' },
         t = { '<cmd>SearchSession<CR>', 'Select Session' },
     },
-    r = { '<cmd>NeoRootSwitchMode<CR>', 'Switch NeoRoot Mode', silent = true, nowait = true },
-    rc = { '<cmd>NeoRootChange<CR>', 'Change NeoRoot', silent = true, nowait = true },
+    rs = { require('root-switcher').toggle, 'Switch Root Mode' },
     rn = { require('renamer').rename, 'Rename' },
     rr = { '<cmd>RustRun<cr>', 'Rust Run' },
     s = {
@@ -252,4 +255,5 @@ local leader = {
     [':'] = { telescope.command_history, 'Command History' },
 }
 
+wk.register(non_leader)
 wk.register(leader, { prefix = '<leader>' })

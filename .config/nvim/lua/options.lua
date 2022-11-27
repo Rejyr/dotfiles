@@ -1,27 +1,27 @@
 -- disable built in plugins
 local disabled_built_ins = {
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
-    "gzip",
-    "zip",
-    "zipPlugin",
-    "tar",
-    "tarPlugin",
-    "getscript",
-    "getscriptPlugin",
-    "vimball",
-    "vimballPlugin",
-    "2html_plugin",
-    "logipat",
-    "rrhelper",
-    "spellfile_plugin",
-    "matchit"
+    'netrw',
+    'netrwPlugin',
+    'netrwSettings',
+    'netrwFileHandlers',
+    'gzip',
+    'zip',
+    'zipPlugin',
+    'tar',
+    'tarPlugin',
+    'getscript',
+    'getscriptPlugin',
+    'vimball',
+    'vimballPlugin',
+    '2html_plugin',
+    'logipat',
+    'rrhelper',
+    'spellfile_plugin',
+    'matchit',
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-    vim.g["loaded_" .. plugin] = 1
+    vim.g['loaded_' .. plugin] = 1
 end
 
 -- set shortmess
@@ -72,8 +72,8 @@ vim.o.updatetime = 300
 -- Show diagnostic popup on cursor hover
 local diag_float_grp = vim.api.nvim_create_augroup('DiagnosticFloat', { clear = true })
 vim.api.nvim_create_autocmd('CursorHold', {
+    group = diag_float_grp,
     callback = function()
         vim.diagnostic.open_float(nil, { focusable = false })
     end,
-    group = diag_float_grp,
 })

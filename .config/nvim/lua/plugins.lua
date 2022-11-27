@@ -216,59 +216,13 @@ return require('packer').startup(function(use)
         end,
     }
 
-    -- fold code
+    -- display marks
     use {
-        'kevinhwang91/nvim-ufo',
-        requires = 'kevinhwang91/promise-async',
+        'chentoast/marks.nvim',
         config = function()
-            vim.wo.foldlevel = 99 -- feel free to decrease the value
-            vim.wo.foldenable = true
-
-            local handler = function(virtText, lnum, endLnum, width, truncate)
-                local newVirtText = {}
-                local suffix = ('  %d '):format(endLnum - lnum)
-                local sufWidth = vim.fn.strdisplaywidth(suffix)
-                local targetWidth = width - sufWidth
-                local curWidth = 0
-                for _, chunk in ipairs(virtText) do
-                    local chunkText = chunk[1]
-                    local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-                    if targetWidth > curWidth + chunkWidth then
-                        table.insert(newVirtText, chunk)
-                    else
-                        chunkText = truncate(chunkText, targetWidth - curWidth)
-                        local hlGroup = chunk[2]
-                        table.insert(newVirtText, { chunkText, hlGroup })
-                        chunkWidth = vim.fn.strdisplaywidth(chunkText)
-                        -- str width returned from truncate() may less than 2nd argument, need padding
-                        if curWidth + chunkWidth < targetWidth then
-                            suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
-                        end
-                        break
-                    end
-                    curWidth = curWidth + chunkWidth
-                end
-                table.insert(newVirtText, { suffix, 'MoreMsg' })
-                return newVirtText
-            end
-
-            -- global handler
-            require('ufo').setup {
-                fold_virt_text_handler = handler,
-                provider_selector = function(_, _, _)
-                    return { 'treesitter', 'indent' }
-                end,
-            }
-
-            -- buffer scope handler
-            -- will override global handler if it is existed
-            local bufnr = vim.api.nvim_get_current_buf()
-            require('ufo').setFoldVirtTextHandler(bufnr, handler)
+            require('marks').setup()
         end,
     }
-
-    -- display marks
-    use 'kshenoy/vim-signature'
 
     -- todo comment
     use {
@@ -381,7 +335,7 @@ return require('packer').startup(function(use)
     -- statusline
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons', 'cbochs/grapple.nvim' },
         config = function()
             require('lualine').setup {
                 options = {
@@ -390,7 +344,10 @@ return require('packer').startup(function(use)
                 sections = {
                     lualine_b = {
                         'branch',
-                        'grapple',
+                        {
+                            require('grapple').key,
+                            cond = require('grapple').exists,
+                        },
                         'diff',
                         'diagnostics',
                     },
@@ -491,16 +448,22 @@ return require('packer').startup(function(use)
     --
     --
     -- move to directory
-    use 'airblade/vim-rooter'
-
-    -- neoroot
     use {
-        'nyngwang/NeoRoot.lua',
+        'notjedi/nvim-rooter.lua',
         config = function()
-            require('neo-root').setup {
-                CUR_MODE = 2, -- 1 for file/buffer mode, 2 for proj-mode
+            require('nvim-rooter').setup()
+        end,
+    }
+
+    use {
+        'Rejyr/root-switcher.nvim',
+        -- '~/Programming/NeovimProjects/root-switcher.nvim',
+        requires = { 'notjedi/nvim-rooter.lua' },
+        config = function()
+            require('root-switcher').setup {
+                starting_mode = 'project',
+                project_root = require('nvim-rooter').get_root,
             }
-            vim.cmd 'au BufEnter * NeoRoot'
         end,
     }
 
@@ -519,6 +482,16 @@ return require('packer').startup(function(use)
                     enable = true, -- mandatory, false will disable the whole extension
                 },
             }
+        end,
+    }
+
+    -- markdown preview
+    use {
+        'toppair/peek.nvim',
+        run = 'deno task --quiet build:fast',
+        config = function()
+            vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+            vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
         end,
     }
 
@@ -563,18 +536,13 @@ return require('packer').startup(function(use)
     use {
         'cbochs/grapple.nvim',
         config = function()
-            local grapple = require 'grapple'
-            grapple.setup {
-                scope = require('grapple.scope').root { 'git' },
+            require('grapple').setup {
+                setup = require('grapple.scope').fallback {
+                    require('grapple.scope').resolvers.lsp_fallback,
+                    require('grapple.scope').resolvers.git_fallback,
+                    require('grapple.scope').resolvers.static,
+                },
             }
-
-            local nord = require 'nord.named_colors'
-            vim.api.nvim_set_hl(0, 'LualineGrappleTagActive', { fg = nord.off_blue, bg = nord.gray, nocombine = false })
-            vim.api.nvim_set_hl(
-                0,
-                'LualineGrappleTagInactive',
-                { fg = nord.glacier, bg = nord.gray, nocombine = false }
-            )
         end,
     }
 
@@ -778,9 +746,10 @@ return require('packer').startup(function(use)
         config = function()
             require('mason-tool-installer').setup {
                 ensure_installed = {
+                    'autopep8',
                     'prettier',
                     'stylua',
-                    'autopep8',
+                    'selene',
                 },
             }
         end,
