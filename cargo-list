@@ -3,5 +3,6 @@ cargo-edit
 cargo-nextest
 cargo-watch
 flamegraph
+solkit
 toipe
 x

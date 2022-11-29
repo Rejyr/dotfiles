@@ -43,6 +43,10 @@ return require('packer').startup(function(use)
     --
     --
 
+    use {
+        'Eandrju/cellular-automaton.nvim',
+        command = { 'CellularAutomaton make_it_rain', 'CellularAutomaton game_of_life' },
+    }
     use { 'alec-gibson/nvim-tetris', command = 'Tetris' }
     use { 'ThePrimeagen/vim-be-good', command = 'VimBeGood' }
     use { 'seandewar/nvimesweeper', command = 'Nvimesweeper' }
@@ -286,6 +290,7 @@ return require('packer').startup(function(use)
     -- tree view for symbols
     use {
         'simrat39/symbols-outline.nvim',
+        command = 'SymbolsOutline',
         config = function()
             require('symbols-outline').setup()
             vim.g.symbols_outline = {
@@ -519,7 +524,7 @@ return require('packer').startup(function(use)
     -- session management
     use {
         'rmagatti/auto-session',
-        requires = { 'rmagatti/session-lens' },
+        requires = { 'rmagatti/session-lens', module = 'session-lens' },
         config = function()
             vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
             require('auto-session').setup {
@@ -588,6 +593,7 @@ return require('packer').startup(function(use)
     use {
         'filipdutescu/renamer.nvim',
         branch = 'master',
+        module = 'renamer',
         nequires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('renamer').setup {}
@@ -682,7 +688,9 @@ return require('packer').startup(function(use)
     -- show diagnosticsc / lsp stuff
     use {
         'folke/trouble.nvim',
-        requires = 'kyazdani42/nvim-web-devicons',
+        event = 'BufReadPre',
+        module = 'trouble',
+        cmd = { 'TroubleToggle', 'Trouble' },
         config = function()
             require('trouble').setup()
         end,
@@ -773,10 +781,10 @@ return require('packer').startup(function(use)
     -- Collection of common configurations for the Nvim LSP client
     use {
         'neovim/nvim-lspconfig',
-        requires = {
-            { 'DNLHC/glance.nvim', module = 'glance' },
-        },
     }
+
+    -- Fancier lsp previews
+    use { 'DNLHC/glance.nvim', module = 'glance' }
 
     -- lsp virtual text
     use {
