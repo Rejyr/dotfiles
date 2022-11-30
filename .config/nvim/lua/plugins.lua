@@ -43,10 +43,6 @@ return require('packer').startup(function(use)
     --
     --
 
-    use {
-        'Eandrju/cellular-automaton.nvim',
-        command = { 'CellularAutomaton make_it_rain', 'CellularAutomaton game_of_life' },
-    }
     use { 'alec-gibson/nvim-tetris', command = 'Tetris' }
     use { 'ThePrimeagen/vim-be-good', command = 'VimBeGood' }
     use { 'seandewar/nvimesweeper', command = 'Nvimesweeper' }
@@ -456,7 +452,7 @@ return require('packer').startup(function(use)
     use {
         'notjedi/nvim-rooter.lua',
         config = function()
-            require('nvim-rooter').setup()
+            require('nvim-rooter').setup { manual = true }
         end,
     }
 

@@ -94,7 +94,6 @@ local leader = {
     f = {
         name = '+file/format',
         mt = { '<cmd>Format<CR>', 'Format' },
-        ml = { '<cmd>CellularAutomaton make_it_rain<CR>', 'Fack My Life' },
         t = { '<cmd>NvimTreeToggle<cr>', 'NvimTree' },
         n = { '<cmd>enew<cr>', 'New File' },
         r = { telescope.old_files, 'Open Recent File' },
