@@ -42,6 +42,8 @@ return {
     s({ trig = 'tit', dscr = 'Italic' }, fmta([[\textit{<>}]], i(1))),
     s({ trig = 'tbf', dscr = 'Bold' }, fmta([[\textbf{<>}]], i(1))),
     s({ trig = 'tul', dscr = 'Underline' }, fmta([[\underline{<>}]], i(1))),
+    -- mbox
+    s({ trig = 'mbox', snippetType = 'autosnippet', dscr = '\\mbox' }, fmta([[\mbox{<>}]], i(1)), { condition = math }),
     -- inline math
     s({ trig = 'mm', snippetType = 'autosnippet', dscr = 'Inline math' }, fmta([[$<>$]], i(1))),
     -- display math
@@ -76,7 +78,7 @@ return {
     ),
     -- \begin{equation*} \end{equation*}
     s(
-        { trig = 'eq', snippetType = 'autosnippet', dscr = "Expands 'eq' into an equation environment" },
+        { trig = 'eq', dscr = "Expands 'eq' into an equation environment" },
         fmta(
             [[
                 \begin{equation*}
@@ -89,44 +91,44 @@ return {
     -- dots
     s(
         { trig = '...', snippetType = 'autosnippet', wordTrig = false, dscr = 'Dots' },
-        { t '\\dots ' },
+        { t '\\dots' },
         { condition = math }
     ),
     -- alpha, beta, gamma
     s({ trig = ';a', snippetType = 'autosnippet', dscr = '\\alpha' }, {
-        t '\\alpha ',
+        t '\\alpha',
     }, { condition = math }),
     s({ trig = ';b', snippetType = 'autosnippet', dscr = '\\beta' }, {
-        t '\\beta ',
+        t '\\beta',
     }, { condition = math }),
     s({ trig = ';g', snippetType = 'autosnippet', dscr = '\\gamma' }, {
-        t '\\gamma ',
+        t '\\gamma',
     }, { condition = math }),
     -- superscript
     s(
         { trig = 'ts', snippetType = 'autosnippet', wordTrig = false, dscr = 'superscript' },
-        fmta([[^{<>} ]], { i(1) }),
+        fmta([[^{<>}]], { i(1) }),
         { condition = math }
     ),
     s(
         { trig = 'sr', snippetType = 'autosnippet', wordTrig = false, dscr = '^2' },
-        fmta([[^2 ]], {}),
+        fmta([[^2]], {}),
         { condition = math }
     ),
     s(
         { trig = 'cr', snippetType = 'autosnippet', wordTrig = false, dscr = '^3' },
-        fmta([[^3 ]], {}),
+        fmta([[^3]], {}),
         { condition = math }
     ),
     -- subscript
     s(
         { trig = 'td', snippetType = 'autosnippet', wordTrig = false, dscr = 'subscript' },
-        fmta([[_{<>} ]], i(1)),
+        fmta([[_{<>}]], i(1)),
         { condition = math }
     ),
     s(
         { trig = '(%a)(%d)', regTrig = true, snippetType = 'autosnippet', dscr = 'auto subscript' },
-        fmta([[<>_<> ]], {
+        fmta([[<>_<>]], {
             f(function(_, snip)
                 return snip.captures[1]
             end),
@@ -138,7 +140,7 @@ return {
     ),
     s(
         { trig = '(%a)_(%d%d)', regTrig = true, snippetType = 'autosnippet', dscr = 'auto subscript for 2+ digits' },
-        fmta([[<>_{<>} ]], {
+        fmta([[<>_{<>}]], {
             f(function(_, snip)
                 return snip.captures[1]
             end),
