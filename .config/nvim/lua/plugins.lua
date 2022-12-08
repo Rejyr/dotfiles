@@ -346,7 +346,10 @@ return require('packer').startup(function(use)
                     lualine_b = {
                         'branch',
                         {
-                            require('grapple').key,
+                            function()
+                                local key = require('grapple').key()
+                                return '  [' .. key .. ']'
+                            end,
                             cond = require('grapple').exists,
                         },
                         'diff',
@@ -537,11 +540,12 @@ return require('packer').startup(function(use)
     use {
         'cbochs/grapple.nvim',
         config = function()
-            require('grapple').setup {
+            local grapple = require 'grapple'
+            grapple.setup {
                 setup = require('grapple.scope').fallback {
-                    require('grapple.scope').resolvers.lsp_fallback,
-                    require('grapple.scope').resolvers.git_fallback,
-                    require('grapple.scope').resolvers.static,
+                    grapple.resolvers.lsp_fallback,
+                    grapple.resolvers.git_fallback,
+                    grapple.resolvers.static,
                 },
             }
         end,
