@@ -1,8 +1,8 @@
-require 'dashboard'
-require 'options'
-require 'theme'
+require 'config.dashboard'
+require 'config.options'
+require 'config.theme'
 
 vim.defer_fn(function()
-    require 'mappings'
-    require 'plugins'
+    require 'config.mappings'
+    require 'config.plugins'
 end, 100)

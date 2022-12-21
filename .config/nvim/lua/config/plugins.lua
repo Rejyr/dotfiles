@@ -130,17 +130,17 @@ return require('packer').startup(function(use)
     }
 
     -- colorful windows separator
-    use {
-        'nvim-zh/colorful-winsep.nvim',
-        config = function()
-            require('colorful-winsep').setup {
-                highlight = {
-                    guibg = '#2E3440',
-                    guifg = '#5E81AC',
-                },
-            }
-        end,
-    }
+    -- use {
+    --     'nvim-zh/colorful-winsep.nvim',
+    --     config = function()
+    --         require('colorful-winsep').setup {
+    --             highlight = {
+    --                 guibg = '#2E3440',
+    --                 guifg = '#5E81AC',
+    --             },
+    --         }
+    --     end,
+    -- }
 
     -- pretty stuff
     use {
@@ -626,6 +626,7 @@ return require('packer').startup(function(use)
                             return {
                                 exe = 'stylua',
                                 args = {
+                                    '-s',
                                     '-',
                                 },
                                 stdin = true,
