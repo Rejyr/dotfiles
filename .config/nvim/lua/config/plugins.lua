@@ -203,17 +203,6 @@ return {
     },
     'neovim/nvim-lspconfig',
     {
-        url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-        event = 'BufReadPre',
-        config = function()
-            local lsp_lines = require 'lsp_lines'
-            lsp_lines.setup()
-            vim.diagnostic.config {
-                virtual_text = false,
-            }
-        end,
-    },
-    {
         'saecki/crates.nvim',
         event = { 'BufRead Cargo.toml' },
         dependencies = { 'nvim-lua/plenary.nvim' },

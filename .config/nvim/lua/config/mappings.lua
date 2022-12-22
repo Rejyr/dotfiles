@@ -13,6 +13,7 @@ vim.opt.timeoutlen = 500
 local map = vim.keymap.set
 
 -- plugins
+---@diagnostic disable-next-line: different-requires
 local lazy = require 'lazy'
 local telescope = require 'telescope.builtin'
 local grapple = require 'grapple'
@@ -132,11 +133,7 @@ local leader = {
         ['2'] = { '<cmd>HopChar2<cr>', 'Hop to 2 Chars' },
     },
     l = {
-        function()
-            vim.diagnostic.config {
-                virtual_text = not require('lsp_lines').toggle(),
-            }
-        end,
+        require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
     },
     m = {
