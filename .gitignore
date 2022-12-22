@@ -1,2 +1,3 @@
 .config/plover/plover.log
 .config/plover/tapey_tape.txt
+.config/nvim/lua/config/plugins.lua
