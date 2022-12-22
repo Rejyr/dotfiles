@@ -1,57 +1,23 @@
--- Install packer
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]]
-
-return require('packer').startup(function(use)
-    -- package manager - packer
-    use 'wbthomason/packer.nvim'
-
-    -- speed up loading time
-    use {
-        'lewis6991/impatient.nvim',
-        config = function()
-            require 'impatient'
-        end,
-    }
-    use {
-        'nathom/filetype.nvim',
-        config = function()
-            require 'filetype'
-        end,
-    }
-
-    --
-    --
-    -- Games
-    --
-    --
-
-    use { 'alec-gibson/nvim-tetris', command = 'Tetris' }
-    use { 'ThePrimeagen/vim-be-good', command = 'VimBeGood' }
-    use { 'seandewar/nvimesweeper', command = 'Nvimesweeper' }
-    -- use { 'seandewar/killersheep.nvim', command = 'KillKillKill' }
-    -- use { 'rktjmp/shenzhen-solitaire.nvim', command = 'ShenzhenSolitaireNewGame' }
-
-    -- treesitter
-    use {
+return {
+    { 'wakatime/vim-wakatime', event = 'VeryLazy' },
+    'numToStr/FTerm.nvim',
+    'folke/which-key.nvim',
+    'DNLHC/glance.nvim',
+    'folke/lsp-colors.nvim',
+    'nvim-tree/nvim-web-devicons',
+    'RRethy/nvim-base16',
+    { 'shaunsingh/nord.nvim', lazy = false },
+    { 'machakann/vim-highlightedyank', event = 'VeryLazy' },
+    { 'alec-gibson/nvim-tetris', cmd = 'Tetris' },
+    { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
+    { 'seandewar/nvimesweeper', cmd = 'Nvimesweeper' },
+    {
         'nvim-treesitter/nvim-treesitter',
+        event = 'BufReadPost',
+        dependencies = {
+            'romgrk/nvim-treesitter-context',
+            'p00f/nvim-ts-rainbow',
+        },
         config = function()
             require('nvim-treesitter.configs').setup {
                 ensure_installed = {
@@ -89,17 +55,24 @@ return require('packer').startup(function(use)
                     -- termcolors = {} -- table of colour name strings
                 },
             }
+            require('treesitter-context').setup()
+            require('nvim-treesitter.configs').setup {
+                rainbow = {
+                    enable = true,
+                    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+                    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+                    -- colors = {}, -- table of hex strings
+                    -- termcolors = {} -- table of colour name strings
+                },
+            }
         end,
-        run = ':TSUpdate',
-    }
-
-    -- time tracking
-    use 'wakatime/vim-wakatime'
-
-    -- mini
-    use {
+        build = ':TSUpdate',
+    },
+    {
         'echasnovski/mini.nvim',
         branch = 'stable',
+        event = 'VeryLazy',
         config = function()
             -- surround
             require('mini.surround').setup()
@@ -110,16 +83,8 @@ return require('packer').startup(function(use)
             -- comment
             require('mini.comment').setup()
         end,
-    }
-
-    --
-    --
-    -- GUI
-    --
-    --
-
-    -- screensaver
-    use {
+    },
+    {
         'folke/drop.nvim',
         event = 'VimEnter',
         config = function()
@@ -127,25 +92,10 @@ return require('packer').startup(function(use)
                 theme = 'snow',
             }
         end,
-    }
-
-    -- colorful windows separator
-    -- use {
-    --     'nvim-zh/colorful-winsep.nvim',
-    --     config = function()
-    --         require('colorful-winsep').setup {
-    --             highlight = {
-    --                 guibg = '#2E3440',
-    --                 guifg = '#5E81AC',
-    --             },
-    --         }
-    --     end,
-    -- }
-
-    -- pretty stuff
-    use {
+    },
+    {
         'folke/noice.nvim',
-        event = 'VimEnter',
+        event = 'VeryLazy',
         config = function()
             require('noice').setup {
                 lsp = {
@@ -192,7 +142,7 @@ return require('packer').startup(function(use)
                 background_colour = '#1a1b26',
             }
         end,
-        requires = {
+        dependencies = {
             -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
             'MunifTanjim/nui.nvim',
             -- OPTIONAL:
@@ -200,48 +150,40 @@ return require('packer').startup(function(use)
             --   If not available, we use `mini` as the fallback
             'rcarriga/nvim-notify',
         },
-    }
-    use {
+    },
+    {
         'stevearc/dressing.nvim',
+        event = 'VeryLazy',
         config = function()
             require('dressing').setup()
         end,
-    }
-
-    -- highlight colors
-    use {
+    },
+    {
         'norcalli/nvim-colorizer.lua',
+        event = 'BufReadPre',
         config = function()
             require('colorizer').setup()
         end,
-    }
-
-    -- display marks
-    use {
+    },
+    {
         'chentoast/marks.nvim',
+        event = 'VeryLazy',
         config = function()
             require('marks').setup()
         end,
-    }
-
-    -- todo comment
-    use {
+    },
+    {
         'folke/todo-comments.nvim',
-        requires = 'nvim-lua/plenary.nvim',
+        cmd = { 'TodoTrouble', 'TodoTelescope' },
+        event = 'BufReadPost',
+        dependencies = 'nvim-lua/plenary.nvim',
         config = function()
             require('todo-comments').setup()
         end,
-    }
-
-    -- which key for commands
-    use {
-        'folke/which-key.nvim',
-        module = 'which-key',
-    }
-
-    -- show indent
-    use {
+    },
+    {
         'lukas-reineke/indent-blankline.nvim',
+        event = 'BufReadPre',
         config = function()
             vim.opt.list = true
             -- vim.opt.listchars:append 'space:⋅'
@@ -269,74 +211,43 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    -- function signature context
-    use {
-        'romgrk/nvim-treesitter-context',
-        after = 'nvim-treesitter',
-        requires = {
-            'nvim-treesitter/nvim-treesitter',
-        },
-        config = function()
-            require('treesitter-context').setup()
-        end,
-    }
-
-    -- tree view for symbols
-    use {
+    },
+    {
         'simrat39/symbols-outline.nvim',
-        command = 'SymbolsOutline',
+        cmd = 'SymbolsOutline',
         config = function()
             require('symbols-outline').setup()
             vim.g.symbols_outline = {
                 width = 50,
             }
         end,
-    }
-
-    -- floating terminal
-    use {
-        'numToStr/FTerm.nvim',
-        config = function() end,
-    }
-
-    -- filesystem
-    use {
+    },
+    {
         'nvim-tree/nvim-tree.lua',
-        command = {
-            'NvimTreeToggle',
+        cmd = {
+            'NvimTreeToggle', 'NvimTreeClose', 'NvimTreeRefresh',
         },
-        requires = {
+        dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
             require('nvim-tree').setup()
         end,
-    }
-
-    --
-    -- git
-    --
-
-    use {
+    },
+    {
         'lewis6991/gitsigns.nvim',
-        requires = {
+        event = 'BufReadPre',
+        dependencies = {
             'nvim-lua/plenary.nvim',
         },
         config = function()
             require('gitsigns').setup()
         end,
-        -- tag = 'release' -- To use the latest release
-    }
-
-    --
-    -- tab/status lines
-    --
-    -- statusline
-    use {
+    },
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', 'cbochs/grapple.nvim' },
+        event = 'VimEnter',
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'cbochs/grapple.nvim' },
         config = function()
             require('lualine').setup {
                 options = {
@@ -358,12 +269,11 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    -- tabline
-    use {
+    },
+    {
         'akinsho/bufferline.nvim',
-        requires = 'nvim-tree/nvim-web-devicons',
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        event = 'BufReadPre',
         config = function()
             require('bufferline').setup {
                 options = {
@@ -376,32 +286,10 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    --
-    --
-    -- Color
-    --
-    --
-
-    -- compatibility
-    use 'folke/lsp-colors.nvim'
-
-    -- icons
-    use 'nvim-tree/nvim-web-devicons'
-
-    -- colorschemes
-    use 'RRethy/nvim-base16'
-    use 'shaunsingh/nord.nvim'
-
-    --
-    --
-    -- eye candy
-    --
-    --
-    -- smooth scrolling
-    use {
+    },
+    {
         'karb94/neoscroll.nvim',
+        keys = { '<C-u>', '<C-d>', 'gg', 'G' },
         config = function()
             require('neoscroll').setup()
             local t = {}
@@ -418,68 +306,33 @@ return require('packer').startup(function(use)
 
             require('neoscroll.config').set_mappings(t)
         end,
-    }
-
-    -- rainbow parentheses
-    use {
-        'p00f/nvim-ts-rainbow',
-        requires = {
-            'nvim-treesitter/nvim-treesitter',
-        },
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                rainbow = {
-                    enable = true,
-                    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-                    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-                    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-                    -- colors = {}, -- table of hex strings
-                    -- termcolors = {} -- table of colour name strings
-                },
-            }
-        end,
-    }
-
-    --
-    -- highlight
-    --
-    -- highlight yank
-    use 'machakann/vim-highlightedyank'
-
-    --
-    --
-    -- Editor
-    --
-    --
-    -- move to directory
-    use {
+    },
+    {
         'notjedi/nvim-rooter.lua',
+        lazy = false,
         config = function()
             require('nvim-rooter').setup { manual = true }
         end,
-    }
-
-    use {
+    },
+    {
         'Rejyr/root-switcher.nvim',
         -- '~/Programming/NeovimProjects/root-switcher.nvim',
-        requires = { 'notjedi/nvim-rooter.lua' },
+        lazy = false,
+        dependencies = { 'notjedi/nvim-rooter.lua' },
         config = function()
             require('root-switcher').setup {
                 starting_mode = 'project',
                 project_root = require('nvim-rooter').get_root,
             }
         end,
-    }
-
-    -- tidy whitespace
-    use {
+    },
+    {
         'McAuleyPenney/tidy.nvim',
         event = 'BufWritePre',
-    }
-
-    -- jump to matching character
-    use {
+    },
+    {
         'andymass/vim-matchup',
+        event = 'BufReadPost',
         config = function()
             require('nvim-treesitter.configs').setup {
                 matchup = {
@@ -487,20 +340,17 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    -- markdown preview
-    use {
+    },
+    {
         'toppair/peek.nvim',
-        run = 'deno task --quiet build:fast',
+        cmd = { 'PeekOpen', 'PeekClose' },
+        build = 'deno task --quiet build:fast',
         config = function()
             vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
             vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
         end,
-    }
-
-    -- latex editing and preview
-    use {
+    },
+    {
         'lervag/vimtex',
         ft = 'tex',
         config = function()
@@ -510,20 +360,18 @@ return require('packer').startup(function(use)
             vim.g.conceallevel = 1
             vim.g.tex_conceal = 'abdmg'
         end,
-    }
-
-    -- open file at last place
-    use {
+    },
+    {
         'ethanholz/nvim-lastplace',
+        event = 'BufReadPre',
         config = function()
             require('nvim-lastplace').setup()
         end,
-    }
-
-    -- session management
-    use {
+    },
+    {
         'rmagatti/auto-session',
-        requires = { 'rmagatti/session-lens', module = 'session-lens' },
+        lazy = false,
+        dependencies = { 'rmagatti/session-lens' },
         config = function()
             vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
             require('auto-session').setup {
@@ -534,11 +382,10 @@ return require('packer').startup(function(use)
             }
             require('session-lens').setup { theme_conf = { winblend = nil } }
         end,
-    }
-
-    -- navigation
-    use {
+    },
+    {
         'cbochs/grapple.nvim',
+        event = 'BufReadPre',
         config = function()
             local grapple = require 'grapple'
             grapple.setup {
@@ -549,22 +396,20 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    -- better registers
-    use {
+    },
+    {
         'AckslD/nvim-neoclip.lua',
-        requires = { 'nvim-telescope/telescope.nvim' },
+        event = 'VeryLazy',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
         config = function()
             require('neoclip').setup()
             require('telescope').load_extension 'neoclip'
         end,
-    }
-
-    -- tabout
-    use {
+    },
+    {
         'abecodes/tabout.nvim',
         branch = 'master',
+        event = 'InsertEnter',
         config = function()
             require('tabout').setup {
                 tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
@@ -587,22 +432,18 @@ return require('packer').startup(function(use)
         end,
         wants = { 'nvim-treesitter' }, -- or require if not used so far
         after = { 'nvim-cmp' }, -- if a completion plugin is using tabs load it before
-    }
-
-    -- vscode ui style renamer
-    use {
+    },
+    {
         'filipdutescu/renamer.nvim',
         branch = 'master',
-        module = 'renamer',
         nequires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('renamer').setup {}
         end,
-    }
-
-    -- Formmater
-    use {
+    },
+    {
         'mhartington/formatter.nvim',
+        cmd = 'Format',
         config = function()
             -- keybind
             local util = require 'formatter.util'
@@ -655,65 +496,46 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    -- movement
-    use {
+    },
+    {
         'phaazon/hop.nvim',
         branch = 'v1', -- optional but strongly recommended
+        event = 'VeryLazy',
         config = function()
             require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
         end,
-    }
-
-    -- Fuzzy Finder
-    use {
+    },
+    {
         'nvim-telescope/telescope.nvim',
-        module = 'telescope',
-        requires = { 'nvim-lua/plenary.nvim' },
-    }
-
-    --
-    --
-    -- lsp/language
-    --
-    --
-    -- lightbulb for code actions
-    use {
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+    {
         'kosayoda/nvim-lightbulb',
+        event = 'BufReadPre',
         config = function()
             vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
         end,
-    }
-
-    -- show diagnosticsc / lsp stuff
-    use {
+    },
+    {
         'folke/trouble.nvim',
         event = 'BufReadPre',
-        module = 'trouble',
         cmd = { 'TroubleToggle', 'Trouble' },
         config = function()
             require('trouble').setup()
         end,
-    }
-
-    -- install lsp servers
-    use {
+    },
+    {
         'williamboman/mason.nvim',
-        after = 'nvim-lspconfig',
-        requires = {
+        event = 'BufReadPre',
+        dependencies = {
             'neovim/nvim-lspconfig',
+            'williamboman/mason-lspconfig.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
         },
         config = function()
             require('mason').setup {
                 providers = { 'mason.providers.client' },
             }
-        end,
-    }
-    use {
-        'williamboman/mason-lspconfig.nvim',
-        after = 'mason-tool-installer.nvim',
-        config = function()
             require('mason-lspconfig').setup {
                 ensure_installed = {
                     'bashls',
@@ -747,12 +569,7 @@ return require('packer').startup(function(use)
                     }
                 end,
             }
-        end,
-    }
-    use {
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
-        after = 'mason.nvim',
-        config = function()
+
             require('mason-tool-installer').setup {
                 ensure_installed = {
                     'autopep8',
@@ -762,10 +579,11 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    use {
+    },
+    'neovim/nvim-lspconfig',
+    {
         'klen/nvim-config-local',
+        event = 'BufReadPre',
         config = function()
             require('config-local').setup {
                 -- Default configuration (optional)
@@ -777,19 +595,10 @@ return require('packer').startup(function(use)
                 lookup_parents = false, -- Lookup config files in parent directories
             }
         end,
-    }
-
-    -- Collection of common configurations for the Nvim LSP client
-    use {
-        'neovim/nvim-lspconfig',
-    }
-
-    -- Fancier lsp previews
-    use { 'DNLHC/glance.nvim', module = 'glance' }
-
-    -- lsp virtual text
-    use {
-        'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    },
+    {
+        url = 'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+        event = 'BufReadPre',
         config = function()
             local lsp_lines = require 'lsp_lines'
             lsp_lines.setup()
@@ -797,11 +606,10 @@ return require('packer').startup(function(use)
                 virtual_text = false,
             }
         end,
-    }
-
-    -- inlay hints
-    use {
+    },
+    {
         'lvimuser/lsp-inlayhints.nvim',
+        event = 'BufReadPre',
         config = function()
             require('lsp-inlayhints').setup()
             vim.api.nvim_create_augroup('LspAttach_inlayhints', {})
@@ -818,13 +626,11 @@ return require('packer').startup(function(use)
                 end,
             })
         end,
-    }
-
-    -- Autocompletion framework
-    use {
+    },
+    {
         'hrsh7th/nvim-cmp',
-        after = 'nvim-lspconfig',
-        requires = {
+        event = 'VimEnter',
+        dependencies = {
             { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
             { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
@@ -957,26 +763,17 @@ return require('packer').startup(function(use)
                 },
             })
         end,
-    }
-
-    --
-    -- Rust
-    --
-
-    -- help manage rust depedencies
-    use {
+    },
+    {
         'saecki/crates.nvim',
         event = { 'BufRead Cargo.toml' },
-        requires = { 'nvim-lua/plenary.nvim' },
+        dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             require('crates').setup()
         end,
-    }
-
-    -- Adds extra functionality over rust analyzer
-    use {
+    },
+    {
         'simrat39/rust-tools.nvim',
-        requires = { 'neovim/nvim-lspconfig' },
         ft = 'rust',
         config = function()
             require('rust-tools').setup {
@@ -1016,9 +813,5 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+    },
+}

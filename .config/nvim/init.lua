@@ -1,8 +1,11 @@
-require 'config.dashboard'
 require 'config.options'
+require 'config.lazy'
+require 'config.dashboard'
 require 'config.theme'
 
-vim.defer_fn(function()
-    require 'config.mappings'
-    require 'config.plugins'
-end, 100)
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("config.mappings")
+  end,
+})

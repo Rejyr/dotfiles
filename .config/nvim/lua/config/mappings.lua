@@ -13,8 +13,8 @@ vim.opt.timeoutlen = 500
 local map = vim.keymap.set
 
 -- plugins
+local lazy = require 'lazy'
 local telescope = require 'telescope.builtin'
-local packer = require 'packer'
 local grapple = require 'grapple'
 require('glance').setup()
 
@@ -175,11 +175,10 @@ local leader = {
         },
     },
     p = {
-        name = '+packer',
-        p = { packer.sync, 'Sync' },
-        s = { packer.status, 'Status' },
-        i = { packer.install, 'Install' },
-        c = { packer.compile, 'Compile' },
+        name = '+plugin manager',
+        p = { lazy.home, 'Home' },
+        s = { lazy.sync, 'Sync' },
+        r = { lazy.check, 'Check' },
     },
     q = {
         name = '+quit/session',
