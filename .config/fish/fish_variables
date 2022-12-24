@@ -37,6 +37,7 @@ SETUVAR _fish_abbr_ct:cargo\x20nextest\x20run
 SETUVAR _fish_abbr_ctn:cargo\x20nextest\x20run\x20\x2d\x2dno\x2ddefault\x2dfeatures
 SETUVAR _fish_abbr_cto:cargo\x20test\x20\x2d\x2d\x20\x2d\x2dshow\x2doutput
 SETUVAR _fish_abbr_gp:git\x20push
+SETUVAR _fish_abbr_j:joshuto
 SETUVAR _fish_abbr_l:exa\x20\x2d\x2dlong\x20\x2d\x2dgroup\x20\x2d\x2dicons
 SETUVAR _fish_abbr_la:exa\x20\x2d\x2dlong\x20\x2d\x2dall\x20\x2d\x2dgroup
 SETUVAR _fish_abbr_ll:exa\x20\x2d\x2dlong\x20\x2d\x2dall\x20\x2d\x2dgroup\x20\x2d\x2dicons
