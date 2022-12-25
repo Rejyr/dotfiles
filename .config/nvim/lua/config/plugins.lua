@@ -6,7 +6,6 @@ return {
     'folke/lsp-colors.nvim',
     'nvim-tree/nvim-web-devicons',
     'RRethy/nvim-base16',
-    { 'shaunsingh/nord.nvim', lazy = false },
     { 'machakann/vim-highlightedyank', event = 'VeryLazy' },
     { 'alec-gibson/nvim-tetris', cmd = 'Tetris' },
     { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },

@@ -38,50 +38,43 @@
 
 /* COLORS */
 
-@define-color nord0 #2E3440;
-@define-color nord1 #3B4252;
-@define-color nord2 #434C5E;
-@define-color nord3 #4C566A;
-@define-color nord4 #D8DEE9;
-@define-color nord5 #E5E9F0;
-@define-color nord6 #ECEFF4;
-@define-color nord7 #8FBCBB;
-@define-color nord8 #88C0D0;
-@define-color nord9 #81A1C1;
-@define-color nord10 #5E81AC;
-@define-color nord11 #BF616A;
-@define-color nord12 #D08770;
-@define-color nord13 #EBCB8B;
-@define-color nord14 #A3BE8C;
-@define-color nord15 #B48EAD;
+@define-color bg0 #2D353B;
+@define-color bg3 #475258;
+@define-color fg #ECEFF4;
+@define-color red #BF616A;
+@define-color orange #D08770;
+@define-color yellow #EBCB8B;
+@define-color green #A3BE8C;
+@define-color aqua #83C092;
+@define-color blue #7FBBB3;
+@define-color purple #D699B6;
 
-/* Nord */
-@define-color light @nord6;
-@define-color dark @nord0;
-@define-color warning @nord13;
-@define-color critical @nord12;
+@define-color light @fg;
+@define-color dark @bg0;
+@define-color warning @yellow;
+@define-color critical @orange;
 @define-color background @dark;
-/* @define-color background rgba(46, 52, 64, 0.5); */
+@define-color background_transparent rgba(45, 53, 59, 0.8);
 
-@define-color mode @nord3;
+@define-color mode @bg3;
 
-@define-color cpu @nord10;
-@define-color memory @nord9;
-@define-color temp @nord8;
-@define-color disk @nord9;
-@define-color network @nord10;
-@define-color keyboard-layout @nord9;
-@define-color updates @nord8;
+@define-color cpu @red;
+@define-color memory @orange;
+@define-color temp @yellow;
+@define-color disk @green;
+@define-color network @aqua;
+@define-color keyboard-layout @green;
+@define-color updates @aqua;
 
-@define-color workspaces @nord10;
-@define-color workspacesfocused @nord8;
+@define-color workspaces @aqua;
+@define-color workspaces_focused @green;
 
-@define-color weather @nord8;
-@define-color backlight @nord9;
-@define-color sound @nord10;
-@define-color date @nord8;
-@define-color time @nord9;
-@define-color battery @nord10;
+@define-color weather @blue;
+@define-color backlight @aqua;
+@define-color sound @green;
+@define-color date @yellow;
+@define-color time @orange;
+@define-color battery @red;
 
 /* Gruvbox */
 /* @define-color light #ebdbb2; */
@@ -90,7 +83,7 @@
 /* @define-color critical #cc241d; */
 /* @define-color mode #a89984; */
 /* @define-color workspaces #458588; */
-/* @define-color workspacesfocused #83a598; */
+/* @define-color workspaces_focused #83a598; */
 /* @define-color sound #d3869b; */
 /* @define-color network #b16286; */
 /* @define-color memory #8ec07c; */
@@ -112,7 +105,7 @@
 
 /* The whole bar */
 #waybar {
-  background: @background;
+  background: @background_transparent;
   color: @light;
   font-family: Iosevka;
   font-size: 15pt;
@@ -268,13 +261,13 @@ button:disabled {
 }
 
 #workspaces button.focused {
-  color: @workspacesfocused;
+  color: @workspaces_focused;
   border-bottom: 2px;
   border-style: solid;
 }
 
 #workspaces button:hover {
-  background: @nord3;
+  background: @bg3;
 }
 
 /*#workspaces button.urgent {

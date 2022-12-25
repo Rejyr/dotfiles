@@ -16,7 +16,7 @@ configuration {
 * {
     fonts:                      "Iosevka 12";
 }
-@import                         "~/.config/rofi/nord.rasi"
+@import                         "~/.config/rofi/everforest.rasi"
 
 * {
     border-colour:               var(selected);

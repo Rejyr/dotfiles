@@ -5,33 +5,24 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Colors
-set $nord0 #2E3440
-set $nord1 #3B4252
-set $nord2 #434C5E
-set $nord3 #4C566A
-set $nord4 #D8DEE9
-set $nord5 #E5E9F0
-set $nord6 #ECEFF4
-set $nord7 #8FBCBB
-set $nord8 #88C0D0
-set $nord9 #81A1C1
-set $nord10 #5E81AC
-set $nord11 #BF616A
-set $nord12 #D08770
-set $nord13 #EBCB8B
-set $nord14 #A3BE8C
-set $nord15 #B48EAD
+set $bg0 #2D353B
+set $bg1 #343F44
+set $bg2 #3D484D
+set $bg3 #475258
+set $fg0 #F1E4C5
+set $fg1 #D3C6AA
+set $red #BF616A
 
-set $background $nord0
-set $foreground $nord5
-set $border $nord2
+set $background $bg0
+set $foreground $fg0
+set $border $bg2
 
 # client.<class> border background text indicator child_border
-client.focused $nord2 $nord0 $nord5 $nord5 $nord2
-client.focused_inactive $nord1 $nord3 $nord4 $nord4 $nord1
-client.focused_tab_title $nord1 $nord3 $nord4 $nord4 $nord1
-client.unfocused $nord1 $nord3 $nord4 $nord4 $nord1
-client.urgent $nord1 $nord11 $foreground $background $nord11
+client.focused $bg2 $bg0 $foreground $foreground $bg2
+client.focused_inactive $bg1 $bg3 $fg1 $fg1 $bg1
+client.focused_tab_title $bg1 $bg3 $fg1 $fg1 $bg1
+client.unfocused $bg1 $bg3 $fg1 $fg1 $bg1
+client.urgent $bg1 $red $foreground $background $red
 
 
 ### Startup

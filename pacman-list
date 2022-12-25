@@ -58,7 +58,6 @@ ifplugd
 jdk8-openjdk
 jq
 jre-openjdk
-kvantum
 libtool
 linux
 linux-firmware
@@ -70,7 +69,6 @@ man-db
 mpc
 mpd
 mpv
-nautilus
 ncmpcpp
 neofetch
 neovim
@@ -146,5 +144,7 @@ wl-clipboard
 wmname
 xdg-desktop-portal-wlr
 youtube-dl
+zathura
+zathura-pdf-mupdf
 zellij
 zoxide

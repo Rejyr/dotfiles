@@ -31,7 +31,7 @@ configuration {
 }
 
 /*****----- Colors -----*****/ 
-@import "~/.config/rofi/nord.rasi"
+@import "~/.config/rofi/everforest.rasi"
 
 /*****----- Main Window -----*****/
 window {
