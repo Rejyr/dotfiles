@@ -18,7 +18,7 @@ beautifulsoup4==4.11.1
 biscuits==0.3.0
 bleach==5.0.1
 Brotli==1.0.9
-btrfsutil==6.0.2
+btrfsutil==6.1
 build==0.9.0
 CacheControl==0.12.11
 cachy==0.3.0
@@ -101,7 +101,7 @@ numpy==1.23.5
 ordered-set==4.1.0
 orjson==3.8.3
 packaging==21.3
-pandas==1.5.1
+pandas==1.5.2
 pastel==0.2.1
 pathvalidate==2.5.2
 pbr==5.11.0
