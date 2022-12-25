@@ -11,15 +11,6 @@ return {
     { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
     { 'seandewar/nvimesweeper', cmd = 'Nvimesweeper' },
     {
-        'folke/drop.nvim',
-        event = 'VimEnter',
-        config = function()
-            require('drop').setup {
-                theme = 'snow',
-            }
-        end,
-    },
-    {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
         config = function()
