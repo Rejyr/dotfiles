@@ -12,9 +12,7 @@ function M.config()
         auto_session_suppress_dirs = { '~/', '~/Downloads', '/', '/tmp' },
         pre_save_cmds = { 'NvimTreeClose', 'cclose' },
         post_restore_cmds = { 'NvimTreeRefresh' },
-        auto_session_enabled = false,
-        auto_save_enabled = true,
-        auto_restore_enabled = false,
+        auto_session_create_enabled = false,
     }
     require('session-lens').setup { theme_conf = { winblend = nil } }
 end

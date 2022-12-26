@@ -81,7 +81,7 @@ return {
     },
     {
         'Rejyr/root-switcher.nvim',
-        -- '~/Programming/NeovimProjects/root-switcher.nvim',
+        -- dir = '~/Programming/NeovimProjects/root-switcher.nvim',
         lazy = false,
         dependencies = { 'notjedi/nvim-rooter.lua' },
         config = function()
@@ -171,10 +171,6 @@ return {
         config = function()
             require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
         end,
-    },
-    {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
     },
     {
         'kosayoda/nvim-lightbulb',

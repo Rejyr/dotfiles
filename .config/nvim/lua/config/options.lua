@@ -29,6 +29,9 @@ end
 -- Avoid showing extra messages when using completion 'c'
 vim.o.shortmess = 'filnxtToOFIc'
 
+-- no command height
+vim.o.cmdheight = 0
+
 -- termgui colors
 vim.opt.termguicolors = true
 

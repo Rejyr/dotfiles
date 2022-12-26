@@ -9,18 +9,6 @@ function M.config()
     vim.diagnostic.config {
         virtual_text = false,
     }
-
-    -- disable in lazy
-    vim.api.nvim_create_augroup('LspLines', {})
-    vim.api.nvim_create_autocmd('BufReadPre lazy', {
-        group = 'LspLines',
-        callback = function(args)
-            vim.diagnostic.config {
-                virtual_text = true,
-                virtual_lines = false,
-            }
-        end,
-    })
 end
 
 function M.toggle()
