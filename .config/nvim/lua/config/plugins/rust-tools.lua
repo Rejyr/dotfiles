@@ -31,6 +31,7 @@ function M.config()
                         checkOnSave = {
                             command = 'clippy',
                         },
+                        inlayHints = { locationLinks = false },
 
                         -- linkedProjects = {
                         --     [[{"sysroot_src": "/home/rejyr/.rustup/toolchains/1.41.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"}]],
