@@ -69,16 +69,17 @@ local non_leader = {
     g = {
         name = '+lsp',
         a = { vim.lsp.buf.code_action, 'Code Action' },
+        f = { '<CMD>Lspsaga lsp_finder<CR>', 'Definition and References' },
         d = { '<CMD>Glance definitions<CR>', 'Definition' },
         D = { '<CMD>Glance type_definitions<CR>', 'Type Definition' },
         i = { '<CMD>Glance implementations<CR>', 'Implementation' },
         r = { '<CMD>Glance references<CR>', 'References' },
         W = { telescope.lsp_workspace_symbols, 'Workspace Symbols' },
         ['0'] = { telescope.lsp_document_symbols, 'Document Symbols' },
-        ['['] = { vim.diagnostic.goto_prev, 'Goto Previous Diagnostic' },
-        [']'] = { vim.diagnostic.goto_next, 'Goto Next Diagnostic' },
+        ['['] = { '<CMD>Lspsaga diagnostic_jump_prev<CR>', 'Goto Previous Diagnostic' },
+        [']'] = { '<CMD>Lspsaga diagnostic_jump_next<CR>', 'Goto Next Diagnostic' },
     },
-    K = { vim.lsp.buf.hover, 'Lsp Hover' },
+    K = { '<CMD>Lspsaga hover_doc<CR>', 'Lsp Hover' },
 }
 
 local leader = {
@@ -92,6 +93,7 @@ local leader = {
         ['D'] = { '<cmd>:bd<CR>', 'Delete Buffer & Window' },
     },
     c = { '<cmd>Telescope neoclip<CR>', 'Copy Registers' },
+    cd = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
     f = {
         name = '+file/format',
         mt = { '<cmd>Format<CR>', 'Format' },

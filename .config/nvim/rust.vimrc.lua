@@ -2,7 +2,6 @@ require('rust-tools').setup {
     server = {
         settings = {
             ['rust-analyzer'] = {
-                inlayHints = { locationLinks = false },
                 checkOnSave = {
                     overrideCommand = { 'python3', 'x.py', 'check', '--json-output' },
                 },
