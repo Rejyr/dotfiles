@@ -93,7 +93,7 @@ local leader = {
         ['D'] = { '<cmd>:bd<CR>', 'Delete Buffer & Window' },
     },
     c = { '<cmd>Telescope neoclip<CR>', 'Copy Registers' },
-    cd = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
+    d = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
     f = {
         name = '+file/format',
         mt = { '<cmd>Format<CR>', 'Format' },

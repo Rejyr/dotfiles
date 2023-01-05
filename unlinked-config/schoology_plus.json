@@ -1,0 +1,72 @@
+{
+    "name": "Everforest",
+    "version": 2,
+    "color": {
+        "custom": {
+            "primary": "#425047",
+            "hover": "#3d484d",
+            "background": "#2d353b",
+            "border": "#3d484d",
+            "link": "#7fbbb3"
+        },
+        "modern": {
+            "dark": true,
+            "interface": {
+                "primary": "#425047",
+                "accent": "#3d484d",
+                "secondary": "#232a2e",
+                "input": "#3d484d",
+                "border": "#dcddde",
+                "highlight": "rgba(184, 134, 11, 0.2)",
+                "active": "rgba(0, 255, 255, 0.1)",
+                "grades": "#a7c080",
+                "error": "#e67e80"
+            },
+            "calendar": [
+                "#457da5",
+                "#547c41",
+                "#926c37",
+                "#7c3d6b",
+                "#0b4c9c",
+                "#00209c",
+                "#004a09",
+                "#72721a",
+                "#44233e",
+                "#683131",
+                "#770a0a",
+                "#a72413",
+                "#e0024c",
+                "#188c16",
+                "#bd7304",
+                "#80168c",
+                "#164152",
+                "#00543f",
+                "#633e11",
+                "#461b2d",
+                "#00427c",
+                "#603073",
+                "#8b1941",
+                "#970c0c",
+                "#9c3b07",
+                "#685203",
+                "#2a5f16",
+                "#09584f",
+                "#005a75",
+                "#4d5557"
+            ],
+            "text": {
+                "primary": "#d3c6aa",
+                "muted": "#859289",
+                "contrast": "#d3c6aa"
+            },
+            "options": {
+                "borderRadius": 5,
+                "borderSize": 1,
+                "padding": 10
+            }
+        }
+    },
+    "logo": {
+        "preset": "schoology_logo"
+    }
+}
