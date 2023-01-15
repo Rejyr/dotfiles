@@ -1,3 +1,4 @@
+airshipper
 anki-bin
 ansiweather
 auto-cpufreq
@@ -6,6 +7,7 @@ cbonsai
 celt
 cpp-taskflow
 electron13
+electron18
 httpdirfs
 jarowinkler-cpp
 joshuto
@@ -26,6 +28,7 @@ python-colored
 python-dacite
 python-install
 python-pathvalidate
+python-pep517
 python-plover_stroke
 python-pytube
 python-requests-cache

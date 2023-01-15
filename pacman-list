@@ -43,6 +43,7 @@ gettext
 ghostscript
 git
 git-delta
+git-lfs
 github-cli
 gitui
 gnome-multi-writer
@@ -50,6 +51,7 @@ grep
 grim
 groff
 grub
+gtk-engine-murrine
 gzip
 hdparm
 htop
@@ -97,6 +99,7 @@ playerctl
 python-pip
 python-pywal
 qbittorrent
+qgnomeplatform-qt5
 qt5-wayland
 qt6-wayland
 ripgrep
