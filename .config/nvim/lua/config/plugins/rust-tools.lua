@@ -22,7 +22,7 @@ function M.config()
             settings = {
                 ['rust-analyzer'] = {
                     -- enable clippy on save
-                    checkOnSave = {
+                    check = {
                         command = 'clippy',
                     },
                     inlayHints = { locationLinks = false },

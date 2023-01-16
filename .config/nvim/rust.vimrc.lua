@@ -2,7 +2,7 @@ require('rust-tools').setup {
     server = {
         settings = {
             ['rust-analyzer'] = {
-                checkOnSave = {
+                check = {
                     overrideCommand = { 'python3', 'x.py', 'check', '--json-output' },
                 },
                 rustfmt = {
