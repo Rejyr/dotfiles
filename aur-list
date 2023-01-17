@@ -39,6 +39,7 @@ python-spotipy
 python-timeout-decorator
 python-url-normalize
 python-ytmusicapi
+qt5-styleplugins
 rofi-lbonn-wayland
 soundcloud-dl
 swaync

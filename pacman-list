@@ -43,7 +43,6 @@ gettext
 ghostscript
 git
 git-delta
-git-lfs
 github-cli
 gitui
 gnome-multi-writer
@@ -101,6 +100,7 @@ python-pywal
 qbittorrent
 qgnomeplatform-qt5
 qt5-wayland
+qt5ct
 qt6-wayland
 ripgrep
 sed
