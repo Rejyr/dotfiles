@@ -13,32 +13,24 @@ return {
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
-        config = function()
-            require('dressing').setup()
-        end,
+        config = true,
     },
     {
         'norcalli/nvim-colorizer.lua',
         event = 'BufReadPre',
-        config = function()
-            require('colorizer').setup()
-        end,
+        config = true,
     },
     {
         'chentoast/marks.nvim',
         event = 'VeryLazy',
-        config = function()
-            require('marks').setup()
-        end,
+        config = true,
     },
     {
         'folke/todo-comments.nvim',
         cmd = { 'TodoTrouble', 'TodoTelescope' },
         event = 'BufReadPost',
         dependencies = 'nvim-lua/plenary.nvim',
-        config = function()
-            require('todo-comments').setup()
-        end,
+        config = true,
     },
     {
         'simrat39/symbols-outline.nvim',
@@ -53,14 +45,14 @@ return {
     {
         'nvim-tree/nvim-tree.lua',
         cmd = {
-            'NvimTreeToggle', 'NvimTreeClose', 'NvimTreeRefresh',
+            'NvimTreeToggle',
+            'NvimTreeClose',
+            'NvimTreeRefresh',
         },
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
-        config = function()
-            require('nvim-tree').setup()
-        end,
+        config = true,
     },
     {
         'lewis6991/gitsigns.nvim',
@@ -68,16 +60,12 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
         },
-        config = function()
-            require('gitsigns').setup()
-        end,
+        config = true,
     },
     {
         'notjedi/nvim-rooter.lua',
         lazy = false,
-        config = function()
-            require('nvim-rooter').setup { manual = true }
-        end,
+        opt = { manual = true },
     },
     {
         'Rejyr/root-switcher.nvim',
@@ -129,9 +117,7 @@ return {
     {
         'ethanholz/nvim-lastplace',
         event = 'BufReadPre',
-        config = function()
-            require('nvim-lastplace').setup()
-        end,
+        config = true,
     },
     {
         'cbochs/grapple.nvim',
@@ -160,17 +146,15 @@ return {
         'filipdutescu/renamer.nvim',
         branch = 'master',
         nequires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require('renamer').setup {}
-        end,
+        config = true,
     },
     {
         'phaazon/hop.nvim',
         branch = 'v1', -- optional but strongly recommended
         event = 'VeryLazy',
-        config = function()
-            require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-        end,
+        opt = {
+            keys = 'etovxqpdygfblzhckisuran',
+        },
     },
     {
         'kosayoda/nvim-lightbulb',
@@ -183,17 +167,13 @@ return {
         'folke/trouble.nvim',
         event = 'BufReadPre',
         cmd = { 'TroubleToggle', 'Trouble' },
-        config = function()
-            require('trouble').setup()
-        end,
+        config = true,
     },
     'neovim/nvim-lspconfig',
     {
         'saecki/crates.nvim',
         event = { 'BufRead Cargo.toml' },
         dependencies = { 'nvim-lua/plenary.nvim' },
-        config = function()
-            require('crates').setup()
-        end,
+        config = true,
     },
 }
