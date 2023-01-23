@@ -12,6 +12,9 @@ function M.config()
             enable = false,
         },
         ui = {
+            theme = 'round',
+            border = 'rounded',
+            winblend = 0,
             colors = {
                 --float window normal bakcground color
                 normal_bg = colors.bg1,

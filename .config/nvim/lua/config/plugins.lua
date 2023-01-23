@@ -143,6 +143,14 @@ return {
         end,
     },
     {
+        'danielfalk/smart-open.nvim',
+        branch = '0.1.x',
+        dependencies = { 'kkharji/sqlite.lua' },
+        config = function()
+            require('telescope').load_extension 'smart_open'
+        end,
+    },
+    {
         'filipdutescu/renamer.nvim',
         branch = 'master',
         nequires = { 'nvim-lua/plenary.nvim' },

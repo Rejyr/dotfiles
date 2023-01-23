@@ -99,7 +99,7 @@ local leader = {
         mt = { '<cmd>Format<CR>', 'Format' },
         t = { '<cmd>NvimTreeToggle<cr>', 'NvimTree' },
         n = { '<cmd>enew<cr>', 'New File' },
-        r = { telescope.old_files, 'Open Recent File' },
+        r = { require('telescope').extensions.smart_open.smart_open, 'Open Recent File' },
         f = { telescope.find_files, 'Find File' },
         h = { '<cmd>Telescope find_files hidden=true<cr>', 'Find Hidden File' },
     },
