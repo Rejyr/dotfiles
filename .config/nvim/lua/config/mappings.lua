@@ -93,7 +93,28 @@ local leader = {
         ['D'] = { '<cmd>:bd<CR>', 'Delete Buffer & Window' },
     },
     c = { '<cmd>Telescope neoclip<CR>', 'Copy Registers' },
-    d = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
+    dd = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
+    d = {
+        name = 'Debug',
+        b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", 'Toggle Breakpoint' },
+        C = { "<CMD>lua require('dap').clear_breakpoints()<CR>", 'Clear Breakpoints' },
+        c = { "<cmd>lua require('dap').continue()<CR>", 'Continue' },
+        v = { "<cmd>lua require('dap').step_over()<CR>", 'Step Over' },
+        i = { "<cmd>lua require('dap').step_into()<CR>", 'Step Into' },
+        o = { "<cmd>lua require('dap').step_out()<CR>", 'Step Out' },
+        h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", 'Hover' },
+        r = { "<cmd>lua require('dap').repl.open()<CR>", 'Repl' },
+        u = { "<cmd>lua require('dapui').toggle()<CR>", 'Ui'},
+        e = {
+            function()
+                require('dap').clear_breakpoints()
+                require('dapui').toggle {}
+                require('dap').terminate()
+                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>=', false, true, true), 'n', false)
+            end,
+            'End Debug Session',
+        },
+    },
     f = {
         name = '+file/format',
         mt = { '<cmd>Format<CR>', 'Format' },

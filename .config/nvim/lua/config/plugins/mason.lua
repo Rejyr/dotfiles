@@ -60,6 +60,7 @@ function M.config()
     require('mason-tool-installer').setup {
         ensure_installed = {
             'autopep8',
+            'clang-format',
             'prettier',
             'stylua',
             'selene',
