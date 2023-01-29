@@ -1,5 +1,5 @@
 function rcpp
 	set file $argv[1]
 	set output (echo $argv[1] | sed 's/\.cpp//;s/\.c++//')
-	g++ $file -g -o $output && ./$output
+	g++ $file -std=c++17 -fsanitize=undefined -fsanitize=address -Wall -Wextra -Wshadow -Wconversion -Wfloat-equal -Wduplicated-cond -Wlogical-op -g -O2 -o $output && ./$output
 end
