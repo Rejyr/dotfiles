@@ -103,10 +103,10 @@
             "format": "<span style=\"italic\">{}</span>"
         },
 	"network": {
-                "format": "⚠ Disabled",
-                "format-wifi": " {essid}",
-                "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-                "format-disconnected": "⚠ Disconnected",
+                "format": "⚠  Disabled",
+                "format-wifi": "  {essid}",
+                "format-ethernet": "  {ifname}: {ipaddr}/{cidr}",
+                "format-disconnected": "⚠  Disconnected",
                 "on-click": "alacritty -e nmcli",
 		"tooltip": false,
 	},
@@ -124,8 +124,8 @@
                 "critical": 20
             },
             "format": "{icon} {capacity}%",
-            "format-charging": " {capacity}%",
-            "format-plugged": " {capacity}%",
+            "format-charging": "  {capacity}%",
+            "format-plugged": "  {capacity}%",
             "format-alt": "{time} {icon}",
             "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
             // "format-icons": ["", "", "", "", ""]
@@ -136,25 +136,25 @@
 	},
         "clock#time": {
             "interval": 1,
-            "format": " {:%H:%M}",
-            "format-alt": " {:%H:%M:%S}",
+            "format": "  {:%H:%M}",
+            "format-alt": "  {:%H:%M:%S}",
             "tooltip-format": "{:%H:%M:%S}",
         },
         "clock#date": {
             "interval": 60,
-            "format": " {:%m-%d-%Y}",
-            "format-alt": " {:%A %B %d %Y}",
+            "format": "  {:%m-%d-%Y}",
+            "format-alt": "  {:%A %B %d %Y}",
             "tooltip-format": "{:%A %B %d %Y}",
         },
         "cpu": {
             "interval": 15,
-            "format": " {usage}%",
+            "format": "  {usage}%",
             "max-length": 10,
             "on-click": "alacritty -e btop",
         },
         "memory": {
             "interval": 30,
-            "format": " {}%",
+            "format": "  {}%",
             "max-length": 10,
             "on-click": "alacritty -e btop",
         },
@@ -173,8 +173,8 @@
             "on-click": "alacritty -e btop",
         },
         "custom/weather":{
-            "format": "{}",
-            "format-alt": "{alt}: {}",
+            "format": "{} ",
+            "format-alt": "{alt}: {} ",
             "format-alt-click": "click-right",
             "interval": 1800,
             "return-type": "json",
@@ -182,7 +182,7 @@
             "exec-if": "ping wttr.in -c1"
         },
         "custom/updates":{
-            "format": " {}",
+            "format": "  {}",
             /* "format": "{} Update(s)", */
             "interval": 7200,                     // every two hours
             "exec": "checkupdates | wc -l",

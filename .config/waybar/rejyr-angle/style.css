@@ -120,14 +120,14 @@ button {
 #waybar {
   background: @background_transparent;
   color: @light;
-  font-family: Iosevka;
+  font-family: Iosevka Nerd Font;
   font-size: 15pt;
   color: inherit;
   /*font-weight: bold;*/
 }
 
 * {
-    font-family: Iosevka;    
+    font-family: Iosevka Nerd Font;
     font-size: 15pt;
 }
 
