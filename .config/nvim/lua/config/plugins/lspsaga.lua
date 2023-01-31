@@ -8,10 +8,11 @@ function M.config()
     local colors = require('everforest.colours').generate_palette({}, 'dark')
 
     require('lspsaga').setup {
-        code_action_lightbulb = {
-            enable = false,
+        lightbulb = {
+            virtual_text = false,
         },
         ui = {
+            title = false,
             theme = 'round',
             border = 'rounded',
             winblend = 0,

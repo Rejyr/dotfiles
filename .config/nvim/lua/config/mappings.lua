@@ -93,7 +93,6 @@ local leader = {
         ['D'] = { '<cmd>:bd<CR>', 'Delete Buffer & Window' },
     },
     c = { '<cmd>Telescope neoclip<CR>', 'Copy Registers' },
-    dd = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
     d = {
         name = 'Debug',
         b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", 'Toggle Breakpoint' },
@@ -114,6 +113,12 @@ local leader = {
             end,
             'End Debug Session',
         },
+    },
+    e = {
+        name = '+show diagnostics',
+        c = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
+        l = { '<cmd>Lspsaga show_line_diagnostics<CR>', 'Show Line Diagnostics' },
+        b = { '<cmd>Lspsaga show_buf_diagnostics<CR>', 'Show Buffer Diagnostics' },
     },
     f = {
         name = '+file/format',

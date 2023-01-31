@@ -55,6 +55,10 @@ function M.config()
         },
     }
     vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Red' })
+    vim.fn.sign_define('DapBreakpointCondition', { text = '', texthl = 'Red' })
+    vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'Red' })
+    vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'Red' })
+    vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'Orange' })
 
     dap.adapters.lldb = {
         type = 'executable',

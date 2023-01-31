@@ -165,13 +165,6 @@ return {
         },
     },
     {
-        'kosayoda/nvim-lightbulb',
-        event = 'BufReadPre',
-        config = function()
-            vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-        end,
-    },
-    {
         'folke/trouble.nvim',
         event = 'BufReadPre',
         cmd = { 'TroubleToggle', 'Trouble' },
