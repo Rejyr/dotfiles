@@ -86,7 +86,7 @@ os-prober
 p7zip
 pacman
 pacman-contrib
-pandoc
+pandoc-cli
 patch
 pavucontrol
 perf
