@@ -26,6 +26,30 @@ return {
         config = true,
     },
     {
+        'kosayoda/nvim-lightbulb',
+        event = 'VeryLazy',
+        config = function()
+            vim.api.nvim_create_augroup('NvimLightbulb', {})
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                group = 'NvimLightbulb',
+                callback = function()
+                    require('nvim-lightbulb').update_lightbulb()
+                end,
+            })
+        end,
+    },
+    {
+        'utilyre/barbecue.nvim',
+        name = 'barbecue',
+        version = '*',
+        event = 'VeryLazy',
+        dependencies = {
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons', -- optional dependency
+        },
+        config = true,
+    },
+    {
         'folke/todo-comments.nvim',
         cmd = { 'TodoTrouble', 'TodoTelescope' },
         event = 'BufReadPost',
@@ -114,6 +138,7 @@ return {
             vim.g.tex_conceal = 'abdmg'
         end,
     },
+    { 'mechatroner/rainbow_csv', lazy = false },
     {
         'ethanholz/nvim-lastplace',
         event = 'BufReadPre',
@@ -149,12 +174,6 @@ return {
         config = function()
             require('telescope').load_extension 'smart_open'
         end,
-    },
-    {
-        'filipdutescu/renamer.nvim',
-        branch = 'master',
-        nequires = { 'nvim-lua/plenary.nvim' },
-        config = true,
     },
     {
         'phaazon/hop.nvim',

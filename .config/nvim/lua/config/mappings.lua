@@ -14,7 +14,6 @@ local map = vim.keymap.set
 
 -- plugins
 ---@diagnostic disable-next-line: different-requires
-local lazy = require 'lazy'
 local telescope = require 'telescope.builtin'
 local grapple = require 'grapple'
 require('glance').setup()
@@ -40,10 +39,10 @@ map('n', '<up>', '<C-w>k')
 map('n', '<right>', '<C-w>l')
 
 -- Resize window using <ctrl> arrow keys
-map('n', '<S-Up>', '<cmd>resize +2<CR>')
-map('n', '<S-Down>', '<cmd>resize -2<CR>')
-map('n', '<S-Left>', '<cmd>vertical resize -2<CR>')
-map('n', '<S-Right>', '<cmd>vertical resize +2<CR>')
+map('n', '<S-Up>', '<cmd>resize +2<cr>')
+map('n', '<S-Down>', '<cmd>resize -2<cr>')
+map('n', '<S-Left>', '<cmd>vertical resize -2<cr>')
+map('n', '<S-Right>', '<cmd>vertical resize +2<cr>')
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map({ 'n', 'x', 'o' }, 'n', "'Nn'[v:searchforward]", { expr = true })
@@ -58,52 +57,51 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 
 -- lsp
-map('n', '<c-]>', '<CMD>Glance definitions<CR>', { silent = true })
+map('n', '<c-]>', '<cmd>Glance definitions<cr>', { silent = true })
 map('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
 
 -- FTerm
-map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
-map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+map('n', '<A-i>', '<cmd>lua require("FTerm").toggle()<cr>')
+map('t', '<A-i>', '<C-\\><C-n><cmd>lua require("FTerm").toggle()<cr>')
 
 local non_leader = {
     g = {
         name = '+lsp',
         a = { vim.lsp.buf.code_action, 'Code Action' },
-        f = { '<CMD>Lspsaga lsp_finder<CR>', 'Definition and References' },
-        d = { '<CMD>Glance definitions<CR>', 'Definition' },
-        D = { '<CMD>Glance type_definitions<CR>', 'Type Definition' },
-        i = { '<CMD>Glance implementations<CR>', 'Implementation' },
-        r = { '<CMD>Glance references<CR>', 'References' },
+        d = { '<cmd>Glance definitions<cr>', 'Definition' },
+        D = { '<cmd>Glance type_definitions<cr>', 'Type Definition' },
+        i = { '<cmd>Glance implementations<cr>', 'Implementation' },
+        r = { '<cmd>Glance references<cr>', 'References' },
         W = { telescope.lsp_workspace_symbols, 'Workspace Symbols' },
         ['0'] = { telescope.lsp_document_symbols, 'Document Symbols' },
-        ['['] = { '<CMD>Lspsaga diagnostic_jump_prev<CR>', 'Goto Previous Diagnostic' },
-        [']'] = { '<CMD>Lspsaga diagnostic_jump_next<CR>', 'Goto Next Diagnostic' },
+        ['['] = { vim.diagnostic.goto_prev, 'Goto Previous Diagnostic' },
+        [']'] = { vim.diagnostic.goto_next, 'Goto Next Diagnostic' },
     },
-    K = { '<CMD>Lspsaga hover_doc<CR>', 'Lsp Hover' },
+    K = { vim.lsp.buf.hover, 'Lsp Hover' },
 }
 
 local leader = {
     b = {
         name = '+buffer',
-        ['p'] = { '<cmd>BufferLinePick<CR>', 'Pick Buffer' },
+        ['p'] = { '<cmd>BufferLinePick<cr>', 'Pick Buffer' },
         ['s'] = { telescope.buffers, 'Select Buffer' },
         ['b'] = { '<cmd>:e #<cr>', 'Switch to Other Buffer' },
-        ['['] = { '<cmd>:BufferLineCyclePrev<CR>', 'Previous Buffer' },
-        [']'] = { '<cmd>:BufferLineCycleNext<CR>', 'Next Buffer' },
-        ['D'] = { '<cmd>:bd<CR>', 'Delete Buffer & Window' },
+        ['['] = { '<cmd>:BufferLineCyclePrev<cr>', 'Previous Buffer' },
+        [']'] = { '<cmd>:BufferLineCycleNext<cr>', 'Next Buffer' },
+        ['D'] = { '<cmd>:bd<cr>', 'Delete Buffer & Window' },
     },
-    c = { '<cmd>Telescope neoclip<CR>', 'Copy Registers' },
+    c = { '<cmd>Telescope neoclip<cr>', 'Copy Registers' },
     d = {
         name = 'Debug',
-        b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", 'Toggle Breakpoint' },
-        C = { "<CMD>lua require('dap').clear_breakpoints()<CR>", 'Clear Breakpoints' },
-        c = { "<cmd>lua require('dap').continue()<CR>", 'Continue' },
-        v = { "<cmd>lua require('dap').step_over()<CR>", 'Step Over' },
-        i = { "<cmd>lua require('dap').step_into()<CR>", 'Step Into' },
-        o = { "<cmd>lua require('dap').step_out()<CR>", 'Step Out' },
-        h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", 'Hover' },
-        r = { "<cmd>lua require('dap').repl.open()<CR>", 'Repl' },
-        u = { "<cmd>lua require('dapui').toggle()<CR>", 'Ui'},
+        b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", 'Toggle Breakpoint' },
+        C = { "<cmd>lua require('dap').clear_breakpoints()<cr>", 'Clear Breakpoints' },
+        c = { "<cmd>lua require('dap').continue()<cr>", 'Continue' },
+        v = { "<cmd>lua require('dap').step_over()<cr>", 'Step Over' },
+        i = { "<cmd>lua require('dap').step_into()<cr>", 'Step Into' },
+        o = { "<cmd>lua require('dap').step_out()<cr>", 'Step Out' },
+        h = { "<cmd>lua require('dap.ui.widgets').hover()<cr>", 'Hover' },
+        r = { "<cmd>lua require('dap').repl.open()<cr>", 'Repl' },
+        u = { "<cmd>lua require('dapui').toggle()<cr>", 'Ui' },
         e = {
             function()
                 require('dap').clear_breakpoints()
@@ -114,15 +112,9 @@ local leader = {
             'End Debug Session',
         },
     },
-    e = {
-        name = '+show diagnostics',
-        c = { '<cmd>Lspsaga show_cursor_diagnostics<CR>', 'Show Cursor Diagnostics' },
-        l = { '<cmd>Lspsaga show_line_diagnostics<CR>', 'Show Line Diagnostics' },
-        b = { '<cmd>Lspsaga show_buf_diagnostics<CR>', 'Show Buffer Diagnostics' },
-    },
     f = {
         name = '+file/format',
-        mt = { '<cmd>Format<CR>', 'Format' },
+        mt = { '<cmd>Format<cr>', 'Format' },
         t = { '<cmd>NvimTreeToggle<cr>', 'NvimTree' },
         n = { '<cmd>enew<cr>', 'New File' },
         r = { require('telescope').extensions.smart_open.smart_open, 'Open Recent File' },
@@ -145,7 +137,7 @@ local leader = {
         name = '+help',
         c = { telescope.commands, 'Commands' },
         h = { telescope.help_tags, 'Help Pages' },
-        m = { telescope.man_pagse, 'Man Pages' },
+        m = { telescope.man_pages, 'Man Pages' },
         k = { telescope.keymaps, 'Key Maps' },
         s = { telescope.highlights, 'Search Highlight Groups' },
         f = { telescope.filetypes, 'File Types' },
@@ -154,13 +146,20 @@ local leader = {
     },
     j = {
         name = '+hop',
-        w = { '<cmd>HopWord<CR>', 'Hop to Word' },
-        p = { '<cmd>HopPattern<CR>', 'Hop to Pattern' },
+        w = { '<cmd>HopWord<cr>', 'Hop to Word' },
+        p = { '<cmd>HopPattern<cr>', 'Hop to Pattern' },
         l = { '<cmd>HopLine<cr>', 'Hop to Line' },
         j = { '<cmd>HopChar1<cr>', 'Hop to 1 Char' },
         ['2'] = { '<cmd>HopChar2<cr>', 'Hop to 2 Chars' },
     },
     l = {
+        name = '+lsp',
+        d = { '<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>', 'Buffer Diagnostics' },
+        w = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
+        i = { '<cmd>LspInfo<cr>', 'Info' },
+        I = { '<cmd>Mason<cr>', 'Mason Info' },
+    },
+    ll = {
         require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
     },
@@ -201,45 +200,34 @@ local leader = {
     },
     p = {
         name = '+plugin manager',
-        p = { lazy.home, 'Home' },
-        s = { lazy.sync, 'Sync' },
-        r = { lazy.check, 'Check' },
+        p = { '<cmd>Lazy home<cr>', 'Home' },
+        c = { '<cmd>Lazy check<cr>', 'Check' },
+        i = { '<cmd>Lazy install<cr>', 'Install' },
+        s = { '<cmd>Lazy sync<cr>', 'Sync' },
+        S = { '<cmd>Lazy clear<cr>', 'Status' },
+        x = { '<cmd>Lazy clean<cr>', 'Clean' },
+        u = { '<cmd>Lazy update<cr>', 'Update' },
+        l = { '<cmd>Lazy log<cr>', 'Log' },
+        d = { '<cmd>Lazy debug<cr>', 'Debug' },
     },
     q = {
         name = '+quit/session',
         q = { '<cmd>qa<cr>', 'Quit' },
         ['!'] = { '<cmd>:qa!<cr>', 'Quit without saving' },
-        l = { '<cmd>RestoreSession<CR>', 'Restore Session' },
-        s = { '<cmd>SaveSession<CR>', 'Save Session' },
-        t = { '<cmd>SearchSession<CR>', 'Select Session' },
+        l = { '<cmd>RestoreSession<cr>', 'Restore Session' },
+        s = { '<cmd>SaveSession<cr>', 'Save Session' },
+        t = { '<cmd>SearchSession<cr>', 'Select Session' },
     },
     rs = { require('root-switcher').toggle, 'Switch Root Mode' },
-    rn = { require('renamer').rename, 'Rename' },
+    rn = { vim.lsp.buf.rename, 'Rename' },
     rr = { '<cmd>RustRun<cr>', 'Rust Run' },
     s = {
-        name = '+search/symbols',
+        name = '+search',
         g = { telescope.live_grep, 'Grep' },
         b = { telescope.current_buffer_fuzzy_find, 'Buffer' },
-        s = {
-            function()
-                require('telescope.builtin').lsp_document_symbols {
-                    symbols = {
-                        'Class',
-                        'Function',
-                        'Method',
-                        'Constructor',
-                        'Interface',
-                        'Module',
-                        'Struct',
-                        'Trait',
-                        'String',
-                    },
-                }
-            end,
-            'Goto Symbol',
-        },
         h = { telescope.command_history, 'Command History' },
         m = { telescope.marks, 'Jump to Mark' },
+        s = { telescope.resume, 'Resume last search' },
     },
     so = { '<cmd>SymbolsOutline<cr>', 'Symbols Outline' },
     w = {
@@ -271,8 +259,8 @@ local leader = {
         q = { '<cmd>TodoQuickFix<cr>', 'Todo Quickfix' },
     },
     ['`'] = { '<cmd>:e #<cr>', 'Switch to Other Buffer' },
-    ['['] = { '<cmd>:BufferLineCyclePrev<CR>', 'Previous Buffer' },
-    [']'] = { '<cmd>:BufferLineCycleNext<CR>', 'Next Buffer' },
+    ['['] = { '<cmd>:BufferLineCyclePrev<cr>', 'Previous Buffer' },
+    [']'] = { '<cmd>:BufferLineCycleNext<cr>', 'Next Buffer' },
     ['.'] = { telescope.file_browser, 'Browse Files' },
     [','] = { telescope.buffers, 'Switch Buffer' },
     ['/'] = { telescope.live_grep, 'Search' },

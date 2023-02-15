@@ -59,6 +59,7 @@ ifplugd
 jdk8-openjdk
 jq
 jre-openjdk
+jupyter-notebook
 libtool
 linux
 linux-firmware

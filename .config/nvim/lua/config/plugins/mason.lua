@@ -23,9 +23,9 @@ function M.config()
             'html',
             'jsonls',
             'ltex',
+            'lua_ls',
             'pyright',
             'rust_analyzer',
-            'sumneko_lua',
             'texlab',
         },
         automatic_installation = true,
@@ -41,8 +41,8 @@ function M.config()
                 on_attach = on_attach,
             }
         end,
-        ['sumneko_lua'] = function()
-            require('lspconfig').sumneko_lua.setup {
+        ['lua_ls'] = function()
+            require('lspconfig').lua_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
