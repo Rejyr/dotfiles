@@ -63,9 +63,3 @@ vim.g.maplocalleader = ' '
 -- have a fixed column for the diagnostics to appear in
 -- this removes the jitter when warnings/errors flow in
 vim.wo.signcolumn = 'yes'
-
--- diagnostic icons
-vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError'})
-vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn'})
-vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo'})
-vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint'})

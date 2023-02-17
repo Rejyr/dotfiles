@@ -22,6 +22,7 @@ function M.config()
                 ['vim.lsp.handlers["textDocument/signatureHelp"]'] = false,
             },
         },
+        presets = { lsp_doc_border = true },
         views = {
             cmdline_popup = {
                 position = {
@@ -55,7 +56,7 @@ function M.config()
     }
     require('telescope').load_extension 'noice'
     require('notify').setup {
-        background_colour = '#1a1b26',
+        background_colour = '#000000',
     }
 end
 

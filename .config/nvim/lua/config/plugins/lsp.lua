@@ -66,6 +66,36 @@ function M.config()
             'selene',
         },
     }
+
+    -- diagnostic icons
+    vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
+    vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
+    vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
+    vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+    vim.diagnostic.config {
+        signs = {
+            active = true,
+        },
+        virtual_text = true,
+        update_in_insert = false,
+        underline = true,
+        severity_sort = true,
+        float = {
+            focusable = true,
+            style = 'minimal',
+            border = 'rounded',
+            source = 'always',
+            header = '',
+            prefix = '',
+            format = function(d)
+                local code = d.code or (d.user_data and d.user_data.lsp.code)
+                if code then
+                    return string.format('%s [%s]', d.message, code):gsub('1. ', '')
+                end
+                return d.message
+            end,
+        },
+    }
 end
 
 return M

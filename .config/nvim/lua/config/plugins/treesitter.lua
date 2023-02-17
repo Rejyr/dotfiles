@@ -4,7 +4,6 @@ local M = {
     build = ':TSUpdate',
 
     dependencies = {
-        'romgrk/nvim-treesitter-context',
         'p00f/nvim-ts-rainbow',
     },
 }
@@ -55,7 +54,6 @@ function M.config()
             -- termcolors = {} -- table of colour name strings
         },
     }
-    require('treesitter-context').setup()
     require('nvim-treesitter.configs').setup {
         rainbow = {
             enable = true,
