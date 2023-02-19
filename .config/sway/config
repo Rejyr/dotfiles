@@ -30,6 +30,8 @@ client.urgent $bg1 $red $foreground $background $red
 exec swaync
 # start mpd
 exec mpd
+# clipboard manager
+exec wl-paste --watch cliphist store
 
 # workspace 1
 workspace 1
@@ -168,6 +170,12 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+
+    # select old cilpboard item
+    bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi -p "clipboard history:" | cliphist decode | wl-copy
+    
+    # delete clipboard item
+    bindsym $mod+Shift+Control+v exec cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi -p "delete clipboard history:" | cliphist delete
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
