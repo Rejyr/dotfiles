@@ -25,7 +25,7 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 -- lightbulb time
-vim.o.updatetime = 200
+vim.o.updatetime = 100
 
 -- set shortmess
 -- disable builtin intro 'I'

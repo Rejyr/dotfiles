@@ -10,6 +10,7 @@ return {
     { 'alec-gibson/nvim-tetris', cmd = 'Tetris' },
     { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
     { 'seandewar/nvimesweeper', cmd = 'Nvimesweeper' },
+    { 'alanfortlink/blackjack.nvim', cmd = 'BlackJackNewGame', opt = { card_style = 'large' } },
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
@@ -119,15 +120,6 @@ return {
         end,
     },
     {
-        'toppair/peek.nvim',
-        cmd = { 'PeekOpen', 'PeekClose' },
-        build = 'deno task --quiet build:fast',
-        config = function()
-            vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
-            vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
-        end,
-    },
-    {
         'lervag/vimtex',
         lazy = false,
         config = function()
@@ -137,6 +129,10 @@ return {
             vim.g.conceallevel = 1
             vim.g.tex_conceal = 'abdmg'
         end,
+    },
+    {
+        'vim-pandoc/vim-pandoc-syntax',
+        lazy = false,
     },
     { 'mechatroner/rainbow_csv', lazy = false },
     {

@@ -13,6 +13,8 @@ function M.config()
     require('mini.cursorword').setup()
     -- comment
     require('mini.comment').setup()
+    -- brackets
+    -- require('mini.bracketed').setup()
 end
 
 return M
