@@ -72,6 +72,7 @@ SETUVAR _fish_abbr_xtestui:x\x20test\x20src/test/ui\x20\x2di\x20\x2d\x2djobs\x20
 SETUVAR _fish_abbr_xtestuilint:x\x20test\x20src/test/ui/lint\x20\x2di\x20\x2d\x2djobs\x208
 SETUVAR _fish_abbr_xti:x\x20tidy
 SETUVAR _fish_abbr_xtidy:x\x20test\x20tidy
+SETUVAR _fish_abbr_xwayland:env\x20-u\x20WAYLAND_DISPLAY\x20-u\x20QT_QPA_PLATFORM
 SETUVAR _fish_abbr_yeet:yay\x20\x2dRsn
 SETUVAR _fish_abbr_yoink:yay\x20\x2dS
 SETUVAR _fish_abbr_za:zathura

@@ -10,7 +10,7 @@ return {
     { 'alec-gibson/nvim-tetris', cmd = 'Tetris' },
     { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
     { 'seandewar/nvimesweeper', cmd = 'Nvimesweeper' },
-    { 'alanfortlink/blackjack.nvim', cmd = 'BlackJackNewGame', opt = { card_style = 'large' } },
+    { 'alanfortlink/blackjack.nvim', cmd = 'BlackJackNewGame', opts = { card_style = 'large' } },
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',

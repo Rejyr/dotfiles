@@ -4,7 +4,7 @@ local M = {
     build = ':TSUpdate',
 
     dependencies = {
-        'p00f/nvim-ts-rainbow',
+        'HiPhish/nvim-ts-rainbow2',
     },
 }
 
@@ -47,23 +47,21 @@ function M.config()
         },
         rainbow = {
             enable = true,
-            -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-            extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-            max_file_lines = nil, -- Do not enable for files with more than n lines, int
-            -- colors = {}, -- table of hex strings
-            -- termcolors = {} -- table of colour name strings
+            -- list of languages you want to disable the plugin for
+            -- disable = { 'jsx', 'cpp' },
+            -- Which query to use for finding delimiters
+            query = 'rainbow-parens',
+            -- Highlight the entire buffer all at once
+            strategy = require 'ts-rainbow.strategy.global',
         },
     }
-    require('nvim-treesitter.configs').setup {
-        rainbow = {
-            enable = true,
-            -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-            extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-            max_file_lines = nil, -- Do not enable for files with more than n lines, int
-            -- colors = {}, -- table of hex strings
-            -- termcolors = {} -- table of colour name strings
-        },
-    }
+    vim.api.nvim_set_hl(0, 'TSRainbowRed', { link = 'Red' })
+    vim.api.nvim_set_hl(0, 'TSRainbowOrange', { link = 'Orange' })
+    vim.api.nvim_set_hl(0, 'TSRainbowYellow', { link = 'Yellow' })
+    vim.api.nvim_set_hl(0, 'TSRainbowGreen', { link = 'Green' })
+    vim.api.nvim_set_hl(0, 'TSRainbowBlue', { link = 'Blue' })
+    vim.api.nvim_set_hl(0, 'TSRainbowCyan', { link = 'Aqua' })
+    vim.api.nvim_set_hl(0, 'TSRainbowViolet', { link = 'Purple' })
 end
 
 return M

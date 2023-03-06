@@ -46,10 +46,25 @@ function M.config()
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
-                    Lua = {
-                        diagnostics = {
-                            -- Get the language server to recognize the `vim` global
-                            globals = { 'vim' },
+                    ['lua_ls'] = {
+                        Lua = {
+                            diagnostics = {
+                                -- Get the language server to recognize the `vim` global
+                                globals = { 'vim' },
+                            },
+                        },
+                    },
+                },
+            }
+        end,
+        ['ltex'] = function()
+            require('lspconfig').ltex.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = {
+                    ['ltex'] = {
+                        ltex = {
+                            checkFrequency = 'save',
                         },
                     },
                 },

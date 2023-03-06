@@ -31,15 +31,11 @@ python-install
 python-pathvalidate
 python-pep517
 python-plover_stroke
-python-pytube
 python-requests-cache
 python-rtf_tokenize
 python-soundcloud-v2
-python-spotdl
-python-spotipy
 python-timeout-decorator
 python-url-normalize
-python-ytmusicapi
 qt5-styleplugins
 rofi-lbonn-wayland
 soundcloud-dl
