@@ -7,7 +7,4 @@ if [[ -z $session ]]; then
     exit
 fi
 
-case "$sessions" in 
-    *"$session"*) alacritty -e zellij attach $session ;;
-    *) alacritty -e zellij attach --create $session ;;
-esac
+alacritty -e zellij attach --create $session

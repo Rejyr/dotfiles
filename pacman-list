@@ -99,9 +99,7 @@ pkgconf
 playerctl
 python-astropy
 python-pip
-python-pytorch
 python-pywal
-python-tensorflow
 qbittorrent
 qgnomeplatform-qt5
 qt5-wayland

@@ -2,7 +2,7 @@ if status --is-interactive
     # Commands to run in interactive sessions can go here
 	if ! set -q ZELLIJ
 		and test ! (tty) = "/dev/tty1"
-		exec zellij
+                attach_zellij
 	end
 end
 

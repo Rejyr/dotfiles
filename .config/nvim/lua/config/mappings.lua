@@ -16,7 +16,6 @@ local map = vim.keymap.set
 ---@diagnostic disable-next-line: different-requires
 local telescope = require 'telescope.builtin'
 local grapple = require 'grapple'
-require('glance').setup()
 
 --
 --
@@ -47,6 +46,9 @@ map('n', '<S-Right>', '<cmd>vertical resize +2<cr>')
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map({ 'n', 'x', 'o' }, 'n', "'Nn'[v:searchforward]", { expr = true })
 map({ 'n', 'x', 'o' }, 'N', "'nN'[v:searchforward]", { expr = true })
+
+-- ZZ extensions
+map('n', 'ZA', '<cmd>wqa<cr>')
 
 -- save in insert mode
 map({ 'n', 'i' }, '<C-s>', '<cmd>:w<cr><esc>')
@@ -101,6 +103,7 @@ local leader = {
         o = { "<cmd>lua require('dap').step_out()<cr>", 'Step Out' },
         h = { "<cmd>lua require('dap.ui.widgets').hover()<cr>", 'Hover' },
         r = { "<cmd>lua require('dap').repl.open()<cr>", 'Repl' },
+        T = { "<cmd>lua require('dap').terminate()<cr>", 'Terminate' },
         u = { "<cmd>lua require('dapui').toggle()<cr>", 'Ui' },
         e = {
             function()

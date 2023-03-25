@@ -20,6 +20,7 @@ logiops-git
 lunar-client
 nodejs-live-server
 nordic-theme
+pdfposter
 perl-term-shellui
 pipes-rs-git
 plover-git
@@ -31,6 +32,7 @@ python-install
 python-pathvalidate
 python-pep517
 python-plover_stroke
+python-pypdf2
 python-requests-cache
 python-rtf_tokenize
 python-soundcloud-v2
@@ -44,7 +46,9 @@ tailwind-css
 tint-git
 tllocalmgr-git
 trunk-bin
+ttf-cm-unicode
 tty-clock-git
 ventoy-bin
 vscode-codicons-git
+xorg-font-utils
 yay

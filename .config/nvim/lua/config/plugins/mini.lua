@@ -1,20 +1,43 @@
-local M = {
-    'echasnovski/mini.nvim',
-    branch = 'stable',
-    event = 'VeryLazy',
+return {
+    {
+        'echasnovski/mini.bracketed',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.bracketed').setup()
+        end,
+    },
+    {
+        'echasnovski/mini.comment',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.comment').setup()
+        end,
+    },
+    {
+        'echasnovski/mini.cursorword',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.cursorword').setup()
+        end,
+    },
+    { 'echasnovski/mini.starter', version = false, event = 'VeryLazy' },
+    {
+        'echasnovski/mini.pairs',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.pairs').setup()
+        end,
+    },
+    {
+        'echasnovski/mini.surround',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            require('mini.surround').setup()
+        end,
+    },
 }
-
-function M.config()
-    -- surround
-    require('mini.surround').setup()
-    -- auto-pair
-    require('mini.pairs').setup()
-    -- underline words
-    require('mini.cursorword').setup()
-    -- comment
-    require('mini.comment').setup()
-    -- brackets
-    -- require('mini.bracketed').setup()
-end
-
-return M
