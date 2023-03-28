@@ -33,7 +33,9 @@ function M.config()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     ---@diagnostic disable-next-line: unused-local
-    local on_attach = function(client, bufnr) end
+    local on_attach = function(client, bufnr)
+    require('nvim-navbuddy').attach(client, bufnr)
+    end
     require('mason-lspconfig').setup_handlers {
         function(server_name)
             require('lspconfig')[server_name].setup {

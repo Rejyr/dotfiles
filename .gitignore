@@ -1,3 +1,8 @@
-.config/plover/plover.log
-.config/plover/tapey_tape.txt
-.config/nvim/lua/config/plugins.lua
+/.config/plover/plover.log
+/.config/plover/tapey_tape.txt
+/.config/nvim/lua/config/plugins.lua
+/.librewolf/*
+!/.librewolf/y7o13kcl.default-release
+/.librewolf/y7o13kcl.default-release/*
+!/.librewolf/y7o13kcl.default-release/chrome
+!/.librewolf/librewolf.overrides.cfg

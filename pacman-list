@@ -46,6 +46,7 @@ git
 git-delta
 github-cli
 gitui
+gnome-font-viewer
 gnome-multi-writer
 grep
 grim
@@ -85,9 +86,11 @@ obs-studio
 obsidian
 onefetch
 os-prober
+otf-latin-modern
 p7zip
 pacman
 pacman-contrib
+pacutils
 pandoc-cli
 patch
 pavucontrol
@@ -142,6 +145,7 @@ ttf-nerd-fonts-symbols-2048-em-mono
 unzip
 upower
 usbutils
+valgrind
 vivaldi
 waybar
 wf-recorder

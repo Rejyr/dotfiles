@@ -15,6 +15,7 @@ joshuto
 laptop-mode-tools
 lavat-git
 libcs50
+librewolf-bin
 libvterm01
 logiops-git
 lunar-client
@@ -46,9 +47,7 @@ tailwind-css
 tint-git
 tllocalmgr-git
 trunk-bin
-ttf-cm-unicode
 tty-clock-git
 ventoy-bin
 vscode-codicons-git
-xorg-font-utils
 yay

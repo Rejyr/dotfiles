@@ -201,6 +201,7 @@ local leader = {
             'Goto Grapple 5',
         },
     },
+    nb = { '<cmd>Navbuddy<cr>', 'Navbuddy' },
     p = {
         name = '+plugin manager',
         p = { '<cmd>Lazy home<cr>', 'Home' },

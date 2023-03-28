@@ -24,6 +24,14 @@ client.focused_tab_title $bg1 $bg3 $fg1 $fg1 $bg1
 client.unfocused $bg1 $bg3 $fg1 $fg1 $bg1
 client.urgent $bg1 $red $foreground $background $red
 
+# Your preferred terminal emulator
+set $term alacritty
+# browser
+set $browser librewolf
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
 ### Startup
 # start notifications
@@ -35,7 +43,7 @@ exec wl-paste --watch cliphist store
 
 # workspace 1
 workspace 1
-exec vivaldi-stable
+exec $browser
 
 # workspace 2
 workspace 2
@@ -61,14 +69,6 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term alacritty
-# browser
-set $browser vivaldi-stable
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
 # font
 font pango: Iosevka Nerd Font 12
 

@@ -51,6 +51,17 @@ return {
         config = true,
     },
     {
+        'SmiteshP/nvim-navbuddy',
+        event = 'VeryLazy',
+        dependencies = { 'neovim/nvim-lspconfig', 'SmiteshP/nvim-navic', 'MunifTanjim/nui.nvim' },
+        opts = {
+            window = {
+                border = 'rounded',
+                size = '50%',
+            },
+        }
+    },
+    {
         'folke/todo-comments.nvim',
         cmd = { 'TodoTrouble', 'TodoTelescope' },
         event = 'BufReadPost',
