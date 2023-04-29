@@ -11,6 +11,9 @@ local M = {
 
 function M.config()
     require('mason').setup {
+        ui = {
+            border = 'rounded',
+        },
         providers = { 'mason.providers.client' },
     }
     require('mason-lspconfig').setup {
@@ -34,7 +37,7 @@ function M.config()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     ---@diagnostic disable-next-line: unused-local
     local on_attach = function(client, bufnr)
-    require('nvim-navbuddy').attach(client, bufnr)
+        require('nvim-navbuddy').attach(client, bufnr)
     end
     require('mason-lspconfig').setup_handlers {
         function(server_name)

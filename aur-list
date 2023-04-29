@@ -5,7 +5,6 @@ auto-cpufreq
 cava
 cbonsai
 celt
-cliphist
 cpp-taskflow
 electron13
 electron18
@@ -26,13 +25,14 @@ perl-term-shellui
 pipes-rs-git
 plover-git
 plover_plugins_manager
-prismlauncher-bin
+prismlauncher-qt5-bin
 python-colored
 python-dacite
 python-install
 python-pathvalidate
 python-pep517
 python-plover_stroke
+python-progress
 python-pypdf2
 python-requests-cache
 python-rtf_tokenize

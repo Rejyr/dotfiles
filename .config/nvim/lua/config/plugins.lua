@@ -59,7 +59,21 @@ return {
                 border = 'rounded',
                 size = '50%',
             },
-        }
+        },
+    },
+    {
+        'Fildo7525/pretty_hover',
+        event = 'VeryLazy',
+        config = true,
+    },
+    {
+        'j-hui/fidget.nvim',
+        event = 'LspAttach',
+        opts = {
+            window = {
+                blend = 0,
+            },
+        },
     },
     {
         'folke/todo-comments.nvim',
