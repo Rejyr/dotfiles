@@ -127,7 +127,7 @@
             "format-charging": "  {capacity}%",
             "format-plugged": "  {capacity}%",
             "format-alt": "{time} {icon}",
-            "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+            "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁽", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
             // "format-icons": ["", "", "", "", ""]
         },
 	"tray":{
@@ -136,8 +136,8 @@
 	},
         "clock#time": {
             "interval": 1,
-            "format": "  {:%H:%M}",
-            "format-alt": "  {:%H:%M:%S}",
+            "format": "  {:%H:%M}",
+            "format-alt": "  {:%H:%M:%S}",
             "tooltip-format": "{:%H:%M:%S}",
         },
         "clock#date": {

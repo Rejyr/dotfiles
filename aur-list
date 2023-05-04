@@ -29,11 +29,13 @@ prismlauncher-qt5-bin
 python-colored
 python-dacite
 python-install
+python-jarowinkler
 python-pathvalidate
 python-pep517
 python-plover_stroke
 python-progress
 python-pypdf2
+python-rapidfuzz-capi
 python-requests-cache
 python-rtf_tokenize
 python-soundcloud-v2
