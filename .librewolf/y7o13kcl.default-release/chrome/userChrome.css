@@ -28,6 +28,12 @@ UI model:
 /* bring the browser window to the top */
 #browser {
 	-moz-box-ordinal-group: 0 !important;
+	order: 0 !important;
+}
+
+#navigator-toolbox-background {
+	-moz-box-ordinal-group: 1 !important;
+	order: 1 !important;
 }
 
 /* adjust paddings */
@@ -42,15 +48,17 @@ UI model:
 /* } */
 
 /* restore top border */
-/*TODO: find the proper color variable, it's not -moz-accent-color*/
 *|*:root[sizemode="normal"] #browser {
-	border-top: 1px solid #4d4d50 !important;
+	border-top: .5px solid AccentColor !important;
+}
+*|*:root[sizemode="normal"]:-moz-window-inactive #browser {
+	border-top-color: rgb(57,57,57) !important;
 }
 
 /* make toolbar border persist on fullscreen */
 *|*:root[sizemode="maximized"] #navigator-toolbox {
-  border-top: 1px solid -moz-accent-color !important;
-  border-bottom: 1px solid -moz-accent-color !important;
+  border-top: .5px solid AccentColor !important;
+  border-bottom: .5px solid AccentColor !important;
 }
 
 /* hide titlebar buttons */
@@ -70,17 +78,15 @@ UI model:
 
 
 
-
-/* 1.3.0
-- Truncated https:// from URL's
-- Added option to hide all URLbar buttons
-- Added option to not center the URLbar on focus
-- Fix being unable to drag tab in single-tab (oops)
+/* 1.4.0
+- Fixed from latest Firefox update!
+- Added CSS variables for changing the URLbar width
 */
 
 #navigator-toolbox {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     position: relative !important;
     padding-left: var(--tab-block-margin);
 }
@@ -186,14 +192,17 @@ toolbarspring,
     position: static !important;
 }
 #urlbar-container {
-    min-width: 200px !important;
+    min-width: var(--urlbar-collapsed-width) !important;
     z-index: 10;
     transition: background-color .2s, width .2s, min-width .2s;
     position: static !important;
+    width: unset !important;
 }
 #urlbar {
     position: relative !important;
     top: unset !important;
+    align-self: flex-start !important;
+    margin-block: auto !important;
 }
 #urlbar[breakout-extend] {
     position: absolute !important;
@@ -214,7 +223,7 @@ toolbarspring,
     transition: width .2s;
 }
 #urlbar-container:focus-within, #urlbar-container:hover {
-    min-width: 300px !important;
+    min-width: var(--urlbar-open-width) !important;
 }
 #urlbar-input:not(:focus-within) {
     mask: linear-gradient(to right, black calc(100% - 20px), transparent);
