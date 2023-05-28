@@ -222,7 +222,6 @@ local leader = {
         s = { '<cmd>SaveSession<cr>', 'Save Session' },
         t = { '<cmd>SearchSession<cr>', 'Select Session' },
     },
-    rs = { require('root-switcher').toggle, 'Switch Root Mode' },
     rn = { vim.lsp.buf.rename, 'Rename' },
     rr = { '<cmd>RustRun<cr>', 'Rust Run' },
     s = {

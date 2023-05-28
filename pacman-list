@@ -9,7 +9,6 @@ automake
 base
 base-devel
 bat
-biber
 binutils
 bison
 bluez
@@ -18,6 +17,7 @@ bottom
 brightnessctl
 btop
 cliphist
+cmake
 cmatrix
 cowsay
 cups
@@ -37,8 +37,10 @@ findutils
 fish
 fisher
 flex
+flite
 fortune-mod
 fzf
+gammastep
 gawk
 gcc
 gettext
@@ -64,7 +66,6 @@ jdk8-openjdk
 jq
 jre-openjdk
 jre17-openjdk
-jupyter-notebook
 libreoffice-fresh
 libtool
 linux
@@ -95,7 +96,6 @@ p7zip
 pacman
 pacman-contrib
 pacutils
-pandoc-cli
 patch
 pavucontrol
 perf
@@ -104,8 +104,6 @@ pipewire-jack
 pipewire-pulse
 pkgconf
 playerctl
-python-astropy
-python-pandas
 python-pip
 python-pyparsing
 python-pywal
@@ -150,7 +148,6 @@ ttf-nerd-fonts-symbols-mono
 unzip
 upower
 usbutils
-valgrind
 waybar
 wf-recorder
 wget

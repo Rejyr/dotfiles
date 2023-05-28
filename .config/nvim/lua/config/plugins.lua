@@ -115,19 +115,7 @@ return {
     {
         'notjedi/nvim-rooter.lua',
         lazy = false,
-        opt = { manual = true },
-    },
-    {
-        'Rejyr/root-switcher.nvim',
-        -- dir = '~/Programming/NeovimProjects/root-switcher.nvim',
-        lazy = false,
-        dependencies = { 'notjedi/nvim-rooter.lua' },
-        config = function()
-            require('root-switcher').setup {
-                starting_mode = 'project',
-                project_root = require('nvim-rooter').get_root,
-            }
-        end,
+        config = true,
     },
     {
         'McAuleyPenney/tidy.nvim',
