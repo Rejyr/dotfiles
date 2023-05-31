@@ -10,6 +10,7 @@ end
 zoxide init fish | source
 
 sway_startup
+gammastep_startup
 everforest
 
 # setup bobthefish prompt

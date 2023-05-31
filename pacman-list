@@ -43,6 +43,7 @@ fzf
 gammastep
 gawk
 gcc
+geoclue
 gettext
 ghostscript
 git
@@ -104,6 +105,7 @@ pipewire-jack
 pipewire-pulse
 pkgconf
 playerctl
+python-gobject
 python-pip
 python-pyparsing
 python-pywal
