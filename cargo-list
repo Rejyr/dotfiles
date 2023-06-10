@@ -4,5 +4,7 @@ cargo-nextest
 cargo-watch
 flamegraph
 solkit
+todo
+tofu-cli
 toipe
 x

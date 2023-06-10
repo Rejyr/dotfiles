@@ -29,6 +29,7 @@ function M.config()
             'lua_ls',
             'ruff_lsp',
             'rust_analyzer',
+            'sqlls',
             'texlab',
         },
         automatic_installation = true,

@@ -11,7 +11,7 @@ SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export GTK2_RC_FILES:/home/rejyr/\x2ethemes/Everforest/gtk\x2d2\x2e0/gtkrc
 SETUVAR --export GTK_THEME:Everforest
 SETUVAR --export LDLIBS:\x2dlcrypt\x1e\x2dlcs50\x1e\x2dlm
-SETUVAR --export --path PATH:/home/rejyr/Programming/RustProjects/todo/target/debug\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
+SETUVAR --export --path PATH:/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR --export --path PYTHONPATH:\x1d
 SETUVAR --export QT_QPA_PLATFORM:wayland
 SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
@@ -34,7 +34,7 @@ SETUVAR _fish_abbr_cl:clear
 SETUVAR _fish_abbr_clf:clear\x3b\x20neofetch
 SETUVAR _fish_abbr_clg:clear\x3b\x20fish_greeting
 SETUVAR _fish_abbr_cln:clear\x3b\x20neofetch
-SETUVAR _fish_abbr_clt:clear\x3b\x20todo
+SETUVAR _fish_abbr_clt:clear\x3b\x20tofu
 SETUVAR _fish_abbr_cpustat:auto\x2dcpufreq\x20\x2d\x2dstats
 SETUVAR _fish_abbr_cr:cargo\x20run
 SETUVAR _fish_abbr_crr:cargo\x20run\x20\x2d\x2drelease
@@ -63,7 +63,7 @@ SETUVAR _fish_abbr_systat:systemctl\x20status
 SETUVAR _fish_abbr_systl:systemctl
 SETUVAR _fish_abbr_systop:systemctl\x20stop
 SETUVAR _fish_abbr_systrt:systemctl\x20start
-SETUVAR _fish_abbr_t:todo
+SETUVAR _fish_abbr_t:tofu
 SETUVAR _fish_abbr_tree:exa\x20\x2dFT
 SETUVAR _fish_abbr_ts:todo\x20show\x20\x2d\x2dall
 SETUVAR _fish_abbr_tsf:todo\x20show\x20\x2df
@@ -127,5 +127,5 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/rejyr/Programming/RustProjects/todo/target/release\x1e/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin
 SETUVAR --export wmname:LG3D

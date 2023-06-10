@@ -62,8 +62,8 @@ function M.config()
                     cmp.select_next_item()
                 elseif luasnip.expandable() then
                     luasnip.expand()
-                elseif has_words_before() then
-                    cmp.complete()
+                -- elseif has_words_before() then
+                --     cmp.complete()
                 else
                     fallback()
                 end
