@@ -28,7 +28,7 @@ function M.config()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
 
-    require('luasnip.loaders.from_lua').load { paths = '~/.config/nvim/lua/snippets' }
+    require('luasnip.loaders.from_lua').load { paths = '~/.config/nvim/lua/config/snippets' }
     require('luasnip.loaders.from_vscode').lazy_load()
     luasnip.config.set_config {
         enable_autosnippets = true,

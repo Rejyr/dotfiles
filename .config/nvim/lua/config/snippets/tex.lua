@@ -86,7 +86,8 @@ return {
                 \end{equation*}
              ]],
             { i(1) }
-        )
+        ),
+        { condition = math }
     ),
     -- dots
     s(

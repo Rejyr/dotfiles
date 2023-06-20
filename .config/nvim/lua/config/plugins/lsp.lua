@@ -22,6 +22,7 @@ function M.config()
             'clangd',
             'cssls',
             'emmet_ls',
+            'eslint',
             'grammarly',
             'html',
             'jsonls',
@@ -31,6 +32,7 @@ function M.config()
             'rust_analyzer',
             'sqlls',
             'texlab',
+            'tsserver',
         },
         automatic_installation = true,
     }

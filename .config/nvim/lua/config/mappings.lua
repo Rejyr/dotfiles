@@ -162,7 +162,7 @@ local leader = {
         i = { '<cmd>LspInfo<cr>', 'Info' },
         I = { '<cmd>Mason<cr>', 'Mason Info' },
     },
-    ll = {
+    LL = {
         require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
     },

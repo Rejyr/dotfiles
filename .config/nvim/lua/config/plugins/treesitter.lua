@@ -11,7 +11,9 @@ local M = {
 function M.config()
     require('nvim-treesitter.configs').setup {
         highlight = {
-            enable = true
+            enable = true,
+            -- disable = { 'latex' },
+            additional_vim_regex_highlighting = { 'latex' },
         },
         incremental_selection = {
             enable = true,
@@ -33,8 +35,8 @@ function M.config()
             'go',
             'help',
             'html',
-            -- 'java',
-            -- 'javascript',
+            'java',
+            'javascript',
             'json',
             'latex',
             'lua',

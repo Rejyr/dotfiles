@@ -11,6 +11,7 @@ SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export GTK2_RC_FILES:/home/rejyr/\x2ethemes/Everforest/gtk\x2d2\x2e0/gtkrc
 SETUVAR --export GTK_THEME:Everforest
 SETUVAR --export LDLIBS:\x2dlcrypt\x1e\x2dlcs50\x1e\x2dlm
+SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export --path PATH:/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR --export --path PYTHONPATH:\x1d
 SETUVAR --export QT_QPA_PLATFORM:wayland
@@ -53,7 +54,7 @@ SETUVAR _fish_abbr_n:nvim
 SETUVAR _fish_abbr_nc:ncmpcpp
 SETUVAR _fish_abbr_nf:nvim\x20\x28fzf\x29
 SETUVAR _fish_abbr_nfet:neofetch
-SETUVAR _fish_abbr_pac:pacman
+SETUVAR _fish_abbr_pac:yay
 SETUVAR _fish_abbr_restart:reboot
 SETUVAR _fish_abbr_sleep:systemctl\x20suspend
 SETUVAR _fish_abbr_sysdis:systemctl\x20disable
