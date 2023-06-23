@@ -17,7 +17,7 @@
     commit_author: Green,
     danger_fg: Red,
     push_gauge_bg: Green,
-    push_gauge_fg: White,
+    push_gauge_fg: DarkGray,
     tag_fg: LightMagenta,
     branch_fg: LightYellow,
 )

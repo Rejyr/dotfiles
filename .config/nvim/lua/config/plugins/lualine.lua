@@ -2,7 +2,7 @@ local M = {
     'nvim-lualine/lualine.nvim',
     event = 'VimEnter',
 
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'cbochs/grapple.nvim', 'Isrothy/lualine-diagnostic-message' },
+    dependencies = { 'nvim-tree/nvim-web-devicons', 'Isrothy/lualine-diagnostic-message' },
 }
 
 function M.config()
@@ -14,13 +14,6 @@ function M.config()
             lualine_a = { 'mode' },
             lualine_b = {
                 'branch',
-                {
-                    function()
-                        local key = require('grapple').key()
-                        return '  [' .. key .. ']'
-                    end,
-                    cond = require('grapple').exists,
-                },
                 'diff',
                 'diagnostics',
             },

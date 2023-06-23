@@ -42,7 +42,7 @@ exec mpd
 exec wl-paste --watch cliphist store
 
 # start discord
-exec discord
+# exec discord
 
 # workspace 1
 workspace 1

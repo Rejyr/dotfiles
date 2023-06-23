@@ -1,16 +1,10 @@
 return {
     { 'wakatime/vim-wakatime', event = 'VeryLazy' },
-    'numToStr/FTerm.nvim',
     'folke/which-key.nvim',
     'folke/lsp-colors.nvim',
     'nvim-tree/nvim-web-devicons',
-    'RRethy/nvim-base16',
     { 'DNLHC/glance.nvim', event = 'VeryLazy' },
     { 'machakann/vim-highlightedyank', event = 'VeryLazy' },
-    { 'alec-gibson/nvim-tetris', cmd = 'Tetris' },
-    { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
-    { 'seandewar/nvimesweeper', cmd = 'Nvimesweeper' },
-    { 'alanfortlink/blackjack.nvim', cmd = 'BlackJackNewGame', opts = { card_style = 'large' } },
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',
@@ -125,18 +119,6 @@ return {
         end,
     },
     {
-        'nvim-tree/nvim-tree.lua',
-        cmd = {
-            'NvimTreeToggle',
-            'NvimTreeClose',
-            'NvimTreeRefresh',
-        },
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = true,
-    },
-    {
         'lewis6991/gitsigns.nvim',
         event = 'BufReadPre',
         dependencies = {
@@ -184,20 +166,6 @@ return {
         'ethanholz/nvim-lastplace',
         event = 'BufReadPre',
         config = true,
-    },
-    {
-        'cbochs/grapple.nvim',
-        event = 'BufReadPre',
-        config = function()
-            local grapple = require 'grapple'
-            grapple.setup {
-                setup = require('grapple.scope').fallback {
-                    grapple.resolvers.lsp_fallback,
-                    grapple.resolvers.git_fallback,
-                    grapple.resolvers.static,
-                },
-            }
-        end,
     },
     {
         'AckslD/nvim-neoclip.lua',

@@ -15,7 +15,6 @@ local map = vim.keymap.set
 -- plugins
 ---@diagnostic disable-next-line: different-requires
 local telescope = require 'telescope.builtin'
-local grapple = require 'grapple'
 
 --
 --
@@ -118,7 +117,6 @@ local leader = {
     f = {
         name = '+file/format',
         mt = { '<cmd>Format<cr>', 'Format' },
-        t = { '<cmd>NvimTreeToggle<cr>', 'NvimTree' },
         n = { '<cmd>enew<cr>', 'New File' },
         r = { require('telescope').extensions.smart_open.smart_open, 'Open Recent File' },
         f = { telescope.find_files, 'Find File' },
@@ -165,41 +163,6 @@ local leader = {
     LL = {
         require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
-    },
-    m = {
-        name = '+grapple',
-        m = { grapple.toggle, 'Grapple Mark' },
-        p = { grapple.popup_tags, 'Grapple Popup' },
-        ['1'] = {
-            function()
-                grapple.select { key = 1 }
-            end,
-            'Goto Grapple 1',
-        },
-        ['2'] = {
-            function()
-                grapple.select { key = 2 }
-            end,
-            'Goto Grapple 2',
-        },
-        ['3'] = {
-            function()
-                grapple.select { key = 3 }
-            end,
-            'Goto Grapple 2',
-        },
-        ['4'] = {
-            function()
-                grapple.select { key = 4 }
-            end,
-            'Goto Grapple 4',
-        },
-        ['5'] = {
-            function()
-                grapple.select { key = 5 }
-            end,
-            'Goto Grapple 5',
-        },
     },
     nb = { '<cmd>Navbuddy<cr>', 'Navbuddy' },
     p = {
