@@ -22,6 +22,9 @@ local telescope = require 'telescope.builtin'
 --
 --
 
+-- remap F1 to Esc
+map({'n', 'i'}, '<F1>', '<Esc>')
+
 -- set proper paste keybind
 map(
     'i',
