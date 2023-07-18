@@ -56,6 +56,7 @@ hdparm
 htop
 hyperfine
 ifplugd
+imagemagick
 jdk8-openjdk
 jq
 jre-openjdk
@@ -99,6 +100,7 @@ pkgconf
 playerctl
 python-gobject
 python-pip
+python-pipx
 qbittorrent
 qgnomeplatform-qt5
 qt5-wayland
@@ -135,6 +137,7 @@ ttf-iosevka-nerd
 ttf-linux-libertine
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
+typst
 unzip
 upower
 usbutils

@@ -31,6 +31,7 @@ python-progress
 python-rapidfuzz-capi
 python-requests-cache
 python-rtf_tokenize
+python-time-machine
 python-timeout-decorator
 python-url-normalize
 rofi-lbonn-wayland

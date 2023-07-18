@@ -185,14 +185,6 @@ return {
         end,
     },
     {
-        'phaazon/hop.nvim',
-        branch = 'v1', -- optional but strongly recommended
-        event = 'VeryLazy',
-        opt = {
-            keys = 'etovxqpdygfblzhckisuran',
-        },
-    },
-    {
         'folke/trouble.nvim',
         event = 'BufReadPre',
         cmd = { 'TroubleToggle', 'Trouble' },

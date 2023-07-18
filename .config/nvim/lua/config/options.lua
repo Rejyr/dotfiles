@@ -63,3 +63,6 @@ vim.g.maplocalleader = ' '
 -- have a fixed column for the diagnostics to appear in
 -- this removes the jitter when warnings/errors flow in
 vim.wo.signcolumn = 'yes'
+
+-- add typst ft
+vim.filetype.add { extension = { typ = 'typst' } }

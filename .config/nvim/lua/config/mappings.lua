@@ -23,7 +23,7 @@ local telescope = require 'telescope.builtin'
 --
 
 -- remap F1 to Esc
-map({'n', 'i'}, '<F1>', '<Esc>')
+map({ 'n', 'i' }, '<F1>', '<Esc>')
 
 -- set proper paste keybind
 map(
@@ -124,6 +124,8 @@ local leader = {
         r = { require('telescope').extensions.smart_open.smart_open, 'Open Recent File' },
         f = { telescope.find_files, 'Find File' },
         h = { '<cmd>Telescope find_files hidden=true<cr>', 'Find Hidden File' },
+        b = { '<cmd>Telescope file_browser<cr>', 'Open Telescope File Browser' },
+        B = { '<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>', 'Open Telescope File Browser' },
     },
     g = {
         name = '+git',
@@ -147,14 +149,6 @@ local leader = {
         f = { telescope.filetypes, 'File Types' },
         o = { telescope.vim_options, 'Options' },
         a = { telescope.autocommands, 'Auto Commands' },
-    },
-    j = {
-        name = '+hop',
-        w = { '<cmd>HopWord<cr>', 'Hop to Word' },
-        p = { '<cmd>HopPattern<cr>', 'Hop to Pattern' },
-        l = { '<cmd>HopLine<cr>', 'Hop to Line' },
-        j = { '<cmd>HopChar1<cr>', 'Hop to 1 Char' },
-        ['2'] = { '<cmd>HopChar2<cr>', 'Hop to 2 Chars' },
     },
     l = {
         name = '+lsp',
@@ -199,6 +193,7 @@ local leader = {
         s = { telescope.resume, 'Resume last search' },
     },
     so = { '<cmd>SymbolsOutline<cr>', 'Symbols Outline' },
+    u = { '<cmd>Telescope undo<cr>', 'Telescope Undo Tree' },
     w = {
         name = '+windows',
         ['2'] = { '<C-W>v', 'layout-double-columns' },
