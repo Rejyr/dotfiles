@@ -5,6 +5,7 @@ return {
     'nvim-tree/nvim-web-devicons',
     { 'DNLHC/glance.nvim', event = 'VeryLazy' },
     { 'machakann/vim-highlightedyank', event = 'VeryLazy' },
+    { 'ashfinal/qfview.nvim', event = 'VeryLazy', config = true },
     {
         'stevearc/dressing.nvim',
         event = 'VeryLazy',

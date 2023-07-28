@@ -20,7 +20,6 @@ cups
 deno
 dhcpcd
 dialog
-discord
 dust
 efibootmgr
 eog
@@ -81,6 +80,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 ntfs-3g
+nushell
 obs-studio
 obsidian
 onefetch

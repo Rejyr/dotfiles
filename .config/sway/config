@@ -41,9 +41,6 @@ exec mpd
 # clipboard manager
 exec wl-paste --watch cliphist store
 
-# start discord
-# exec discord
-
 # workspace 1
 workspace 1
 exec $browser
@@ -129,7 +126,7 @@ input type:touchpad {
 # Read `man 5 sway-input` for more information about this section.
 
 # Enable floating
-for_window [class="discord"] move scratchpad
+for_window [class="WebCord"] move scratchpad
 for_window [class="SpeedCrunch"] floating enable
 for_window [instance="MultiMC"] floating enable
 for_window [title="Plover: Strokes Meter"] floating enable

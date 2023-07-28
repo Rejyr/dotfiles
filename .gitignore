@@ -7,3 +7,6 @@
 !/.librewolf/y7o13kcl.default-release/chrome
 !/.librewolf/librewolf.overrides.cfg
 .config/btop/btop.log
+.config/nushell/history.txt
+.config/plover
+.config/plover/.cache/plugins.sqlite
