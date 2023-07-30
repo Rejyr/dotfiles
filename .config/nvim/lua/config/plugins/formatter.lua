@@ -4,27 +4,36 @@ local M = {
 }
 
 function M.config()
-    local util = require 'formatter.util'
+    local util = require('formatter.util')
     require('formatter').setup {
         filetype = {
             cpp = {
-                function()
-                    return {
-                        exe = 'clang-format',
-                        args = {
-                            '-assume-filename',
-                            util.escape_path(util.get_current_buffer_file_name()),
-                        },
-                        stdin = true,
-                        try_node_modules = true,
-                    }
-                end,
+                require('formatter.filetypes.cpp').clangformat,
             },
             css = {
+                require('formatter.filetypes.css').prettier,
+            },
+            javascript = {
+                require('formatter.filetypes.javascript').prettier,
+            },
+            json = {
+                require('formatter.filetypes.json').prettier
+            },
+            lua = {
+                require('formatter.filetypes.lua').stylua,
+            },
+            python = {
+                require('formatter.filetypes.python').autopep8,
+            },
+            rust = {
+                require('formatter.filetypes.rust').rustfmt,
+            },
+            svelte = {
                 function()
                     return {
-                        exe = 'prettier',
+                        exe = 'npx',
                         args = {
+                            'prettier',
                             '--stdin-filepath',
                             util.escape_path(util.get_current_buffer_file_path()),
                         },
@@ -33,36 +42,8 @@ function M.config()
                     }
                 end,
             },
-            lua = {
-                function()
-                    return {
-                        exe = 'stylua',
-                        args = {
-                            '-s',
-                            '-',
-                        },
-                        stdin = true,
-                    }
-                end,
-            },
-            python = {
-                function()
-                    return {
-                        exe = 'autopep8',
-                        args = { '-' },
-                        stdin = 1,
-                    }
-                end,
-            },
-            rust = {
-                -- Rustfmt
-                function()
-                    return {
-                        exe = 'rustfmt',
-                        args = { '--emit=stdout', '--edition=2021' },
-                        stdin = true,
-                    }
-                end,
+            typescript = {
+                require('formatter.filetypes.typescript').prettier,
             },
         },
     }

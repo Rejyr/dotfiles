@@ -162,6 +162,7 @@ local leader = {
         'Toggle lsp_lines',
     },
     nb = { '<cmd>Navbuddy<cr>', 'Navbuddy' },
+    nd = { '<cmd>NoiceDismiss<cr>', 'Dismiss Noice Notifications' },
     p = {
         name = '+plugin manager',
         p = { '<cmd>Lazy home<cr>', 'Home' },

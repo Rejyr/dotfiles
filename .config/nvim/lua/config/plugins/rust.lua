@@ -1,9 +1,9 @@
-local M = {
+local rust_tools = {
     'simrat39/rust-tools.nvim',
     ft = 'rust',
 }
 
-function M.config()
+function rust_tools.config()
     require('rust-tools').setup {
         tools = {
             runnables = {
@@ -36,4 +36,11 @@ function M.config()
     }
 end
 
-return M
+local crates = {
+    'saecki/crates.nvim',
+    event = { 'BufRead Cargo.toml' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = true,
+}
+
+return { rust_tools, crates }

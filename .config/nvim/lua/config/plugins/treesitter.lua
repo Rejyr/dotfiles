@@ -45,6 +45,7 @@ function M.config()
             'python',
             'regex',
             'rust',
+            'svelte',
             'toml',
             'typescript',
             'vim',

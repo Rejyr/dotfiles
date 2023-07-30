@@ -1,4 +1,9 @@
-local M = {
+local lspconfig = {
+
+    'neovim/nvim-lspconfig',
+}
+
+local mason = {
     'williamboman/mason.nvim',
     lazy = false,
 
@@ -9,7 +14,7 @@ local M = {
     },
 }
 
-function M.config()
+function mason.config()
     require('mason').setup {
         ui = {
             border = 'rounded',
@@ -31,6 +36,7 @@ function M.config()
             'ruff_lsp',
             'rust_analyzer',
             'sqlls',
+            'svelte',
             'texlab',
             'tsserver',
         },
@@ -84,6 +90,7 @@ function M.config()
         ensure_installed = {
             'autopep8',
             'clang-format',
+            'eslint_d',
             'prettier',
             'stylua',
             'selene',
@@ -121,4 +128,4 @@ function M.config()
     }
 end
 
-return M
+return { lspconfig, mason }
