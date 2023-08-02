@@ -126,11 +126,13 @@ input type:touchpad {
 # Read `man 5 sway-input` for more information about this section.
 
 # Enable floating
-for_window [class="WebCord"] move scratchpad
 for_window [class="SpeedCrunch"] floating enable
-for_window [instance="MultiMC"] floating enable
 for_window [title="Plover: Strokes Meter"] floating enable
 for_window [title="Plover: WPM Meter"] floating enable
+
+# Auto scratchpad
+for_window [class="pomotroid"] move scratchpad
+for_window [class="WebCord"] move scratchpad
 
 # Resize
 for_window [title="Plover: Strokes Meter"] width 181 height 148

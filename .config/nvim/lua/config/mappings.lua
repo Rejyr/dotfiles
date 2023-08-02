@@ -64,11 +64,7 @@ map('v', '>', '>gv')
 map('n', '<c-]>', '<cmd>Glance definitions<cr>', { silent = true })
 map('n', '<c-k>', vim.lsp.buf.signature_help, { silent = true })
 
--- FTerm
-map('n', '<A-i>', '<cmd>lua require("FTerm").toggle()<cr>')
-map('t', '<A-i>', '<C-\\><C-n><cmd>lua require("FTerm").toggle()<cr>')
-
-local non_leader = {
+local non_leader_keymaps = {
     g = {
         name = '+lsp',
         a = { vim.lsp.buf.code_action, 'Code Action' },
@@ -84,7 +80,7 @@ local non_leader = {
     K = { vim.lsp.buf.hover, 'Lsp Hover' },
 }
 
-local leader = {
+local leader_keymaps = {
     b = {
         name = '+buffer',
         ['p'] = { '<cmd>BufferLinePick<cr>', 'Pick Buffer' },
@@ -129,12 +125,6 @@ local leader = {
     },
     g = {
         name = '+git',
-        g = {
-            function()
-                require('FTerm').run [[gitui]]
-            end,
-            'Gitui',
-        },
         c = { telescope.git_commits, 'commits' },
         b = { telescope.git_branches, 'branches' },
         s = { telescope.git_status, 'status' },
@@ -232,5 +222,5 @@ local leader = {
     [':'] = { telescope.command_history, 'Command History' },
 }
 
-wk.register(non_leader)
-wk.register(leader, { prefix = '<leader>' })
+wk.register(non_leader_keymaps)
+wk.register(leader_keymaps, { prefix = '<leader>' })
