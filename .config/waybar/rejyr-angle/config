@@ -38,10 +38,8 @@
             "custom/rarrow4",
             "network",
             "custom/rarrow5",
-            "custom/keyboard-layout",
-            "custom/rarrow6",
             "custom/updates",
-            "custom/rarrow7",
+            "custom/rarrow6",
         ],
 	"modules-center": [
             "custom/clarrow",
@@ -137,8 +135,8 @@
         "clock#time": {
             "interval": 1,
             "format": "  {:%H:%M}",
-            "format-alt": "  {:%H:%M:%S}",
-            "tooltip-format": "{:%H:%M:%S}",
+            "format-alt": "  {:%H:%M:%OS}",
+            "tooltip-format": "{:%H:%M:%OS}",
         },
         "clock#date": {
             "interval": 60,
@@ -189,16 +187,6 @@
             "exec-if": "exit 0",                  // always run; consider advanced run conditions
             "on-click": "alacritty -e yay; pkill -SIGRTMIN+8 waybar",
 	    "tooltip": false,
-        },
-        "custom/keyboard-layout":{
-            "exec": "~/.config/waybar/keyboard-layout.sh",
-            // Interval set only as a fallback, as te value is updated by signal
-            "interval": 30,
-            "format": "  {}", // Icon: keyboard
-            // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-            "signal": 1, // SIGHUP
-            "on-click": "~/.config/waybar/toggle-keyboard-layout.sh",
-            "tooltip": false,
         },
         "custom/rarrow1":{
             "format": "",

@@ -85,15 +85,23 @@ return {
     config_local,
     { 'wakatime/vim-wakatime', event = 'VeryLazy' },
     {
+        'McAuleyPenney/tidy.nvim',
+        event = 'BufWritePre',
+    },
+    {
+        'MaximilianLloyd/tw-values.nvim',
+        cmd = { 'TWValues' },
+        keys = {
+            { '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
+        },
+        config = true,
+    },
+    {
         'notjedi/nvim-rooter.lua',
         lazy = false,
         opts = {
             manual = true,
         },
-    },
-    {
-        'McAuleyPenney/tidy.nvim',
-        event = 'BufWritePre',
     },
     {
         'andymass/vim-matchup',

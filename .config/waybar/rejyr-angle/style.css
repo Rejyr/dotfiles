@@ -85,7 +85,6 @@ button {
 @define-color temp @yellow;
 @define-color disk @green;
 @define-color network @aqua;
-@define-color keyboard-layout @green;
 @define-color updates @aqua;
 
 @define-color workspaces @aqua;
@@ -144,7 +143,6 @@ button {
 #disk,
 #custom-updates,
 #custom-weather,
-#custom-keyboard-layout,
 #tray {
   padding-left: 10px;
   padding-right: 10px;
@@ -242,19 +240,11 @@ button {
   color: @network;
 }
 
-#custom-keyboard-layout {
-  color: @keyboard-layout;
-}
-
-#custom-rarrow6 {
-  color: @keyboard-layout;
-}
-
 #custom-updates {
   color: @updates;
 }
 
-#custom-rarrow7 {
+#custom-rarrow6 {
   color: @updates;
 }
 

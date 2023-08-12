@@ -1,6 +1,7 @@
 anki-bin
 ansiweather
 auto-cpufreq
+bibata-cursor-theme
 cava
 cbonsai
 celt
@@ -23,6 +24,8 @@ plover-git
 plover_plugins_manager
 pomotroid-bin
 prismlauncher-qt5-bin
+python-anytree
+python-clickgen
 python-colored
 python-install
 python-jarowinkler
@@ -32,13 +35,13 @@ python-progress
 python-rapidfuzz-capi
 python-requests-cache
 python-rtf_tokenize
-python-time-machine
 python-timeout-decorator
 python-url-normalize
 rofi-lbonn-wayland
 swaync
 ungoogled-chromium-bin
 ventoy-bin
+vial-appimage
 vscode-codicons-git
 webcord
 yay

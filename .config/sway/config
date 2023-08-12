@@ -113,9 +113,6 @@ exec swayidle -w \
 # disable mouse acceleration
 input * accel_profile flat
 
-# keyboard layout
-include "$HOME/.config/sway/keyboard-layout"
-
 # touchpad settings
 input type:touchpad {
     tap enabled

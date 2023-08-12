@@ -1,6 +1,0 @@
-input * {
-    xkb_model "pc104aw-zqu"
-    xkb_layout "us"
-    xkb_variant "cmk_ed_us"
-    xkb_options "misc:cmk_curl_dh"
-}

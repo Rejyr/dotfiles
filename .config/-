@@ -1,0 +1,357 @@
+[38;5;238m───────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+       [38;5;238m│ [0m[1mSTDIN[0m
+[38;5;238m───────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m
+[38;5;238m   1[0m   [38;5;238m│[0m [38;2;248;248;242mrofi usage:[0m
+[38;5;238m   2[0m   [38;5;238m│[0m [38;2;248;248;242m    rofi [-options ...][0m
+[38;5;238m   3[0m   [38;5;238m│[0m 
+[38;5;238m   4[0m   [38;5;238m│[0m [38;2;248;248;242mCommand line only options:[0m
+[38;5;238m   5[0m   [38;5;238m│[0m [38;2;248;248;242m    -config [file]                         Load an alternative configuration.[0m
+[38;5;238m   6[0m   [38;5;238m│[0m [38;2;248;248;242m    -no-config                             Do not load configuration, use default values.[0m
+[38;5;238m   7[0m   [38;5;238m│[0m [38;2;248;248;242m    -v,-version                            Print the version number and exit.[0m
+[38;5;238m   8[0m   [38;5;238m│[0m [38;2;248;248;242m    -dmenu                                 Start in dmenu mode.[0m
+[38;5;238m   9[0m   [38;5;238m│[0m [38;2;248;248;242m    -display [string]                      X server to contact.[0m
+[38;5;238m  10[0m   [38;5;238m│[0m [38;2;248;248;242m        ${DISPLAY}[0m
+[38;5;238m  11[0m   [38;5;238m│[0m [38;2;248;248;242m    -h,-help                               This help message.[0m
+[38;5;238m  12[0m   [38;5;238m│[0m [38;2;248;248;242m    -e [string]                            Show a dialog displaying the passed message and exit.[0m
+[38;5;238m  13[0m   [38;5;238m│[0m [38;2;248;248;242m    -markup                                Enable pango markup where possible.[0m
+[38;5;238m  14[0m   [38;5;238m│[0m [38;2;248;248;242m    -normal-window                         Behave as a normal window. (experimental)[0m
+[38;5;238m  15[0m   [38;5;238m│[0m [38;2;248;248;242m    -show [mode]                           Show the mode 'mode' and exit. The mode has to be enabled.[0m
+[38;5;238m  16[0m   [38;5;238m│[0m [38;2;248;248;242m    -no-lazy-grab                          Disable lazy grab that, when fail to grab keyboard, does not block but retry later.[0m
+[38;5;238m  17[0m   [38;5;238m│[0m [38;2;248;248;242m    -no-plugins                            Disable loading of external plugins.[0m
+[38;5;238m  18[0m   [38;5;238m│[0m [38;2;248;248;242m    -plugin-path                           Directory used to search for rofi plugins. *DEPRECATED*[0m
+[38;5;238m  19[0m   [38;5;238m│[0m [38;2;248;248;242m    -dump-config                           Dump the current configuration in rasi format and exit.[0m
+[38;5;238m  20[0m   [38;5;238m│[0m [38;2;248;248;242m    -dump-theme                            Dump the current theme in rasi format and exit.[0m
+[38;5;238m  21[0m   [38;5;238m│[0m [38;2;248;248;242mDMENU command line options:[0m
+[38;5;238m  22[0m   [38;5;238m│[0m [38;2;248;248;242m    -mesg [string]                         Print a small user message under the prompt (uses pango markup)[0m
+[38;5;238m  23[0m   [38;5;238m│[0m [38;2;248;248;242m    -p [string]                            Prompt to display left of entry field[0m
+[38;5;238m  24[0m   [38;5;238m│[0m [38;2;248;248;242m    -selected-row [integer]                Select row[0m
+[38;5;238m  25[0m   [38;5;238m│[0m [38;2;248;248;242m    -format [string]                       Output format string[0m
+[38;5;238m  26[0m   [38;5;238m│[0m [38;2;248;248;242m        s[0m
+[38;5;238m  27[0m   [38;5;238m│[0m [38;2;248;248;242m    -u [list]                              List of row indexes to mark urgent[0m
+[38;5;238m  28[0m   [38;5;238m│[0m [38;2;248;248;242m    -a [list]                              List of row indexes to mark active[0m
+[38;5;238m  29[0m   [38;5;238m│[0m [38;2;248;248;242m    -l [integer]                           Number of rows to display[0m
+[38;5;238m  30[0m   [38;5;238m│[0m [38;2;248;248;242m    -window-title [string]                 Set the dmenu window title[0m
+[38;5;238m  31[0m   [38;5;238m│[0m [38;2;248;248;242m    -i                                     Set filter to be case insensitive[0m
+[38;5;238m  32[0m   [38;5;238m│[0m [38;2;248;248;242m    -only-match                            Force selection to be given entry, disallow no match[0m
+[38;5;238m  33[0m   [38;5;238m│[0m [38;2;248;248;242m    -no-custom                             Don't accept custom entry, allow no match[0m
+[38;5;238m  34[0m   [38;5;238m│[0m [38;2;248;248;242m    -select [string]                       Select the first row that matches[0m
+[38;5;238m  35[0m   [38;5;238m│[0m [38;2;248;248;242m    -password                              Do not show what the user inputs. Show '*' instead.[0m
+[38;5;238m  36[0m   [38;5;238m│[0m [38;2;248;248;242m    -markup-rows                           Allow and render pango markup as input data.[0m
+[38;5;238m  37[0m   [38;5;238m│[0m [38;2;248;248;242m    -sep [char]                            Element separator.[0m
+[38;5;238m  38[0m   [38;5;238m│[0m [38;2;248;248;242m        '\n'[0m
+[38;5;238m  39[0m   [38;5;238m│[0m [38;2;248;248;242m    -input [filename]                      Read input from file instead from standard input.[0m
+[38;5;238m  40[0m   [38;5;238m│[0m [38;2;248;248;242m    -sync                                  Force dmenu to first read all input data, then show dialog.[0m
+[38;5;238m  41[0m   [38;5;238m│[0m [38;2;248;248;242m    -w windowid                            Position over window with X11 windowid.[0m
+[38;5;238m  42[0m   [38;5;238m│[0m [38;2;248;248;242m    -keep-right                            Set ellipsize to end.[0m
+[38;5;238m  43[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-columns                       Only show the selected columns[0m
+[38;5;238m  44[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-column-separator               Separator to use to split columns (regex)[0m
+[38;5;238m  45[0m   [38;5;238m│[0m [38;2;248;248;242m    -ballot-selected-str                     When multi-select is enabled prefix this string when element is selected.[0m
+[38;5;238m  46[0m   [38;5;238m│[0m [38;2;248;248;242m    -ballot-unselected-str                 When multi-select is enabled prefix this string when element is not selected.[0m
+[38;5;238m  47[0m   [38;5;238m│[0m [38;2;248;248;242mGlobal options:[0m
+[38;5;238m  48[0m   [38;5;238m│[0m [38;2;248;248;242m    -modes [string]                         Enable modes[0m
+[38;5;238m  49[0m   [38;5;238m│[0m [38;2;248;248;242m        drun,run,ssh (Default)[0m
+[38;5;238m  50[0m   [38;5;238m│[0m [38;2;248;248;242m    -font [string]                          Font to use[0m
+[38;5;238m  51[0m   [38;5;238m│[0m [38;2;248;248;242m        mono 12 (Default)[0m
+[38;5;238m  52[0m   [38;5;238m│[0m [38;2;248;248;242m    -location [number]                      Location on screen[0m
+[38;5;238m  53[0m   [38;5;238m│[0m [38;2;248;248;242m        0 (Default)[0m
+[38;5;238m  54[0m   [38;5;238m│[0m [38;2;248;248;242m    -yoffset [number]                       Y-offset relative to location. *DEPRECATED* see rofi-theme manpage for new option[0m
+[38;5;238m  55[0m   [38;5;238m│[0m [38;2;248;248;242m        0 (Default)[0m
+[38;5;238m  56[0m   [38;5;238m│[0m [38;2;248;248;242m    -xoffset [number]                       X-offset relative to location. *DEPRECATED* see rofi-theme manpage for new option[0m
+[38;5;238m  57[0m   [38;5;238m│[0m [38;2;248;248;242m        0 (Default)[0m
+[38;5;238m  58[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]fixed-num-lines                   Always show number of lines[0m
+[38;5;238m  59[0m   [38;5;238m│[0m [38;2;248;248;242m        True (Default)[0m
+[38;5;238m  60[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]show-icons                        Whether to load and show icons[0m
+[38;5;238m  61[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m  62[0m   [38;5;238m│[0m [38;2;248;248;242m    -terminal [string]                      Terminal to use[0m
+[38;5;238m  63[0m   [38;5;238m│[0m [38;2;248;248;242m        rofi-sensible-terminal (Default)[0m
+[38;5;238m  64[0m   [38;5;238m│[0m [38;2;248;248;242m    -ssh-client [string]                    Ssh client to use[0m
+[38;5;238m  65[0m   [38;5;238m│[0m [38;2;248;248;242m        ssh (Default)[0m
+[38;5;238m  66[0m   [38;5;238m│[0m [38;2;248;248;242m    -ssh-command [string]                   Ssh command to execute[0m
+[38;5;238m  67[0m   [38;5;238m│[0m [38;2;248;248;242m        {terminal} -e {ssh-client} {host} [-p {port}] (Default)[0m
+[38;5;238m  68[0m   [38;5;238m│[0m [38;2;248;248;242m    -run-command [string]                   Run command to execute[0m
+[38;5;238m  69[0m   [38;5;238m│[0m [38;2;248;248;242m        {cmd} (Default)[0m
+[38;5;238m  70[0m   [38;5;238m│[0m [38;2;248;248;242m    -run-list-command [string]              Command to get extra run targets[0m
+[38;5;238m  71[0m   [38;5;238m│[0m [38;2;248;248;242m         (Default)[0m
+[38;5;238m  72[0m   [38;5;238m│[0m [38;2;248;248;242m    -run-shell-command [string]             Run command to execute that runs in shell[0m
+[38;5;238m  73[0m   [38;5;238m│[0m [38;2;248;248;242m        {terminal} -e {cmd} (Default)[0m
+[38;5;238m  74[0m   [38;5;238m│[0m [38;2;248;248;242m    -window-command [string]                Command to executed when -kb-accept-alt binding is hit on selected window [0m
+[38;5;238m  75[0m   [38;5;238m│[0m [38;2;248;248;242m        wmctrl -i -R {window} (Default)[0m
+[38;5;238m  76[0m   [38;5;238m│[0m [38;2;248;248;242m    -window-match-fields [string]           Window fields to match in window mode[0m
+[38;5;238m  77[0m   [38;5;238m│[0m [38;2;248;248;242m        all (Default)[0m
+[38;5;238m  78[0m   [38;5;238m│[0m [38;2;248;248;242m    -icon-theme [string]                    Theme to use to look for icons[0m
+[38;5;238m  79[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m  80[0m   [38;5;238m│[0m [38;2;248;248;242m    -drun-match-fields [string]             Desktop entry fields to match in drun[0m
+[38;5;238m  81[0m   [38;5;238m│[0m [38;2;248;248;242m        name,generic,exec,categories,keywords (Default)[0m
+[38;5;238m  82[0m   [38;5;238m│[0m [38;2;248;248;242m    -drun-categories [string]               Only show Desktop entry from these categories[0m
+[38;5;238m  83[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m  84[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]drun-show-actions                 Desktop entry show actions.[0m
+[38;5;238m  85[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m  86[0m   [38;5;238m│[0m [38;2;248;248;242m    -drun-display-format [string]           DRUN format string. (Supports: generic,name,comment,exec,categories)[0m
+[38;5;238m  87[0m   [38;5;238m│[0m [38;2;248;248;242m        {name} [<span weight='light' size='small'><i>({generic})</i></span>] (Default)[0m
+[38;5;238m  88[0m   [38;5;238m│[0m [38;2;248;248;242m    -drun-url-launcher [string]             Command to open a Desktop Entry that is a Link.[0m
+[38;5;238m  89[0m   [38;5;238m│[0m [38;2;248;248;242m        xdg-open (Default)[0m
+[38;5;238m  90[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]disable-history                   Disable history in run/ssh[0m
+[38;5;238m  91[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m  92[0m   [38;5;238m│[0m [38;2;248;248;242m    -ignored-prefixes [string]              Programs ignored for history[0m
+[38;5;238m  93[0m   [38;5;238m│[0m [38;2;248;248;242m         (Default)[0m
+[38;5;238m  94[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]sort                              Use sorting[0m
+[38;5;238m  95[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m  96[0m   [38;5;238m│[0m [38;2;248;248;242m    -sorting-method [string]                Choose the strategy used for sorting: normal (levenshtein) or fzf.[0m
+[38;5;238m  97[0m   [38;5;238m│[0m [38;2;248;248;242m        normal (Default)[0m
+[38;5;238m  98[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]case-sensitive                    Set case-sensitivity[0m
+[38;5;238m  99[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 100[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]cycle                             Cycle through the results list[0m
+[38;5;238m 101[0m   [38;5;238m│[0m [38;2;248;248;242m        True (Default)[0m
+[38;5;238m 102[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]sidebar-mode                      Enable sidebar-mode[0m
+[38;5;238m 103[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 104[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]hover-select                      Enable hover-select[0m
+[38;5;238m 105[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 106[0m   [38;5;238m│[0m [38;2;248;248;242m    -eh [number]                            Row height (in chars)[0m
+[38;5;238m 107[0m   [38;5;238m│[0m [38;2;248;248;242m        1 (Default)[0m
+[38;5;238m 108[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]auto-select                       Enable auto select mode[0m
+[38;5;238m 109[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 110[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]parse-hosts                       Parse hosts file for ssh mode[0m
+[38;5;238m 111[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 112[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]parse-known-hosts                 Parse known_hosts file for ssh mode[0m
+[38;5;238m 113[0m   [38;5;238m│[0m [38;2;248;248;242m        True (Default)[0m
+[38;5;238m 114[0m   [38;5;238m│[0m [38;2;248;248;242m    -combi-modes [string]                   Set the modi to combine in combi mode[0m
+[38;5;238m 115[0m   [38;5;238m│[0m [38;2;248;248;242m        window,run (Default)[0m
+[38;5;238m 116[0m   [38;5;238m│[0m [38;2;248;248;242m    -matching [string]                      Set the matching algorithm. (normal, regex, glob, fuzzy, prefix)[0m
+[38;5;238m 117[0m   [38;5;238m│[0m [38;2;248;248;242m        normal (Default)[0m
+[38;5;238m 118[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]tokenize                          Tokenize input string[0m
+[38;5;238m 119[0m   [38;5;238m│[0m [38;2;248;248;242m        True (Default)[0m
+[38;5;238m 120[0m   [38;5;238m│[0m [38;2;248;248;242m    -m [string]                             Monitor id to show on[0m
+[38;5;238m 121[0m   [38;5;238m│[0m [38;2;248;248;242m        -5 (Default)[0m
+[38;5;238m 122[0m   [38;5;238m│[0m [38;2;248;248;242m    -filter [string]                        Pre-set filter[0m
+[38;5;238m 123[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 124[0m   [38;5;238m│[0m [38;2;248;248;242m    -dpi [number]                           DPI[0m
+[38;5;238m 125[0m   [38;5;238m│[0m [38;2;248;248;242m        -1 (Default)[0m
+[38;5;238m 126[0m   [38;5;238m│[0m [38;2;248;248;242m    -threads [number]                       Threads to use for string matching[0m
+[38;5;238m 127[0m   [38;5;238m│[0m [38;2;248;248;242m        0 (Default)[0m
+[38;5;238m 128[0m   [38;5;238m│[0m [38;2;248;248;242m    -scroll-method [number]                 Scrolling method. (0: Page, 1: Centered)[0m
+[38;5;238m 129[0m   [38;5;238m│[0m [38;2;248;248;242m        0 (Default)[0m
+[38;5;238m 130[0m   [38;5;238m│[0m [38;2;248;248;242m    -window-format [string]                 Window Format. w (desktop name), t (title), n (name), r (role), c (class)[0m
+[38;5;238m 131[0m   [38;5;238m│[0m [38;2;248;248;242m        {w}    {c}   {t} (Default)[0m
+[38;5;238m 132[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]click-to-exit                     Click outside the window to exit[0m
+[38;5;238m 133[0m   [38;5;238m│[0m [38;2;248;248;242m        True (Default)[0m
+[38;5;238m 134[0m   [38;5;238m│[0m [38;2;248;248;242m    -max-history-size [number]              Max history size (WARNING: can cause slowdowns when set too high).[0m
+[38;5;238m 135[0m   [38;5;238m│[0m [38;2;248;248;242m        25 (Default)[0m
+[38;5;238m 136[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]combi-hide-mode-prefix            Hide the prefix mode prefix on the combi view.**deprecated** use combi-display-format[0m
+[38;5;238m 137[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 138[0m   [38;5;238m│[0m [38;2;248;248;242m    -combi-display-format [string]          Combi format string. (Supports: mode, text)[0m
+[38;5;238m 139[0m   [38;5;238m│[0m [38;2;248;248;242m        {mode} {text} (Default)[0m
+[38;5;238m 140[0m   [38;5;238m│[0m [38;2;248;248;242m    -matching-negate-char [character]          Set the character used to negate the matching. ('\0' to disable)[0m
+[38;5;238m 141[0m   [38;5;238m│[0m [38;2;248;248;242m        - (Default)[0m
+[38;5;238m 142[0m   [38;5;238m│[0m [38;2;248;248;242m    -cache-dir [string]                     Directory where history and temporary files are stored.[0m
+[38;5;238m 143[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 144[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]window-thumbnail                  Show window thumbnail (if available) as icon in window switcher.[0m
+[38;5;238m 145[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 146[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]drun-use-desktop-cache            DRUN: build and use a cache with desktop file content.[0m
+[38;5;238m 147[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 148[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]drun-reload-desktop-cache         DRUN: If enabled, reload the cache with desktop file content.[0m
+[38;5;238m 149[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 150[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]normalize-match                   Normalize string when matching (disables match highlighting).[0m
+[38;5;238m 151[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 152[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]steal-focus                       Steal focus on launch and restore to window that had it on rofi start on close .[0m
+[38;5;238m 153[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 154[0m   [38;5;238m│[0m [38;2;248;248;242m    -application-fallback-icon [string]     Fallback icon to use when the application icon is not found in run/drun.[0m
+[38;5;238m 155[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 156[0m   [38;5;238m│[0m [38;2;248;248;242m    -refilter-timeout-limit [number]        When there are more entries then this limit, only refilter after a timeout.[0m
+[38;5;238m 157[0m   [38;5;238m│[0m [38;2;248;248;242m        8192 (Default)[0m
+[38;5;238m 158[0m   [38;5;238m│[0m [38;2;248;248;242m    -[no-]xserver-i300-workaround           Workaround for XServer issue #300 (issue #611 for rofi.)[0m
+[38;5;238m 159[0m   [38;5;238m│[0m [38;2;248;248;242m        False (Default)[0m
+[38;5;238m 160[0m   [38;5;238m│[0m [38;2;248;248;242m    -pid [string]                           Pidfile location[0m
+[38;5;238m 161[0m   [38;5;238m│[0m [38;2;248;248;242m        /run/user/1000/rofi.pid (Default)[0m
+[38;5;238m 162[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-run [string]                   The display name of this browser[0m
+[38;5;238m 163[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 164[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-ssh [string]                   The display name of this browser[0m
+[38;5;238m 165[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 166[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-drun [string]                  The display name of this browser[0m
+[38;5;238m 167[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 168[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-combi [string]                 The display name of this browser[0m
+[38;5;238m 169[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 170[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-keys [string]                  The display name of this browser[0m
+[38;5;238m 171[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 172[0m   [38;5;238m│[0m [38;2;248;248;242m    -display-filebrowser [string]           The display name of this browser[0m
+[38;5;238m 173[0m   [38;5;238m│[0m [38;2;248;248;242m        (unset) (Default)[0m
+[38;5;238m 174[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-primary-paste [string]              Paste primary selection[0m
+[38;5;238m 175[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+V,Shift+Insert (Default)[0m
+[38;5;238m 176[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-secondary-paste [string]            Paste clipboard[0m
+[38;5;238m 177[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+v,Insert (Default)[0m
+[38;5;238m 178[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-clear-line [string]                 Clear input line[0m
+[38;5;238m 179[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+w (Default)[0m
+[38;5;238m 180[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-front [string]                 Beginning of line[0m
+[38;5;238m 181[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+a (Default)[0m
+[38;5;238m 182[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-end [string]                   End of line[0m
+[38;5;238m 183[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+e (Default)[0m
+[38;5;238m 184[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-word-back [string]             Move back one word[0m
+[38;5;238m 185[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+b,Control+Left (Default)[0m
+[38;5;238m 186[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-word-forward [string]          Move forward one word[0m
+[38;5;238m 187[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+f,Control+Right (Default)[0m
+[38;5;238m 188[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-char-back [string]             Move back one char[0m
+[38;5;238m 189[0m   [38;5;238m│[0m [38;2;248;248;242m        Left,Control+b (Default)[0m
+[38;5;238m 190[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-move-char-forward [string]          Move forward one char[0m
+[38;5;238m 191[0m   [38;5;238m│[0m [38;2;248;248;242m        Right,Control+f (Default)[0m
+[38;5;238m 192[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-word-back [string]           Delete previous word[0m
+[38;5;238m 193[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Alt+h,Control+BackSpace (Default)[0m
+[38;5;238m 194[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-word-forward [string]        Delete next word[0m
+[38;5;238m 195[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Alt+d (Default)[0m
+[38;5;238m 196[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-char-forward [string]        Delete next char[0m
+[38;5;238m 197[0m   [38;5;238m│[0m [38;2;248;248;242m        Delete,Control+d (Default)[0m
+[38;5;238m 198[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-char-back [string]           Delete previous char[0m
+[38;5;238m 199[0m   [38;5;238m│[0m [38;2;248;248;242m        BackSpace,Shift+BackSpace,Control+h (Default)[0m
+[38;5;238m 200[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-to-eol [string]              Delete till the end of line[0m
+[38;5;238m 201[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+k (Default)[0m
+[38;5;238m 202[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-remove-to-sol [string]              Delete till the start of line[0m
+[38;5;238m 203[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+u (Default)[0m
+[38;5;238m 204[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-accept-entry [string]               Accept entry[0m
+[38;5;238m 205[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+j,Control+m,Return,KP_Enter (Default)[0m
+[38;5;238m 206[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-accept-custom [string]              Use entered text as command (in ssh/run modes)[0m
+[38;5;238m 207[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Return (Default)[0m
+[38;5;238m 208[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-accept-custom-alt [string]          Use entered text as command (in ssh/run modes)[0m
+[38;5;238m 209[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Shift+Return (Default)[0m
+[38;5;238m 210[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-accept-alt [string]                 Use alternate accept command.[0m
+[38;5;238m 211[0m   [38;5;238m│[0m [38;2;248;248;242m        Shift+Return (Default)[0m
+[38;5;238m 212[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-delete-entry [string]               Delete entry from history[0m
+[38;5;238m 213[0m   [38;5;238m│[0m [38;2;248;248;242m        Shift+Delete (Default)[0m
+[38;5;238m 214[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-mode-next [string]                  Switch to the next mode.[0m
+[38;5;238m 215[0m   [38;5;238m│[0m [38;2;248;248;242m        Shift+Right,Control+Tab (Default)[0m
+[38;5;238m 216[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-mode-previous [string]              Switch to the previous mode.[0m
+[38;5;238m 217[0m   [38;5;238m│[0m [38;2;248;248;242m        Shift+Left,Control+ISO_Left_Tab (Default)[0m
+[38;5;238m 218[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-mode-complete [string]              Start completion for mode.[0m
+[38;5;238m 219[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+l (Default)[0m
+[38;5;238m 220[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-left [string]                   Go to the previous column[0m
+[38;5;238m 221[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Page_Up (Default)[0m
+[38;5;238m 222[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-right [string]                  Go to the next column[0m
+[38;5;238m 223[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+Page_Down (Default)[0m
+[38;5;238m 224[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-up [string]                     Select previous entry[0m
+[38;5;238m 225[0m   [38;5;238m│[0m [38;2;248;248;242m        Up,Control+p (Default)[0m
+[38;5;238m 226[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-down [string]                   Select next entry[0m
+[38;5;238m 227[0m   [38;5;238m│[0m [38;2;248;248;242m        Down,Control+n (Default)[0m
+[38;5;238m 228[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-tab [string]                    Go to next row, if one left, accept it, if no left next mode.[0m
+[38;5;238m 229[0m   [38;5;238m│[0m [38;2;248;248;242m         (Default)[0m
+[38;5;238m 230[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-element-next [string]               Go to next element (in logical order).[0m
+[38;5;238m 231[0m   [38;5;238m│[0m [38;2;248;248;242m        Tab (Default)[0m
+[38;5;238m 232[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-element-prev [string]               Go to next previous element (in logical order).[0m
+[38;5;238m 233[0m   [38;5;238m│[0m [38;2;248;248;242m        ISO_Left_Tab (Default)[0m
+[38;5;238m 234[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-page-prev [string]                  Go to the previous page[0m
+[38;5;238m 235[0m   [38;5;238m│[0m [38;2;248;248;242m        Page_Up (Default)[0m
+[38;5;238m 236[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-page-next [string]                  Go to the next page[0m
+[38;5;238m 237[0m   [38;5;238m│[0m [38;2;248;248;242m        Page_Down (Default)[0m
+[38;5;238m 238[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-first [string]                  Go to the first entry[0m
+[38;5;238m 239[0m   [38;5;238m│[0m [38;2;248;248;242m        Home,KP_Home (Default)[0m
+[38;5;238m 240[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-last [string]                   Go to the last entry[0m
+[38;5;238m 241[0m   [38;5;238m│[0m [38;2;248;248;242m        End,KP_End (Default)[0m
+[38;5;238m 242[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-row-select [string]                 Set selected item as input text[0m
+[38;5;238m 243[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+space (Default)[0m
+[38;5;238m 244[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-screenshot [string]                 Take a screenshot of the rofi window[0m
+[38;5;238m 245[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+S (Default)[0m
+[38;5;238m 246[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-ellipsize [string]                  Toggle between ellipsize modes for displayed data[0m
+[38;5;238m 247[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+period (Default)[0m
+[38;5;238m 248[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-toggle-case-sensitivity [string]    Toggle case sensitivity[0m
+[38;5;238m 249[0m   [38;5;238m│[0m [38;2;248;248;242m        grave,dead_grave (Default)[0m
+[38;5;238m 250[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-toggle-sort [string]                Toggle sort[0m
+[38;5;238m 251[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+grave (Default)[0m
+[38;5;238m 252[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-cancel [string]                     Quit rofi[0m
+[38;5;238m 253[0m   [38;5;238m│[0m [38;2;248;248;242m        Escape,Control+g,Control+bracketleft (Default)[0m
+[38;5;238m 254[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-1 [string]                   Custom keybinding 1[0m
+[38;5;238m 255[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+1 (Default)[0m
+[38;5;238m 256[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-2 [string]                   Custom keybinding 2[0m
+[38;5;238m 257[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+2 (Default)[0m
+[38;5;238m 258[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-3 [string]                   Custom keybinding 3[0m
+[38;5;238m 259[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+3 (Default)[0m
+[38;5;238m 260[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-4 [string]                   Custom keybinding 4[0m
+[38;5;238m 261[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+4 (Default)[0m
+[38;5;238m 262[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-5 [string]                   Custom Keybinding 5[0m
+[38;5;238m 263[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+5 (Default)[0m
+[38;5;238m 264[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-6 [string]                   Custom keybinding 6[0m
+[38;5;238m 265[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+6 (Default)[0m
+[38;5;238m 266[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-7 [string]                   Custom Keybinding 7[0m
+[38;5;238m 267[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+7 (Default)[0m
+[38;5;238m 268[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-8 [string]                   Custom keybinding 8[0m
+[38;5;238m 269[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+8 (Default)[0m
+[38;5;238m 270[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-9 [string]                   Custom keybinding 9[0m
+[38;5;238m 271[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+9 (Default)[0m
+[38;5;238m 272[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-10 [string]                  Custom keybinding 10[0m
+[38;5;238m 273[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+0 (Default)[0m
+[38;5;238m 274[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-11 [string]                  Custom keybinding 11[0m
+[38;5;238m 275[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+exclam (Default)[0m
+[38;5;238m 276[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-12 [string]                  Custom keybinding 12[0m
+[38;5;238m 277[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+at (Default)[0m
+[38;5;238m 278[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-13 [string]                  Custom keybinding 13[0m
+[38;5;238m 279[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+numbersign (Default)[0m
+[38;5;238m 280[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-14 [string]                  Custom keybinding 14[0m
+[38;5;238m 281[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+dollar (Default)[0m
+[38;5;238m 282[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-15 [string]                  Custom keybinding 15[0m
+[38;5;238m 283[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+percent (Default)[0m
+[38;5;238m 284[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-16 [string]                  Custom keybinding 16[0m
+[38;5;238m 285[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+dead_circumflex (Default)[0m
+[38;5;238m 286[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-17 [string]                  Custom keybinding 17[0m
+[38;5;238m 287[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+ampersand (Default)[0m
+[38;5;238m 288[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-18 [string]                  Custom keybinding 18[0m
+[38;5;238m 289[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+asterisk (Default)[0m
+[38;5;238m 290[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-custom-19 [string]                  Custom Keybinding 19[0m
+[38;5;238m 291[0m   [38;5;238m│[0m [38;2;248;248;242m        Alt+parenleft (Default)[0m
+[38;5;238m 292[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-1 [string]                   Select row 1[0m
+[38;5;238m 293[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+1 (Default)[0m
+[38;5;238m 294[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-2 [string]                   Select row 2[0m
+[38;5;238m 295[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+2 (Default)[0m
+[38;5;238m 296[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-3 [string]                   Select row 3[0m
+[38;5;238m 297[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+3 (Default)[0m
+[38;5;238m 298[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-4 [string]                   Select row 4[0m
+[38;5;238m 299[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+4 (Default)[0m
+[38;5;238m 300[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-5 [string]                   Select row 5[0m
+[38;5;238m 301[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+5 (Default)[0m
+[38;5;238m 302[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-6 [string]                   Select row 6[0m
+[38;5;238m 303[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+6 (Default)[0m
+[38;5;238m 304[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-7 [string]                   Select row 7[0m
+[38;5;238m 305[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+7 (Default)[0m
+[38;5;238m 306[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-8 [string]                   Select row 8[0m
+[38;5;238m 307[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+8 (Default)[0m
+[38;5;238m 308[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-9 [string]                   Select row 9[0m
+[38;5;238m 309[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+9 (Default)[0m
+[38;5;238m 310[0m   [38;5;238m│[0m [38;2;248;248;242m    -kb-select-10 [string]                  Select row 10[0m
+[38;5;238m 311[0m   [38;5;238m│[0m [38;2;248;248;242m        Super+0 (Default)[0m
+[38;5;238m 312[0m   [38;5;238m│[0m [38;2;248;248;242m    -ml-row-left [string]                   Go to the previous column[0m
+[38;5;238m 313[0m   [38;5;238m│[0m [38;2;248;248;242m        ScrollLeft (Default)[0m
+[38;5;238m 314[0m   [38;5;238m│[0m [38;2;248;248;242m    -ml-row-right [string]                  Go to the next column[0m
+[38;5;238m 315[0m   [38;5;238m│[0m [38;2;248;248;242m        ScrollRight (Default)[0m
+[38;5;238m 316[0m   [38;5;238m│[0m [38;2;248;248;242m    -ml-row-up [string]                     Select previous entry[0m
+[38;5;238m 317[0m   [38;5;238m│[0m [38;2;248;248;242m        ScrollUp (Default)[0m
+[38;5;238m 318[0m   [38;5;238m│[0m [38;2;248;248;242m    -ml-row-down [string]                   Select next entry[0m
+[38;5;238m 319[0m   [38;5;238m│[0m [38;2;248;248;242m        ScrollDown (Default)[0m
+[38;5;238m 320[0m   [38;5;238m│[0m [38;2;248;248;242m    -me-select-entry [string]               Select hovered row[0m
+[38;5;238m 321[0m   [38;5;238m│[0m [38;2;248;248;242m        MousePrimary (Default)[0m
+[38;5;238m 322[0m   [38;5;238m│[0m [38;2;248;248;242m    -me-accept-entry [string]               Accept hovered row[0m
+[38;5;238m 323[0m   [38;5;238m│[0m [38;2;248;248;242m        MouseDPrimary (Default)[0m
+[38;5;238m 324[0m   [38;5;238m│[0m [38;2;248;248;242m    -me-accept-custom [string]              Accept hovered row with custom action[0m
+[38;5;238m 325[0m   [38;5;238m│[0m [38;2;248;248;242m        Control+MouseDPrimary (Default)[0m
+[38;5;238m 326[0m   [38;5;238m│[0m 
+[38;5;238m 327[0m   [38;5;238m│[0m 
+[38;5;238m 328[0m   [38;5;238m│[0m [38;2;248;248;242mDetected modes:[0m
+[38;5;238m 329[0m   [38;5;238m│[0m [38;2;248;248;242m        • +run[0m
+[38;5;238m 330[0m   [38;5;238m│[0m [38;2;248;248;242m        • +ssh[0m
+[38;5;238m 331[0m   [38;5;238m│[0m [38;2;248;248;242m        • +drun[0m
+[38;5;238m 332[0m   [38;5;238m│[0m [38;2;248;248;242m        • combi[0m
+[38;5;238m 333[0m   [38;5;238m│[0m [38;2;248;248;242m        • keys[0m
+[38;5;238m 334[0m   [38;5;238m│[0m [38;2;248;248;242m        • filebrowser[0m
+[38;5;238m 335[0m   [38;5;238m│[0m 
+[38;5;238m 336[0m   [38;5;238m│[0m [38;2;248;248;242mDetected user scripts:[0m
+[38;5;238m 337[0m   [38;5;238m│[0m 
+[38;5;238m 338[0m   [38;5;238m│[0m [38;2;248;248;242mCompile time options:[0m
+[38;5;238m 339[0m   [38;5;238m│[0m [38;2;248;248;242m    • Pango   version 1.50.14[0m
+[38;5;238m 340[0m   [38;5;238m│[0m [38;2;248;248;242m    • window  enabled[0m
+[38;5;238m 341[0m   [38;5;238m│[0m [38;2;248;248;242m    • drun    enabled[0m
+[38;5;238m 342[0m   [38;5;238m│[0m [38;2;248;248;242m    • gcov    disabled[0m
+[38;5;238m 343[0m   [38;5;238m│[0m [38;2;248;248;242m    • asan    disabled[0m
+[38;5;238m 344[0m   [38;5;238m│[0m 
+[38;5;238m 345[0m   [38;5;238m│[0m [38;2;248;248;242mFor more information see: man rofi[0m
+[38;5;238m 346[0m   [38;5;238m│[0m [38;2;248;248;242m                 Version: 1.7.5+wayland1[0m
+[38;5;238m 347[0m   [38;5;238m│[0m [38;2;248;248;242m              Bugreports: https://github.com/davatorium/rofi/[0m
+[38;5;238m 348[0m   [38;5;238m│[0m [38;2;248;248;242m                 Support: https://reddit.com/r/qtools/[0m
+[38;5;238m 349[0m   [38;5;238m│[0m [38;2;248;248;242m                          #rofi @ libera.chat[0m
+[38;5;238m 350[0m   [38;5;238m│[0m [38;2;248;248;242m      Configuration file: /home/rejyr/.config/rofi/config.rasi[0m
+[38;5;238m 351[0m   [38;5;238m│[0m 
+[38;5;238m 352[0m   [38;5;238m│[0m [38;2;248;248;242mParsed files:[0m
+[38;5;238m 353[0m   [38;5;238m│[0m 
+[38;5;238m───────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[0m

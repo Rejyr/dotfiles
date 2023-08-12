@@ -1,4 +1,5 @@
 function abbrs_startup
+abbr -a -- ln 'ln -s' 
 abbr -a -- nf 'nvim (fzf)' 
 abbr -a -- n nvim 
 abbr -a -- bac 'bacon -j clippy' 

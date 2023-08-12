@@ -68,6 +68,7 @@ lldb
 m4
 make
 man-db
+mold
 mpc
 mpd
 mpv
@@ -147,6 +148,7 @@ which
 wl-clipboard
 wmname
 xdg-desktop-portal-wlr
+xournalpp
 yt-dlp
 zathura
 zathura-pdf-mupdf
