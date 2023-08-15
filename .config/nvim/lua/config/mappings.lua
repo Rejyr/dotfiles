@@ -34,16 +34,16 @@ map(
 )
 
 -- Move to window using the <ctrl> movement keys
-map('n', '<left>', '<C-w>h')
-map('n', '<down>', '<C-w>j')
-map('n', '<up>', '<C-w>k')
-map('n', '<right>', '<C-w>l')
+map('n', '<S-Left>', '<C-w>h')
+map('n', '<S-Down>', '<C-w>j')
+map('n', '<S-Up>', '<C-w>k')
+map('n', '<s-Right>', '<C-w>l')
 
 -- Resize window using <ctrl> arrow keys
-map('n', '<S-Up>', '<cmd>resize +2<cr>')
-map('n', '<S-Down>', '<cmd>resize -2<cr>')
-map('n', '<S-Left>', '<cmd>vertical resize -2<cr>')
-map('n', '<S-Right>', '<cmd>vertical resize +2<cr>')
+map('n', '<C-Up>', '<cmd>resize +2<cr>')
+map('n', '<C-Down>', '<cmd>resize -2<cr>')
+map('n', '<C-Left>', '<cmd>vertical resize -2<cr>')
+map('n', '<C-Right>', '<cmd>vertical resize +2<cr>')
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map({ 'n', 'x', 'o' }, 'n', "'Nn'[v:searchforward]", { expr = true })

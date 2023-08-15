@@ -20,6 +20,7 @@ SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
 SETUVAR --export QT_STYLE_OVERRIDE:Everforest
 SETUVAR --export TMUX:\x1d
 SETUVAR --export --path XCURSOR_PATH:/home/rejyr/\x2elocal/share/icons
+SETUVAR --export XCURSOR_THEME:Shiori
 SETUVAR --export XDG_CURRENT_DESKTOP:sway
 SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1
 SETUVAR __fish_initialized:3400
