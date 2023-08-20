@@ -18,6 +18,7 @@ librewolf-bin
 libvterm01
 logiops-git
 lunar-client
+pandoc-bin
 pipes-rs-git
 plover-git
 plover_plugins_manager
