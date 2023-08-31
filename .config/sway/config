@@ -121,6 +121,12 @@ input type:touchpad {
     middle_emulation disabled
 }
 
+# map graphics tablet to hdmi monitor
+input type:tablet_tool map_to_output HDMI-A-1
+
+# ralt compose key
+input * xkb_options compose:ralt
+
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
