@@ -83,11 +83,8 @@ local non_leader_keymaps = {
 local leader_keymaps = {
     b = {
         name = '+buffer',
-        ['p'] = { '<cmd>BufferLinePick<cr>', 'Pick Buffer' },
-        ['s'] = { telescope.buffers, 'Select Buffer' },
-        ['b'] = { '<cmd>:e #<cr>', 'Switch to Other Buffer' },
-        ['['] = { '<cmd>:BufferLineCyclePrev<cr>', 'Previous Buffer' },
-        [']'] = { '<cmd>:BufferLineCycleNext<cr>', 'Next Buffer' },
+        ['b'] = { telescope.buffers, 'Select Buffer' },
+        ['s'] = { '<cmd>:e #<cr>', 'Switch to Other Buffer' },
         ['D'] = { '<cmd>:bd<cr>', 'Delete Buffer & Window' },
     },
     c = { '<cmd>Telescope neoclip<cr>', 'Copy Registers' },
@@ -151,7 +148,6 @@ local leader_keymaps = {
         require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
     },
-    nb = { '<cmd>Navbuddy<cr>', 'Navbuddy' },
     nd = { '<cmd>NoiceDismiss<cr>', 'Dismiss Noice Notifications' },
     p = {
         name = '+plugin manager',
@@ -169,9 +165,8 @@ local leader_keymaps = {
         name = '+quit/session',
         q = { '<cmd>qa<cr>', 'Quit' },
         ['!'] = { '<cmd>:qa!<cr>', 'Quit without saving' },
-        l = { '<cmd>SessionRestore<cr>', 'Restore Session' },
-        s = { '<cmd>SessionSave<cr>', 'Save Session' },
-        t = { '<cmd>SearchSession<cr>', 'Select Session' },
+        l = { '<cmd>Telescope possession list<cr>', 'Load Session' },
+        s = { '<cmd>SSave<cr>', 'Save Session' },
     },
     rn = { vim.lsp.buf.rename, 'Rename' },
     rr = { '<cmd>RustRun<cr>', 'Rust Run' },

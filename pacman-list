@@ -17,13 +17,12 @@ btop
 cliphist
 cmake
 cups
-deno
 dhcpcd
 dialog
 dust
 efibootmgr
 eog
-exa
+eza
 fakeroot
 fd
 file
@@ -147,6 +146,7 @@ wl-clipboard
 wmname
 xdg-desktop-portal-wlr
 xournalpp
+yazi
 yt-dlp
 zathura
 zathura-pdf-mupdf

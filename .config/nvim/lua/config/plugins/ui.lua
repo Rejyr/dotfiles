@@ -82,27 +82,10 @@ local indent_blankline = {
         vim.opt.list = true
         vim.opt.listchars:append 'eol:↴'
 
-        require('indent_blankline').setup {
-            use_treesitter_scope = true,
-            show_current_context = true,
-            show_current_context_start = true,
-        }
-    end,
-}
-
-local bufferline = {
-    'akinsho/bufferline.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-        require('bufferline').setup {
-            options = {
-                diagnostics = 'nvim_lsp',
-                diagnostics_indicator = function(count, level, _, _)
-                    local icon = level:match 'error' and ' ' or ' '
-                    return ' ' .. icon .. count
-                end,
-                separator_style = 'thick',
+        require('ibl').setup {
+            scope = {
+                enabled = true,
+                highlight = 'Green',
             },
         }
     end,
@@ -138,7 +121,6 @@ return {
     symbols_outline,
     inlayhints,
     indent_blankline,
-    bufferline,
     lualine,
     'folke/which-key.nvim',
     { 'DNLHC/glance.nvim', event = 'VeryLazy' },
@@ -167,17 +149,6 @@ return {
         event = 'BufReadPre',
         cmd = { 'TroubleToggle', 'Trouble' },
         config = true,
-    },
-    {
-        'SmiteshP/nvim-navbuddy',
-        event = 'VeryLazy',
-        dependencies = { 'neovim/nvim-lspconfig', 'SmiteshP/nvim-navic', 'MunifTanjim/nui.nvim' },
-        opts = {
-            window = {
-                border = 'rounded',
-                size = '50%',
-            },
-        },
     },
     {
         'j-hui/fidget.nvim',

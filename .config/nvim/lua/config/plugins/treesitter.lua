@@ -38,6 +38,7 @@ function M.config()
             'java',
             'javascript',
             'json',
+            'kdl',
             'latex',
             'lua',
             'markdown',

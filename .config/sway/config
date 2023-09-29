@@ -57,7 +57,7 @@ exec ~/.config/sway/attach-zellij.sh
 smart_gaps off
 
 # disable window titlebar
-# default_border pixel 2
+default_border pixel 2
 
 # xdg_desktop_portal setup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway

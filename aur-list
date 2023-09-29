@@ -1,3 +1,4 @@
+adwaita-color-schemes
 adwaita-qt5
 anki-bin
 ansiweather
@@ -10,7 +11,6 @@ electron18
 electron21
 httpdirfs
 jarowinkler-cpp
-joshuto
 js78
 laptop-mode-tools
 librewolf-bin
@@ -21,10 +21,12 @@ pandoc-bin
 pipes-rs-git
 pomotroid-bin
 prismlauncher-qt5-bin
-python-progress
 qgnomeplatform-qt5
 rofi-lbonn-wayland
 swaync
+turbo-base64
+ueberzugpp
+ueberzugpp-debug
 ungoogled-chromium-bin
 ventoy-bin
 vial-appimage

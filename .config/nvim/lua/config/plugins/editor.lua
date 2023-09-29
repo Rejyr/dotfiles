@@ -1,17 +1,17 @@
-local auto_session = {
-    'rmagatti/auto-session',
-    lazy = false,
-    dependencies = { 'rmagatti/session-lens' },
+local session = {
+    'jedrzejboczar/possession.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    event = 'VeryLazy',
     config = function()
-        vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
-        require('auto-session').setup {
-            log_level = 'error',
-            auto_session_suppress_dirs = { '~/', '~/Downloads', '/', '/tmp' },
-            pre_save_cmds = { 'cclose' },
-            post_restore_cmds = {},
-            auto_session_create_enabled = false,
+        require('possession').setup {
+            commands = {
+                save = 'SSave',
+                load = 'SLoad',
+                delete = 'SDelete',
+                list = 'SList',
+            },
         }
-        require('session-lens').setup { theme_conf = { winblend = nil } }
+        require('telescope').load_extension('possession')
     end,
 }
 
@@ -79,7 +79,7 @@ local config_local = {
 }
 
 return {
-    auto_session,
+    session,
     neoscroll,
     tabout,
     config_local,
