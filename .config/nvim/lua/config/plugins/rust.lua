@@ -40,7 +40,13 @@ local crates = {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
     dependencies = { 'nvim-lua/plenary.nvim' },
-    config = true,
+    opts = {
+        src = {
+            cmp = {
+                enabled = true,
+            },
+        },
+    },
 }
 
 return { rust_tools, crates }

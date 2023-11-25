@@ -14,7 +14,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    fonts:                      "Iosevka Nerd Font 12";
+    fonts:                      "Iosevka NF 12";
 }
 @import                         "~/.config/rofi/everforest.rasi"
 

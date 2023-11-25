@@ -1,5 +1,5 @@
 function attach_zellij
-    set sessions "$(zellij ls)"
+    set sessions "$(zellij ls -sn)"
     set new_session "(create new session)"
     set none "(none: no session)"
     set session ( printf "$new_session\n$none\n$sessions" | fzf --prompt "zellij session: " | sed 's/ (current)//' )

@@ -83,6 +83,10 @@ local indent_blankline = {
         vim.opt.listchars:append 'eol:↴'
 
         require('ibl').setup {
+            indent = {
+                char = '▎',
+                tab_char = '▎', 
+            },
             scope = {
                 enabled = true,
                 highlight = 'Green',
