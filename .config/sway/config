@@ -72,7 +72,7 @@ set $down j
 set $up k
 set $right l
 # font
-font pango: Iosevka Nerd Font 12
+font pango: Iosevka NF 12
 
 ### Output configuration
 #
@@ -137,7 +137,7 @@ for_window [title="Plover: WPM Meter"] floating enable
 
 # Auto scratchpad
 for_window [class="pomotroid"] move scratchpad
-for_window [class="WebCord"] move scratchpad
+for_window [app_id="WebCord"] move scratchpad
 
 # Resize
 for_window [title="Plover: Strokes Meter"] width 181 height 148

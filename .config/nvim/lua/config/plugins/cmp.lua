@@ -13,7 +13,7 @@ local M = {
         { 'dmitmel/cmp-cmdline-history' },
         -- luasnip
         { 'saadparwaiz1/cmp_luasnip' },
-        { 'L3MON4D3/LuaSnip' },
+        { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
         { 'rafamadriz/friendly-snippets' },
     },
 }
@@ -114,7 +114,6 @@ function M.config()
     cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources {
-            { name = 'noice_popupmenu' },
             { name = 'path' },
             { name = 'cmdline' },
             { name = 'cmdline_history' },

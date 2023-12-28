@@ -148,7 +148,6 @@ local leader_keymaps = {
         require('config.plugins.lsp_lines').toggle,
         'Toggle lsp_lines',
     },
-    nd = { '<cmd>NoiceDismiss<cr>', 'Dismiss Noice Notifications' },
     p = {
         name = '+plugin manager',
         p = { '<cmd>Lazy home<cr>', 'Home' },
