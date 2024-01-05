@@ -42,6 +42,8 @@ exec swaync
 exec mpd
 # clipboard manager
 exec wl-paste --watch cliphist store
+# redshift
+exec fish -c gammastep_startup
 
 # workspace 1
 workspace 1

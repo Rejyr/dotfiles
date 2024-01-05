@@ -10,7 +10,6 @@ end
 zoxide init fish | source
 
 sway_startup
-gammastep_startup
 abbrs_startup
 everforest
 

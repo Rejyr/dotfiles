@@ -25,6 +25,9 @@ local telescope = require 'telescope.builtin'
 -- remap F1 to Esc
 map({ 'n', 'i' }, '<F1>', '<Esc>')
 
+-- write on escape
+map('n', '<Esc>', ':w<cr>')
+
 -- set proper paste keybind
 map(
     'i',
@@ -168,7 +171,6 @@ local leader_keymaps = {
         s = { '<cmd>SSave<cr>', 'Save Session' },
     },
     rn = { vim.lsp.buf.rename, 'Rename' },
-    rr = { '<cmd>RustRun<cr>', 'Rust Run' },
     s = {
         name = '+search',
         g = { telescope.live_grep, 'Grep' },

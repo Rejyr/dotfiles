@@ -55,6 +55,7 @@ function mason.config()
                 on_attach = on_attach,
             }
         end,
+        ['rust_analyzer'] = function() end, -- let rustacean set up rust_analyzer
         ['lua_ls'] = function()
             require('lspconfig').lua_ls.setup {
                 capabilities = capabilities,

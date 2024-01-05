@@ -1,4 +1,4 @@
-require('rust-tools').setup {
+vim.g.rustacean = {
     server = {
         settings = {
             ['rust-analyzer'] = {

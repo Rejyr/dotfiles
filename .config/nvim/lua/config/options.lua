@@ -24,6 +24,9 @@ for _, plugin in pairs(disabled_built_ins) do
     vim.g['loaded_' .. plugin] = 1
 end
 
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+
 -- lightbulb time
 vim.o.updatetime = 100
 

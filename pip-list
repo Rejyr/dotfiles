@@ -1,6 +1,6 @@
-anki==23.12
+anki==23.12.1
 annotated-types==0.6.0
-aqt==23.12
+aqt==23.12.1
 argcomplete==2.0.0
 attrs==23.1.0
 auto-cpufreq==1

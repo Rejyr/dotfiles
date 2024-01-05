@@ -1,10 +1,10 @@
-local rust_tools = {
-    'simrat39/rust-tools.nvim',
+local rustacean = {
+    'mrcjkb/rustaceanvim',
     ft = 'rust',
 }
 
-function rust_tools.config()
-    require('rust-tools').setup {
+function rustacean.config()
+    vim.g.rustacean = {
         tools = {
             runnables = {
                 use_telescope = true,
@@ -49,4 +49,4 @@ local crates = {
     },
 }
 
-return { rust_tools, crates }
+return { rustacean, crates }
