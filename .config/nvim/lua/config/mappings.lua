@@ -120,6 +120,7 @@ local leader_keymaps = {
     { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find File' },
     { '<leader>fh', '<cmd>Telescope find_files hidden=true<cr>', desc = 'Find Hidden File' },
     { '<leader>fmt', '<cmd>Format<cr>', desc = 'Format' },
+    { '<leader>fml', '<cmd>lua vim.lsp.buf.format()<cr>', desc = 'Format with LSP' },
     { '<leader>fn', '<cmd>enew<cr>', desc = 'New File' },
     { '<leader>fr', '<cmd>Telescope smart_open<cr>', desc = 'Open Recent File' },
     { '<leader>g', group = 'git' },

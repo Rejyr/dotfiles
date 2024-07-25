@@ -9,7 +9,19 @@ return {
         'echasnovski/mini.comment',
         version = false,
         event = 'VeryLazy',
-        config = true,
+        config = function()
+            require('mini.comment').setup {
+                options = {
+                    custom_commentstring = function()
+                        if vim.bo.filetype == 'openscad' then
+                            return '// %s'
+                        else
+                            return nil
+                        end
+                    end,
+                },
+            }
+        end,
     },
     {
         'echasnovski/mini.cursorword',

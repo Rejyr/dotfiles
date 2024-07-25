@@ -33,6 +33,7 @@ function mason.config()
             'jsonls',
             'ltex',
             'lua_ls',
+            'openscad_lsp',
             'ruff_lsp',
             'rust_analyzer',
             'sqlls',
@@ -79,6 +80,18 @@ function mason.config()
                         ltex = {
                             checkFrequency = 'save',
                         },
+                    },
+                },
+            }
+        end,
+        ['openscad_lsp'] = function()
+            require('lspconfig').openscad_lsp.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = {
+                    ['openscad'] = {
+                        search_paths = '~/.local/share/OpenSCAD/libraries',
+                        fmt_style = '{BasedOnStyle: chromium, IndentWidth: 4, ContinuationIndentWidth: 0, BreakAfterAttributes: Always, AlignConsecutiveAssignments: true, AlignArrayOfStructures: Right, BinPackArguments: false}',
                     },
                 },
             }
