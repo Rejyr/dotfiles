@@ -1,16 +1,17 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BC_ENV_ARGS:/home/rejyr/\x2ebc
 SETUVAR --export BROWSER:librewolf
 SETUVAR --export CARGO_DIR:/home/rejyr/\x2ecargo/
 SETUVAR --export CC:gcc
-SETUVAR --export CFLAGS:\x2dfsanitize\x3dsigned\x2dinteger\x2doverflow\x1e\x2dfsanitize\x3dundefined\x1e\x2dggdb3\x1e\x2dO0\x1e\x2dstd\x3dc11\x1e\x2dWall\x1e\x2dWerror\x1e\x2dWextra\x1e\x2dWno\x2dsign\x2dcompare\x1e\x2dWno\x2dunused\x2dparameter\x1e\x2dWno\x2dunused\x2dvariable\x1e\x2dWshadow
+SETUVAR --export CFLAGS:
 SETUVAR --export DEBUGINFOD_URLS:https\x3a//debuginfod\x2earchlinux\x2eorg
 SETUVAR --export DOTFILES:/home/rejyr/dotfiles/
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export GTK2_RC_FILES:/home/rejyr/\x2ethemes/Everforest/gtk\x2d2\x2e0/gtkrc
 SETUVAR --export GTK_THEME:Everforest
-SETUVAR --export LDLIBS:\x2dlcrypt\x1e\x2dlcs50\x1e\x2dlm
+SETUVAR --export LDLIBS:\x1d
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export OBSIDIAN_USE_WAYLAND:1
 SETUVAR --export --path PATH:/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl

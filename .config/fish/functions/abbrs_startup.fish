@@ -41,7 +41,7 @@ abbr -a -- systat 'systemctl status'
 abbr -a -- systop 'systemctl stop' 
 abbr -a -- zf 'zathura (fzf) &' 
 abbr -a -- update yay 
-abbr -a -- tree 'exa -FT' 
+abbr -a -- tree 'exa -TF' 
 abbr -a -- xbu 'x build -i --jobs 8' 
 abbr -a -- xch 'x check -i --jobs 8 compiler' 
 abbr -a -- xti 'x tidy' 

@@ -12,6 +12,7 @@
 "THEPLZ": "themself",
 "T*EUPL": "{:time:%H:%M:%S}",
 "T*EPL": "{:time:%H:%M}",
+"KHR*L": "{#Control_L(t)}",
 "KHR*Z": "{#Control_L(z)}",
 "KHR-BGS": "{#Control_L(x)}",
 "PWAOERT/KAUL/SAUL": "Better Call Saul",
@@ -21,7 +22,6 @@
 "WEUPB/KRAFT": "Wynncraft",
 "HR*EL": "lel",
 "HR*FR": "{^\n^}{-|}",
-"HAG/TKUS": "Hagadus",
 "HEUS/PAPB/KWROL/HRA": "Hispaniola",
 "R*RD": "{#Control_L{#KP_Enter}}{^}",
 "A/TPHEURB": "Anish"

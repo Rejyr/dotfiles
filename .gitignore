@@ -11,3 +11,5 @@
 .config/plover
 .config/plover/.cache/plugins.sqlite
 .config/WebCord/Themes/everforest
+.ssh/known_hosts
+.ssh/known_hosts.old
