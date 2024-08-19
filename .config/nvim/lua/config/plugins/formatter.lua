@@ -16,6 +16,9 @@ function M.config()
             javascript = {
                 require('formatter.filetypes.javascript').prettier,
             },
+            javascriptreact = {
+                require('formatter.filetypes.javascriptreact').prettier,
+            },
             json = {
                 require('formatter.filetypes.json').prettier
             },

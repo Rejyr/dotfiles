@@ -26,7 +26,7 @@ function mason.config()
             'bashls',
             'clangd',
             'cssls',
-            'emmet_ls',
+            'emmet_language_server',
             'eslint',
             'grammarly',
             'html',
@@ -93,6 +93,26 @@ function mason.config()
                         search_paths = '~/.local/share/OpenSCAD/libraries',
                         fmt_style = '{BasedOnStyle: chromium, IndentWidth: 4, ContinuationIndentWidth: 0, BreakAfterAttributes: Always, AlignConsecutiveAssignments: true, AlignArrayOfStructures: Right, BinPackArguments: false}',
                     },
+                },
+            }
+        end,
+        ['emmet_language_server'] = function()
+            require('lspconfig').emmet_language_server.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                filetypes = {
+                    'css',
+                    'eruby',
+                    'html',
+                    'javascript',
+                    'javascriptreact',
+                    'less',
+                    'sass',
+                    'scss',
+                    'svelte',
+                    'pug',
+                    'typescriptreact',
+                    'vue',
                 },
             }
         end,

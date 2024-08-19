@@ -188,7 +188,7 @@ local leader_keymaps = {
     { '<leader>xq', '<cmd>TodoQuickFix<cr>', desc = 'Todo Quickfix' },
     { '<leader>xt', '<cmd>TodoTrouble<cr>', desc = 'Todo Trouble' },
     { '<leader>xtt', '<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>', desc = 'Todo Trouble' },
-    { '<leader>xx', '<cmd>TroubleToggle workspace_diagnostics<cr>', desc = 'Trouble' },
+    { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Trouble' },
 }
 
 wk.add(non_leader_keymaps)
