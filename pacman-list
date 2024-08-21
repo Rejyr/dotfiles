@@ -70,6 +70,7 @@ libtool
 linux
 linux-firmware
 lldb
+luarocks
 lutris
 m4
 make
@@ -141,6 +142,7 @@ texlive-pstricks
 texlive-publishers
 tokei
 torbrowser-launcher
+tree-sitter-cli
 ttc-iosevka-aile
 ttc-iosevka-etoile
 ttf-iosevka-nerd

@@ -61,7 +61,7 @@ vim.o.linebreak = true
 -- map leader key to space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 -- have a fixed column for the diagnostics to appear in
 -- this removes the jitter when warnings/errors flow in

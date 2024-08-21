@@ -102,6 +102,7 @@ function M.config()
             { name = 'path' },
             { name = 'crates' },
             { name = 'nvim_lsp_signature_help' },
+            { name = 'neorg' },
         },
     }
 
