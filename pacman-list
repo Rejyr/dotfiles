@@ -58,6 +58,7 @@ hdparm
 hplip
 htop
 hyperfine
+i3status-rust
 ifplugd
 imagemagick
 jdk8-openjdk

@@ -11,7 +11,7 @@ BetterADBSync==1.4.0
 btrfsutil==6.10
 build==1.2.2
 CacheControl==0.14.0
-cachetools==5.3.3
+cachetools==5.5.0
 cachy==0.3.0
 cattrs==24.1.2
 certifi==2024.8.30
@@ -84,7 +84,7 @@ pexpect==4.9.0
 pillow==10.4.0
 pipx==1.6.0
 pkginfo==1.10.0
-platformdirs==4.2.2
+platformdirs==4.3.6
 pluggy==1.5.0
 ply==3.11
 poetry==1.8.3
@@ -115,6 +115,7 @@ pytest-qt==4.4.0
 pytest-socket==0.7.0
 pytest-xvfb==2.0.0
 python-dateutil==2.9.0
+python-mpd2==3.1.1
 python-xlib==0.33
 pytz==2024.2
 PyVirtualDisplay==3.0
@@ -157,5 +158,5 @@ virtualenv==20.26.2
 wcwidth==0.2.13
 webencodings==0.5.1
 wheel==0.44.0
-yt-dlp==2024.8.6
+yt-dlp==2024.9.27
 zipp==3.19.3.dev0+gc6a3339.d20240728
