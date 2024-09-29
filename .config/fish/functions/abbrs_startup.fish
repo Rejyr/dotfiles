@@ -25,7 +25,6 @@ abbr -a -- xtidy 'x test tidy'
 abbr -a -- sysdis 'systemctl disable' 
 abbr -a -- clg 'clear; fish_greeting' 
 abbr -a -- cl clear 
-abbr -a -- cava 'alacritty -e cava&' 
 abbr -a -- cc 'cargo check' 
 abbr -a -- blctl bluetoothctl 
 abbr -a -- ca 'cargo add' 
@@ -50,7 +49,7 @@ abbr -a -- clt 'clear; tofu'
 abbr -a -- clte 'clear; tofu show -o done-last earliest priority' 
 abbr -a -- yoink 'yay -S' 
 abbr -a -- za zathura 
-abbr -a -- clf 'clear; neofetch' 
+abbr -a -- clf 'clear; fastfetch' 
 abbr -a -- t tofu 
 abbr -a -- xtestui 'x test src/test/ui -i --jobs 8' 
 abbr -a -- nc ncmpcpp 

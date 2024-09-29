@@ -13,7 +13,7 @@ keybinds {}
 //   - true
 //   - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -123,96 +123,5 @@ themes {
         cyan "#83c092"
         white "#d3c6aa"
         orange "#FF9E64"
-    }
-    gruvbox-dark {
-        fg 213 196 161
-        bg 40 40 40
-        black 60 56 54
-        red 204 36 29
-        green 152 151 26
-        yellow 215 153 33
-        blue 69 133 136
-        magenta 177 98 134
-        cyan 104 157 106
-        white 251 241 199
-        orange 214 93 14
-    }
-    gruvbox-light {
-        fg 60 56 54
-        bg 251 82 75
-        black 40 40 40
-        red 205 75 69
-        green 152 151 26
-        yellow 215 153 33
-        blue 69 133 136
-        magenta 177 98 134
-        cyan 104 157 106
-        white 213 196 161
-        orange 214 93 14
-    }
-    kanagawa {
-        fg 220 215 186
-        bg 54 54 70
-        black 9 6 24
-        red 195 64 67
-        green 118 148 106
-        yellow 192 163 110
-        blue 192 163 110
-        magenta 149 127 184
-        cyan 106 149 137
-        white 200 192 147
-        orange 255 160 102
-    }
-    nord {
-        fg 216 222 233
-        bg 46 52 64
-        black 59 66 82
-        red 191 97 106
-        green 163 190 140
-        yellow 235 203 139
-        blue 129 161 193
-        magenta 180 142 173
-        cyan 136 192 208
-        white 229 233 240
-        orange 208 135 112
-    }
-    tokyo-night {
-        fg 169 177 214
-        bg 26 27 38
-        black 56 62 90
-        red 249 51 87
-        green 158 206 106
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
-    }
-    tokyo-night-light {
-        fg 52 59 88
-        bg 213 214 219
-        black 15 15 20
-        red 186 75 96
-        green 72 94 48
-        yellow 143 94 21
-        blue 52 84 138
-        magenta 90 74 120
-        cyan 15 75 110
-        white 130 137 172
-        orange 150 80 39
-    }
-    tokyo-night-storm {
-        fg 169 177 214
-        bg 36 40 59
-        black 56 62 90
-        red 249 51 87
-        green 158 206 106
-        yellow 224 175 104
-        blue 122 162 247
-        magenta 187 154 247
-        cyan 42 195 222
-        white 192 202 245
-        orange 255 158 100
     }
 }

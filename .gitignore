@@ -13,3 +13,5 @@
 .config/WebCord/Themes/everforest
 .ssh/known_hosts
 .ssh/known_hosts.old
+.config/zellij
+.config/zellij

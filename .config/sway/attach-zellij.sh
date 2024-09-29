@@ -1,9 +1,15 @@
 #! /bin/sh
 
-session=$(zellij ls -sn | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi -p "zellij session:" )
+prompt="$1"
+
+session=$(zellij ls -sn | tofi --require-match=false --padding-left="25%" --prompt-text "$prompt" )
 
 if [[ -z $session ]]; then
     exit
 fi
 
-alacritty -e zellij attach --create $session
+if [[ "$prompt" = *"delete"* ]]; then
+    zellij delete-session -f "$session"
+else
+    alacritty -e zellij attach --create $session
+fi

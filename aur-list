@@ -45,10 +45,11 @@ python-rtf_tokenize-debug
 python-timeout-decorator
 python-url-normalize
 qgnomeplatform-qt5
-rofi-lbonn-wayland
-rofi-lbonn-wayland-debug
+rest
+rest-debug
 swaync-debug
-ttf-harmonyos-sans
+tofi
+tofi-debug
 turbo-base64
 ueberzugpp
 ueberzugpp-debug
@@ -60,7 +61,6 @@ vial-appimage
 vscode-codicons-git
 waypipe
 waypipe-debug
-webcord-vencord-git
 wlroots0.16
 yay
 yay-debug

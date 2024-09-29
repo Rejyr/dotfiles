@@ -10,17 +10,26 @@ TERM = "xterm-256color"
 [font]
 size = 18.0
 
-[font.bold]
-family = "Iosevka NF"
-
-[font.bold_italic]
-family = "Iosevka NF"
-
-[font.italic]
-family = "Iosevka NF"
-
 [font.normal]
-family = "Iosevka NF"
+family = "Iosevka Term NF"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/bin/fish"
+
+[window]
+dynamic_title = true
+opacity = 0.9
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
 
 [[keyboard.bindings]]
 action = "ScrollPageUp"
@@ -120,21 +129,3 @@ mods = "Control"
 action = "DecreaseFontSize"
 key = "NumpadSubtract"
 mods = "Control"
-
-[scrolling]
-history = 10000
-multiplier = 3
-
-[selection]
-save_to_clipboard = true
-
-[shell]
-program = "/bin/fish"
-
-[window]
-dynamic_title = true
-opacity = 0.9
-
-[window.class]
-general = "Alacritty"
-instance = "Alacritty"

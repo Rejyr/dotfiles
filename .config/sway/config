@@ -33,17 +33,15 @@ set $browser librewolf
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun -theme ~/.config/rofi/launcher.rasi
+set $menu tofi-drun --padding-left="35%"
 
 ### Startup
 # start notifications
-exec swaync
+exec dunst
 # start mpd
 exec mpd
 # clipboard manager
 exec wl-paste --watch cliphist store
-# redshift
-exec fish -c gammastep_startup
 
 # workspace 1
 workspace 1
@@ -59,7 +57,7 @@ exec ~/.config/sway/attach-zellij.sh
 smart_gaps off
 
 # disable window titlebar
-default_border pixel 2
+# default_border pixel 2
 
 # xdg_desktop_portal setup
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
@@ -150,14 +148,10 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
 # Basics:
 #
     # Start a terminal and attach to a zellij session
-    bindsym $mod+Return exec ~/.config/sway/attach-zellij.sh
+    bindsym $mod+Return exec ~/.config/sway/attach-zellij.sh "open session: "
+    # Delete zellij session
+    bindsym $mod+Shift+Return exec ~/.config/sway/attach-zellij.sh "delete session: "
     # bindsym $mod+Return exec $term
-
-    # Run a command
-    bindsym $mod+Shift+Return exec ~/.config/sway/run.sh
-
-    # Run a command in a terminal
-    bindsym $mod+Control+Return exec ~/.config/sway/run-in-term.sh
 
     # Start a the browser
     bindsym $mod+Alt+Return exec $browser
@@ -176,10 +170,7 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
     floating_modifier $mod normal
 
     # select old cilpboard item
-    bindsym $mod+Shift+v exec cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi -p "clipboard history:" | cliphist decode | wl-copy
-    
-    # delete clipboard item
-    bindsym $mod+Shift+Control+v exec cliphist list | rofi -dmenu -theme ~/.config/rofi/dmenu.rasi -p "delete clipboard history:" | cliphist delete
+    bindsym $mod+Shift+v exec cliphist list | tofi --padding-left="10%" --prompt-text "clipboard: " | cliphist decode | wl-copy
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload

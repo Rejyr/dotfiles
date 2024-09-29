@@ -1,1 +1,351 @@
-rejyr-angle/style.css
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* Reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Fix modules without "on-click" being gray */
+label:disabled,
+button:disabled {
+  all: unset;
+  color: inherit;
+  background-image: none;
+}
+
+button {
+    min-width: 16px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @warning;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @critical;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+ * Styles
+ * -------------------------------------------------------------------------- */
+
+/* COLORS */
+
+@define-color bg0 #2D353B;
+@define-color bg3 #475258;
+@define-color fg #ECEFF4;
+@define-color red #BF616A;
+@define-color orange #D08770;
+@define-color yellow #EBCB8B;
+@define-color green #A3BE8C;
+@define-color aqua #83C092;
+@define-color blue #7FBBB3;
+@define-color purple #D699B6;
+
+@define-color light @fg;
+@define-color dark @bg0;
+@define-color warning @yellow;
+@define-color critical @orange;
+@define-color background @dark;
+@define-color background_transparent rgba(45, 53, 59, 1.0);
+
+@define-color mode @bg3;
+
+@define-color cpu @red;
+@define-color memory @orange;
+@define-color temp @yellow;
+@define-color disk @green;
+@define-color network @aqua;
+@define-color updates @aqua;
+
+@define-color workspaces @aqua;
+@define-color workspaces_focused @green;
+
+@define-color weather @blue;
+@define-color backlight @aqua;
+@define-color sound @green;
+@define-color date @yellow;
+@define-color time @orange;
+@define-color battery @red;
+
+/* Gruvbox */
+/* @define-color light #ebdbb2; */
+/* @define-color dark #282828; */
+/* @define-color warning #fabd2f; */
+/* @define-color critical #cc241d; */
+/* @define-color mode #a89984; */
+/* @define-color workspaces #458588; */
+/* @define-color workspaces_focused #83a598; */
+/* @define-color sound #d3869b; */
+/* @define-color network #b16286; */
+/* @define-color memory #8ec07c; */
+/* @define-color cpu #98971a; */
+/* @define-color temp #b8bb26; */
+/* @define-color layout #689d6a; */
+/* @define-color battery #fabd2f; */
+/* @define-color date #282828; */
+/* @define-color time #ebdbb2; */
+
+/* The whole bar */
+#waybar {
+  background: @background_transparent;
+  color: @light;
+  font-family: Iosevka NF;
+  font-size: 15pt;
+  color: inherit;
+  /*font-weight: bold;*/
+}
+
+* {
+    font-family: Iosevka NF;
+    font-size: 15pt;
+}
+
+/* Each module */
+#clock,
+#battery,
+#temperature,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#backlight,
+#disk,
+#custom-updates,
+#custom-weather,
+#tray {
+  padding-left: 10px;
+  padding-right: 10px;
+  background: inherit;
+}
+
+/* Each module that should blink */
+#mode,
+#memory,
+#temperature,
+#battery {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Each critical module */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#disk.critical,
+#battery.critical {
+  color: @critical;
+}
+
+/* Each critical that should blink */
+#mode,
+#memory.critical,
+#temperature.critical,
+#battery.critical.discharging {
+  animation-name: blink-critical;
+  animation-duration: 2s;
+}
+
+/* Each warning */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#disk.warning,
+#battery.warning {
+  color: @warning;
+}
+
+/* Each warning that should blink */
+#battery.warning.discharging {
+  animation-name: blink-warning;
+  animation-duration: 3s;
+}
+
+/* And now modules themselves in their respective order */
+
+#mode {
+  /* Shown current Sway mode (resize etc.) */
+  color: @light;
+}
+
+#cpu {
+  color: @cpu;
+}
+
+#custom-rarrow1 {
+  color: @cpu;
+}
+
+#memory {
+  color: @memory;
+}
+
+#custom-rarrow2 {
+  color: @memory;
+}
+
+#temperature {
+  color: @temp;
+}
+
+#custom-rarrow3 {
+  color: @temp;
+}
+
+#disk {
+  color: @disk;
+}
+
+#custom-rarrow4 {
+  color: @disk;
+}
+
+#network {
+  color: @network;
+}
+
+#custom-rarrow5 {
+  color: @network;
+}
+
+#custom-updates {
+  color: @updates;
+}
+
+#custom-rarrow6 {
+  color: @updates;
+}
+
+/* Workspaces stuff */
+#workspaces button {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  border-bottom: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  color: @workspaces;
+}
+
+#workspaces button.focused {
+  color: @workspaces_focused;
+  border-bottom: 2px;
+  border-style: solid;
+}
+
+#workspaces button:hover {
+  background: @bg3;
+}
+
+/*#workspaces button.urgent {
+	border-color: #c9545d;
+	color: #c9545d;
+}*/
+
+#custom-crarrow,
+#custom-clarrow {
+  color: @workspaces;
+}
+
+#custom-larrow6 {
+  color: @weather;
+}
+
+#custom-weather {
+  color: @weather;
+}
+
+#custom-larrow5 {
+  color: @backlight;
+}
+
+#backlight {
+  color: @backlight;
+}
+
+#custom-larrow4 {
+  color: @sound;
+}
+
+#pulseaudio {
+  color: @sound;
+}
+
+#custom-larrow3 {
+  color: @date;
+}
+
+/* #tray { */
+/*   padding-right: 0px; */
+/* } */
+
+#clock.date {
+  color: @date;
+}
+
+#custom-larrow2 {
+  color: @time;
+}
+
+#clock.time {
+  color: @time;
+}
+
+#custom-larrow1 {
+  color: @battery;
+}
+
+#battery {
+  color: @battery;
+}
+
+#custom-rarrow1,
+#custom-rarrow2,
+#custom-rarrow3,
+#custom-rarrow4,
+#custom-rarrow5,
+#custom-rarrow6,
+#custom-rarrow7,
+#custom-clarrow,
+#custom-crarrow,
+#custom-larrow6,
+#custom-larrow5,
+#custom-larrow4,
+#custom-larrow3,
+#custom-larrow2,
+#custom-larrow1 {
+  font-size: 20px;
+  padding-top: 2px;
+}

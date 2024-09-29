@@ -1,0 +1,32 @@
+[global]
+font = "Iosevka NF 12"
+follow = keyboard
+markup = full
+show_indicators = false
+
+origin = top-right
+width = 300
+height = 300
+offset = 20x50
+
+separator_height = 2
+padding = 8
+horizontal_padding = 8
+frame_width = 2
+
+[urgency_critical]
+frame_color = "#E67E80"
+foreground = "#D3C6AA"
+background = "#4C3743"
+
+[urgency_normal]
+frame_color = "#4F5B58"
+foreground = "#D3C6AA"
+background = "#3C4841"
+
+[urgency_low]
+frame_color = "#4F5B58"
+foreground = "#7A8478"
+background = "#1E2326"
+
+# vim: ft=cfg

@@ -12,7 +12,6 @@ binutils
 bison
 bluez
 bluez-utils
-bottom
 brightnessctl
 btop
 cliphist
@@ -21,11 +20,13 @@ cups
 deno
 dhcpcd
 dialog
+dunst
 dust
 efibootmgr
 eog
 eza
 fakeroot
+fastfetch
 fd
 file
 findutils
@@ -36,7 +37,6 @@ flite
 fortune-mod
 freecad
 fzf
-gammastep
 gawk
 gcc
 geoclue
@@ -80,7 +80,6 @@ mpc
 mpd
 mpv
 ncmpcpp
-neofetch
 neovim
 networkmanager
 noto-fonts
@@ -119,13 +118,13 @@ qt6-wayland
 ripgrep
 sed
 slurp
+starship
 steam
 stylua
 sudo
 sway
 swayidle
 swaylock
-swaync
 texinfo
 texlive-basic
 texlive-bibtexextra
@@ -146,6 +145,7 @@ tree-sitter-cli
 ttc-iosevka-aile
 ttc-iosevka-etoile
 ttf-iosevka-nerd
+ttf-iosevkaterm-nerd
 ttf-linux-libertine
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
