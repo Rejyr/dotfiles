@@ -1,13 +1,4 @@
--- which-key setup
-local wk = require 'which-key'
-
-wk.setup {
-    show_help = false,
-    triggers = { { '<auto>', mode = 'nixsotc' } },
-    plugins = { spelling = true },
-    replace = { ['<leader>'] = 'SPC' },
-}
-vim.opt.timeoutlen = 500
+local miniclue = require 'mini.clue'
 
 -- keymap util
 local map = vim.keymap.set
@@ -60,136 +51,270 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 
 -- lsp
-map('n', '<c-]>', '<cmd>Glance definitions<cr>', { silent = true })
-map('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()', { silent = true })
+map('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<cr>', { silent = true })
+map('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { silent = true })
 
-local non_leader_keymaps = {
-    { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', desc = 'Lsp Hover' },
-    { 'g', group = 'lsp' },
-    { 'g0', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'Document Symbols' },
-    { 'gD', '<cmd>Glance type_definitions<cr>', desc = 'Type Definition' },
-    { 'gW', '<cmd>Telescope lsp_workspace_symbols<cr>', desc = 'Workspace Symbols' },
-    { 'gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', desc = 'Goto Previous Diagnostic' },
-    { 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', desc = 'Goto Next Diagnostic' },
-    { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', desc = 'Code Action' },
-    { 'gd', '<cmd>Glance definitions<cr>', desc = 'Definition' },
-    { 'gi', '<cmd>Glance implementations<cr>', desc = 'Implementation' },
-    { 'gr', '<cmd>Glance references<cr>', desc = 'References' },
+local groups = {
+    {
+        keys = '',
+        desc = '',
+        mappings = {
+            { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { desc = 'Lsp Hover' } },
+            { '<leader>,', '<cmd>Telescope buffers<cr>', { desc = 'Switch Buffer' } },
+            { '<leader>.', '<cmd>Telescope file_browser<cr>', { desc = 'Browse Files' } },
+            { '<leader>/', '<cmd>Telescope live_grep<cr>', { desc = 'Search' } },
+            { '<leader>:', '<cmd>Telescope command_history<cr>', { desc = 'Command History' } },
+            { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
+            { '<leader>c', '<cmd>Telescope neoclip<cr>', { desc = 'Copy Registers' } },
+            {
+                '<leader>L',
+                "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
+                { desc = 'Toggle lsp_lines' },
+            },
+            { '<leader>W', ':w<cr>', { desc = 'Write to Buffer' } },
+            { '<leader>Q', ':wqa<cr>', { desc = 'Write to all Buffers and Quit' } },
+        },
+    },
+    {
+        keys = 'g',
+        desc = '+lsp',
+        mappings = {
+            { 'g0', '<cmd>Telescope lsp_document_symbols<cr>', { desc = 'Document Symbols' } },
+            { 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>', { desc = 'Type Definition' } },
+            { 'gW', '<cmd>Telescope lsp_workspace_symbols<cr>', { desc = 'Workspace Symbols' } },
+            { 'gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Goto Previous Diagnostic' } },
+            { 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Goto Next Diagnostic' } },
+            { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' } },
+            { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'Definition' } },
+            { 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 'Implementation' } },
+            { 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', { desc = 'References' } },
+        },
+    },
+    {
+        keys = '<leader>b',
+        desc = '+buffer',
+        mappings = {
+            { '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer & Window' } },
+            { '<leader>bb', '<cmd>Telescope buffers<cr>', { desc = 'Select Buffer' } },
+            { '<leader>bs', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
+        },
+    },
+    {
+        keys = '<leader>C',
+        desc = '+CSV',
+        mappings = {
+            {
+                '<leader>Ca',
+                ":lua require('decisive').align_csv({})<cr>",
+                { desc = 'Align CSV', silent = true },
+            },
+            {
+                '<leader>CA',
+                ":lua require('decisive').align_csv_clear({})<cr>",
+                { desc = 'Align CSV clear', silent = true },
+            },
+            {
+                '[c',
+                ":lua require('decisive').align_csv_prev_col()<cr>",
+                { desc = 'Align CSV prev col', silent = true },
+            },
+            {
+                ']c',
+                ":lua require('decisive').align_csv_next_col()<cr>",
+                { desc = 'Align CSV next col', silent = true },
+            },
+        },
+    },
+    {
+        keys = '<leader>f',
+        desc = '+file/format',
+        mappings = {
+            {
+                '<leader>fB',
+                '<cmd>Telescope file_browser path=%:p:help |select_buffer=true<cr>|',
+                desc = 'Open Telescope File Browser',
+            },
+            { '<leader>fb', '<cmd>Telescope file_browser<cr>', { desc = 'Open Telescope File Browser' } },
+            { '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find File' } },
+            { '<leader>fh', '<cmd>Telescope find_files hidden=true<cr>', { desc = 'Find Hidden File' } },
+            { '<leader>fmt', '<cmd>Format<cr>', { desc = 'Format' } },
+            { '<leader>fml', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = 'Format with LSP' } },
+            { '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' } },
+            { '<leader>fr', '<cmd>Telescope smart_open<cr>', { desc = 'Open Recent File' } },
+        },
+    },
+    {
+        keys = '<leader>g',
+        desc = '+git',
+        mappings = {
+            { '<leader>gb', '<cmd>Telescope git_branches<cr>', { desc = 'branches' } },
+            { '<leader>gc', '<cmd>Telescope git_commits<cr>', { desc = 'commits' } },
+            { '<leader>gs', '<cmd>Telescope git_status<cr>', { desc = 'status' } },
+        },
+    },
+    {
+        keys = '<leader>h',
+        desc = '+help',
+        mappings = {
+            { '<leader>ha', '<cmd>Telescope autocommands<cr>', { desc = 'Auto Commands' } },
+            { '<leader>hc', '<cmd>Telescope commands<cr>', { desc = 'Commands' } },
+            { '<leader>hf', '<cmd>Telescope filetypes<cr>', { desc = 'File Types' } },
+            { '<leader>hh', '<cmd>Telescope help_tags<cr>', { desc = 'Help Pages' } },
+            { '<leader>hk', '<cmd>Telescope keymaps<cr>', { desc = 'Key Maps' } },
+            { '<leader>hm', '<cmd>Telescope man_pages<cr>', { desc = 'Man Pages' } },
+            { '<leader>ho', '<cmd>Telescope vim_options<cr>', { desc = 'Options' } },
+            { '<leader>hs', '<cmd>Telescope highlights<cr>', { desc = 'Search Highlight Groups' } },
+        },
+    },
+    {
+        keys = '<leader>l',
+        desc = '+lsp',
+        mappings = {
+            { '<leader>lI', '<cmd>Mason<cr>', { desc = 'Mason Info' } },
+            { '<leader>ld', '<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>', { desc = 'Buffer Diagnostics' } },
+            { '<leader>li', '<cmd>LspInfo<cr>', { desc = 'Info' } },
+            { '<leader>lw', '<cmd>Telescope diagnostics<cr>', { desc = 'Diagnostics' } },
+        },
+    },
+    {
+        keys = '<leader>p',
+        desc = '+plugin',
+        mappings = {
+            { '<leader>pS', '<cmd>Lazy clear<cr>', { desc = 'Status' } },
+            { '<leader>pc', '<cmd>Lazy check<cr>', { desc = 'Check' } },
+            { '<leader>pd', '<cmd>Lazy debug<cr>', { desc = 'Debug' } },
+            { '<leader>pi', '<cmd>Lazy install<cr>', { desc = 'Install' } },
+            { '<leader>pl', '<cmd>Lazy log<cr>', { desc = 'Log' } },
+            { '<leader>pp', '<cmd>Lazy home<cr>', { desc = 'Home' } },
+            { '<leader>ps', '<cmd>Lazy sync<cr>', { desc = 'Sync' } },
+            { '<leader>pu', '<cmd>Lazy update<cr>', { desc = 'Update' } },
+            { '<leader>px', '<cmd>Lazy clean<cr>', { desc = 'Clean' } },
+        },
+    },
+    {
+        keys = '<leader>q',
+        desc = '+quit/session',
+        mappings = {
+            { '<leader>q!', '<cmd>:qa!<cr>', { desc = 'Quit without saving' } },
+            { '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit' } },
+        },
+    },
+    {
+        keys = '<leader>r',
+        desc = '+rename',
+        mappings = {
+            { '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' } },
+        },
+    },
+    {
+        keys = '<leader>s',
+        desc = '+search',
+        mappings = {
+            { '<leader>sb', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { desc = 'Buffer' } },
+            { '<leader>sg', '<cmd>Telescope live_grep<cr>', { desc = 'Grep' } },
+            { '<leader>sh', '<cmd>Telescope command_history<cr>', { desc = 'Command History' } },
+            { '<leader>sm', '<cmd>Telescope marks<cr>', { desc = 'Jump to Mark' } },
+            { '<leader>so', '<cmd>SymbolsOutline<cr>', { desc = 'Symbols Outline' } },
+            { '<leader>ss', '<cmd>Telescope resume<cr>', { desc = 'Resume last search' } },
+            { '<leader>u', '<cmd>Telescope undo<cr>', { desc = 'Telescope Undo Tree' } },
+        },
+    },
+    {
+        keys = '<leader>w',
+        desc = '+windows',
+        mappings = {
+            { '<leader>w-', '<C-W>s', { desc = 'split-window-below' } },
+            { '<leader>w2', '<C-W>v', { desc = 'layout-double-columns' } },
+            { '<leader>w=', '<C-W>=', { desc = 'balance-window' } },
+            { '<leader>wH', '<C-W>5<', { desc = 'expand-window-left' } },
+            { '<leader>wJ', ':resize +5', { desc = 'expand-window-below' } },
+            { '<leader>wK', ':resize -5', { desc = 'expand-window-up' } },
+            { '<leader>wL', '<C-W>5>', { desc = 'expand-window-right' } },
+            { '<leader>wd', '<C-W>c', { desc = 'delete-window' } },
+            { '<leader>wh', '<C-W>h', { desc = 'window-left' } },
+            { '<leader>wj', '<C-W>j', { desc = 'window-below' } },
+            { '<leader>wk', '<C-W>k', { desc = 'window-up' } },
+            { '<leader>wl', '<C-W>l', { desc = 'window-right' } },
+            { '<leader>ws', '<C-W>s', { desc = 'split-window-below' } },
+            { '<leader>wv', '<C-W>v', { desc = 'split-window-right' } },
+            { '<leader>ww', '<C-W>p', { desc = 'other-window' } },
+            { '<leader>w|', '<C-W>v', { desc = 'split-window-right' } },
+        },
+    },
+    {
+        keys = '<leader>x',
+        desc = '+errors',
+        mappings = {
+            { '<leader>xT', '<cmd>TodoTelescope<cr>', { desc = 'Todo Telescope' } },
+            { '<leader>xl', '<cmd>lopen<cr>', { desc = 'Open Location List' } },
+            { '<leader>xq', '<cmd>TodoQuickFix<cr>', { desc = 'Todo Quickfix' } },
+            { '<leader>xt', '<cmd>TodoTrouble<cr>', { desc = 'Todo Trouble' } },
+            { '<leader>xtt', '<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>', { desc = 'Todo Trouble' } },
+            { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Trouble' } },
+        },
+    },
 }
 
-local leader_keymaps = {
-    { '<leader>,', '<cmd>Telescope buffers<cr>', desc = 'Switch Buffer' },
-    { '<leader>.', '<cmd>Telescope file_browser<cr>', desc = 'Browse Files' },
-    { '<leader>/', '<cmd>Telescope live_grep<cr>', desc = 'Search' },
-    { '<leader>:', '<cmd>Telescope command_history<cr>', desc = 'Command History' },
-    { '<leader>LL', "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>", desc = 'Toggle lsp_lines' },
-    { '<leader>`', '<cmd>:e #<cr>', desc = 'Switch to Other Buffer' },
-    { '<leader>b', group = 'buffer' },
-    { '<leader>bD', '<cmd>:bd<cr>', desc = 'Delete Buffer & Window' },
-    { '<leader>bb', '<cmd>Telescope buffers<cr>', desc = 'Select Buffer' },
-    { '<leader>bs', '<cmd>:e #<cr>', desc = 'Switch to Other Buffer' },
-    { '<leader>c', '<cmd>Telescope neoclip<cr>', desc = 'Copy Registers' },
-    { '<leader>d', group = 'Debug' },
-    { '<leader>dC', "<cmd>lua require('dap').clear_breakpoints()<cr>", desc = 'Clear Breakpoints' },
-    { '<leader>dT', "<cmd>lua require('dap').terminate()<cr>", desc = 'Terminate' },
-    { '<leader>db', "<cmd>lua require('dap').toggle_breakpoint()<cr>", desc = 'Toggle Breakpoint' },
-    { '<leader>dc', "<cmd>lua require('dap').continue()<cr>", desc = 'Continue' },
-    {
-        '<leader>de',
-        function()
-            require('dap').clear_breakpoints()
-            require('dapui').toggle {}
-            require('dap').terminate()
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>=', false, true, true), 'n', false)
-        end,
-        desc = 'End Debug Session',
-    },
-    { '<leader>dh', "<cmd>lua require('dap.ui.widgets').hover()<cr>", desc = 'Hover' },
-    { '<leader>di', "<cmd>lua require('dap').step_into()<cr>", desc = 'Step Into' },
-    { '<leader>do', "<cmd>lua require('dap').step_out()<cr>", desc = 'Step Out' },
-    { '<leader>dr', "<cmd>lua require('dap').repl.open()<cr>", desc = 'Repl' },
-    { '<leader>du', "<cmd>lua require('dapui').toggle()<cr>", desc = 'Ui' },
-    { '<leader>dv', "<cmd>lua require('dap').step_over()<cr>", desc = 'Step Over' },
-    { '<leader>f', group = 'file/format' },
-    {
-        '<leader>fB',
-        '<cmd>Telescope file_browser path=%:p:help |select_buffer=true<cr>|',
-        desc = 'Open Telescope File Browser',
-    },
-    { '<leader>fb', '<cmd>Telescope file_browser<cr>', desc = 'Open Telescope File Browser' },
-    { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find File' },
-    { '<leader>fh', '<cmd>Telescope find_files hidden=true<cr>', desc = 'Find Hidden File' },
-    { '<leader>fmt', '<cmd>Format<cr>', desc = 'Format' },
-    { '<leader>fml', '<cmd>lua vim.lsp.buf.format()<cr>', desc = 'Format with LSP' },
-    { '<leader>fn', '<cmd>enew<cr>', desc = 'New File' },
-    { '<leader>fr', '<cmd>Telescope smart_open<cr>', desc = 'Open Recent File' },
-    { '<leader>g', group = 'git' },
-    { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = 'branches' },
-    { '<leader>gc', '<cmd>Telescope git_commits<cr>', desc = 'commits' },
-    { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'status' },
-    { '<leader>h', group = 'help' },
-    { '<leader>ha', '<cmd>Telescope autocommands<cr>', desc = 'Auto Commands' },
-    { '<leader>hc', '<cmd>Telescope commands<cr>', desc = 'Commands' },
-    { '<leader>hf', '<cmd>Telescope filetypes<cr>', desc = 'File Types' },
-    { '<leader>hh', '<cmd>Telescope help_tags<cr>', desc = 'Help Pages' },
-    { '<leader>hk', '<cmd>Telescope keymaps<cr>', desc = 'Key Maps' },
-    { '<leader>hm', '<cmd>Telescope man_pages<cr>', desc = 'Man Pages' },
-    { '<leader>ho', '<cmd>Telescope vim_options<cr>', desc = 'Options' },
-    { '<leader>hs', '<cmd>Telescope highlights<cr>', desc = 'Search Highlight Groups' },
-    { '<leader>l', group = 'lsp' },
-    { '<leader>lI', '<cmd>Mason<cr>', desc = 'Mason Info' },
-    { '<leader>ld', '<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>', desc = 'Buffer Diagnostics' },
-    { '<leader>li', '<cmd>LspInfo<cr>', desc = 'Info' },
-    { '<leader>lw', '<cmd>Telescope diagnostics<cr>', desc = 'Diagnostics' },
-    { '<leader>p', group = 'plugin manager' },
-    { '<leader>pS', '<cmd>Lazy clear<cr>', desc = 'Status' },
-    { '<leader>pc', '<cmd>Lazy check<cr>', desc = 'Check' },
-    { '<leader>pd', '<cmd>Lazy debug<cr>', desc = 'Debug' },
-    { '<leader>pi', '<cmd>Lazy install<cr>', desc = 'Install' },
-    { '<leader>pl', '<cmd>Lazy log<cr>', desc = 'Log' },
-    { '<leader>pp', '<cmd>Lazy home<cr>', desc = 'Home' },
-    { '<leader>ps', '<cmd>Lazy sync<cr>', desc = 'Sync' },
-    { '<leader>pu', '<cmd>Lazy update<cr>', desc = 'Update' },
-    { '<leader>px', '<cmd>Lazy clean<cr>', desc = 'Clean' },
-    { '<leader>q', group = 'quit/session' },
-    { '<leader>q!', '<cmd>:qa!<cr>', desc = 'Quit without saving' },
-    { '<leader>ql', '<cmd>Telescope possession list<cr>', desc = 'Load Session' },
-    { '<leader>qq', '<cmd>qa<cr>', desc = 'Quit' },
-    { '<leader>qs', '<cmd>SSave<cr>', desc = 'Save Session' },
-    { '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', desc = 'Rename' },
-    { '<leader>s', group = 'search' },
-    { '<leader>sb', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Buffer' },
-    { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'Grep' },
-    { '<leader>sh', '<cmd>Telescope command_history<cr>', desc = 'Command History' },
-    { '<leader>sm', '<cmd>Telescope marks<cr>', desc = 'Jump to Mark' },
-    { '<leader>so', '<cmd>SymbolsOutline<cr>', desc = 'Symbols Outline' },
-    { '<leader>ss', '<cmd>Telescope resume<cr>', desc = 'Resume last search' },
-    { '<leader>u', '<cmd>Telescope undo<cr>', desc = 'Telescope Undo Tree' },
-    { '<leader>w', group = 'windows' },
-    { '<leader>w-', '<C-W>s', desc = 'split-window-below' },
-    { '<leader>w2', '<C-W>v', desc = 'layout-double-columns' },
-    { '<leader>w=', '<C-W>=', desc = 'balance-window' },
-    { '<leader>wH', '<C-W>5<', desc = 'expand-window-left' },
-    { '<leader>wJ', ':resize +5', desc = 'expand-window-below' },
-    { '<leader>wK', ':resize -5', desc = 'expand-window-up' },
-    { '<leader>wL', '<C-W>5>', desc = 'expand-window-right' },
-    { '<leader>wd', '<C-W>c', desc = 'delete-window' },
-    { '<leader>wh', '<C-W>h', desc = 'window-left' },
-    { '<leader>wj', '<C-W>j', desc = 'window-below' },
-    { '<leader>wk', '<C-W>k', desc = 'window-up' },
-    { '<leader>wl', '<C-W>l', desc = 'window-right' },
-    { '<leader>ws', '<C-W>s', desc = 'split-window-below' },
-    { '<leader>wv', '<C-W>v', desc = 'split-window-right' },
-    { '<leader>ww', '<C-W>p', desc = 'other-window' },
-    { '<leader>w|', '<C-W>v', desc = 'split-window-right' },
-    { '<leader>x', group = 'errors' },
-    { '<leader>xT', '<cmd>TodoTelescope<cr>', desc = 'Todo Telescope' },
-    { '<leader>xl', '<cmd>lopen<cr>', desc = 'Open Location List' },
-    { '<leader>xq', '<cmd>TodoQuickFix<cr>', desc = 'Todo Quickfix' },
-    { '<leader>xt', '<cmd>TodoTrouble<cr>', desc = 'Todo Trouble' },
-    { '<leader>xtt', '<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>', desc = 'Todo Trouble' },
-    { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Trouble' },
-}
+local function add_mappings(groups_table)
+    local clue_groups = {}
+    for _, group in pairs(groups_table) do
+        if group['keys'] ~= '' then
+            table.insert(clue_groups, { mode = 'n', keys = group['keys'], desc = group['desc'] })
+        end
+        for _, mapping in pairs(group['mappings']) do
+            ---@diagnostic disable-next-line: deprecated
+            map('n', unpack(mapping))
+        end
+    end
+    return clue_groups
+end
 
-wk.add(non_leader_keymaps)
-wk.add(leader_keymaps)
+local clue_groups = add_mappings(groups)
+miniclue.setup {
+    window = {
+        delay = 0,
+        config = {
+            border = 'solid',
+        },
+    },
+    triggers = {
+        -- Leader triggers
+        { mode = 'n', keys = '<Leader>' },
+        { mode = 'x', keys = '<Leader>' },
+
+        -- Built-in completion
+        { mode = 'i', keys = '<C-x>' },
+
+        -- `g` key
+        { mode = 'n', keys = 'g' },
+        { mode = 'x', keys = 'g' },
+
+        -- Marks
+        { mode = 'n', keys = "'" },
+        { mode = 'n', keys = '`' },
+        { mode = 'x', keys = "'" },
+        { mode = 'x', keys = '`' },
+
+        -- Registers
+        { mode = 'n', keys = '"' },
+        { mode = 'x', keys = '"' },
+        { mode = 'i', keys = '<C-r>' },
+        { mode = 'c', keys = '<C-r>' },
+
+        -- Window commands
+        { mode = 'n', keys = '<C-w>' },
+
+        -- `z` key
+        { mode = 'n', keys = 'z' },
+        { mode = 'x', keys = 'z' },
+    },
+    clues = {
+        miniclue.gen_clues.builtin_completion(),
+        miniclue.gen_clues.g(),
+        miniclue.gen_clues.marks(),
+        miniclue.gen_clues.registers(),
+        miniclue.gen_clues.windows(),
+        miniclue.gen_clues.z(),
+        clue_groups,
+    },
+}

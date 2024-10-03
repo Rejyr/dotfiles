@@ -30,6 +30,8 @@ vim.api.nvim_create_user_command('Q', 'q', {})
 -- lightbulb time
 vim.o.updatetime = 100
 
+vim.opt.timeoutlen = 500
+
 -- set shortmess
 -- disable builtin intro 'I'
 -- Avoid showing extra messages when using completion 'c'

@@ -17,7 +17,7 @@ local mason = {
 function mason.config()
     require('mason').setup {
         ui = {
-            border = 'rounded',
+            border = 'solid',
         },
         providers = { 'mason.providers.client' },
     }
@@ -39,7 +39,7 @@ function mason.config()
             'sqlls',
             'svelte',
             'texlab',
-            'tsserver',
+            'ts_ls',
         },
         automatic_installation = true,
     }
@@ -145,7 +145,7 @@ function mason.config()
         float = {
             focusable = true,
             style = 'minimal',
-            border = 'rounded',
+            border = 'solid',
             source = 'always',
             header = '',
             prefix = '',

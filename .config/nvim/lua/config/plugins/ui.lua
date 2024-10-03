@@ -85,36 +85,11 @@ local indent_blankline = {
         require('ibl').setup {
             indent = {
                 char = '▎',
-                tab_char = '▎', 
+                tab_char = '▎',
             },
             scope = {
                 enabled = true,
                 highlight = 'Green',
-            },
-        }
-    end,
-}
-
-local lualine = {
-    'nvim-lualine/lualine.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'Isrothy/lualine-diagnostic-message' },
-    config = function()
-        require('lualine').setup {
-            options = {
-                globalstatus = true,
-            },
-            sections = {
-                lualine_a = { 'mode' },
-                lualine_b = {
-                    'branch',
-                    'diff',
-                    'diagnostics',
-                },
-                lualine_c = { 'filename', 'diagnostic-message' },
-                lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'progress' },
-                lualine_z = { 'location' },
             },
         }
     end,
@@ -125,10 +100,8 @@ return {
     symbols_outline,
     inlayhints,
     indent_blankline,
-    lualine,
     'folke/which-key.nvim',
-    { 'DNLHC/glance.nvim', event = 'VeryLazy' },
-    { 'ashfinal/qfview.nvim', event = 'VeryLazy', config = true },
+    { 'ashfinal/qfview.nvim', event = 'UIEnter', config = true },
     {
         'lewis6991/gitsigns.nvim',
         event = 'BufReadPre',
@@ -141,10 +114,9 @@ return {
         'utilyre/barbecue.nvim',
         name = 'barbecue',
         version = '*',
-        event = 'VeryLazy',
+        event = 'BufEnter',
         dependencies = {
             'SmiteshP/nvim-navic',
-            'nvim-tree/nvim-web-devicons',
         },
         config = true,
     },
@@ -152,6 +124,13 @@ return {
         'folke/trouble.nvim',
         event = 'BufReadPre',
         cmd = { 'TroubleToggle', 'Trouble' },
+        config = true,
+    },
+    {
+        'folke/todo-comments.nvim',
+        cmd = { 'TodoTrouble', 'TodoTelescope' },
+        event = 'BufReadPost',
+        dependencies = 'nvim-lua/plenary.nvim',
         config = true,
     },
     {

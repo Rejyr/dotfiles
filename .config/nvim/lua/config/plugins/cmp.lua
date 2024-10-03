@@ -15,12 +15,6 @@ local M = {
 }
 
 function M.config()
-    local has_words_before = function()
-        ---@diagnostic disable-next-line: deprecated
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
-    end
-
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
 
@@ -31,16 +25,20 @@ function M.config()
         store_selection_keys = '<Tab>',
     }
 
+    local cmp_border = cmp.config.window.bordered {
+        border = 'solid',
+        winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+    }
+
     cmp.setup {
         snippet = {
             expand = function(args)
-                -- luasnip
                 require('luasnip').lsp_expand(args.body)
             end,
         },
         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
+            completion = cmp_border,
+            documentation = cmp_border,
         },
         completion = {
             completeopt = 'menu,menuone,noinsert',
@@ -102,7 +100,6 @@ function M.config()
             { name = 'path' },
             { name = 'crates' },
             { name = 'nvim_lsp_signature_help' },
-            { name = 'neorg' },
         },
     }
 

@@ -1,41 +1,3 @@
-local session = {
-    'jedrzejboczar/possession.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    event = 'VeryLazy',
-    config = function()
-        require('possession').setup {
-            commands = {
-                save = 'SSave',
-                load = 'SLoad',
-                delete = 'SDelete',
-                list = 'SList',
-            },
-        }
-        require('telescope').load_extension('possession')
-    end,
-}
-
-local neoscroll = {
-    'karb94/neoscroll.nvim',
-    keys = { '<C-u>', '<C-d>', 'gg', 'G' },
-    config = function()
-        require('neoscroll').setup()
-        local t = {}
-        -- Syntax: t[keys] = {function, {function arguments}}
-        t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '80' } }
-        t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '80' } }
-        t['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '250' } }
-        t['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '250' } }
-        t['<C-y>'] = { 'scroll', { '-0.10', 'false', '80' } }
-        t['<C-e>'] = { 'scroll', { '0.10', 'false', '80' } }
-        t['zt'] = { 'zt', { '150' } }
-        t['zz'] = { 'zz', { '150' } }
-        t['zb'] = { 'zb', { '150' } }
-
-        require('neoscroll.config').set_mappings(t)
-    end,
-}
-
 local tabout = {
     'abecodes/tabout.nvim',
     branch = 'master',
@@ -79,23 +41,8 @@ local config_local = {
 }
 
 return {
-    session,
-    neoscroll,
     tabout,
     config_local,
-    { 'wakatime/vim-wakatime', event = 'VeryLazy' },
-    {
-        'McAuleyPenney/tidy.nvim',
-        event = 'BufWritePre',
-    },
-    {
-        'MaximilianLloyd/tw-values.nvim',
-        cmd = { 'TWValues' },
-        keys = {
-            { '<leader>sv', '<cmd>TWValues<cr>', desc = 'Show tailwind CSS values' },
-        },
-        config = true,
-    },
     {
         'notjedi/nvim-rooter.lua',
         lazy = false,
@@ -126,11 +73,6 @@ return {
         end,
     },
     {
-        'vim-pandoc/vim-pandoc-syntax',
-        lazy = false,
-    },
-    { 'mechatroner/rainbow_csv', lazy = false },
-    {
         'chentoast/marks.nvim',
         event = 'VeryLazy',
         config = true,
@@ -139,13 +81,5 @@ return {
         'ethanholz/nvim-lastplace',
         event = 'BufReadPre',
         config = true,
-    },
-    {
-        'danielfalk/smart-open.nvim',
-        branch = '0.1.x',
-        dependencies = { 'kkharji/sqlite.lua' },
-        config = function()
-            require('telescope').load_extension 'smart_open'
-        end,
     },
 }
