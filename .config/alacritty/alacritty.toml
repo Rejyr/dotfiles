@@ -25,7 +25,7 @@ program = "/bin/fish"
 
 [window]
 dynamic_title = true
-opacity = 0.9
+opacity = 1.0
 
 [window.class]
 general = "Alacritty"
