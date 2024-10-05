@@ -75,32 +75,10 @@ local inlayhints = {
     end,
 }
 
-local indent_blankline = {
-    'lukas-reineke/indent-blankline.nvim',
-    event = 'BufReadPre',
-    config = function()
-        vim.opt.list = true
-        vim.opt.listchars:append 'eol:↴'
-
-        require('ibl').setup {
-            indent = {
-                char = '▎',
-                tab_char = '▎',
-            },
-            scope = {
-                enabled = true,
-                highlight = 'Green',
-            },
-        }
-    end,
-}
-
 return {
     lightbulb,
     symbols_outline,
     inlayhints,
-    indent_blankline,
-    'folke/which-key.nvim',
     { 'ashfinal/qfview.nvim', event = 'UIEnter', config = true },
     {
         'lewis6991/gitsigns.nvim',
@@ -118,19 +96,6 @@ return {
         dependencies = {
             'SmiteshP/nvim-navic',
         },
-        config = true,
-    },
-    {
-        'folke/trouble.nvim',
-        event = 'BufReadPre',
-        cmd = { 'TroubleToggle', 'Trouble' },
-        config = true,
-    },
-    {
-        'folke/todo-comments.nvim',
-        cmd = { 'TodoTrouble', 'TodoTelescope' },
-        event = 'BufReadPost',
-        dependencies = 'nvim-lua/plenary.nvim',
         config = true,
     },
     {

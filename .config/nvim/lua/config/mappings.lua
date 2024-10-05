@@ -61,11 +61,12 @@ local groups = {
         mappings = {
             { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { desc = 'Lsp Hover' } },
             { '<leader>,', '<cmd>Telescope buffers<cr>', { desc = 'Switch Buffer' } },
-            { '<leader>.', '<cmd>Telescope file_browser<cr>', { desc = 'Browse Files' } },
+            { '<leader>.', '<cmd>lua require("mini.files").open()<cr>', { desc = 'Browse Files' } },
             { '<leader>/', '<cmd>Telescope live_grep<cr>', { desc = 'Search' } },
             { '<leader>:', '<cmd>Telescope command_history<cr>', { desc = 'Command History' } },
             { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
             { '<leader>c', '<cmd>Telescope neoclip<cr>', { desc = 'Copy Registers' } },
+            { '<leader>u', '<cmd>Telescope undo<cr>', { desc = 'Telescope Undo Tree' } },
             {
                 '<leader>L',
                 "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
@@ -129,18 +130,17 @@ local groups = {
         keys = '<leader>f',
         desc = '+file/format',
         mappings = {
-            {
-                '<leader>fB',
-                '<cmd>Telescope file_browser path=%:p:help |select_buffer=true<cr>|',
-                desc = 'Open Telescope File Browser',
-            },
-            { '<leader>fb', '<cmd>Telescope file_browser<cr>', { desc = 'Open Telescope File Browser' } },
             { '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find File' } },
             { '<leader>fh', '<cmd>Telescope find_files hidden=true<cr>', { desc = 'Find Hidden File' } },
+            { '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' } },
+        },
+    },
+    {
+        keys = '<leader>fm',
+        desc = '+format',
+        mappings = {
             { '<leader>fmt', '<cmd>Format<cr>', { desc = 'Format' } },
             { '<leader>fml', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = 'Format with LSP' } },
-            { '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' } },
-            { '<leader>fr', '<cmd>Telescope smart_open<cr>', { desc = 'Open Recent File' } },
         },
     },
     {
@@ -216,7 +216,6 @@ local groups = {
             { '<leader>sm', '<cmd>Telescope marks<cr>', { desc = 'Jump to Mark' } },
             { '<leader>so', '<cmd>SymbolsOutline<cr>', { desc = 'Symbols Outline' } },
             { '<leader>ss', '<cmd>Telescope resume<cr>', { desc = 'Resume last search' } },
-            { '<leader>u', '<cmd>Telescope undo<cr>', { desc = 'Telescope Undo Tree' } },
         },
     },
     {
@@ -239,18 +238,6 @@ local groups = {
             { '<leader>wv', '<C-W>v', { desc = 'split-window-right' } },
             { '<leader>ww', '<C-W>p', { desc = 'other-window' } },
             { '<leader>w|', '<C-W>v', { desc = 'split-window-right' } },
-        },
-    },
-    {
-        keys = '<leader>x',
-        desc = '+errors',
-        mappings = {
-            { '<leader>xT', '<cmd>TodoTelescope<cr>', { desc = 'Todo Telescope' } },
-            { '<leader>xl', '<cmd>lopen<cr>', { desc = 'Open Location List' } },
-            { '<leader>xq', '<cmd>TodoQuickFix<cr>', { desc = 'Todo Quickfix' } },
-            { '<leader>xt', '<cmd>TodoTrouble<cr>', { desc = 'Todo Trouble' } },
-            { '<leader>xtt', '<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>', { desc = 'Todo Trouble' } },
-            { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Trouble' } },
         },
     },
 }

@@ -6,6 +6,7 @@ local M = {
 
 function M.config()
     local setup_modules = {
+        'ai',
         'animate',
         'bracketed',
         'comment',
@@ -13,6 +14,7 @@ function M.config()
         'files',
         'hipatterns',
         'icons',
+        'indentscope',
         'pairs',
         'statusline',
         'surround',
@@ -64,6 +66,16 @@ function M.setup_icons()
     require('mini.icons').mock_nvim_web_devicons()
 end
 
+function M.setup_indentscope()
+    require('mini.indentscope').setup {
+        draw = {
+            delay = 0,
+            animation = require('mini.indentscope').gen_animation.none(),
+        },
+        symbol = '▎',
+    }
+end
+
 function M.setup_statusline()
     require('mini.statusline').setup()
     vim.o.laststatus = 3
@@ -71,13 +83,13 @@ end
 
 function M.setup_trailspace()
     require('mini.trailspace').setup()
-    local augroup = vim.api.nvim_create_augroup("RemoveTrailingWhitespace", {})
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    local augroup = vim.api.nvim_create_augroup('RemoveTrailingWhitespace', {})
+    vim.api.nvim_create_autocmd('BufWritePre', {
         group = augroup,
-        callback = function ()
+        callback = function()
             require('mini.trailspace').trim()
             require('mini.trailspace').trim_last_lines()
-        end
+        end,
     })
 end
 
