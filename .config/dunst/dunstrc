@@ -1,5 +1,5 @@
 [global]
-font = "Iosevka NF 12"
+font = "Iosevka 12"
 follow = keyboard
 markup = full
 show_indicators = false

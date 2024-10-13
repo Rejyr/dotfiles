@@ -4,4 +4,4 @@ daemonize
 image=~/dotfiles/wallpapers/wallpaper.jpg
 scaling=fill
 indicator-caps-lock
-font=Iosevka NF
+font=Iosevka

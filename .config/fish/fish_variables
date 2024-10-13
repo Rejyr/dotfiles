@@ -8,6 +8,7 @@ SETUVAR --export CFLAGS:
 SETUVAR --export DEBUGINFOD_URLS:https\x3a//debuginfod\x2earchlinux\x2eorg
 SETUVAR --export DOTFILES:/home/rejyr/dotfiles/
 SETUVAR --export EDITOR:nvim
+SETUVAR --export GDK_BACKEND:wayland
 SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export GTK2_RC_FILES:/home/rejyr/\x2ethemes/Everforest/gtk\x2d2\x2e0/gtkrc
 SETUVAR --export GTK_THEME:Everforest
@@ -22,8 +23,12 @@ SETUVAR --export QT_STYLE_OVERRIDE:Everforest
 SETUVAR --export TMUX:\x1d
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR --export --path XCURSOR_PATH:/home/rejyr/\x2elocal/share/icons
-SETUVAR --export XCURSOR_THEME:Fauna
+SETUVAR --export XDG_CACHE_HOME:/home/rejyr/\x2ecache
+SETUVAR --export XDG_CONFIG_HOME:/home/rejyr/\x2econfig
 SETUVAR --export XDG_CURRENT_DESKTOP:sway
+SETUVAR --export XDG_DATA_HOME:/home/rejyr/\x2elocal/share
+SETUVAR --export XDG_RUNTIME_DIR:/run/user/1000
+SETUVAR --export XDG_STATE_HOME:/home/rejyr/\x2elocal/state
 SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
@@ -31,9 +36,16 @@ SETUVAR _fisher_jorgebucaran_2F_hydro_files:\x7e/\x2econfig/fish/functions/fish_
 SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish\x1ejorgebucaran/hydro
 SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR _hydro_git_10816:void\u2022\x20
+SETUVAR _hydro_git_15337:void\u2022\x20
+SETUVAR _hydro_git_1817:\x1d
+SETUVAR _hydro_git_1826:void\u2022\x20
 SETUVAR _hydro_git_2750622:main\u2022\x20
 SETUVAR _hydro_git_2758491:main\u2022\x20
+SETUVAR _hydro_git_3830:\x1d
 SETUVAR _hydro_git_905417:main\u2022\x20
+SETUVAR _hydro_git_9702:void\u2022\x20
+SETUVAR _hydro_git_9793:void\u2022\x20
 SETUVAR base16_theme:tomorrow\x2dnight\x2deighties
 SETUVAR dry_count:\x1d
 SETUVAR fish_color_autosuggestion:747369
