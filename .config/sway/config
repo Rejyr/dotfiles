@@ -54,7 +54,7 @@ exec $browser
 
 # workspace 2
 workspace 2
-exec ~/.config/sway/attach-zellij.sh
+exec ~/.config/sway/attach-zellij.sh "open session: "
 
 # gaps
 # gaps inner 10
@@ -77,7 +77,7 @@ set $down j
 set $up k
 set $right l
 # font
-font pango: Iosevka NF 12
+font pango: Iosevka 12
 
 ### Output configuration
 #
@@ -339,7 +339,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    font pango:Iosevka NF 12
+    font pango:Iosevka 12
     position bottom
     status_command i3status-rs
     colors {

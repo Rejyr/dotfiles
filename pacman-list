@@ -129,8 +129,8 @@ texlive-music
 texlive-pictures
 texlive-pstricks
 texlive-publishers
-ttf-iosevka-nerd
-ttf-iosevkaterm-nerd
+ttc-iosevka
+ttf-nerd-fonts-symbols
 unrar
 unzip
 upower

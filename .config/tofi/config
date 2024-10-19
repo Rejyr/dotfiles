@@ -1,4 +1,4 @@
-font = /usr/share/fonts/TTF/IosevkaNerdFont-Regular.ttf
+font = Iosevka
 num-results = 5
 drun-launch=true
 
