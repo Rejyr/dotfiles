@@ -16,7 +16,7 @@ vim.opt.runtimepath:prepend(lazypath)
 require('lazy').setup('config.plugins', {
     defaults = { lazy = true },
     ui = {
-        border = 'solid',
+        border = vim.g.border,
     },
     performance = {
         rtp = {

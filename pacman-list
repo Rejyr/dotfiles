@@ -58,7 +58,6 @@ imagemagick
 imv
 jdk8-openjdk
 jq
-jre-openjdk
 jre17-openjdk
 jre21-openjdk
 kiwix-desktop
@@ -82,8 +81,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 ntfs-3g
-nushell
-obs-studio
 onefetch
 os-prober
 otf-latin-modern
@@ -102,10 +99,8 @@ playerctl
 python-gobject
 python-pip
 python-pipx
-qbittorrent
 qt5-wayland
 qt5ct
-qt6-wayland
 ripgrep
 rustup
 sed
@@ -135,6 +130,7 @@ unrar
 unzip
 upower
 usbutils
+wezterm
 wget
 which
 wl-clipboard

@@ -17,7 +17,7 @@ local mason = {
 function mason.config()
     require('mason').setup {
         ui = {
-            border = 'solid',
+            border = vim.g.border,
         },
         providers = { 'mason.providers.client' },
     }
@@ -145,7 +145,7 @@ function mason.config()
         float = {
             focusable = true,
             style = 'minimal',
-            border = 'solid',
+            border = vim.g.border,
             source = 'always',
             header = '',
             prefix = '',
