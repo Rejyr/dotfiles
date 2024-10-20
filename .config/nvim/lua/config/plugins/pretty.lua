@@ -4,10 +4,10 @@ return {
         event = 'VeryLazy',
         opts = {
             input = {
-                border = 'solid',
+                border = vim.g.border,
             },
             builtin = {
-                border = 'solid',
+                border = vim.g.border,
             },
         },
     },

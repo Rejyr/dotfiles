@@ -1,17 +1,3 @@
-local lightbulb = {
-    'kosayoda/nvim-lightbulb',
-    event = 'VeryLazy',
-    config = function()
-        vim.api.nvim_create_augroup('NvimLightbulb', {})
-        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            group = 'NvimLightbulb',
-            callback = function()
-                require('nvim-lightbulb').update_lightbulb()
-            end,
-        })
-    end,
-}
-
 local symbols_outline = {
     'simrat39/symbols-outline.nvim',
     cmd = 'SymbolsOutline',
@@ -32,7 +18,7 @@ local symbols_outline = {
                 Function = { icon = '󰊕', hl = '@function' },
                 Variable = { icon = '', hl = '@constant' },
                 Constant = { icon = '', hl = '@constant' },
-                String = { icon = '𝓐', hl = '@string' },
+                String = { icon = '', hl = '@string' },
                 Number = { icon = '#', hl = '@number' },
                 Boolean = { icon = '⊨', hl = '@boolean' },
                 Array = { icon = '󰅪', hl = '@constant' },
@@ -76,7 +62,6 @@ local inlayhints = {
 }
 
 return {
-    lightbulb,
     symbols_outline,
     inlayhints,
     { 'ashfinal/qfview.nvim', event = 'UIEnter', config = true },
@@ -85,16 +70,6 @@ return {
         event = 'BufReadPre',
         dependencies = {
             'nvim-lua/plenary.nvim',
-        },
-        config = true,
-    },
-    {
-        'utilyre/barbecue.nvim',
-        name = 'barbecue',
-        version = '*',
-        event = 'BufEnter',
-        dependencies = {
-            'SmiteshP/nvim-navic',
         },
         config = true,
     },

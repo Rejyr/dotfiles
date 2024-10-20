@@ -261,7 +261,7 @@ miniclue.setup {
     window = {
         delay = 0,
         config = {
-            border = 'solid',
+            border = vim.g.border,
         },
     },
     triggers = {

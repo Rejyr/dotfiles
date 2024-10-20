@@ -26,7 +26,7 @@ function M.config()
     }
 
     local cmp_border = cmp.config.window.bordered {
-        border = 'solid',
+        border = vim.g.border,
         winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
     }
 

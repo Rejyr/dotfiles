@@ -71,3 +71,6 @@ vim.wo.signcolumn = 'yes'
 
 -- add typst ft
 vim.filetype.add { extension = { typ = 'typst' } }
+
+-- set border type
+vim.g.border = 'solid'
