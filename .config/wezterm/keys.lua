@@ -62,7 +62,7 @@ local keys = {
     { key = 'v', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
     { key = 'V', mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
     { key = '0', mods = 'CTRL', action = act.ResetFontSize },
-    { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
+    { key = '=', mods = 'CTRL', action = act.IncreaseFontSize },
     { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
     { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection 'Left' },
     { key = 'LeftArrow', mods = 'SHIFT|ALT|CTRL', action = act.AdjustPaneSize { 'Left', 1 } },
