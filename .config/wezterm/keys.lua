@@ -38,6 +38,7 @@ local leader_keys = {
     { 'a', act.AttachDomain(domains.domain_name) },
     { 'c', act.ActivateCopyMode },
     { 'd', act.DetachDomain { DomainName = domains.domain_name } },
+    { 'f', act.Search 'CurrentSelectionOrEmptyString' },
     { 'h', act.SplitVertical { domain = 'CurrentPaneDomain' } },
     { 'l', act.ShowDebugOverlay },
     { 'n', act.ActivateTabRelative(1) },
