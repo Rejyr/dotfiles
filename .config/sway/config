@@ -153,6 +153,7 @@ for_window [title="Plover: WPM Meter"] width 181 height 148
 # Basics:
 #
     bindsym $mod+Return exec $term
+    bindsym $mod+Shift+Return exec ~/.config/sway/ssh.sh
     # Start a terminal and attach to a zellij session
     bindsym $mod+Ctrl+Return exec ~/.config/sway/attach-zellij.sh "open session: "
     # Delete zellij session
