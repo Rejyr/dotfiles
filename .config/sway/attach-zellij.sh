@@ -11,5 +11,5 @@ fi
 if [[ "$prompt" = *"delete"* ]]; then
     zellij delete-session -f "$session"
 else
-    wezterm start -- zellij attach --create $session
+    foot -e start -- zellij attach --create $session
 fi

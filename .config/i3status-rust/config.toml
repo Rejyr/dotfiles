@@ -25,11 +25,11 @@ icons = "awesome4"
 [[block]]
 block = "music"
 
-[[block]]
-block = "custom"
-command = "~/.config/i3status-rust/weather.sh"
-format = " $text "
-interval = 1800
+# [[block]]
+# block = "custom"
+# command = "~/.config/i3status-rust/weather.sh"
+# format = " $text "
+# interval = 1800
 
 [[block]]
 block = "packages"
