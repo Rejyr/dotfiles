@@ -32,7 +32,7 @@ client.urgent $bg1 $red $foreground $background $red
 seat seat0 xcursor_theme Fauna 24
 
 # Your preferred terminal emulator
-set $term wezterm
+set $term foot
 # browser
 set $browser librewolf
 # Your preferred application launcher

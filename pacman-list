@@ -31,6 +31,7 @@ findutils
 fish
 fisher
 flex
+foot
 fzf
 gawk
 gcc
@@ -130,7 +131,6 @@ unrar
 unzip
 upower
 usbutils
-wezterm
 wget
 which
 wl-clipboard

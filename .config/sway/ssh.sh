@@ -6,4 +6,4 @@ if [[ -z $host ]]; then
     exit
 fi
 
-wezterm ssh $host
+foot -e ssh $host
