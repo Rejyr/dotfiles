@@ -28,7 +28,7 @@ abbr -a -- nc ncmpcpp
 abbr -a -- nf 'nvim (fzf)'
 abbr -a -- reboot 'sudo reboot'
 abbr -a -- tree 'exa -TF'
-abbr -a -- update yay
+abbr -a -- update 'sudo xbps-install -Su'
 abbr -a -- xbu 'x build -i --jobs 8'
 abbr -a -- xch 'x check -i --jobs 8 compiler'
 abbr -a -- xtestui 'x test src/test/ui -i --jobs 8'
