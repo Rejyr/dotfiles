@@ -41,7 +41,7 @@ local crates = {
     event = { 'BufRead Cargo.toml' },
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
-        src = {
+        completion = {
             cmp = {
                 enabled = true,
             },
