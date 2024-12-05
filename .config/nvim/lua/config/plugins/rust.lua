@@ -3,38 +3,40 @@ local rustacean = {
     ft = 'rust',
 }
 
-function rustacean.config()
-    vim.g.rustacean = {
-        tools = {
-            runnables = {
-                use_telescope = true,
-            },
-            inlay_hints = {
-                auto = false,
-            },
+vim.g.rustaceanvim = {
+    tools = {
+        runnables = {
+            use_telescope = true,
         },
-
-        -- all the opts to send to nvim-lspconfig
-        -- these override the defaults set by rust-tools.nvim
-        -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
-        server = {
-            standalone = true,
-            settings = {
-                ['rust-analyzer'] = {
-                    -- enable clippy on save
-                    check = {
-                        command = 'clippy',
+        inlay_hints = {
+            auto = false,
+        },
+    },
+    server = {
+        standalone = true,
+        default_settings = {
+            ['rust-analyzer'] = {
+                check = {
+                    command = 'clippy',
+                },
+                inlayHints = { locationLinks = false },
+                diagnostic = {
+                    refreshSupport = false,
+                },
+                cargo = {
+                    features = 'all',
+                },
+                procMacro = {
+                    ignored = {
+                        leptos_macro = {
+                            'server',
+                        },
                     },
-                    inlayHints = { locationLinks = false },
-
-                    -- linkedProjects = {
-                    --     [[{"sysroot_src": "/home/rejyr/.rustup/toolchains/1.41.1-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"}]],
-                    -- },
                 },
             },
         },
-    }
-end
+    },
+}
 
 local crates = {
     'saecki/crates.nvim',

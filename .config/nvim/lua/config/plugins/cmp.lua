@@ -25,6 +25,18 @@ M.opts = {
         ['<Tab>'] = { 'snippet_forward', 'fallback' },
         ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
     },
+    windows = {
+        autocomplete = {
+            border = vim.g.border,
+        },
+        documentation = {
+            border = vim.g.border,
+        },
+        signature_help = {
+            border = vim.g.border,
+        }
+    },
+    trigger = { signature_help = { enabled = true } },
     snippets = {
         expand = function(snippet)
             require('luasnip').lsp_expand(snippet)
