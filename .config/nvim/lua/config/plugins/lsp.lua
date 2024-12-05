@@ -34,7 +34,6 @@ function mason.config()
             'ltex',
             'lua_ls',
             'openscad_lsp',
-            'ruff_lsp',
             'rust_analyzer',
             'sqlls',
             'svelte',
@@ -43,8 +42,7 @@ function mason.config()
         },
         automatic_installation = true,
     }
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     ---@diagnostic disable-next-line: unused-local
     local on_attach = function(client, bufnr) end
     require('mason-lspconfig').setup_handlers {
@@ -107,6 +105,7 @@ function mason.config()
                     'javascript',
                     'javascriptreact',
                     'less',
+                    'rust',
                     'sass',
                     'scss',
                     'svelte',
@@ -124,6 +123,7 @@ function mason.config()
             'clang-format',
             'eslint_d',
             'prettier',
+            'ruff',
             'stylua',
             'selene',
         },

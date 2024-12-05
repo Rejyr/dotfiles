@@ -54,6 +54,9 @@ map('v', '>', '>gv')
 map('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<cr>', { silent = true })
 map('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { silent = true })
 
+-- disable command edit bind
+map('n', 'q:', '')
+
 local groups = {
     {
         keys = '',
