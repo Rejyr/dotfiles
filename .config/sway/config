@@ -29,8 +29,6 @@ client.focused_tab_title $bg1 $bg3 $fg1 $fg1 $bg1
 client.unfocused $bg1 $bg3 $fg1 $fg1 $bg1
 client.urgent $bg1 $red $foreground $background $red
 
-seat seat0 xcursor_theme Fauna 24
-
 # Your preferred terminal emulator
 set $term foot
 # browser
@@ -51,10 +49,6 @@ exec wl-paste --watch cliphist store
 # workspace 1
 workspace 1
 exec $browser
-
-# workspace 2
-workspace 2
-exec ~/.config/sway/attach-zellij.sh "open session: "
 
 # gaps
 # gaps inner 10
