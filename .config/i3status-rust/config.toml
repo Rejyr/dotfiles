@@ -45,6 +45,8 @@ block = "disk_space"
 path = "/"
 info_type = "used"
 interval = 60
+warning = 80.0
+alert = 90.0
 format = " $icon $percentage "
 format_alt = " $icon $used.eng(w:2)/$total.eng(w:2) "
 
@@ -53,7 +55,7 @@ block = "sound"
 driver = "pulseaudio"
 [[block.click]]
 button = "left"
-cmd = "pavucontrol"
+cmd = "pavucontrol-qt"
 
 [[block]]
 block = "time"

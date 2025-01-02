@@ -11,32 +11,13 @@ local M = {
 }
 
 M.opts = {
-    keymap = {
-        ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-        ['<C-e>'] = { 'hide' },
-        ['<C-y>'] = { 'select_and_accept' },
-
-        ['<C-p>'] = { 'select_prev', 'fallback' },
-        ['<C-n>'] = { 'select_next', 'fallback' },
-
-        ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-        ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-        ['<Tab>'] = { 'snippet_forward', 'fallback' },
-        ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+    keymap = { preset = 'super-tab' },
+    completion = {
+        list = { selection = 'auto_insert' },
+        menu = { border = vim.g.border },
+        documentation = { window = { border = vim.g.border } },
     },
-    windows = {
-        autocomplete = {
-            border = vim.g.border,
-        },
-        documentation = {
-            border = vim.g.border,
-        },
-        signature_help = {
-            border = vim.g.border,
-        }
-    },
-    trigger = { signature_help = { enabled = true } },
+    signature = { enabled = true, window = { border = vim.g.border } },
     snippets = {
         expand = function(snippet)
             require('luasnip').lsp_expand(snippet)
@@ -52,9 +33,7 @@ M.opts = {
         end,
     },
     sources = {
-        completion = {
-            enabled_providers = { 'lsp', 'path', 'snippets', 'buffer', 'luasnip' },
-        },
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'luasnip' },
         providers = {
             luasnip = {
                 name = 'luasnip',
