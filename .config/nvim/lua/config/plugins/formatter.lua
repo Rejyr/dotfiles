@@ -13,6 +13,9 @@ function M.config()
             css = {
                 require('formatter.filetypes.css').prettier,
             },
+            scss = {
+                require('formatter.filetypes.css').prettier,
+            },
             javascript = {
                 require('formatter.filetypes.javascript').prettier,
             },

@@ -1,11 +1,13 @@
 bacon
 cargo-edit
 cargo-expand
+cargo-leptos
 cargo-nextest
 cargo-show-asm
 cargo-watch
 flamegraph
 irust
+leptosfmt
 solkit
 todo
 tofu-cli

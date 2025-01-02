@@ -1,3 +1,4 @@
+7zip
 acpid
 android-tools
 autoconf
@@ -86,7 +87,6 @@ onefetch
 os-prober
 otf-latin-modern
 otf-latinmodern-math
-p7zip
 pacman
 pacman-contrib
 pacutils
@@ -106,6 +106,7 @@ qt5-wayland
 qt5ct
 qt6-wayland
 ripgrep
+rsync
 rustup
 sed
 slurp

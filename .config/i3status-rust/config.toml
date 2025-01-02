@@ -22,8 +22,8 @@ separator_fg = "#A7C080"
 [icons]
 icons = "awesome4"
 
-[[block]]
-block = "music"
+# [[block]]
+# block = "music"
 
 # [[block]]
 # block = "custom"
