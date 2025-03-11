@@ -1,3 +1,4 @@
+better-adb-sync-git
 bolt-launcher
 bolt-launcher-debug
 cbonsai
@@ -11,11 +12,18 @@ orca-slicer-unstable-bin-debug
 pandoc-bin
 pandoc-bin-debug
 prismlauncher-qt5-bin-debug
-runelite
-runescape-launcher-debug
+python-bandcamp-api
+python-dacite
+python-demjson3
+python-soundcloud-v2
+python-spotipy
+python-syncedlyrics
+sdl2-debug
+spotdl
 tofi
 ungoogled-chromium-bin
 ungoogled-chromium-bin-debug
 ventoy-bin
+ventoy-bin-debug
 vial-appimage
 yay

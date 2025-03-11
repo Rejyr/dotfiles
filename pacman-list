@@ -33,6 +33,7 @@ fish
 fisher
 flex
 foot
+freecad
 fzf
 gawk
 gcc
@@ -63,11 +64,13 @@ jre11-openjdk
 jre17-openjdk
 jre21-openjdk
 kiwix-desktop
+libreoffice-fresh
 libtool
 linux
 linux-firmware
 lldb
 luarocks
+lutris
 m4
 make
 man-db
@@ -124,6 +127,7 @@ texlive-formatsextra
 texlive-games
 texlive-humanities
 texlive-latexextra
+texlive-luatex
 texlive-mathscience
 texlive-music
 texlive-pictures
@@ -136,8 +140,10 @@ unrar
 unzip
 upower
 usbutils
+vulkan-radeon
 wget
 which
+wine
 wl-clipboard
 wmname
 wtype

@@ -13,38 +13,23 @@ local M = {
 M.opts = {
     keymap = { preset = 'super-tab' },
     completion = {
-        list = { selection = 'auto_insert' },
+        accept = {
+            auto_brackets = {
+                override_brackets_for_filetypes = {
+                    tex = { '{', '}' },
+                },
+            },
+        },
+        list = { selection = {
+            auto_insert = false,
+        } },
         menu = { border = vim.g.border },
         documentation = { window = { border = vim.g.border } },
     },
     signature = { enabled = true, window = { border = vim.g.border } },
-    snippets = {
-        expand = function(snippet)
-            require('luasnip').lsp_expand(snippet)
-        end,
-        active = function(filter)
-            if filter and filter.direction then
-                return require('luasnip').jumpable(filter.direction)
-            end
-            return require('luasnip').in_snippet()
-        end,
-        jump = function(direction)
-            require('luasnip').jump(direction)
-        end,
-    },
+    snippets = { preset = 'luasnip' },
     sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'luasnip' },
-        providers = {
-            luasnip = {
-                name = 'luasnip',
-                module = 'blink.compat.source',
-                score_offset = -3,
-                opts = {
-                    use_show_condition = false,
-                    show_autosnippets = true,
-                },
-            },
-        },
+        default = { 'lsp', 'path', 'snippets', 'buffer', },
     },
 }
 
