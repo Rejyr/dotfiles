@@ -30,6 +30,7 @@ function mason.config()
             'eslint',
             'grammarly',
             'html',
+            'jdtls',
             'jsonls',
             'ltex',
             'lua_ls',

@@ -1,5 +1,4 @@
 better-adb-sync-git
-bolt-launcher
 bolt-launcher-debug
 cbonsai
 grimshot
@@ -20,7 +19,6 @@ python-spotipy
 python-syncedlyrics
 sdl2-debug
 spotdl
-tofi
 ungoogled-chromium-bin
 ungoogled-chromium-bin-debug
 ventoy-bin

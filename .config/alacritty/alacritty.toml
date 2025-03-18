@@ -1,0 +1,5 @@
+[general]
+import = ["themes/everforest_dark.toml"]
+[font]
+normal = { family = "Iosevka", style = "Regular" }
+size = 18
