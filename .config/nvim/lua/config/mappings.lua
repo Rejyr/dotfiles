@@ -90,8 +90,9 @@ local groups = {
             { 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Goto Next Diagnostic' } },
             { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' } },
             { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'Definition' } },
-            { 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 'Implementation' } },
-            { 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', { desc = 'References' } },
+            { 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 'Implementation' } },
+            { 'grr', '<cmd>lua vim.lsp.buf.references()<cr>', { desc = 'References' } },
+            { 'grn', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' } },
         },
     },
     {
@@ -203,13 +204,6 @@ local groups = {
         },
     },
     {
-        keys = '<leader>r',
-        desc = '+rename',
-        mappings = {
-            { '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' } },
-        },
-    },
-    {
         keys = '<leader>s',
         desc = '+search',
         mappings = {
@@ -263,9 +257,6 @@ local clue_groups = add_mappings(groups)
 miniclue.setup {
     window = {
         delay = 0,
-        config = {
-            border = vim.g.border,
-        },
     },
     triggers = {
         -- Leader triggers

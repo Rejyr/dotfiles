@@ -5,7 +5,6 @@ local M = {
     dependencies = {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
-        -- lock compat to tagged versions, if you've also locked blink.cmp to tagged versions
         { 'saghen/blink.compat', version = '*', opts = { impersonate_nvim_cmp = true } },
     },
 }
@@ -23,10 +22,8 @@ M.opts = {
         list = { selection = {
             auto_insert = false,
         } },
-        menu = { border = vim.g.border },
-        documentation = { window = { border = vim.g.border } },
     },
-    signature = { enabled = true, window = { border = vim.g.border } },
+    signature = { enabled = true },
     snippets = { preset = 'luasnip' },
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer', },

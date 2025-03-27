@@ -73,4 +73,12 @@ vim.wo.signcolumn = 'yes'
 vim.filetype.add { extension = { typ = 'typst' } }
 
 -- set border type
-vim.g.border = 'solid'
+vim.o.winborder = 'solid'
+
+-- native lsp lines
+vim.diagnostic.config({
+    virtual_text = true,
+    virtual_lines = {
+        current_line = true,
+    }
+})

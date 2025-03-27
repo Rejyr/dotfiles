@@ -1,5 +1,4 @@
 local lspconfig = {
-
     'neovim/nvim-lspconfig',
 }
 
@@ -16,9 +15,6 @@ local mason = {
 
 function mason.config()
     require('mason').setup {
-        ui = {
-            border = vim.g.border,
-        },
         providers = { 'mason.providers.client' },
     }
     require('mason-lspconfig').setup {

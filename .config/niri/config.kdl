@@ -1,6 +1,11 @@
 // vim: cms=//\ %s
 spawn-at-startup "librewolf"
 spawn-at-startup "alacritty"
+spawn-at-startup "xwayland-satellite"
+
+environment {
+    DISPLAY ":0"
+}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -143,7 +148,7 @@ layout {
     struts {
         // left 64
         // right 64
-        // top 64
+        top -5
         // bottom 64
     }
 }
