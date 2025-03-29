@@ -54,6 +54,10 @@ map('v', '>', '>gv')
 map('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<cr>', { silent = true })
 map('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { silent = true })
 
+-- yanky
+map("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+map("n", "<c-n>", "<Plug>(YankyNextEntry)")
+
 -- disable command edit bind
 map('n', 'q:', '')
 
@@ -63,13 +67,12 @@ local groups = {
         desc = '',
         mappings = {
             { 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', { desc = 'Lsp Hover' } },
-            { '<leader>,', '<cmd>Telescope buffers<cr>', { desc = 'Switch Buffer' } },
+            { '<leader>,', '<cmd>lua Snacks.picker.buffers()<cr>', { desc = 'Switch Buffer' } },
             { '<leader>.', '<cmd>lua require("mini.files").open()<cr>', { desc = 'Browse Files' } },
-            { '<leader>/', '<cmd>Telescope live_grep<cr>', { desc = 'Search' } },
-            { '<leader>:', '<cmd>Telescope command_history<cr>', { desc = 'Command History' } },
+            { '<leader>/', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Search' } },
+            { '<leader>:', '<cmd>lua Snacks.picker.command_history()<cr>', { desc = 'Command History' } },
             { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
-            { '<leader>c', '<cmd>Telescope neoclip<cr>', { desc = 'Copy Registers' } },
-            { '<leader>u', '<cmd>Telescope undo<cr>', { desc = 'Telescope Undo Tree' } },
+            { '<leader>u', '<cmd>lua Snacks.picker.undo()<cr>', { desc = 'Undo Tree' } },
             {
                 '<leader>L',
                 "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
@@ -77,15 +80,16 @@ local groups = {
             },
             { '<leader>W', ':w<cr>', { desc = 'Write to Buffer' } },
             { '<leader>Q', ':wqa<cr>', { desc = 'Write to all Buffers and Quit' } },
+            { '<leader>y', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Open Yank History' } },
         },
     },
     {
         keys = 'g',
         desc = '+lsp',
         mappings = {
-            { 'g0', '<cmd>Telescope lsp_document_symbols<cr>', { desc = 'Document Symbols' } },
+            { 'g0', '<cmd>lua Snacks.picker.lsp_symbols()<cr>', { desc = 'Document Symbols' } },
             { 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>', { desc = 'Type Definition' } },
-            { 'gW', '<cmd>Telescope lsp_workspace_symbols<cr>', { desc = 'Workspace Symbols' } },
+            { 'gW', '<cmd>lua Snacks.picker.lsp_workspace_symbols()<cr>', { desc = 'Workspace Symbols' } },
             { 'gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Goto Previous Diagnostic' } },
             { 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Goto Next Diagnostic' } },
             { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' } },
@@ -100,42 +104,16 @@ local groups = {
         desc = '+buffer',
         mappings = {
             { '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer & Window' } },
-            { '<leader>bb', '<cmd>Telescope buffers<cr>', { desc = 'Select Buffer' } },
+            { '<leader>bb', '<cmd>lua Snacks.picker.buffers()<cr>', { desc = 'Select Buffer' } },
             { '<leader>bs', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
-        },
-    },
-    {
-        keys = '<leader>C',
-        desc = '+CSV',
-        mappings = {
-            {
-                '<leader>Ca',
-                ":lua require('decisive').align_csv({})<cr>",
-                { desc = 'Align CSV', silent = true },
-            },
-            {
-                '<leader>CA',
-                ":lua require('decisive').align_csv_clear({})<cr>",
-                { desc = 'Align CSV clear', silent = true },
-            },
-            {
-                '[c',
-                ":lua require('decisive').align_csv_prev_col()<cr>",
-                { desc = 'Align CSV prev col', silent = true },
-            },
-            {
-                ']c',
-                ":lua require('decisive').align_csv_next_col()<cr>",
-                { desc = 'Align CSV next col', silent = true },
-            },
         },
     },
     {
         keys = '<leader>f',
         desc = '+file/format',
         mappings = {
-            { '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find File' } },
-            { '<leader>fh', '<cmd>Telescope find_files hidden=true<cr>', { desc = 'Find Hidden File' } },
+            { '<leader>ff', '<cmd>lua Snacks.picker.files()<cr>', { desc = 'Find File' } },
+            { '<leader>fh', '<cmd>lua Snacks.picker.files({hidden=true})<cr>', { desc = 'Find Hidden File' } },
             { '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' } },
         },
     },
@@ -151,23 +129,21 @@ local groups = {
         keys = '<leader>g',
         desc = '+git',
         mappings = {
-            { '<leader>gb', '<cmd>Telescope git_branches<cr>', { desc = 'branches' } },
-            { '<leader>gc', '<cmd>Telescope git_commits<cr>', { desc = 'commits' } },
-            { '<leader>gs', '<cmd>Telescope git_status<cr>', { desc = 'status' } },
+            { '<leader>gb', '<cmd>lua Snacks.picker.git_branches()<cr>', { desc = 'branches' } },
+            { '<leader>gc', '<cmd>lua Snacks.picker.git_log()<cr>', { desc = 'log' } },
+            { '<leader>gs', '<cmd>lua Snacks.picker.git_status()<cr>', { desc = 'status' } },
         },
     },
     {
         keys = '<leader>h',
         desc = '+help',
         mappings = {
-            { '<leader>ha', '<cmd>Telescope autocommands<cr>', { desc = 'Auto Commands' } },
-            { '<leader>hc', '<cmd>Telescope commands<cr>', { desc = 'Commands' } },
-            { '<leader>hf', '<cmd>Telescope filetypes<cr>', { desc = 'File Types' } },
-            { '<leader>hh', '<cmd>Telescope help_tags<cr>', { desc = 'Help Pages' } },
-            { '<leader>hk', '<cmd>Telescope keymaps<cr>', { desc = 'Key Maps' } },
-            { '<leader>hm', '<cmd>Telescope man_pages<cr>', { desc = 'Man Pages' } },
-            { '<leader>ho', '<cmd>Telescope vim_options<cr>', { desc = 'Options' } },
-            { '<leader>hs', '<cmd>Telescope highlights<cr>', { desc = 'Search Highlight Groups' } },
+            { '<leader>ha', '<cmd>lua Snacks.picker.autocmds()<cr>', { desc = 'Auto Commands' } },
+            { '<leader>hc', '<cmd>lua Snacks.picker.commands()<cr>', { desc = 'Commands' } },
+            { '<leader>hh', '<cmd>lua Snacks.picker.help()<cr>', { desc = 'Help Pages' } },
+            { '<leader>hk', '<cmd>lua Snacks.picker.keymaps()<cr>', { desc = 'Key Maps' } },
+            { '<leader>hm', '<cmd>lua Snacks.picker.man()<cr>', { desc = 'Man Pages' } },
+            { '<leader>hs', '<cmd>lua Snacks.picker.highlights()<cr>', { desc = 'Search Highlight Groups' } },
         },
     },
     {
@@ -175,9 +151,9 @@ local groups = {
         desc = '+lsp',
         mappings = {
             { '<leader>lI', '<cmd>Mason<cr>', { desc = 'Mason Info' } },
-            { '<leader>ld', '<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>', { desc = 'Buffer Diagnostics' } },
+            { '<leader>ld', '<cmd>lua Snacks.picker.diagnostics_buffer()<cr>', { desc = 'Buffer Diagnostics' } },
             { '<leader>li', '<cmd>LspInfo<cr>', { desc = 'Info' } },
-            { '<leader>lw', '<cmd>Telescope diagnostics<cr>', { desc = 'Diagnostics' } },
+            { '<leader>lw', '<cmd>lua Snacks.picker.diagnostics()<cr>', { desc = 'Diagnostics' } },
         },
     },
     {
@@ -207,12 +183,12 @@ local groups = {
         keys = '<leader>s',
         desc = '+search',
         mappings = {
-            { '<leader>sb', '<cmd>Telescope current_buffer_fuzzy_find<cr>', { desc = 'Buffer' } },
-            { '<leader>sg', '<cmd>Telescope live_grep<cr>', { desc = 'Grep' } },
-            { '<leader>sh', '<cmd>Telescope command_history<cr>', { desc = 'Command History' } },
-            { '<leader>sm', '<cmd>Telescope marks<cr>', { desc = 'Jump to Mark' } },
-            { '<leader>so', '<cmd>SymbolsOutline<cr>', { desc = 'Symbols Outline' } },
-            { '<leader>ss', '<cmd>Telescope resume<cr>', { desc = 'Resume last search' } },
+            { '<leader>sb', '<cmd>lua Snacks.picker.grep({buffers=true})<cr>', { desc = 'Buffer' } },
+            { '<leader>sg', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Grep' } },
+            { '<leader>sh', '<cmd>lua Snacks.picker.command_history()<cr>', { desc = 'Command History' } },
+            { '<leader>sm', '<cmd>lua Snacks.picker.marks()<cr>', { desc = 'Jump to Mark' } },
+            { '<leader>so', '<cmd>Outline<cr>', { desc = 'Toggle Outline' } },
+            { '<leader>ss', '<cmd>lua Snacks.picker.resume()<cr>', { desc = 'Resume last search' } },
         },
     },
     {

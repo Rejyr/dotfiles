@@ -1,13 +1,10 @@
 local rustacean = {
     'mrcjkb/rustaceanvim',
-    ft = 'rust',
+    lazy = false,
 }
 
 vim.g.rustaceanvim = {
     tools = {
-        runnables = {
-            use_telescope = true,
-        },
         inlay_hints = {
             auto = false,
         },
