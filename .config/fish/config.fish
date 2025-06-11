@@ -1,10 +1,9 @@
 if test -z $DISPLAY
     and test (tty) = "/dev/tty1"
-    niri-session
+    systemctl start --user niri.service
 end
 
 zoxide init fish | source
 
-prompt_startup
 abbrs_startup
 everforest

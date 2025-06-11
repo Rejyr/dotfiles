@@ -1,13 +1,9 @@
 better-adb-sync-git
-bolt-launcher-debug
 cbonsai
-grimshot
 librewolf-bin
 librewolf-bin-debug
 logiops-git
 mpdris2
-orca-slicer-unstable-bin
-orca-slicer-unstable-bin-debug
 pandoc-bin
 pandoc-bin-debug
 prismlauncher-qt5-bin-debug
@@ -17,7 +13,6 @@ python-demjson3
 python-soundcloud-v2
 python-spotipy
 python-syncedlyrics
-sdl2-debug
 spotdl
 ungoogled-chromium-bin
 ungoogled-chromium-bin-debug
@@ -25,3 +20,4 @@ ventoy-bin
 ventoy-bin-debug
 vial-appimage
 yay
+yay-debug

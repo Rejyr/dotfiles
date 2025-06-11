@@ -50,10 +50,6 @@ map('n', '<C-c>', '<cmd>normal ciw<cr>a')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
--- lsp
-map('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<cr>', { silent = true })
-map('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { silent = true })
-
 -- yanky
 map("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 map("n", "<c-n>", "<Plug>(YankyNextEntry)")

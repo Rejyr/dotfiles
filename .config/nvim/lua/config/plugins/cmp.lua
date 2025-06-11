@@ -1,32 +1,27 @@
 local M = {
     'saghen/blink.cmp',
-    version = '0.*',
+    version = '1.*',
     event = 'InsertEnter',
     dependencies = {
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
-        { 'saghen/blink.compat', version = '*', opts = { impersonate_nvim_cmp = true } },
+        { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     },
 }
 
 M.opts = {
-    keymap = { preset = 'super-tab' },
+    keymap = { preset = 'enter' },
     completion = {
-        accept = {
-            auto_brackets = {
-                override_brackets_for_filetypes = {
-                    tex = { '{', '}' },
-                },
+        list = {
+            selection = {
+                preselect = false,
             },
         },
-        list = { selection = {
-            auto_insert = false,
-        } },
+        documentation = { auto_show = true },
+        ghost_text = { enabled = true },
     },
     signature = { enabled = true },
     snippets = { preset = 'luasnip' },
     sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 }
 

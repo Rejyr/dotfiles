@@ -15,7 +15,6 @@ bluez
 bluez-utils
 brightnessctl
 btop
-cliphist
 cmake
 cups
 deno
@@ -32,7 +31,6 @@ findutils
 fish
 fisher
 flex
-freecad
 fzf
 gamescope
 gawk
@@ -62,8 +60,6 @@ jq
 jre11-openjdk
 jre17-openjdk
 jre21-openjdk
-kiwix-desktop
-libreoffice-fresh
 libtool
 linux
 linux-firmware
@@ -87,7 +83,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 ntfs-3g
-onefetch
+obs-studio
 os-prober
 otf-latin-modern
 otf-latinmodern-math
@@ -134,6 +130,7 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 tlp
+torbrowser-launcher
 ttc-iosevka
 ttf-nerd-fonts-symbols
 unrar
@@ -143,9 +140,9 @@ usbutils
 uv
 vulkan-radeon
 waybar
+wayland-protocols
 wget
 which
-wine
 wl-clipboard
 wmname
 wofi

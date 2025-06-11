@@ -3,12 +3,12 @@ local lspconfig = {
 }
 
 local mason = {
-    'williamboman/mason.nvim',
+    'mason-org/mason.nvim',
     lazy = false,
 
     dependencies = {
         'neovim/nvim-lspconfig',
-        'williamboman/mason-lspconfig.nvim',
+        'mason-org/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
     },
 }
@@ -30,88 +30,12 @@ function mason.config()
             'jsonls',
             'ltex',
             'lua_ls',
-            'openscad_lsp',
             'rust_analyzer',
             'sqlls',
             'svelte',
             'texlab',
             'ts_ls',
         },
-        automatic_installation = true,
-    }
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
-    ---@diagnostic disable-next-line: unused-local
-    local on_attach = function(client, bufnr) end
-    require('mason-lspconfig').setup_handlers {
-        function(server_name)
-            require('lspconfig')[server_name].setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            }
-        end,
-        ['rust_analyzer'] = function() end, -- let rustacean set up rust_analyzer
-        ['lua_ls'] = function()
-            require('lspconfig').lua_ls.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = {
-                    ['lua_ls'] = {
-                        Lua = {
-                            diagnostics = {
-                                -- Get the language server to recognize the `vim` global
-                                globals = { 'vim' },
-                            },
-                        },
-                    },
-                },
-            }
-        end,
-        ['ltex'] = function()
-            require('lspconfig').ltex.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = {
-                    ['ltex'] = {
-                        ltex = {
-                            checkFrequency = 'save',
-                        },
-                    },
-                },
-            }
-        end,
-        ['openscad_lsp'] = function()
-            require('lspconfig').openscad_lsp.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = {
-                    ['openscad'] = {
-                        search_paths = '~/.local/share/OpenSCAD/libraries',
-                        fmt_style = '{BasedOnStyle: chromium, IndentWidth: 4, ContinuationIndentWidth: 0, BreakAfterAttributes: Always, AlignConsecutiveAssignments: true, AlignArrayOfStructures: Right, BinPackArguments: false}',
-                    },
-                },
-            }
-        end,
-        ['emmet_language_server'] = function()
-            require('lspconfig').emmet_language_server.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-                filetypes = {
-                    'css',
-                    'eruby',
-                    'html',
-                    'javascript',
-                    'javascriptreact',
-                    'less',
-                    'rust',
-                    'sass',
-                    'scss',
-                    'svelte',
-                    'pug',
-                    'typescriptreact',
-                    'vue',
-                },
-            }
-        end,
     }
 
     require('mason-tool-installer').setup {
@@ -127,12 +51,14 @@ function mason.config()
     }
 
     -- diagnostic icons
-    vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-    vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
-    vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-    vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
     vim.diagnostic.config {
         signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = '',
+                [vim.diagnostic.severity.WARN] = '',
+                [vim.diagnostic.severity.INFO] = '',
+                [vim.diagnostic.severity.HINT] = '',
+            },
             active = true,
         },
         virtual_text = true,
