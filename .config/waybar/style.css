@@ -1,6 +1,9 @@
 @define-color background #2d353b;
 @define-color color7 #d3c6aa;
 @define-color color9 #a7c080;
+@define-color red #e67e80;
+@define-color orange #e69875;
+@define-color green #a7c080;
 
 * {
     font-size:15px;
@@ -51,6 +54,17 @@ tooltip {
     color:@color7;
     transition: all .3s ease;
 }
+
+@keyframes pomodoroBlink {
+  0% { color: @color7; }
+  100% { color: @red; }
+}
+
+#custom-pomodoro.break {
+    color: @red;
+    animation: pomodoroBlink 0.5s linear infinite alternate;
+}
+
 #workspaces {
     padding: 0px 5px;
 }
@@ -94,15 +108,16 @@ tooltip {
 }
 
 #battery.charging {
-    color: #26A65B;
+
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: #ffbe61;
+    color: @orange;
 }
 
 #battery.critical:not(.charging) {
-    color: #f53c3c;
+    color: @red;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;

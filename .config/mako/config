@@ -79,7 +79,7 @@ format= <b>%s</b>\n%b
 text-alignment=center
 
 # Set the default timeout to timeout in milliseconds.
-default-timeout=10000
+default-timeout=0
 
 # If set, mako will ignore the expire timeout(value: 0|1 )
 ignore-timeout=0
