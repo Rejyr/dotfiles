@@ -7,7 +7,6 @@ local M = {
 M.opts = {
     bigfile = { enabled = true },
     input = { enabled = true },
-    notifier = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },

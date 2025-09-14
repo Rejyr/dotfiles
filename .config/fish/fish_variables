@@ -9,17 +9,13 @@ SETUVAR --export DEBUGINFOD_URLS:https\x3a//debuginfod\x2earchlinux\x2eorg
 SETUVAR --export DOTFILES:/home/rejyr/dotfiles/
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
-SETUVAR --export GTK2_RC_FILES:/home/rejyr/\x2ethemes/Everforest/gtk\x2d2\x2e0/gtkrc
-SETUVAR --export GTK_THEME:Everforest
 SETUVAR --export LDLIBS:\x1d
 SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21
 SETUVAR --export MOZ_ENABLE_WAYLAND:1
 SETUVAR --export OBSIDIAN_USE_WAYLAND:1
 SETUVAR --export --path PATH:/home/rejyr/\x2elocal/share/nvim/lsp_servers/rust_analyzer\x1e/home/rejyr/\x2elocal/bin\x1e/home/rejyr/\x2ecargo/bin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR --export --path PYTHONPATH:\x1d
-SETUVAR --export QT_QPA_PLATFORM:wayland
-SETUVAR --export QT_QPA_PLATFORMTHEME:gtk2
-SETUVAR --export QT_STYLE_OVERRIDE:Everforest
+SETUVAR --export QT_QPA_PLATFORMTHEME:qt6ct
 SETUVAR --export TMUX:\x1d
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR --export --path XCURSOR_PATH:/home/rejyr/\x2elocal/share/icons

@@ -1,9 +1,7 @@
 bacon
 cargo-edit
 cargo-expand
-cargo-nextest
-cargo-show-asm
 cargo-watch
 flamegraph
-irust
+waybar-module-pomodoro
 x

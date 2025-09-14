@@ -183,7 +183,6 @@ local groups = {
             { '<leader>sg', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Grep' } },
             { '<leader>sh', '<cmd>lua Snacks.picker.command_history()<cr>', { desc = 'Command History' } },
             { '<leader>sm', '<cmd>lua Snacks.picker.marks()<cr>', { desc = 'Jump to Mark' } },
-            { '<leader>so', '<cmd>Outline<cr>', { desc = 'Toggle Outline' } },
             { '<leader>ss', '<cmd>lua Snacks.picker.resume()<cr>', { desc = 'Resume last search' } },
         },
     },

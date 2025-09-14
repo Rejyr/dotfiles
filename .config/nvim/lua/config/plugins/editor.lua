@@ -13,26 +13,19 @@ return {
         },
     },
     {
-        'klen/nvim-config-local',
-        event = 'BufReadPre',
-        config = function()
-            require('config-local').setup {
-                lookup_parents = true,
-            }
-        end,
+        'otavioschwanck/arrow.nvim',
+        event = 'VeryLazy',
+        opts = {
+            show_icons = true,
+            leader_key = ';', -- Recommended to be a single key
+            buffer_leader_key = 'm', -- Per Buffer Mappings
+        },
     },
     {
         'gbprod/yanky.nvim',
         event = 'BufReadPost',
         dependencies = { 'folke/snacks.nvim' },
         opts = {},
-    },
-    {
-        'notjedi/nvim-rooter.lua',
-        lazy = false,
-        opts = {
-            manual = true,
-        },
     },
     {
         'andymass/vim-matchup',
@@ -46,6 +39,10 @@ return {
         end,
     },
     {
+        'tpope/vim-fugitive',
+        lazy = false,
+    },
+    {
         'lervag/vimtex',
         lazy = false,
         init = function()
@@ -55,15 +52,5 @@ return {
             vim.g.conceallevel = 1
             vim.g.tex_conceal = 'abdmg'
         end,
-    },
-    {
-        'chentoast/marks.nvim',
-        event = 'VeryLazy',
-        config = true,
-    },
-    {
-        'ethanholz/nvim-lastplace',
-        event = 'BufReadPre',
-        config = true,
     },
 }

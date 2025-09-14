@@ -15,9 +15,9 @@ abbr -a -- ls 'eza -F'
 abbr -a -- lt 'eza -lga --sort=modified'
 abbr -a -- mkdir 'mkdir -p'
 abbr -a -- n nvim
-abbr -a -- nc ncmpcpp
 abbr -a -- nf 'nvim (fzf)'
 abbr -a -- pac yay
+abbr -a -- rc rmpc
 abbr -a -- restart reboot
 abbr -a -- suspend 'systemctl suspend'
 abbr -a -- sysdis 'systemctl disable'

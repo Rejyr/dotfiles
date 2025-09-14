@@ -8,11 +8,13 @@ local M = {
 }
 
 M.opts = {
-    keymap = { preset = 'enter' },
+    keymap = { preset = 'super-tab' },
     completion = {
         list = {
             selection = {
-                preselect = false,
+                preselect = function(_)
+                    return not require('blink.cmp').snippet_active { direction = 1 }
+                end,
             },
         },
         documentation = { auto_show = true },

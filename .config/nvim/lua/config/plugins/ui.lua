@@ -1,10 +1,6 @@
 return {
-    {
-        'hedyhli/outline.nvim',
-        cmd = { 'Outline', 'OutlineOpen' },
-        opts = {},
-    },
     { 'ashfinal/qfview.nvim', event = 'UIEnter', config = true },
+    { 'brenoprata10/nvim-highlight-colors', event = 'VeryLazy', config=true },
     {
         'lewis6991/gitsigns.nvim',
         event = 'BufReadPre',
@@ -15,11 +11,14 @@ return {
     },
     {
         'j-hui/fidget.nvim',
-        tag = 'legacy',
-        event = 'LspAttach',
+        tag = 'v1.6.1',
+        event = 'VeryLazy',
         opts = {
-            window = {
-                blend = 0,
+            notification = {
+                override_vim_notify = true,
+                window = {
+                    winblend = 50,
+                }
             },
         },
     },
