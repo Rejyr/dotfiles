@@ -55,16 +55,6 @@ tooltip {
     transition: all .3s ease;
 }
 
-@keyframes pomodoroBlink {
-  0% { color: @color7; }
-  100% { color: @red; }
-}
-
-#custom-pomodoro.break {
-    color: @red;
-    animation: pomodoroBlink 0.5s linear infinite alternate;
-}
-
 #workspaces {
     padding: 0px 5px;
 }
