@@ -1,15 +1,6 @@
-/.config/plover/plover.log
-/.config/plover/tapey_tape.txt
-/.config/nvim/lua/config/plugins.lua
 /.librewolf/*
 !/.librewolf/y7o13kcl.default-release
 /.librewolf/y7o13kcl.default-release/*
 !/.librewolf/y7o13kcl.default-release/chrome
 !/.librewolf/librewolf.overrides.cfg
-.config/btop/btop.log
 .config/nushell/history.txt
-.config/plover
-.config/plover/.cache/plugins.sqlite
-.config/WebCord/Themes/everforest
-.ssh/known_hosts
-.ssh/known_hosts.old

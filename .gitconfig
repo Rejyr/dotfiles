@@ -1,11 +1,13 @@
 [user]
-	name = Jerry Wang
-	email = jerrylwang123@gmail.com
+    name = Jerry Wang
+    email = jerrylwang123@gmail.com
+
 [credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+    helper = !/usr/bin/gh auth git-credential
+
 [credential]
-	helper = store
+    helper = store
+
 [core]
     pager = delta
 
@@ -20,7 +22,7 @@
 [delta]
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    side-by-side = false 
+    side-by-side = false
 
 [merge]
     conflictstyle = diff3
@@ -37,5 +39,6 @@
 
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
