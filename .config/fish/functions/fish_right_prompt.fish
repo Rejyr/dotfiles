@@ -1,4 +1,7 @@
 function fish_right_prompt
+        # top align
+        tput sc; tput cuu1; tput cuf 2
+
         set -g __fish_git_prompt_showdirtystate 1
         set -g __fish_git_prompt_showuntrackedfiles 1
         # set -g __fish_git_prompt_showupstream informative
@@ -32,4 +35,7 @@ function fish_right_prompt
 
         set_color normal
         string join " " -- (_prompt_greyout $venv) (_prompt_greyout $duration) (_prompt_greyout $vcs) (_prompt_greyout $d)
+
+        # top align
+        tput rc
 end
