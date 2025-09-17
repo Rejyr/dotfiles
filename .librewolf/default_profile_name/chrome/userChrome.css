@@ -1,3 +1,5 @@
+@import url("autohide_toolbox.css");
+
 /* no close, minimize and maximize buttons */
 .tab-close-button,
 #TabsToolbar .toolbarbutton-1,
