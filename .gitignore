@@ -1,6 +1,0 @@
-/.librewolf/*
-!/.librewolf/y7o13kcl.default-release
-/.librewolf/y7o13kcl.default-release/*
-!/.librewolf/y7o13kcl.default-release/chrome
-!/.librewolf/librewolf.overrides.cfg
-.config/nushell/history.txt
