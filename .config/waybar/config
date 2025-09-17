@@ -13,16 +13,6 @@
         "niri/workspaces": {
             "format": "{icon}",
             "format-icons": {
-//                "1": "󰲠",
-//                "2": "󰲢",
-//                "3": "󰲤",
-//                "4": "󰲦",
-//                "5": "󰲨",
-//                "6": "󰲪",
-//                "7": "󰲬",
-//                "8": "󰲮",
-//                "9": "󰲰",
-//                "10": "󰿬",
                 "active": "",
                 "default": "",
                 "empty": ""
@@ -42,20 +32,20 @@
             }
         },
         "network": {
-            "format-wifi": "",
-            "format-ethernet":"󰈀",
-            "format-disconnected": "",
-            "tooltip-format-disconnected": "Error",
-            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-            "tooltip-format-ethernet": "{ifname} 🖧 ",
-            "on-click": "alacritty -e nmtui"
+            "format-wifi": "<span color='#a7c080'><b>net:</b></span>wifi",
+            "format-ethernet":"<span color='#a7c080'><b>net:</b></span>eth",
+            "format-disconnected": "<span color='#a7c080'><b>net:</b></span>none",
+            "tooltip-format-disconnected": "error",
+            "tooltip-format-wifi": "{essid}-{signalStrength}%",
+            "tooltip-format-ethernet": "{ifname}",
+            "on-click": "foot nmtui"
         },
         "bluetooth": {
-            "format-on": "󰂯",
-            "format-off": "BT-off",
-            "format-disabled": "󰂲",
-            "format-connected-battery": "󰂱",
-            "format-alt": "{device_alias} 󰂯",
+            "format-on": "<span color='#a7c080'><b>bt</b></span>",
+            "format-off": "<span color='#a7c080'><b>bt-off</b></span>",
+            "format-connected": "<span color='#a7c080'><b>bt:</b></span>con",
+            // "format-disabled": "󰂲",
+            "format-alt": "<span color='#a7c080'><b>bt:</b></span>{device_alias}",
             "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
             "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
             "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
@@ -63,12 +53,9 @@
             "on-click-right": "blueman-manager",
         },
         "pulseaudio": {
-            "format": "{volume}% {icon}",
-            "format-bluetooth": "{volume}% {icon}",
-            "format-muted": "",
-            "format-icons": {
-                "default": ["", ""]
-            },
+            "format": "<span color='#a7c080'><b>vol:</b></span>{volume}%",
+            "format-bluetooth": "<span color='#a7c080'><b>volb:</b></span>{volume}%",
+            "format-muted": "mute",
             "scroll-step": 1,
         },
         "battery": {
@@ -78,30 +65,22 @@
                 "warning": 30,
                 "critical": 20
             },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
+            "format": "<b>bat:</b>{capacity}%",
+            // "format-charging": "{capacity}% 󰂄",
+            // "format-plugged": "{capacity}% 󰂄 ",
             "format-alt": "{time} {icon}",
-            "format-icons": [
-                "󰁻",
-            "󰁼",
-            "󰁾",
-            "󰂀",
-            "󰂂",
-            "󰁹"
-            ],
         },
         "custom/pacman": {
-            "format": "{} 󰅢 ",
+            "format": "<span color='#a7c080'><b>pkg:</b></span>{}",
             "interval": 600,
             "exec": "checkupdates | wc -l",
             "exec-if": "exit 0",
-            "on-click": "alacritty -e 'yay'",
+            "on-click": "foot 'yay'",
             "signal": 8,
             "tooltip": false,
         },
         "custom/expand": {
-            "format": "",
+            "format": "expand",
             "tooltip": false
         },
         "custom/endpoint":{
@@ -115,21 +94,21 @@
                 "transition-to-left": true,
                 "click-to-reveal": true,
             },
-            "modules": ["custom/expand","cpu","memory","temperature","disk","custom/pacman","custom/endpoint"],
-        },
-        "cpu": {
-            "format": "{usage}% 󰍛",
-            "tooltip": true
-        },
-        "memory": {
-            "format": "{percentage}% "
+            "modules": ["custom/expand","temperature","cpu","memory","disk","custom/pacman","custom/endpoint"],
         },
         "temperature": {
             "critical-threshold": 80,
-            "format": "{temperatureC}°C ",
+            "format": "<span color='#a7c080'><b>temp:</b></span>{temperatureC}°C",
+        },
+        "cpu": {
+            "format": "<span color='#a7c080'><b>cpu:</b></span>{usage}%",
+            "tooltip": true
+        },
+        "memory": {
+            "format": "<span color='#a7c080'><b>mem:</b></span>{percentage}%"
         },
         "disk": {
-            "format": "{percentage_used}% ",
+            "format": "<span color='#a7c080'><b>disk:</b></span>{percentage_used}%",
             "tooltip-format": "{used}/{total}"
         },
         "tray": {
@@ -138,7 +117,7 @@
         },
         "custom/cava": {
             "exec": "~/.config/waybar/scripts/cava.sh",
-            "format": "♪ {}",
+            "format": "{}",
             "on-click-middle": "playerctl play-pause",
             "on-click-right": "playerctl next",
             "on-click": "playerctl previous",
@@ -147,8 +126,9 @@
         "custom/pomodoro": {
             "format": "{}",
             "return-type": "json",
-            "exec": "waybar-module-pomodoro",
+            "exec": "waybar-module-pomodoro --no-work-icons",
             "on-click": "waybar-module-pomodoro toggle",
             "on-click-right": "waybar-module-pomodoro reset",
         },
 }
+// vim: cms=//\ %s

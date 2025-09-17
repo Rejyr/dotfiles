@@ -50,9 +50,15 @@ map('n', '<C-c>', '<cmd>normal ciw<cr>a')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
--- yanky
+map({"n","x"}, "p", "<Plug>(YankyPutAfter)")
+map({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+map({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
+map({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
+
 map("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 map("n", "<c-n>", "<Plug>(YankyNextEntry)")
+
+
 
 -- disable command edit bind
 map('n', 'q:', '')
@@ -68,6 +74,7 @@ local groups = {
             { '<leader>/', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Search' } },
             { '<leader>:', '<cmd>lua Snacks.picker.command_history()<cr>', { desc = 'Command History' } },
             { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
+            { '<leader>c', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Undo Tree' } },
             { '<leader>u', '<cmd>lua Snacks.picker.undo()<cr>', { desc = 'Undo Tree' } },
             {
                 '<leader>L',
