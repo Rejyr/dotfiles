@@ -68,7 +68,7 @@
             "format": "<b>bat:</b>{capacity}%",
             // "format-charging": "{capacity}% 󰂄",
             // "format-plugged": "{capacity}% 󰂄 ",
-            "format-alt": "{time} {icon}",
+            "format-alt": "<bat>bat:</b>{time}",
         },
         "custom/pacman": {
             "format": "<span color='#a7c080'><b>pkg:</b></span>{}",
