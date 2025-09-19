@@ -1,5 +1,4 @@
 return {
-    { 'ashfinal/qfview.nvim', event = 'UIEnter', config = true },
     { 'brenoprata10/nvim-highlight-colors', event = 'VeryLazy', config=true },
     {
         'lewis6991/gitsigns.nvim',

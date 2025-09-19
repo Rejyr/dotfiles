@@ -112,23 +112,15 @@ layout {
     default-column-width { proportion 0.5; }
     // default-column-width {}
 
-    border {
+    focus-ring {
         // off
-        width 3
-
-        active-color "#7fc8ff"
-        inactive-color "#505050"
+        width 2
 
         active-gradient from="#a7c080" to="#7fbbb3" angle=45 in="oklch shorter hue"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
-
-    focus-ring {
-        off
     }
 
     shadow {
-        on
+        // on
         draw-behind-window true
         softness 30
         spread 5
@@ -139,7 +131,7 @@ layout {
     struts {
         left 32
         right 32
-        top -5
+        // top -5
         // bottom 64
     }
 }
@@ -298,6 +290,8 @@ binds {
 
     Mod+Shift+C { spawn-sh "makoctl dismiss"; }
     Mod+Ctrl+Shift+C { spawn-sh "makoctl restore"; }
+
+    Mod+P { spawn "clipcat-menu"; }
 
     Mod+Escape { spawn "swaylock"; }
 

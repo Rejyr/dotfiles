@@ -1,0 +1,74 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "native"
+[theme.overrides]
+idle_bg = "#2D353B"
+idle_fg = "#D3C6AA"
+good_bg = "#2D353B"
+good_fg = "#A7C080"
+warning_bg = "#2D353B"
+warning_fg = "#E69875"
+critical_bg = "#2D353B"
+critical_fg = "#E67E80"
+info_bg = "#2D353B"
+info_fg = "#DBBC7F"
+# separator_bg = "#2D353B"
+# separator_fg = "000000"
+# │
+separator = ""
+end_separator = ""
+
+
+[icons]
+icons = "none"
+[icons.overrides]
+bat = [
+    "|_|",
+    "|=|",
+    "|#|",
+    "|X|",
+]
+bat_charging = "|^|"
+
+[[block]]
+block = "cpu"
+format = " cpu $utilization "
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
+
+# [[block]]
+# format = " temp $average "
+# format_alt = " temp $average avg, $max max "
+# block = "temperature"
+# good = 50
+# idle = 60
+# info = 70
+# warning = 90
+
+[[block]]
+block = "memory"
+format = " mem $mem_used_percents.eng(w:2) "
+format_alt = " swap $swap_used_percents.eng(w:2) "
+
+[[block]]
+block = "sound"
+format = " vol {$volume.eng(w:2) |}"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:'%a %m/%d %R') "
+
+[[block]]
+block = "battery"
+format = " $icon $percentage {$time |} "
+full_format = " $icon $percentage "
+not_charging_format = " $icon $percentage "
+charging_format = " $icon $percentage "
+empty_format = " $icon $percentage "
+missing_format = " $icon "
