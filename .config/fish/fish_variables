@@ -8,6 +8,8 @@ SETUVAR --export CFLAGS:
 SETUVAR --export DEBUGINFOD_URLS:https\x3a//debuginfod\x2earchlinux\x2eorg
 SETUVAR --export DOTFILES:/home/rejyr/dotfiles/
 SETUVAR --export EDITOR:nvim
+SETUVAR --export FZF_CTRL_R_OPTS:\x2d\x2dstyle\x20minimal\x20\x2d\x2dcolor\x2016\x20\x2d\x2dinfo\x20inline\x20\x2d\x2dno\x2dsort\x20\x2d\x2dno\x2dpreview
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dstyle\x20minimal\x20\x2d\x2dcolor\x2016\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dheight\x2030\x25\x20\x2d\x2dpreview\x3d\x27bat\x20\x2dp\x20\x2d\x2dcolor\x3dalways\x20\x7b\x7d\x27
 SETUVAR --export GRIM_DEFAULT_DIR:/home/rejyr/Pictures/
 SETUVAR --export LDLIBS:\x1d
 SETUVAR --export MANPAGER:nvim\x20\x2bMan\x21

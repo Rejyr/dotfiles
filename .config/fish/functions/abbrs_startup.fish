@@ -33,4 +33,6 @@ abbr -a -- yeet 'yay -Rsn'
 abbr -a -- yoink 'yay -S'
 abbr -a -- za zathura
 abbr -a -- zf 'zathura (fzf) &'
+abbr -a --position anywhere -- --help '--help | bat -plhelp'
+abbr -a --position anywhere -- -h '-h | bat -plhelp'
 end
