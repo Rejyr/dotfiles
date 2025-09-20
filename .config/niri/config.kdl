@@ -295,6 +295,8 @@ binds {
 
     Mod+Escape { spawn "swaylock"; }
 
+    Mod+T { spawn-sh "~/dotfiles/scripts/time.sh"; }
+
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
