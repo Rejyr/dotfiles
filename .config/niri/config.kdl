@@ -1,6 +1,4 @@
 // vim: cms=//\ %s
-spawn-at-startup "librewolf"
-spawn-at-startup "foot"
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -284,7 +282,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "foot"; }
-    Mod+Alt+Return { spawn "librewolf"; }
+    Mod+Alt+Return { spawn "qutebrowser"; }
     Mod+D { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
 

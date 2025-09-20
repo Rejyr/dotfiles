@@ -99,10 +99,12 @@ pipewire-pulse
 pkgconf
 playerctl
 prismlauncher
+python-adblock
 python-gobject
 python-uv
 qt6-wayland
 qt6ct
+qutebrowser
 ripgrep
 rmpc
 rsync
