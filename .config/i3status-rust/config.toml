@@ -13,10 +13,10 @@ critical_bg = "#2D353B"
 critical_fg = "#E67E80"
 info_bg = "#2D353B"
 info_fg = "#DBBC7F"
-# separator_bg = "#2D353B"
-# separator_fg = "000000"
+separator_bg = "#2D353B"
+separator_fg = "#425047"
 # │
-separator = ""
+separator = "|"
 end_separator = ""
 
 
@@ -32,25 +32,31 @@ bat = [
 bat_charging = "|^|"
 
 [[block]]
-block = "cpu"
-format = " cpu $utilization "
-info_cpu = 20
-warning_cpu = 50
-critical_cpu = 90
+block = "custom"
+format = " $text "
+command = "cat ~/.local/share/timewarrior/status.txt"
+watch_files = ["~/.local/share/timewarrior/status.txt"]
 
 # [[block]]
-# format = " temp $average "
+# block = "cpu"
+# format = " cpu $utilization "
+# info_cpu = 20
+# warning_cpu = 50
+# critical_cpu = 90
+
+[[block]]
+format = " cpu $average "
 # format_alt = " temp $average avg, $max max "
-# block = "temperature"
-# good = 50
-# idle = 60
-# info = 70
-# warning = 90
+block = "temperature"
+good = 50
+idle = 60
+info = 70
+warning = 90
 
 [[block]]
 block = "memory"
-format = " mem $mem_used_percents.eng(w:2) "
-format_alt = " swap $swap_used_percents.eng(w:2) "
+format = " mem $mem_used.eng(p:Mi,w:3) "
+# format_alt = " swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "sound"
