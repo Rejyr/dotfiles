@@ -6,9 +6,9 @@
 
 config_version: 2
 settings:
-  colors.webpage.darkmode.enabled:
-    global: true
-  content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
+  content.javascript.clipboard:
+    https://github.com: access-paste
   statusbar.show:
     global: always
+  tabs.show:
+    global: never
