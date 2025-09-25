@@ -6,9 +6,16 @@
 
 config_version: 2
 settings:
+  colors.webpage.darkmode.enabled:
+    global: true
   content.javascript.clipboard:
-    https://github.com: access-paste
+    https://mail.google.com: access-paste
+  content.notifications.enabled:
+    https://calendar.google.com: true
+  content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   statusbar.show:
     global: always
   tabs.show:
-    global: never
+    global: multiple

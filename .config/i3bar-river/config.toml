@@ -1,7 +1,7 @@
 command = "i3status-rs"
 
 # colors
-background = "#2d353bc0"
+background = "#2d353b40"
 color = "#d3c6aa"
 # separator = "#9da9a0"
 tag_fg = "#dbbc7f"

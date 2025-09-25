@@ -76,7 +76,7 @@ config.set("content.cookies.store", True)
 # config.set("content.javascript.enabled", False) # tsh keybind to toggle
 
 c.content.blocking.enabled = True
-c.content.blocking.method = 'adblock' # uncomment this if you install python-adblock
+c.content.blocking.method = 'both'
 
 
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
