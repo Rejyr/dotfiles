@@ -1,4 +1,4 @@
-function everforest
+function setup_everforest
     #!/usr/bin/fish
 
     # Everforest Fish shell theme

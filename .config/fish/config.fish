@@ -5,5 +5,5 @@ end
 
 zoxide init fish | source
 
-abbrs_startup
-everforest
+setup_abbr
+setup_everforest

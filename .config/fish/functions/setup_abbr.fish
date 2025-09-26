@@ -1,4 +1,4 @@
-function abbrs_startup
+function setup_abbr
 abbr -a -- bac 'bacon -j clippy'
 abbr -a -- blctl bluetoothctl
 abbr -a -- c cargo

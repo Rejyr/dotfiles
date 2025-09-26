@@ -22,7 +22,7 @@ config.load_autoconfig(False) # load settings done via the gui
 c.auto_save.session = True # save tabs on quit/restart
 
 c.tabs.show = 'never'
-c.statusbar.show = 'never'
+c.statusbar.show = 'always'
 
 # keybinding changes
 config.bind('=', 'cmd-set-text -s :open')

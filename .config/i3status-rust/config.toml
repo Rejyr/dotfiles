@@ -44,19 +44,19 @@ watch_files = ["~/.local/share/timewarrior/status.txt"]
 # warning_cpu = 50
 # critical_cpu = 90
 
-[[block]]
-format = " cpu $average "
-# format_alt = " temp $average avg, $max max "
-block = "temperature"
-good = 50
-idle = 60
-info = 70
-warning = 90
-
-[[block]]
-block = "memory"
-format = " mem $mem_used.eng(p:Mi,w:3) "
-# format_alt = " swap $swap_used_percents.eng(w:2) "
+# [[block]]
+# format = " cpu $average "
+# # format_alt = " temp $average avg, $max max "
+# block = "temperature"
+# good = 50
+# idle = 60
+# info = 70
+# warning = 90
+#
+# [[block]]
+# block = "memory"
+# format = " mem $mem_used.eng(p:Mi,w:3) "
+# # format_alt = " swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "sound"

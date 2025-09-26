@@ -6,13 +6,19 @@ function fish_prompt
 
         set -l delim '$'
         fish_is_root_user; and set delim "#"
-        set delim (set_color -o red)$delim(set_color normal)
 
         set -l cwd (set_color $fish_color_cwd)
 
-        # Prompt status only if it's not 0
         set -l prompt_status
-        test $last_status -ne 0; and set prompt_status (set_color $fish_color_status)" $last_status$normal"
+        if test $last_status -ne 0
+            # Prompt status only if it's not 0
+            set prompt_status (set_color $fish_color_status)" $last_status$normal"
+            # red prompt character for error
+            set delim (set_color -o red)$delim(set_color normal)
+        else
+            # green prompt for normal
+            set delim (set_color -o green)$delim(set_color normal)
+        end
 
         # Only show host if in SSH or container
         # Store this in a global variable because it's slow and unchanging
@@ -28,7 +34,7 @@ function fish_prompt
         end
 
         # Shorten pwd if prompt is too long
-        set -l pwd (set_color -o green)(prompt_pwd)(set_color normal)
+        set -l pwd (set_color -o blue)(prompt_pwd)(set_color normal)
 
         echo -s $prompt_host $cwd $pwd $normal $prompt_status
         echo -n -s $delim ' '
