@@ -216,7 +216,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "foot"; }
-    Mod+Alt+Return { spawn "qutebrowser"; }
+    Mod+Alt+Return { spawn "librewolf"; }
     Mod+D { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
 
@@ -226,9 +226,6 @@ binds {
     Mod+P { spawn "clipcat-menu"; }
 
     Mod+Escape { spawn "swaylock"; }
-
-    Mod+T { spawn-sh "~/dotfiles/scripts/time.sh"; }
-    Mod+Shift+P { spawn-sh "~/dotfiles/scripts/rbw-menu password | wl-copy"; }
 
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
