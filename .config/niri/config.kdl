@@ -1,5 +1,7 @@
 // vim: cms=//\ %s
 
+spawn-sh-at-startup "wl-paste --watch cliphist store"
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
@@ -223,7 +225,7 @@ binds {
     Mod+Shift+C { spawn-sh "makoctl dismiss"; }
     Mod+Ctrl+Shift+C { spawn-sh "makoctl restore"; }
 
-    Mod+P { spawn "clipcat-menu"; }
+    Mod+P { spawn-sh "cliphist list | fuzzel -d -p 'copy: ' | cliphist decode | wl-copy"; }
 
     Mod+Escape { spawn "swaylock"; }
 
