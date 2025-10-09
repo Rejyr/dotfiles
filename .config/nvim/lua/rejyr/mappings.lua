@@ -9,9 +9,6 @@ local map = vim.keymap.set
 --
 --
 
--- remap F1 to Esc
-map({ 'n', 'i' }, '<F1>', '<Esc>')
-
 -- write on escape
 map('n', '<Esc>', ':w<cr>')
 
@@ -50,18 +47,15 @@ map('n', '<C-c>', '<cmd>normal ciw<cr>a')
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
-map({"n","x"}, "p", "<Plug>(YankyPutAfter)")
-map({"n","x"}, "P", "<Plug>(YankyPutBefore)")
-map({"n","x"}, "gp", "<Plug>(YankyGPutAfter)")
-map({"n","x"}, "gP", "<Plug>(YankyGPutBefore)")
-
-map("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
-map("n", "<c-n>", "<Plug>(YankyNextEntry)")
-
-
-
 -- disable command edit bind
 map('n', 'q:', '')
+
+-- flash mappings
+map({ 'n', 'x', 'o' }, 'S', "<cmd>lua require('flash').jump()<cr>", { desc = 'Flash' })
+map({ 'n', 'x', 'o' }, '<C-S-s>', "<cmd>lua require('flash').treesitter()<cr>", { desc = 'Flash Treesitter' })
+map('o', 'r', "<cmd>lua require('flash').remote()<cr>", { desc = 'Remote Flash' })
+map({ 'o', 'x' }, 'R', "<cmd>lua require('flash').treesitter_search()<cr>", { desc = 'Treesitter Search' })
+map('c', '<C-s>', "<cmd>lua require('flash').toggle()<cr>", { desc = 'Toggle Flash Search' })
 
 local groups = {
     {
@@ -74,8 +68,8 @@ local groups = {
             { '<leader>/', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Search' } },
             { '<leader>:', '<cmd>lua Snacks.picker.command_history()<cr>', { desc = 'Command History' } },
             { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
-            { '<leader>c', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Undo Tree' } },
             { '<leader>u', '<cmd>lua Snacks.picker.undo()<cr>', { desc = 'Undo Tree' } },
+            { '<leader>y', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Open Yank History' } },
             {
                 '<leader>L',
                 "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
@@ -83,7 +77,6 @@ local groups = {
             },
             { '<leader>W', ':w<cr>', { desc = 'Write to Buffer' } },
             { '<leader>Q', ':wqa<cr>', { desc = 'Write to all Buffers and Quit' } },
-            { '<leader>y', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Open Yank History' } },
         },
     },
     {
@@ -124,7 +117,7 @@ local groups = {
         keys = '<leader>fm',
         desc = '+format',
         mappings = {
-            { '<leader>fmt', '<cmd>Format<cr>', { desc = 'Format' } },
+            { '<leader>fmt', '<cmd>lua require("conform").format()<cr>', { desc = 'Format' } },
             { '<leader>fml', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = 'Format with LSP' } },
         },
     },
