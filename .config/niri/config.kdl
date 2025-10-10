@@ -1,5 +1,6 @@
 // vim: cms=//\ %s
 
+spawn-at-startup "gammastep"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 // Open the Firefox picture-in-picture player as floating by default.
