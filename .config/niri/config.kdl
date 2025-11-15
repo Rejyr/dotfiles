@@ -122,16 +122,16 @@ layout {
         // off
         width 2
 
-        active-gradient from="#a7c080" to="#7fbbb3" angle=45 in="oklch shorter hue"
+        active-color "#a7c080"
     }
 
     shadow {
-        // on
+        on
         draw-behind-window true
-        softness 30
+        softness 10
         spread 5
         offset x=0 y=5
-        color "#0007"
+        color "#000a"
     }
 
     struts {

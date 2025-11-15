@@ -305,3 +305,9 @@ now(function()
         buffer_leader_key = 'm', -- Per Buffer Mappings
     }
 end)
+
+-- color highlights
+now(function()
+    add { source = 'brenoprata10/nvim-highlight-colors' }
+    require('nvim-highlight-colors').setup()
+end)
