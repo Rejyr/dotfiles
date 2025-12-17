@@ -186,6 +186,7 @@ now(function()
             'jsonls',
             'ltex',
             'lua_ls',
+            'pyright',
             'rust_analyzer',
             'sqlls',
             'svelte',
@@ -253,7 +254,6 @@ now(function()
     ---@diagnostic disable-next-line: undefined-global
     Snacks.setup {
         bigfile = { enabled = true },
-        input = { enabled = true },
         picker = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -264,6 +264,18 @@ now(function()
     -- clipboard
     add { source = 'gbprod/yanky.nvim' }
     require('yanky').setup()
+end)
+
+-- diagonstic list
+later(function()
+    add { source = 'folke/trouble.nvim' }
+    require('trouble').setup()
+end)
+
+-- todo comments
+later(function()
+    add { source = 'folke/todo-comments.nvim' }
+    require('todo-comments').setup()
 end)
 
 -- lsp info/notifs

@@ -50,6 +50,10 @@ map('v', '>', '>gv')
 -- disable command edit bind
 map('n', 'q:', '')
 
+-- move through quickfix list
+map('n', '<C-j>', '<cmd>cnext<cr>')
+map('n', '<C-k>', '<cmd>cprev<cr>')
+
 -- flash mappings
 map({ 'n', 'x', 'o' }, 'S', "<cmd>lua require('flash').jump()<cr>", { desc = 'Flash' })
 map({ 'n', 'x', 'o' }, '<C-S-s>', "<cmd>lua require('flash').treesitter()<cr>", { desc = 'Flash Treesitter' })
@@ -75,8 +79,8 @@ local groups = {
                 "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
                 { desc = 'Toggle lsp_lines' },
             },
-            { '<leader>W', ':w<cr>', { desc = 'Write to Buffer' } },
-            { '<leader>Q', ':wqa<cr>', { desc = 'Write to all Buffers and Quit' } },
+            { '<leader>Q', ':q<cr>', { desc = ':q' } },
+            { '<leader>W', ':wq<cr>', { desc = ':wq' } },
         },
     },
     {
@@ -128,6 +132,8 @@ local groups = {
             { '<leader>gb', '<cmd>lua Snacks.picker.git_branches()<cr>', { desc = 'branches' } },
             { '<leader>gc', '<cmd>lua Snacks.picker.git_log()<cr>', { desc = 'log' } },
             { '<leader>gs', '<cmd>lua Snacks.picker.git_status()<cr>', { desc = 'status' } },
+            { '<leader>gg', '<cmd>Git<cr>', { desc = 'Fugitive' } },
+            { '<leader>gp', '<cmd>Git push<cr>', { desc = 'Fugitive Git Push' } },
         },
     },
     {
@@ -156,23 +162,17 @@ local groups = {
         keys = '<leader>p',
         desc = '+plugin',
         mappings = {
-            { '<leader>pS', '<cmd>Lazy clear<cr>', { desc = 'Status' } },
-            { '<leader>pc', '<cmd>Lazy check<cr>', { desc = 'Check' } },
-            { '<leader>pd', '<cmd>Lazy debug<cr>', { desc = 'Debug' } },
-            { '<leader>pi', '<cmd>Lazy install<cr>', { desc = 'Install' } },
-            { '<leader>pl', '<cmd>Lazy log<cr>', { desc = 'Log' } },
-            { '<leader>pp', '<cmd>Lazy home<cr>', { desc = 'Home' } },
-            { '<leader>ps', '<cmd>Lazy sync<cr>', { desc = 'Sync' } },
-            { '<leader>pu', '<cmd>Lazy update<cr>', { desc = 'Update' } },
-            { '<leader>px', '<cmd>Lazy clean<cr>', { desc = 'Clean' } },
+            { '<leader>pu', '<cmd>DepsUpdate<cr>', { desc = 'Update' } },
+            { '<leader>px', '<cmd>DepsClean<cr>', { desc = 'Clean' } },
         },
     },
     {
         keys = '<leader>q',
         desc = '+quit/session',
         mappings = {
-            { '<leader>q!', '<cmd>:qa!<cr>', { desc = 'Quit without saving' } },
-            { '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit' } },
+            { '<leader>q!', '<cmd>:qa!<cr>', { desc = ':qa!' } },
+            { '<leader>qq', '<cmd>qa<cr>', { desc = ':qa' } },
+            { '<leader>qs', '<cmd>wqa<cr>', { desc = ':wqa' } },
         },
     },
     {
@@ -206,6 +206,24 @@ local groups = {
             { '<leader>wv', '<C-W>v', { desc = 'split-window-right' } },
             { '<leader>ww', '<C-W>p', { desc = 'other-window' } },
             { '<leader>w|', '<C-W>v', { desc = 'split-window-right' } },
+        },
+    },
+    {
+        keys = '<leader>x',
+        desc = '+trouble',
+        mappings = {
+            { '<leader>xt', '<cmd>TodoTrouble<cr>', { desc = 'Todo (Trouble)' } },
+            { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', { desc = 'Diagnostics (Trouble)' } },
+            {
+                '<leader>xX',
+                '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+                { desc = 'Buffer Diagnostics (Trouble)' },
+            },
+            {
+                '<leader>xQ',
+                '<cmd>Trouble qflist toggle<cr>',
+                { desc = 'Quickfix List (Trouble)' },
+            },
         },
     },
 }
