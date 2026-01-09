@@ -19,22 +19,6 @@ now(function()
     require('mini.icons').setup()
     require('mini.icons').mock_nvim_web_devicons()
 end)
-now(function()
-    require('mini.statusline').setup()
-    vim.o.laststatus = 3
-end)
-now(function()
-    local starter = require 'mini.starter'
-    starter.setup {
-        evaluate_single = true,
-        footer = os.date(),
-        items = {
-            starter.sections.recent_files(5, false, false),
-            starter.sections.builtin_actions(),
-        },
-    }
-end)
-
 later(function()
     require('mini.ai').setup()
 end)
@@ -45,7 +29,16 @@ later(function()
     require('mini.comment').setup()
 end)
 later(function()
-    require('mini.hipatterns').setup()
+    require('mini.diff').setup()
+end)
+later(function()
+    require('mini.extra').setup()
+end)
+later(function()
+    require('mini.jump').setup()
+end)
+later(function()
+    require('mini.notify').setup()
 end)
 later(function()
     require('mini.pairs').setup()
@@ -56,6 +49,7 @@ end)
 later(function()
     require('mini.surround').setup()
 end)
+
 later(function()
     local function timing(_, total)
         local ms = 100
@@ -71,6 +65,21 @@ later(function()
     }
 end)
 later(function()
+    local hipatterns = require 'mini.hipatterns'
+    hipatterns.setup {
+        highlighters = {
+            -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+            fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+            hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+            todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+            note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+            -- Highlight hex color strings (`#rrggbb`) using that color
+            hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
+    }
+end)
+later(function()
     require('mini.indentscope').setup {
         draw = {
             delay = 0,
@@ -78,6 +87,38 @@ later(function()
         },
         symbol = '▎',
     }
+end)
+later(function()
+    require('mini.jump2d').setup {
+        view = {
+            dim = true,
+            n_steps_ahead = 1,
+        },
+        mappings = { start_jumping = '' },
+    }
+end)
+later(function()
+    local gen_loader = require('mini.snippets').gen_loader
+    require('mini.snippets').setup {
+        snippets = {
+            gen_loader.from_lang(),
+        },
+    }
+end)
+now(function()
+    local starter = require 'mini.starter'
+    starter.setup {
+        evaluate_single = true,
+        footer = os.date(),
+        items = {
+            starter.sections.recent_files(5, false, false),
+            starter.sections.builtin_actions(),
+        },
+    }
+end)
+now(function()
+    require('mini.statusline').setup()
+    vim.o.laststatus = 3
 end)
 later(function()
     require('mini.trailspace').setup()
@@ -89,14 +130,6 @@ later(function()
             require('mini.trailspace').trim_last_lines()
         end,
     })
-end)
-later(function()
-    local gen_loader = require('mini.snippets').gen_loader
-    require('mini.snippets').setup {
-        snippets = {
-            gen_loader.from_lang(),
-        },
-    }
 end)
 
 -- treesitter
@@ -272,40 +305,9 @@ later(function()
     require('trouble').setup()
 end)
 
--- todo comments
-later(function()
-    add { source = 'folke/todo-comments.nvim' }
-    require('todo-comments').setup()
-end)
-
--- lsp info/notifs
-later(function()
-    add { source = 'j-hui/fidget.nvim' }
-    require('fidget').setup {
-        notification = {
-            override_vim_notify = true,
-            window = {
-                winblend = 50,
-            },
-        },
-    }
-end)
-
--- gitsigns
-later(function()
-    add { source = 'lewis6991/gitsigns.nvim', depends = {
-        'nvim-lua/plenary.nvim',
-    } }
-end)
-
 -- git helper
 now(function()
     add { source = 'tpope/vim-fugitive' }
-end)
-
--- jump
-later(function()
-    add { source = 'folke/flash.nvim' }
 end)
 
 -- file jumping
@@ -318,8 +320,8 @@ now(function()
     }
 end)
 
--- color highlights
-now(function()
-    add { source = 'brenoprata10/nvim-highlight-colors' }
-    require('nvim-highlight-colors').setup()
+-- better quickfix
+later(function()
+    add { source = 'stevearc/quicker.nvim' }
+    require('quicker').setup()
 end)

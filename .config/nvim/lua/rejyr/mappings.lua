@@ -54,12 +54,8 @@ map('n', 'q:', '')
 map('n', '<C-j>', '<cmd>cnext<cr>')
 map('n', '<C-k>', '<cmd>cprev<cr>')
 
--- flash mappings
-map({ 'n', 'x', 'o' }, 'S', "<cmd>lua require('flash').jump()<cr>", { desc = 'Flash' })
-map({ 'n', 'x', 'o' }, '<C-S-s>', "<cmd>lua require('flash').treesitter()<cr>", { desc = 'Flash Treesitter' })
-map('o', 'r', "<cmd>lua require('flash').remote()<cr>", { desc = 'Remote Flash' })
-map({ 'o', 'x' }, 'R', "<cmd>lua require('flash').treesitter_search()<cr>", { desc = 'Treesitter Search' })
-map('c', '<C-s>', "<cmd>lua require('flash').toggle()<cr>", { desc = 'Toggle Flash Search' })
+-- mini.jump2d mappings
+map({ 'n', 'x', 'o' }, '<CR>', '<cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<CR>')
 
 local groups = {
     {
