@@ -1,4 +1,3 @@
-function setup_abbr
 abbr -a -- bac 'bacon -j clippy'
 abbr -a -- blctl bluetoothctl
 abbr -a -- c cargo
@@ -16,7 +15,6 @@ abbr -a -- lt 'eza -lga --sort=modified'
 abbr -a -- mkdir 'mkdir -p'
 abbr -a -- n nvim
 abbr -a -- nf 'nvim (fzf)'
-abbr -a -- pac yay
 abbr -a -- rc rmpc
 abbr -a -- restart reboot
 abbr -a -- suspend 'systemctl suspend'
@@ -28,11 +26,11 @@ abbr -a -- systl systemctl
 abbr -a -- systop 'systemctl stop'
 abbr -a -- systrt 'systemctl start'
 abbr -a -- tree 'eza -TF'
-abbr -a -- update yay
-abbr -a -- yeet 'yay -Rsn'
-abbr -a -- yoink 'yay -S'
+abbr -a -- update 'sudo xbps-install -Su'
+abbr -a -- yeet 'sudo xbps-remove -R'
+abbr -a -- yoink 'sudo xbps-install'
+abbr -a -- xbq 'xbps-query -Rs'
 abbr -a -- za zathura
 abbr -a -- zf 'zathura (fzf) &'
 abbr -a --position anywhere -- --help '--help | bat -plhelp'
 abbr -a --position anywhere -- -h '-h | bat -plhelp'
-end
