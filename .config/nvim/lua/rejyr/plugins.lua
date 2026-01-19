@@ -213,11 +213,10 @@ now(function()
             'cssls',
             'emmet_language_server',
             'eslint',
-            'grammarly',
+            'harper_ls',
             'html',
             'jdtls',
             'jsonls',
-            'ltex',
             'lua_ls',
             'pyright',
             'rust_analyzer',
@@ -315,7 +314,7 @@ now(function()
     add { source = 'otavioschwanck/arrow.nvim' }
     require('arrow').setup {
         show_icons = true,
-        leader_key = ';', -- Recommended to be a single key
+        leader_key = '-', -- Recommended to be a single key
         buffer_leader_key = 'm', -- Per Buffer Mappings
     }
 end)
