@@ -70,11 +70,6 @@ local groups = {
             { '<leader>`', '<cmd>:e #<cr>', { desc = 'Switch to Other Buffer' } },
             { '<leader>u', '<cmd>lua Snacks.picker.undo()<cr>', { desc = 'Undo Tree' } },
             { '<leader>y', '<cmd>lua Snacks.picker.yanky()<cr>', { desc = 'Open Yank History' } },
-            {
-                '<leader>L',
-                "<cmd>lua require('config.plugins.lsp_lines').toggle()<cr>",
-                { desc = 'Toggle lsp_lines' },
-            },
             { '<leader>Q', ':q<cr>', { desc = ':q' } },
             { '<leader>W', ':wq<cr>', { desc = ':wq' } },
         },

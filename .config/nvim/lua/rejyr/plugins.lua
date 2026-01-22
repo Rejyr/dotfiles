@@ -238,6 +238,17 @@ now(function()
             'selene',
         },
     }
+
+    vim.lsp.config('harper_ls', {
+        settings = {
+            ['harper-ls'] = {
+                linters = {
+                    SentenceCapitalization = false,
+                    SpellCheck = false,
+                },
+            },
+        },
+    })
 end)
 
 -- completion
@@ -323,4 +334,10 @@ end)
 later(function()
     add { source = 'stevearc/quicker.nvim' }
     require('quicker').setup()
+end)
+
+-- latex
+now(function()
+    add { source = 'lervag/vimtex' }
+    vim.g.vimtex_view_method = 'zathura'
 end)
