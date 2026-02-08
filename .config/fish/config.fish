@@ -4,6 +4,3 @@ if test -z $DISPLAY
 end
 
 zoxide init fish | source
-
-setup_abbr
-setup_everforest
