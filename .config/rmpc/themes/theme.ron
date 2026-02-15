@@ -3,221 +3,133 @@
 #![enable(unwrap_variant_newtypes)]
 (
     default_album_art_path: None,
-    show_song_table_header: true,
-    draw_borders: true,
     browser_column_widths: [20, 38, 42],
-    background_color: "#2d353b",
-    modal_backdrop: true,
-    text_color: "#d3c6aa",
-    header_background_color: "#2d353b",
-    modal_background_color: "#2d353b",
-    preview_label_style: (fg: "#d699b6"),
-    preview_metadata_group_style: (fg: "#83c092"),
-    tab_bar: (
-        active_style: (fg: "#2d353b", bg: "#a7c080", modifiers: "Bold"),
-        inactive_style: (fg: "#d3c6aa", bg: "#2d353b", modifiers: ""),
-    ),
-    highlighted_item_style: (fg: "#7fbbb3", modifiers: "Bold"),
-    current_item_style: (fg: "#2d353b", bg: "#a7c080", modifiers: "Bold"),
-    borders_style: (fg: "#a7c080", modifiers: "Bold"),
-    highlight_border_style: (fg: "#a7c080"),
-    symbols: (song: "󰝚 ", dir: " ", playlist: "󰲸 ", marker: "* ", ellipsis: "..."),
-    progress_bar: (
-        symbols: ["█", "█", "█", "█", "█"],
-        track_style: (fg: "#343f44"),
-        elapsed_style: (fg: "#a7c080"),
-        thumb_style: (fg: "#a7c080"),
-    ),
-    scrollbar: (
-        symbols: ["│", "█", "▲", "▼"],
-        track_style: (fg: "#a7c080"),
-        ends_style: (fg: "#a7c080"),
-        thumb_style: (fg: "#a7c080"),
-    ),
-    song_table_format: [
-        (
-            prop: (kind: Property(Artist), style: (fg: "#a7c080"),
-                default: (kind: Text("Unknown"), style: (fg: "#d699b6"))
-            ),
-            width: "20%",
-        ),
-        (
-            prop: (kind: Property(Title), style: (fg: "#83c092"),
-                highlighted_item_style: (fg: "#d3c6aa", modifiers: "Bold"),
-                default: (kind: Property(Filename), style: (fg: "#d3c6aa"),)
-            ),
-            width: "35%",
-        ),
-        (
-            prop: (kind: Property(Album), style: (fg: "#a7c080"),
-                default: (kind: Text("Unknown Album"), style: (fg: "#d699b6"))
-            ),
-            width: "30%",
-        ),
-        (
-            prop: (kind: Property(Duration), style: (fg: "#83c092"),
-                default: (kind: Text("-"))
-            ),
-            width: "15%",
-            alignment: Right,
-        ),
-    ],
+    header_background_color: "#343f44",
+    preview_label_style: (fg: "magenta"),
+    preview_metadata_group_style: (fg: "cyan"),
+    draw_borders: false,
+    show_song_table_header: false,
+    tab_bar: (active_style: (fg: "black", bg: None, modifiers: "Bold"), inactive_style: ()),
     layout: Split(
         direction: Vertical,
         panes: [
             (
-                size: "3",
-                pane: Pane(Tabs),
+                pane: Pane(Header),
+                size: "1",
             ),
             (
-                size: "4",
-                pane: Split(
-                    direction: Horizontal,
-                    panes: [
-                        (
-                            size: "100%",
-                            pane: Split(
-                                direction: Vertical,
-                                panes: [
-                                    (
-                                        size: "4",
-                                        borders: "ALL",
-                                        pane: Pane(Header),
-                                    ),
-                                ]
-                            )
-                        ),
-                    ]
-                ),
-            ),
+                pane: Pane(TabContent),
+                size: "100%",),
             (
-                size: "100%",
-                pane: Split(
-                    direction: Horizontal,
-                    panes: [
-                        (
-                            size: "100%",
-                            borders: "NONE",
-                            pane: Pane(TabContent),
-                        ),
-                    ]
-                ),
-            ),
-            (
-                size: "3",
-                borders: "TOP | BOTTOM",
                 pane: Pane(ProgressBar),
+                size: "1",
             ),
         ],
     ),
+    highlighted_item_style: (fg: "yellow", modifiers: "Bold"),
+    current_item_style: (fg: "black", bg: "green", modifiers: "Bold"),
+    borders_style: (fg: "green", modifiers: "Bold"),
+    highlight_border_style: (fg: "green"),
+    symbols: (song: "󰝚 ", dir: " ", playlist: "󰲸 ", marker: "* ", ellipsis: "..."),
+    progress_bar: (
+        symbols: ["█", "█", "█", "█", "█"],
+        track_style: (fg: "#343f44"),
+        elapsed_style: (fg: "green"),
+        thumb_style: (fg: "green"),
+    ),
+    scrollbar: (
+        symbols: ["│", "█", "▲", "▼"],
+        track_style: (fg: "green"),
+        ends_style: (fg: "green"),
+        thumb_style: (fg: "green"),
+    ),
+    song_table_format: [
+        (
+            prop: (kind: Property(Artist), style: (fg: "green"), default: (kind: Text("Unknown"))),
+            width: "35%",
+            alignment: Right,
+        ),
+        (
+            prop: (kind: Text("["), style: (fg: None), default: (kind: Text("Unknown"))),
+            width: "1",
+            alignment: Center,
+        ),
+        (
+            prop: (kind: Property(Album), style: (fg: "cyan"), default: (kind: Text("Unknown"))),
+            width: "30%",
+            alignment: Right,
+        ),
+        (
+            prop: (kind: Text("]"), style: (fg: None), default: (kind: Text("Unknown"))),
+            width: "1",
+            alignment: Center,
+        ),
+        (
+            prop: (kind: Property(Title), style: (fg: "blue"), default: (kind: Text("Unknown"))),
+            width: "35%",
+        ),
+    ],
     header: (
         rows: [
             (
                 left: [
-                    (kind: Text(""), style: (fg: "#a7c080", modifiers: "Bold")),
-                    (kind: Property(Status(StateV2(playing_label: "  ", paused_label: "  ", stopped_label: "  ")))),
-                    (kind: Text(" "), style: (fg: "#a7c080", modifiers: "Bold")),
-                    (kind: Property(Widget(ScanStatus)))
-
+                    (kind: Text("["), style: (fg: "blue", modifiers: "Bold")),
+                    (kind: Property(Status(State)), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "blue", modifiers: "Bold")),
+                    (kind: Text(" ")),
+                    (kind: Text("["), style: (fg: "blue", modifiers: "Bold")),
+                    (kind: Property(Status(Elapsed)), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Text(" / "), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Property(Status(Duration)), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "blue", modifiers: "Bold"))
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (fg: "#d3c6aa",modifiers: "Bold"),
-                        default: (kind: Property(Song(Filename)), style: (fg: "#d3c6aa",modifiers: "Bold"))
-                    )
-                ],
-                right: [
-                    (kind: Text("󱡬"), style: (fg: "#a7c080", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "#d3c6aa", modifiers: "Bold")),
-                    (kind: Text("%"), style: (fg: "#a7c080", modifiers: "Bold"))
-                ]
-            ),
-            (
-                left: [
-                    (kind: Text("[ "),style: (fg: "#a7c080", modifiers: "Bold")),
-                    (kind: Property(Status(Elapsed)),style: (fg: "#d3c6aa")),
-                    (kind: Text(" / "),style: (fg: "#a7c080", modifiers: "Bold")),
-                    (kind: Property(Status(Duration)),style: (fg: "#d3c6aa")),
-                    (kind: Text(" | "),style: (fg: "#a7c080")),
-                    (kind: Property(Status(Bitrate)),style: (fg: "#d3c6aa")),
-                    (kind: Text(" kbps"),style: (fg: "#a7c080")),
-                    (kind: Text("]"),style: (fg: "#a7c080", modifiers: "Bold"))
-                ],
-                center: [
-                    (kind: Property(Song(Artist)), style: (fg: "#83c092", modifiers: "Bold"),
-                        default: (kind: Text("Unknown Artist"), style: (fg: "#83c092", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "yellow", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "yellow", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
-                    (kind: Property(Song(Album)),style: (fg: "#a7c080" ),
-                        default: (kind: Text("Unknown Album"), style: (fg: "#a7c080", modifiers: "Bold"))
+                    (kind: Property(Song(Title)), style: (fg: "blue", modifiers: "Bold"),
+                        default: (kind: Text("No Song"), style: (fg: "blue", modifiers: "Bold"))
                     )
                 ],
                 right: [
-                    (kind: Text("[ "),style: (fg: "#a7c080")),
+                    (kind: Text("["), style: (fg: "blue", modifiers: "Bold")),
                     (kind: Property(Status(RepeatV2(
-                                    on_label: " ", off_label: " ",
-                                    on_style: (fg: "#d3c6aa", modifiers: "Bold"), off_style: (fg: "#475258", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#a7c080")),
+                        on_label: "z",
+                        off_label: "z",
+                        on_style: (fg: "green", modifiers: "Bold"),
+                        off_style: (fg: "blue", modifiers: "Dim"),
+                    )))),
                     (kind: Property(Status(RandomV2(
-                                    on_label: " ", off_label: " ",
-                                    on_style: (fg: "#d3c6aa", modifiers: "Bold"), off_style: (fg: "#475258", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#a7c080")),
+                        on_label: "x",
+                        off_label: "x",
+                        on_style: (fg: "green", modifiers: "Bold"),
+                        off_style: (fg: "blue", modifiers: "Dim"),
+                    )))),
                     (kind: Property(Status(ConsumeV2(
-                                    on_label: "󰮯 ", off_label: "󰮯 ", oneshot_label: "󰮯󰇊 ",
-                                    on_style: (fg: "#d3c6aa", modifiers: "Bold"), off_style: (fg: "#475258", modifiers: "Bold"))))),
-                    (kind: Text(" | "),style: (fg: "#a7c080")),
+                        on_label: "c",
+                        off_label: "c",
+                        oneshot_label: "c",
+                        on_style: (fg: "green", modifiers: "Bold"),
+                        off_style: (fg: "blue", modifiers: "Dim"),
+                        oneshot_style: (fg: "red", modifiers: "Dim"),
+                    )))),
                     (kind: Property(Status(SingleV2(
-                                    on_label: "󰎤 ", off_label: "󰎦 ", oneshot_label: "󰇊 ", off_oneshot_label: "󱅊 ",
-                                    on_style: (fg: "#d3c6aa", modifiers: "Bold"), off_style: (fg: "#475258", modifiers: "Bold"))))),
-                    (kind: Text(" ]"),style: (fg: "#a7c080")),
-                ]
-            ),
-        ],
-    ),
-    browser_song_format: [
-        (
-            kind: Group([
-                    (kind: Property(Track)),
+                        on_label: "v",
+                        off_label: "v",
+                        oneshot_label: "v",
+                        on_style: (fg: "green", modifiers: "Bold"),
+                        off_style: (fg: "blue", modifiers: "Dim"),
+                        oneshot_style: (fg: "red", modifiers: "Bold"),
+                    )))),
+                    (kind: Text("]"), style: (fg: "blue", modifiers: "Bold")),
                     (kind: Text(" ")),
-                ])
-        ),
-        (
-            kind: Group([
-                    (kind: Property(Artist)),
-                    (kind: Text(" - ")),
-                    (kind: Property(Title)),
-                ]),
-            default: (kind: Property(Filename))
-        ),
-    ],
-    cava: (
-        // symbols that will be used to draw the bar in the visualiser, in ascending order of
-        // fill fraction
-        bar_symbols: ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'],
-        // similar to bar_symbols but these are used for the top-down rendering, meaning for orientation
-        // "Horizontal" and "Top"
-        inverted_bar_symbols: ['▔', '🮂', '🮃', '▀', '🮄', '🮅', '🮆', '█'],
-
-        // bg_color: "black", // background color, defaults to rmpc's bg color if not provided
-        bar_width: 1, // width of a single bar in columns
-        bar_spacing: 1, // free space between bars in columns
-
-        // Possible values are "Top", "Bottom" and "Horizontal". Top makes the bars go from top to
-        // bottom, "Bottom" is from bottom up, and "Horizontal" is split in the middle with bars going
-        // both down and up from there.
-        // Using non-default symbols with "Top" and "Horizontal" may produce undesired output.
-        orientation: Bottom,
-
-        // A simple color gradient. This is a map where keys are percent values of the height
-        // where the color starts. After that it is linearly interpolated towards the next value.
-        // In this example, the color will start at green for the lowest amplitudes, go towards
-        // blue at half amplitudes and finishing as red for the highest values. Keys must be between
-        // 0 and 100 and if the first or last key are not 0 and 100 respectively, the lowest and highest
-        // value will be used as 0 and 100. Only hex and RGB colors are supported here and your terminal
-        // must support them as well!
-        bar_color: Gradient({
-              0: "#a7c080",
-             50: "#83c092",
-            100: "#7fbbb3",
-        })
+                    (kind: Text("["), style: (fg: "blue", modifiers: "Bold")),
+                    (kind: Text("Vol: "), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Property(Status(Volume)), style: (fg: "green", modifiers: "Bold")),
+                    (kind: Text("%]"), style: (fg: "blue", modifiers: "Bold"))
+                ]
+            )
+        ],
     ),
 )
