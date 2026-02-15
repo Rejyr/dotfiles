@@ -24,27 +24,27 @@
         },
         {
             "type": "os",
-            "key": "OS ", // Void Icon
+            "key": "os ", // Void Icon
             "keyColor": "cyan"
         },
         {
             "type": "kernel",
-            "key": "KER",
+            "key": "ker",
             "keyColor": "magenta"
         },
         {
             "type": "packages",
-            "key": "PKG",
+            "key": "pkg",
             "keyColor": "blue"
         },
         {
             "type": "wm",
-            "key": "WM ",
+            "key": "wm ",
             "keyColor": "yellow"
         },
         {
             "type": "memory",
-            "key": "MEM",
+            "key": "mem",
             "keyColor": "green"
         },
         "break",
