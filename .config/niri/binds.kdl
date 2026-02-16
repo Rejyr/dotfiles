@@ -10,17 +10,31 @@ binds {
     // Force reorder (useful if something gets misaligned manually)
     Mod+Alt+R { spawn-sh "niri-sidebar reorder"; }
 
+    // waybar scripts/programs
+    Mod+Alt+M { spawn-sh "~/.config/waybar/scripts/spawn_term.sh mpris"; }
+    Mod+Alt+B { spawn-sh "~/.config/waybar/scripts/spawn_term.sh custom-bluetooth"; }
+    Mod+Alt+W { spawn-sh "~/.config/waybar/scripts/spawn_term.sh wireplumber"; }
+    Mod+Alt+N { spawn-sh "~/.config/waybar/scripts/spawn_term.sh network"; }
+    Mod+Alt+C { spawn-sh "~/.config/waybar/scripts/spawn_term.sh cpu"; }
+
+    // spawn programs
     Mod+Return { spawn "foot"; }
     Mod+Alt+Return { spawn "librewolf"; }
     Mod+D { spawn "fuzzel"; }
-    Super+Alt+L { spawn "swaylock"; }
 
+    // notifications
     Mod+Shift+C { spawn-sh "makoctl dismiss"; }
     Mod+Ctrl+Shift+C { spawn-sh "makoctl restore"; }
 
+    // clipboard
     Mod+P { spawn-sh "cliphist list | fuzzel -d -p 'copy: ' | cliphist decode | wl-copy"; }
 
+    // lockscreen
     Mod+Escape { spawn "swaylock"; }
+
+    // logout
+    Mod+Alt+L { spawn-sh "~/.config/waybar/scripts/powermenu.sh"; }
+
 
 
     /// out of the box keybinds

@@ -12,6 +12,34 @@ window-rule {
     open-floating true
 }
 
+// floating with terminal
+window-rule {
+    match app-id="^foot-floating"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^foot-floating" title="from-waybar"
+    default-column-width { proportion 0.4; }
+    default-window-height { proportion 0.5; }
+}
+
+// floating relative to new coords
+window-rule {
+    match app-id="floating-to-top-left$"
+    default-floating-position x=0 y=0 relative-to="top-left"
+}
+
+window-rule {
+    match app-id="floating-to-left$"
+    default-floating-position x=0 y=0 relative-to="left"
+}
+
+window-rule {
+    match app-id="floating-to-bottom-left$"
+    default-floating-position x=0 y=0 relative-to="bottom-left"
+}
+
 // opacity rules
 window-rule {
     // geometry-corner-radius 12
