@@ -17,6 +17,7 @@
     ],
     "modules-center": [
         "mpris"
+        // "niri/window"
     ],
     "modules-right": [
         "tray",
@@ -77,6 +78,10 @@
         },
         "on-click-middle": "",
         "on-click-right": "foot rmpc"
+    },
+    "niri/window": {
+        "rotate": 90,
+        "format": "{app_id} - {title}"
     },
     // right
     "tray": {
