@@ -1,300 +1,212 @@
-[
-    {
-        "height": 40,
-        "spacing": 5,
-        "modules-left": [
-            "group/Utilities",
-            "group/workspaces",
-            "mpris"
-        ],
-        "modules-center": [
-            "group/windows"
-        ],
-        "modules-right": [
-            "group/cpuram",
-            "group/brightvol",
-            "group/system"
-        ],
-        "custom/openbracket": {
-            "format": "[",
-            "tooltip": false
-        },
-        "custom/closebracket": {
-            "format": "]",
-            "tooltip": false
-        },
-        "custom/split": {
-            "format": "|",
-            "tooltip": false
-        },
-        "group/Utilities": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "custom/arch",
-                // "idle_inhibitor",
-                "custom/split",
-                "custom/powermenu",
-                // "custom/powerprofile",
-                // "custom/themeswitcher",
-                "custom/closebracket"
-            ]
-        },
-        "custom/arch": {
-            "format": "",
-            "tooltip": false,
-            "on-click": "fuzzel"
-        },
-        "custom/powermenu": {
-            "format": "",
-            "tooltip": false,
-            "on-click": "~/.config/waybar/scripts/powermenu.sh"
-        },
-        "custom/powerprofile": {
-            "exec": "~/.config/waybar/scripts/powerprofile.sh display",
-            "on-click": "~/.config/waybar/scripts/powerprofile.sh toggle",
-            "interval": 5,
-            "tooltip": true,
-            "exec-tooltip": "~/.config/waybar/scripts/powerprofile.sh tooltip",
-            "tooltip-format": "Power Profile: {} \nClick to cycle: Efficient → Normal → Overclocked"
-        },
-        "custom/themeswitcher": {
-            "format": "",
-            "tooltip": true,
-            "tooltip-format": "Click to change theme",
-            "on-click": "~/.config/waybar/scripts/theme-switcher.sh next",
-            "on-click-right": "~/.config/scripts/theme-switcher.sh random"
-        },
-        "group/workspaces": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "niri/workspaces",
-                "custom/closebracket"
-            ]
-        },
-        "hyprland/workspaces": {
-            "all-outputs": true,
-            "warp-on-scroll": false,
-            "enable-bar-scroll": true,
-            "disable-scroll-wraparound": true,
-            "active-only": false,
-            "format": "{icon}",
-            "format-icons": {
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "default": "•"
+{
+    "layer": "top",
+    "position": "left",
+    "width": 40,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "spacing": 0,
+    "reload_style_on_change": true,
+    "on-sigusr1": "toggle",
+    "on-sigusr2": "reload",
+    "modules-left": [
+        "custom/launcher",
+        "clock",
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "mpris"
+    ],
+    "modules-right": [
+        "tray",
+        "group/jibblets",
+        "custom/powermenu"
+    ],
+    // modules
+    // left
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "fuzzel"
+    },
+    "clock": {
+        "format": "{:%H\n%M}",
+        "format-alt": "{:%m\n%d\n<b>—</b>\n%H\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#7fbbb3'><b>{}</b></span>",
+                "days": "<span color='#d3c6aa'><b>{}</b></span>",
+                "weekdays": "<span color='#dbbc7f'><b>{}</b></span>",
+                "today": "<span color='#a7c080'><b><u>{}</u></b></span>"
             }
         },
-        "niri/workspaces": {
-            "format": "{icon}",
-            "format-icons": {
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "default": "•"
-            }
-        },
-        "mpris": {
-            "format": "[ 󰝚  {status_icon} | {dynamic} ]",
-            "interval": 1,
-            "dynamic-len": 40,
-            "status-icons": {
-                "playing": "▶",
-                "paused": "⏸",
-                "stopped": ""
-            },
-            "dynamic-order": [
-                "artist"
-            ]
-        },
-        "group/windows": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "niri/window",
-                "custom/closebracket"
-            ]
-        },
-        "hyprland/window": {
-            "format": "{title}",
-            "max-length": 30,
-            "min-length": 0,
-            "all-outputs": true
-        },
-        "niri/window": {
-            "format": "{title}",
-            "max-length": 30,
-            "min-length": 0,
-            "all-outputs": true
-        },
-        "group/cpuram": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "cpu",
-                "custom/split",
-                "memory",
-                "custom/closebracket"
-            ]
-        },
-        "cpu": {
-            "format": "CPU:{usage}%",
-            "tooltip": false,
-            "interval": 2,
-            "on-click": "foot btop",
-        },
-        "memory": {
-            "format": "RAM:{}%",
-            "tooltip": false,
-            "interval": 2,
-            "on-click": "foot btop",
-        },
-        "group/brightvol": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                // "backlight",
-                // "custom/split",
-                "wireplumber",
-                "custom/closebracket"
-            ]
-        },
-        "wireplumber": {
-            "scroll-step": 5,
-            "format": "{icon}{volume}%",
-            "format-bluetooth": "{icon}{volume}% ",
-            "format-bluetooth-muted": " {icon}",
-            "format-muted": "",
-            "format-icons": {
-                "headphone": "",
-                "hands-free": "",
-                "headset": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": [
-                    " :",
-                    " :",
-                    " :"
-                ]
-            },
-            "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-            "on-click-right": "foot wiremix"
-        },
-        "backlight": {
-            "format": "{icon}:{percent}%",
-            "format-icons": [
-                "",
-                "",
-                ""
-            ],
-            "on-click": "~/.config/waybar/scripts/brightness_slider.sh"
-        },
-        "group/system": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "clock",
-                "custom/split",
-                "network",
-                "custom/bluetooth",
-                "custom/clipboard",
-                "battery",
-                "custom/swaync",
-                "custom/closebracket"
-            ]
-        },
-        "clock": {
-            "format": "{:%H:%M}",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        },
-        "custom/clipboard": {
-            "format": "",
-            "tooltip": false,
-            "on-click": "~/.config/waybar/scripts/clipboard_menu.sh"
-        },
-        "battery": {
-            "states": {
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-full": "{icon} {capacity}%",
-            "format-charging": " {capacity}%",
-            "format-plugged": "  {capacity}%",
-            "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
-            "on-click": "wlogout"
-        },
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "activated": "",
-                "deactivated": ""
-            }
-        },
-        "custom/swaync": {
-            "format": "",
-            "exec": "swaync-client -swb",
-            "on-click": "swaync-client --toggle-panel",
-            "interval": 0
-        },
-        "network": {
-            "format-wifi": "{icon}",
-            "format-ethernet": "󰈀 LAN",
-            "format-disconnected": "󰖪",
-            "tooltip-format": "{ipaddr}\n{essid} ({signalStrength}%)",
-            "on-click": "foot impala",
-            "format-icons": [
-                "󰤯",
-                "󰤟",
-                "󰤢",
-                "󰤥",
-                "󰤨"
-            ]
-        },
-        "custom/bluetooth": {
-            "format": "{}",
-            "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
-            "interval": 5,
-            "on-click": "foot bluetui"
-        },
-        "group/clock": {
-            "orientation": "horizontal",
-            "modules": [
-                "custom/openbracket",
-                "clock",
-                "custom/closebracket"
-            ]
-        },
-        "custom/cava": {
-            "exec": "~/.config/waybar/scripts/cava_wrapper.sh",
-            "format": "♪ {}",
-            "restart-interval": 1,
-            "max-length": 50,
-            "on-click": "pkill cava"
-        },
-        "tray": {
-            "icon-size": 14,
-            "spacing": 10
-        },
-        "custom/notifications": {
-            "format": "",
-            "tooltip": false,
-            "on-click": "~/.config/waybar/scripts/notification_center.sh"
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
         }
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": ""
+        }
+    },
+    // center
+    "mpris": {
+        "rotate": 90,
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} {dynamic}",
+        "dynamic-order": [
+            "artist",
+            "title"
+        ],
+        "dynamic-len": 40,
+        "player-icons": {
+            "default": "▶",
+            "mpd": "󰝚"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "on-click-middle": "",
+        "on-click-right": "foot rmpc"
+    },
+    // right
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "group/jibblets": {
+        "orientation": "inherit",
+        "modules": [
+            "backlight",
+            "custom/clipboard",
+            "custom/bluetooth",
+            "wireplumber",
+            "network",
+            "cpu",
+            "battery"
+        ]
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "custom/clipboard": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/clipboard_menu.sh"
+    },
+    "custom/bluetooth": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
+        "interval": 5,
+        "tooltip": false,
+        "on-click": "foot bluetui"
+    },
+    "wireplumber": {
+        "scroll-step": 5,
+        "format": "{icon}",
+        // "format-alt": "{icon}\n{volume}%",
+        "tooltip-format": "vol: {volume}%",
+        "format-bluetooth": "{icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "foot wiremix"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ipaddr}\n{essid} ({signalStrength}%)",
+        "on-click": "foot impala",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "cpu": {
+        "format": "{icon}",
+        "format-icons": [
+            "🁣",
+            "🁤",
+            "🁥",
+            "🁦",
+            "🁧",
+            "🁨",
+            "🁩",
+            "🁰",
+            "🁷",
+            "🁾",
+            "🂅",
+            "🂌",
+            "🂓",
+            "🁢"
+        ],
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "foot btop"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-alt": "{icon}\n{capacity}%",
+        "format-charging": "{icon}󱐋",
+        "tooltip-format": "{power}W, {timeTo}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "custom/powermenu": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/powermenu.sh"
     }
-]
+}

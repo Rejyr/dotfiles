@@ -17,189 +17,137 @@
     font-size: 15px;
 }
 
-#custom-openbracket,
-#custom-closebracket {
-    margin: 0 5px;
-}
 
-/* idk what all this does */
+/* colors and right border */
 window#waybar {
-    background-color: transparent;
-    border-bottom: 0;
+    background: @background;
     color: @text;
-    transition: background-color 0.5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
+    border-right-width: 2px;
+    border-style: solid;
+    border-color: @focused;
 }
 
 
-/* configuring the modules */
+/* tooltip */
+/* scrap with system gtk styles */
+tooltip {
+    all: unset;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+tooltip * {
+    color: @text;
+    text-shadow: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+tooltip label {
+    padding: 8px;
+    background-color: @second-background;
+}
+
+
+/* space from top and bottom edge */
 .modules-left {
-    margin: 10px 0 0 10px;
-    padding: 0 0 0 7px;
-    background-color: @background;
-    border: 2px solid @focused;
-}
-
-.modules-center {
-    margin: 10px 0 0 0;
-    padding: 0 10px 0 10px;
-    background-color: @background;
-    border: 2px solid @focused;
+    margin-top: 4px;
 }
 
 .modules-right {
-    margin: 10px 10px 0 0;
-    padding: 0 10px 0 10px;
-    background-color: @background;
-    border: 2px solid @focused;
+    margin-bottom: 4px;
+}
+
+/* inset background color */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding-left: 4px;
+    /* add border size to balance */
+    padding-right: 6px;
 }
 
 
-/* whats this?? */
-button {
-    border: none;
+/* space out different sections */
+#custom-launcher,
+#clock,
+#tray {
+    margin-bottom: 8px;
+}
+
+#custom-powermenu {
+    margin-top: 8px;
 }
 
 
-/* left island */
+/* module background color and size */
+label.module,
+box.module {
+    padding: 10px 0px;
+    background-color: @second-background;
+}
 
-/* menu pannel */
-#custom-arch,
-#custom-powerprofile,
+
+/* focus color hover */
+label.module:hover {
+    color: @focused;
+}
+
+
+/* center icons/content */
+/* this also bumps the minumum width */
+#workspaces,
+#custom-launcher,
+#network,
 #custom-powermenu,
-#custom-themeswitcher {
-    padding-right: 10px;
-    padding-left: 5px;
-    font-size: 15px;
-    border-radius: 8px;
+#custom-clipboard {
+    padding-left: 2px;
 }
 
-#custom-arch:hover,
-#custom-powermenu:hover,
-#custom-powerprofile:hover,
-#custom-themeswitcher:hover {
-    color: @color1;
+#cpu {
+    padding-left: 1px;
 }
 
-/* workspace pannel */
+
+/* workspaces */
+#workspaces {
+    padding: 8px 0px;
+}
+
 #workspaces button {
     all: unset;
     min-width: 0;
-    padding: 0 8px 0 8px;
+    padding: 4px 0;
     background-color: transparent;
     color: @text;
-    border-radius: 0;
+    border: none;
     transition: none;
 }
 
 #workspaces button:hover {
-    color: @color1;
-    background-color: @second-background;
-    box-shadow: inherit;
-}
-
-#workspaces button.active {
-    color: @focused2;
-    background-color: @second-background;
+    color: @focused;
 }
 
 #workspaces button.urgent {
-    background-color: @urgent;
+    color: @urgent;
 }
 
-/* no idea what this does */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
 
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-/* media player */
-#mpris {
-    margin: 0 0 0 5px;
-    padding: 0 9px;
-    background-color: @background;
-    color: @text;
-}
-
+/* mpris */
 #mpris.playing {
-    background-color: @color3;
-    border-radius: 2px;
+    background-color:
+        @focused;
     color: @background;
 }
 
 
-/* center module  */
-#window {
-    padding: 0 5px;
-}
-
-/* Right Island */
-
-/* module general styles */
-#clock,
-#battery,
-#cpu,
-#memory,
-#custom-clipboard,
-#custom-bluetooth,
-#network {
-    padding: 0 10px;
-}
-
-#clock:hover,
-#battery:hover,
-#custom-cpu:hover,
-#custom-clipboard:hover,
-#custom-bluetooth:hover,
-#network:hover,
-#idle_inhibitor:hover,
-#custom-swaync:hover,
-#backlight:hover,
-#wireplumber:hover,
-#memory:hover,
-#cpu:hover {
-    color: @color1;
-}
-
-#idle_inhibitor {
-    padding: 0 10px 0 0;
-}
-
-#custom-powermenu {
-    padding: 0 5px 0 10px;
-}
-
-#custom-powerprofile {
-    padding: 0 8px 0 4px;
-}
-
-/* Remaining Modules */
-#backlight,
-#wireplumber {
-    padding: 0 5px;
-}
-
+/* wireplumber */
 #wireplumber.muted {
     background-color: @color2;
 }
 
-#custom-swaync {
-    padding: 0 10px 0 5px;
-    font-size: 16px;
-    /* same scale as other icons */
-    color: @text;
-}
 
+/* battery */
 #battery.charging,
 #battery.plugged {
     background-color: @focused2 ;
