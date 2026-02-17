@@ -1,6 +1,6 @@
 spawn-at-startup "waybar"
 spawn-at-startup "mpd"
-spawn-at-startup "mpDris2"
+spawn-at-startup "mpdris2-rs"
 spawn-at-startup "pipewire"
 spawn-at-startup "gammastep"
 spawn-sh-at-startup "swaybg -m fill -i ~/dotfiles/wallpapers/wallpaper.jpg"
