@@ -2,7 +2,7 @@
 
 status=$(bluetoothctl show | grep "Powered:" | awk '{print $2}')
 if [ "$status" == "yes" ]; then
-    echo ""
+    echo "󰂯"
 else
-    echo ""
+    echo "󰂲"
 fi
