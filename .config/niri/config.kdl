@@ -12,6 +12,14 @@ window-rule {
     open-floating true
 }
 
+// shadow for (fuzzel) launcher
+layer-rule {
+    match namespace="^launcher$"
+    shadow {
+        on
+    }
+}
+
 // floating with terminal
 window-rule {
     match app-id="^foot-floating"
