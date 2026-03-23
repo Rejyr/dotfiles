@@ -258,9 +258,53 @@ now(function()
     })
 end)
 
+-- local lsp conf
+now(function()
+    add { source = 'mrjones2014/codesettings.nvim' }
+    vim.lsp.config('*', {
+        before_init = function(_, config)
+            local codesettings = require 'codesettings'
+            codesettings.with_local_settings(config.name, config)
+        end,
+    })
+end)
+
+-- rust
+now(function()
+    add { source = 'mrcjkb/rustaceanvim', checkout = 'v8.0.4', monitor = 'master' }
+    vim.g.rustaceanvim = {
+        server = {
+            default_settings = {
+                ['rust-analyzer'] = {
+                    -- inactive-code bugging with leptos
+                    diagnostics = {
+                        disabled = {
+                            'inactive-code',
+                        },
+                    },
+                    -- all features for leptos
+                    cargo = {
+                        features = 'all',
+                    },
+                    procMacro = {
+                        ignored = {
+                            -- leptos macros
+                            leptos_macro = {
+                                -- optional: --
+                                -- "component",
+                                'server',
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    }
+end)
+
 -- completion
 now(function()
-    add { source = 'saghen/blink.cmp', checkout = 'v1.7.0' }
+    add { source = 'saghen/blink.cmp', checkout = 'v1.10.1', monitor = 'main' }
     require('blink.cmp').setup {
         keymap = { preset = 'super-tab' },
         completion = {
@@ -288,7 +332,6 @@ later(function()
     require('conform').setup {
         formatters_by_ft = {
             lua = { 'stylua' },
-            rust = { 'rustfmt', lsp_format = 'fallback' },
         },
         format_on_save = {
             -- These options will be passed to conform.format()
@@ -347,10 +390,4 @@ end)
 now(function()
     add { source = 'lervag/vimtex' }
     vim.g.vimtex_view_method = 'zathura'
-end)
-
--- indented paste
-later(function()
-    add { source = 'nemanjamalesija/smart-paste.nvim' }
-    require('smart-paste').setup()
 end)
