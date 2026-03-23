@@ -232,6 +232,12 @@ now(function()
             'texlab',
             'ts_ls',
         },
+        automatic_enable = {
+            exclude = {
+                -- manage with rustaceanvim
+                'rust_analyzer',
+            },
+        },
     }
 
     require('mason-tool-installer').setup {
@@ -276,12 +282,6 @@ now(function()
         server = {
             default_settings = {
                 ['rust-analyzer'] = {
-                    -- inactive-code bugging with leptos
-                    diagnostics = {
-                        disabled = {
-                            'inactive-code',
-                        },
-                    },
                     -- all features for leptos
                     cargo = {
                         features = 'all',
