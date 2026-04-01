@@ -33,12 +33,14 @@ vim.o.updatetime = 100
 vim.opt.timeoutlen = 500
 
 -- set shortmess
--- disable builtin intro 'I'
 -- Avoid showing extra messages when using completion 'c'
-vim.o.shortmess = 'filnxtToOFIc'
+vim.o.shortmess = 'filnxtToOFc'
 
 -- command height
 vim.o.cmdheight = 1
+
+-- for statusline
+vim.o.laststatus = 3
 
 -- termgui colors
 vim.opt.termguicolors = true

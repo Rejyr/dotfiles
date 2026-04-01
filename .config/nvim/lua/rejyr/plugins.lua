@@ -1,52 +1,108 @@
----@diagnostic disable-next-line: undefined-global
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+local add = vim.pack.add
+vim.pack.add { 'https://github.com/nvim-mini/mini.nvim' }
+
+local minimisc = require 'mini.misc'
+local function later(f)
+    ---@diagnostic disable-next-line: undefined-global
+    minimisc.safely('later', f)
+end
+
+vim.cmd 'packadd nvim.undotree'
+
+add {
+    'https://github.com/neanias/everforest-nvim',
+    'https://github.com/nvim-treesitter/nvim-treesitter',
+    'https://github.com/HiPhish/rainbow-delimiters.nvim',
+    'https://github.com/mason-org/mason.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/mason-org/mason-lspconfig.nvim',
+    'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
+    { src = 'https://github.com/saghen/blink.cmp', version = 'v1.10.1' },
+    'https://github.com/stevearc/conform.nvim',
+    'https://github.com/gbprod/yanky.nvim',
+    'https://github.com/tpope/vim-fugitive',
+    'https://github.com/stevearc/quicker.nvim',
+    'https://github.com/mrjones2014/codesettings.nvim',
+    { src = 'https://github.com/mrcjkb/rustaceanvim', version = 'v8.0.4' },
+    'https://github.com/lervag/vimtex',
+}
+
+-- update hooks
+vim.api.nvim_create_autocmd('PackChanged', {
+    callback = function(ev)
+        local name, kind = ev.data.spec.name, ev.data.kind
+        -- :TSUpdate for treesitter
+        if name == 'nvim-treesitter' and kind == 'update' then
+            if not ev.data.active then
+                vim.cmd.packadd 'nvim-treesitter'
+            end
+            vim.cmd 'TSUpdate'
+        end
+    end,
+})
 
 -- colorscheme
-now(function()
-    add { source = 'neanias/everforest-nvim' }
-    require('everforest').setup {
-        background = 'medium',
-    }
-    vim.cmd 'colorscheme everforest'
-    vim.cmd 'set background=dark'
-end)
+require('everforest').setup {
+    background = 'medium',
+}
+vim.cmd 'colorscheme everforest'
+vim.cmd 'set background=dark'
+
+-- rust
+vim.g.rustaceanvim = {
+    server = {
+        default_settings = {
+            ['rust-analyzer'] = {
+                -- all features for leptos
+                cargo = {
+                    features = 'all',
+                },
+                procMacro = {
+                    ignored = {
+                        -- leptos macros
+                        leptos_macro = {
+                            -- optional: --
+                            -- "component",
+                            'server',
+                        },
+                    },
+                },
+            },
+        },
+    },
+}
+
+-- latex
+vim.g.vimtex_view_method = 'zathura'
+
+-- rainbow-delimiters
+vim.g.rainbow_delimiters = {
+    highlight = {
+        'Red',
+        'Yellow',
+        'Blue',
+        'Orange',
+        'Green',
+    },
+}
 
 -- mini plugins
-now(function()
-    require('mini.files').setup()
-end)
-now(function()
-    require('mini.icons').setup()
-    require('mini.icons').mock_nvim_web_devicons()
-end)
+require('mini.files').setup()
+require('mini.icons').setup()
+require('mini.icons').mock_nvim_web_devicons()
+require('mini.statusline').setup()
+
 later(function()
     require('mini.ai').setup()
-end)
-later(function()
     require('mini.bracketed').setup()
-end)
-later(function()
     require('mini.comment').setup()
-end)
-later(function()
     require('mini.diff').setup()
-end)
-later(function()
     require('mini.extra').setup()
-end)
-later(function()
     require('mini.jump').setup()
-end)
-later(function()
     require('mini.notify').setup()
-end)
-later(function()
     require('mini.pairs').setup()
-end)
-later(function()
     require('mini.pick').setup()
-end)
-later(function()
     require('mini.surround').setup()
 end)
 
@@ -105,21 +161,6 @@ later(function()
         },
     }
 end)
-now(function()
-    local starter = require 'mini.starter'
-    starter.setup {
-        evaluate_single = true,
-        footer = os.date(),
-        items = {
-            starter.sections.recent_files(5, false, false),
-            starter.sections.builtin_actions(),
-        },
-    }
-end)
-now(function()
-    require('mini.statusline').setup()
-    vim.o.laststatus = 3
-end)
 later(function()
     require('mini.trailspace').setup()
     local augroup = vim.api.nvim_create_augroup('RemoveTrailingWhitespace', {})
@@ -132,222 +173,33 @@ later(function()
     })
 end)
 
--- treesitter
-now(function()
-    add {
-        source = 'nvim-treesitter/nvim-treesitter',
-        hooks = {
-            post_checkout = function()
-                vim.cmd 'TSUpdate'
-            end,
-        },
-    }
-
-    -- ensure installed
-    local ensure_languages = {
-        'bash',
-        'c',
-        'cmake',
-        'cpp',
-        'css',
-        'fish',
-        'gitignore',
-        'go',
-        'html',
-        'java',
-        'javascript',
-        'json',
-        'kdl',
-        -- 'latex',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'python',
-        'regex',
-        'rust',
-        'svelte',
-        'toml',
-        'typescript',
-        'vim',
-        'vimdoc',
-        'yaml',
-    }
-    require('nvim-treesitter').install(ensure_languages)
-
-    -- ensure enabled
-    local filetypes = vim.iter(ensure_languages):map(vim.treesitter.language.get_filetypes):flatten():totable()
-    local ts_start = function(ev)
-        vim.treesitter.start(ev.buf)
-    end
-    vim.api.nvim_create_autocmd('FileType', {
-        pattern = filetypes,
-        callback = ts_start,
-    })
-
-    add { source = 'HiPhish/rainbow-delimiters.nvim' }
-    require('rainbow-delimiters.setup').setup {
-        highlight = {
-            'Red',
-            'Yellow',
-            'Blue',
-            'Orange',
-            'Green',
-            'Violet',
-            'Cyan',
-        },
-    }
-end)
-
--- lsp/mason
-now(function()
-    add { source = 'neovim/nvim-lspconfig' }
-    add {
-        source = 'mason-org/mason.nvim',
-        depends = {
-            'neovim/nvim-lspconfig',
-            'mason-org/mason-lspconfig.nvim',
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
-        },
-    }
-
-    require('mason').setup {
-        providers = { 'mason.providers.client' },
-    }
-    require('mason-lspconfig').setup {
-        ensure_installed = {
-            'bashls',
-            'clangd',
-            'cssls',
-            'emmet_language_server',
-            'eslint',
-            'harper_ls',
-            'html',
-            'jdtls',
-            'jsonls',
-            'lua_ls',
-            'pyright',
-            'rust_analyzer',
-            'sqlls',
-            'svelte',
-            'texlab',
-            'ts_ls',
-        },
-        automatic_enable = {
-            exclude = {
-                -- manage with rustaceanvim
-                'rust_analyzer',
-            },
-        },
-    }
-
-    require('mason-tool-installer').setup {
-        ensure_installed = {
-            'autopep8',
-            'clang-format',
-            'eslint_d',
-            'prettier',
-            'ruff',
-            'stylua',
-            'selene',
-        },
-    }
-
-    vim.lsp.config('harper_ls', {
-        settings = {
-            ['harper-ls'] = {
-                linters = {
-                    SentenceCapitalization = false,
-                    SpellCheck = false,
-                },
-            },
-        },
-    })
-
-    vim.lsp.config('emmet_language_server', {
-        filetypes = {
-            'css',
-            'eruby',
-            'html',
-            'javascript',
-            'javascriptreact',
-            'less',
-            'sass',
-            'scss',
-            'pug',
-            'typescriptreact',
-            'rust', -- for leptos
-        },
-    })
-end)
-
--- local lsp conf
-now(function()
-    add { source = 'mrjones2014/codesettings.nvim' }
-    vim.lsp.config('*', {
-        before_init = function(_, config)
-            local codesettings = require 'codesettings'
-            codesettings.with_local_settings(config.name, config)
-        end,
-    })
-end)
-
--- rust
-now(function()
-    add { source = 'mrcjkb/rustaceanvim', checkout = 'v8.0.4', monitor = 'master' }
-    vim.g.rustaceanvim = {
-        server = {
-            default_settings = {
-                ['rust-analyzer'] = {
-                    -- all features for leptos
-                    cargo = {
-                        features = 'all',
-                    },
-                    procMacro = {
-                        ignored = {
-                            -- leptos macros
-                            leptos_macro = {
-                                -- optional: --
-                                -- "component",
-                                'server',
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    }
-end)
-
 -- completion
-now(function()
-    add { source = 'saghen/blink.cmp', checkout = 'v1.10.1', monitor = 'main' }
-    require('blink.cmp').setup {
-        keymap = { preset = 'super-tab' },
-        completion = {
-            list = {
-                selection = {
-                    preselect = function(_)
-                        return not require('blink.cmp').snippet_active { direction = 1 }
-                    end,
-                },
+require('blink.cmp').setup {
+    keymap = { preset = 'super-tab' },
+    completion = {
+        list = {
+            selection = {
+                preselect = function(_)
+                    return not require('blink.cmp').snippet_active { direction = 1 }
+                end,
             },
-            documentation = { auto_show = true },
-            ghost_text = { enabled = true },
         },
-        signature = { enabled = true },
-        snippets = { preset = 'mini_snippets' },
-        sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
-        },
-    }
-end)
+        documentation = { auto_show = true },
+        ghost_text = { enabled = true },
+    },
+    signature = { enabled = true },
+    snippets = { preset = 'mini_snippets' },
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+}
 
 -- formatter
 later(function()
-    add { source = 'stevearc/conform.nvim' }
     require('conform').setup {
         formatters_by_ft = {
             lua = { 'stylua' },
+            toml = { 'taplo' },
         },
         format_on_save = {
             -- These options will be passed to conform.format()
@@ -357,53 +209,12 @@ later(function()
     }
 end)
 
--- pickers
-now(function()
-    add { source = 'folke/snacks.nvim' }
-    ---@diagnostic disable-next-line: undefined-global
-    Snacks.setup {
-        bigfile = { enabled = true },
-        picker = { enabled = true },
-        quickfile = { enabled = true },
-        scope = { enabled = true },
-        statuscolumn = { enabled = true },
-        words = { enabled = true },
-    }
-
-    -- clipboard
-    add { source = 'gbprod/yanky.nvim' }
-    require('yanky').setup()
-end)
-
--- diagonstic list
+-- clipboard
 later(function()
-    add { source = 'folke/trouble.nvim' }
-    require('trouble').setup()
-end)
-
--- git helper
-now(function()
-    add { source = 'tpope/vim-fugitive' }
-end)
-
--- file jumping
-now(function()
-    add { source = 'otavioschwanck/arrow.nvim' }
-    require('arrow').setup {
-        show_icons = true,
-        leader_key = '-', -- Recommended to be a single key
-        buffer_leader_key = 'm', -- Per Buffer Mappings
-    }
+    require('yanky').setup()
 end)
 
 -- better quickfix
 later(function()
-    add { source = 'stevearc/quicker.nvim' }
     require('quicker').setup()
-end)
-
--- latex
-now(function()
-    add { source = 'lervag/vimtex' }
-    vim.g.vimtex_view_method = 'zathura'
 end)

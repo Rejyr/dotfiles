@@ -1,0 +1,82 @@
+{
+  "plugins": {
+    "arrow.nvim": {
+      "rev": "6e0f726f55f99332dd726a53effd6813786b6d49",
+      "src": "https://github.com/otavioschwanck/arrow.nvim"
+    },
+    "blink.cmp": {
+      "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.10.1'"
+    },
+    "codesettings.nvim": {
+      "rev": "20e58f51db14b7374000031c246a58efe622c90a",
+      "src": "https://github.com/mrjones2014/codesettings.nvim"
+    },
+    "conform.nvim": {
+      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "everforest-nvim": {
+      "rev": "323e7633034a8068636a11597cec03bca5465c50",
+      "src": "https://github.com/neanias/everforest-nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "25f609e7fca78af7cede4f9fa3af8a94b1c4950b",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason-tool-installer.nvim": {
+      "rev": "443f1ef8b5e6bf47045cb2217b6f748a223cf7dc",
+      "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
+    },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "3923662bf3d6ca49a9503f8d7196ea0450983e6a",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "8e2084bf5e40c79c1f42210a6ef96a0a4793a763",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "7caec274fd19c12b55902a5b795100d21531391f",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "quicker.nvim": {
+      "rev": "063cc44da1eef8681bbd653b29d3bc961780886a",
+      "src": "https://github.com/stevearc/quicker.nvim"
+    },
+    "rainbow-delimiters.nvim": {
+      "rev": "50080ed0f44dbc18ae13b81278a01b951a06127a",
+      "src": "https://github.com/HiPhish/rainbow-delimiters.nvim"
+    },
+    "rustaceanvim": {
+      "rev": "f2f0c1231a5b019dbc1fd6dafac1751c878925a3",
+      "src": "https://github.com/mrcjkb/rustaceanvim",
+      "version": "'v8.0.4'"
+    },
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vimtex": {
+      "rev": "9306903316c3ddd250676b7cf97c84a84c9c8f99",
+      "src": "https://github.com/lervag/vimtex"
+    },
+    "yanky.nvim": {
+      "rev": "784188e0a7363e762e53140f39124d786aec0832",
+      "src": "https://github.com/gbprod/yanky.nvim"
+    }
+  }
+}
