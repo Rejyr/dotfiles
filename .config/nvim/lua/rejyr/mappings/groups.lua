@@ -20,8 +20,8 @@ local groups = {
         desc = '+lsp',
         mappings = {
             { 'gD', '<cmd>lua vim.lsp.buf.type_definition()<cr>', { desc = 'Type Definition' } },
-            { 'gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>', { desc = 'Goto Previous Diagnostic' } },
-            { 'gn', '<cmd>lua vim.diagnostic.goto_next()<cr>', { desc = 'Goto Next Diagnostic' } },
+            { 'gp', '<cmd>lua vim.diagnostic.jump({count=-1})<cr>', { desc = 'Goto Previous Diagnostic' } },
+            { 'gn', '<cmd>lua vim.diagnostic.jump({count=1})<cr>', { desc = 'Goto Next Diagnostic' } },
             { 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code Action' } },
             { 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'Definition' } },
             { 'gri', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 'Implementation' } },
