@@ -17,7 +17,7 @@ on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/message.oga
 
 # [ STYLE OPTIONS ]
 # which installed font for notification( any font installed )
-font= Iosevka 12
+font= IosevkaNF 12
 
 # background color of notification( #RRGGBB | #RRGGBBAA )
 background-color=#2d353be0

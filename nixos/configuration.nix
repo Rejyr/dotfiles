@@ -47,7 +47,15 @@
 
 
   environment.systemPackages = with pkgs; [
+    bash
     neovim
+    python3
+    uv
+  ];
+  programs.niri.enable = true;
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
   ];
 
   nix.gc = {
