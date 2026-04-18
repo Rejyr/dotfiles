@@ -3,24 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.zathura = {
+  flake.wrapperModules.zathura = {
     pkgs,
     lib,
     ...
   }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.myZathura
-    ];
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myZathura = inputs.wrapper-modules.wrappers.zathura.wrap {
-      inherit pkgs;
+    config = {
       mappings = {
         "D" = "set \"first-page-column 1:1\"";
         "<C-D>" = "set \"first-page-column 1:2\"";
@@ -51,6 +39,18 @@
         recolor = "true";
         recolor-keephue = "false";
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.zathura = inputs.wrapper-modules.wrappers.zathura.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.zathura];
     };
   };
 }

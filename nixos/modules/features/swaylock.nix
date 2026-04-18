@@ -3,24 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.swaylock = {
+  flake.wrapperModules.swaylock = {
     pkgs,
     lib,
     ...
   }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.mySwaylock
-    ];
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.mySwaylock = inputs.wrapper-modules.wrappers.swaylock.wrap {
-      inherit pkgs;
+    config = {
       settings = {
         ignore-empty-password = true;
         show-failed-attempts = true;
@@ -65,6 +53,18 @@
         caps-lock-bs-hl-color = "e67e80";
         text-caps-lock-color = "7fbbb3";
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.swaylock = inputs.wrapper-modules.wrappers.swaylock.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.swaylock];
     };
   };
 }

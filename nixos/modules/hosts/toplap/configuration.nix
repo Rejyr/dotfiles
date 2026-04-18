@@ -9,12 +9,6 @@
     imports = [
       self.nixosModules.toplapHardware
       self.nixosModules.nvf
-      self.nixosModules.foot
-      self.nixosModules.fuzzel
-      self.nixosModules.mako
-      self.nixosModules.swaylock
-      self.nixosModules.waybar
-      self.nixosModules.zathura
     ];
 
     boot.loader.systemd-boot.enable = true;
@@ -59,6 +53,12 @@
 
     environment.systemPackages = with pkgs; [
       selfpkgs.fastfetch
+      selfpkgs.foot
+      selfpkgs.fuzzel
+      selfpkgs.mako
+      selfpkgs.swaylock
+      selfpkgs.waybar
+      selfpkgs.zathura
       bash
       neovim
       python3

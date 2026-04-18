@@ -3,24 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.fuzzel = {
+  flake.wrapperModules.fuzzel = {
     pkgs,
     lib,
     ...
   }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.myFuzzel
-    ];
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myFuzzel = inputs.wrapper-modules.wrappers.fuzzel.wrap {
-      inherit pkgs;
+    config = {
       settings = {
         main = {
           dpi-aware = "no";
@@ -56,6 +44,18 @@
           exit-immediately-if-empty = "yes";
         };
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.fuzzel = inputs.wrapper-modules.wrappers.fuzzel.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.fuzzel];
     };
   };
 }

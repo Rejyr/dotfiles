@@ -3,26 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.waybar = {
+  flake.wrapperModules.waybar = {
     pkgs,
     lib,
     ...
   }: {
-    programs.waybar = {
-      enable = true;
-      package =
-        self.packages.${pkgs.stdenv.hostPlatform.system}.myWaybar;
-    };
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myWaybar = inputs.wrapper-modules.wrappers.waybar.wrap {
-      inherit pkgs;
+    config = {
       "style.css".path = ./style.css;
       settings = {
         layer = "top";
@@ -235,6 +221,18 @@
           on-click = "${./scripts/powermenu.sh}";
         };
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.waybar = inputs.wrapper-modules.wrappers.waybar.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.waybar];
     };
   };
 }

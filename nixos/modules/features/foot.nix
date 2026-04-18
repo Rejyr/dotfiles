@@ -3,25 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.foot = {
+  flake.wrapperModules.foot = {
     pkgs,
     lib,
     ...
   }: {
-    programs.foot = {
-      enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myFoot;
-    };
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myFoot = inputs.wrapper-modules.wrappers.foot.wrap {
-      inherit pkgs;
+    config = {
       settings = {
         main = {
           term = "foot";
@@ -59,6 +46,18 @@
           bright7 = "d3c6aa"; # bright white
         };
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.foot = inputs.wrapper-modules.wrappers.foot.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.foot];
     };
   };
 }

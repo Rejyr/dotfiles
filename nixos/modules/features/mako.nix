@@ -3,24 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.mako = {
+  flake.wrapperModules.mako = {
     pkgs,
     lib,
     ...
   }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.myMako
-    ];
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myMako = inputs.wrapper-modules.wrappers.mako.wrap {
-      inherit pkgs;
+    config = {
       settings = {
         max-history = 5;
         sort = "+time";
@@ -64,6 +52,18 @@
         layer = "top";
         anchor = "bottom-right";
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.mako = inputs.wrapper-modules.wrappers.mako.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.mako];
     };
   };
 }
