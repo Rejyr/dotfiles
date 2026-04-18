@@ -3,25 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.niri = {
+  flake.wrapperModules.niri = {
     pkgs,
     lib,
     ...
   }: {
-    programs.niri = {
-      enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myNiri;
-    };
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myNiri = inputs.wrapper-modules.wrappers.niri.wrap {
-      inherit pkgs;
+    config = {
       settings = let
         yes = _: {};
       in {
@@ -390,6 +377,13 @@
           "Mod+Shift+E".quit = yes;
         };
       };
+    };
+  };
+
+  perSystem = {pkgs, ...}: {
+    packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.niri];
     };
   };
 }
