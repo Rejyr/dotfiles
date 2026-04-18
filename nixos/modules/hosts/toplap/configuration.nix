@@ -7,6 +7,7 @@
     imports = [
       self.nixosModules.toplapHardware
       self.nixosModules.nvf
+      self.nixosModules.foot
     ];
 
     boot.loader.systemd-boot.enable = true;

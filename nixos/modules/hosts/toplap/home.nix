@@ -23,7 +23,6 @@
       eza
       fastfetch
       fd
-      foot
       fzf
       gammastep
       imv
@@ -75,7 +74,6 @@
 
     xdg.configFile.fish.source = ../../../../.config/fish;
     xdg.configFile.fastfetch.source = ../../../../.config/fastfetch;
-    xdg.configFile.foot.source = ../../../../.config/foot;
     xdg.configFile.niri.source = ../../../../.config/niri;
     xdg.configFile.fuzzel.source = ../../../../.config/fuzzel;
     xdg.configFile.mako.source = ../../../../.config/mako;
