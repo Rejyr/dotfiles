@@ -9,7 +9,6 @@
     imports = [
       self.nixosModules.toplapHardware
       self.nixosModules.nvf
-      self.nixosModules.fastfetch
       self.nixosModules.foot
       self.nixosModules.fuzzel
       self.nixosModules.mako
@@ -17,11 +16,6 @@
       self.nixosModules.waybar
       self.nixosModules.zathura
     ];
-
-    programs.niri = {
-      enable = true;
-      package = selfpkgs.niri;
-    };
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
@@ -58,7 +52,13 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    programs.niri = {
+      enable = true;
+      package = selfpkgs.niri;
+    };
+
     environment.systemPackages = with pkgs; [
+      selfpkgs.fastfetch
       bash
       neovim
       python3

@@ -3,24 +3,12 @@
   inputs,
   ...
 }: {
-  flake.nixosModules.fastfetch = {
+  flake.wrapperModules.fastfetch = {
     pkgs,
     lib,
     ...
   }: {
-    environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.myFastfetch
-    ];
-  };
-
-  perSystem = {
-    pkgs,
-    lib,
-    self',
-    ...
-  }: {
-    packages.myFastfetch = inputs.wrapper-modules.wrappers.fastfetch.wrap {
-      inherit pkgs;
+    config = {
       settings = {
         logo = {
           type = "small";
@@ -72,6 +60,18 @@
           }
         ];
       };
+    };
+  };
+
+  perSystem = {
+    pkgs,
+    lib,
+    self',
+    ...
+  }: {
+    packages.fastfetch = inputs.wrapper-modules.wrappers.fastfetch.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.fastfetch];
     };
   };
 }
