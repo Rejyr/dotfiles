@@ -21,7 +21,6 @@
       btop
       dust
       eza
-      fastfetch
       fd
       fzf
       gammastep
@@ -73,7 +72,6 @@
     programs.librewolf.enable = true;
 
     xdg.configFile.fish.source = ../../../../.config/fish;
-    xdg.configFile.fastfetch.source = ../../../../.config/fastfetch;
     xdg.configFile.niri.source = ../../../../.config/niri;
     xdg.configFile.fuzzel.source = ../../../../.config/fuzzel;
     xdg.configFile.mako.source = ../../../../.config/mako;
