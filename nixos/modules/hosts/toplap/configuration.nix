@@ -11,6 +11,7 @@
       self.nixosModules.foot
       self.nixosModules.fuzzel
       self.nixosModules.mako
+      self.nixosModules.niri
       self.nixosModules.swaylock
       self.nixosModules.waybar
       self.nixosModules.zathura
@@ -57,7 +58,6 @@
       python3
       uv
     ];
-    programs.niri.enable = true;
 
     fonts.packages = with pkgs; [
       nerd-fonts.iosevka

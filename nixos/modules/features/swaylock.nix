@@ -29,7 +29,7 @@
         image = "~/dotfiles/wallpapers/wallpaper.jpg";
         scaling = "fill";
         indicator-caps-lock = true;
-        font = "Iosevka";
+        font = "IosevkaNF";
 
         indicator-radius = 240;
         indicator-thickness = 20;

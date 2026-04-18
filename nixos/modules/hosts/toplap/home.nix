@@ -67,7 +67,6 @@
     programs.librewolf.enable = true;
 
     xdg.configFile.fish.source = ../../../../.config/fish;
-    xdg.configFile.niri.source = ../../../../.config/niri;
     xdg.configFile.mpd.source = ../../../../.config/mpd;
     xdg.configFile.rmpc.source = ../../../../.config/rmpc;
     xdg.configFile.zellij.source = ../../../../.config/zellij;
