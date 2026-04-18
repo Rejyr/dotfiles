@@ -3,11 +3,6 @@
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles/.config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-  configs = [
-    "nvim"
-    "fish"
-    "fastfetch" 
-  ];
 in
 
 {
@@ -72,7 +67,6 @@ in
   services.polkit-gnome.enable = true;
   programs.librewolf.enable = true;
 
-  xdg.configFile.nvim.source = ../.config/nvim;
   xdg.configFile.fish.source = ../.config/fish;
   xdg.configFile.fastfetch.source = ../.config/fastfetch;
   xdg.configFile.foot.source = ../.config/foot;
