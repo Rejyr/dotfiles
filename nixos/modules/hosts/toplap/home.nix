@@ -45,7 +45,6 @@
       xdg-desktop-portal-gnome
       xwayland-satellite
       yazi
-      zathura
       zellij
       zoxide
     ];

@@ -13,6 +13,7 @@
       self.nixosModules.mako
       self.nixosModules.swaylock
       self.nixosModules.waybar
+      self.nixosModules.zathura
     ];
 
     boot.loader.systemd-boot.enable = true;
