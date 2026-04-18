@@ -11,6 +11,7 @@
       self.nixosModules.foot
       self.nixosModules.fuzzel
       self.nixosModules.mako
+      self.nixosModules.swaylock
     ];
 
     boot.loader.systemd-boot.enable = true;
