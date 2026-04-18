@@ -64,7 +64,6 @@
       };
     };
 
-    programs.fuzzel.enable = true;
     programs.swaylock.enable = true;
     programs.waybar.enable = true;
     services.mako.enable = true;
@@ -73,7 +72,6 @@
 
     xdg.configFile.fish.source = ../../../../.config/fish;
     xdg.configFile.niri.source = ../../../../.config/niri;
-    xdg.configFile.fuzzel.source = ../../../../.config/fuzzel;
     xdg.configFile.mako.source = ../../../../.config/mako;
     xdg.configFile.mpd.source = ../../../../.config/mpd;
     xdg.configFile.rmpc.source = ../../../../.config/rmpc;

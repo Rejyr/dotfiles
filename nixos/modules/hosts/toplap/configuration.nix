@@ -9,6 +9,7 @@
       self.nixosModules.nvf
       self.nixosModules.fastfetch
       self.nixosModules.foot
+      self.nixosModules.fuzzel
     ];
 
     boot.loader.systemd-boot.enable = true;
