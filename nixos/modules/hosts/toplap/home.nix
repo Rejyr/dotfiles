@@ -27,10 +27,8 @@
       imv
       jq
       mpc
-      mpd
       mpv
       noto-fonts
-      pipewire
       playerctl
       ripgrep
       rmpc
@@ -61,10 +59,26 @@
       };
     };
 
+    services.mpd = {
+      enable = true;
+      musicDirectory = "~/Music";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "My PipeWire Output"
+        }
+        audio_output {
+          type "fifo"
+          name "my_fifo"
+          path "/tmp/mpd.fifo"
+          format "44100:16:2"
+        }
+      '';
+    };
+    services.mpdris2-rs.enable = true;
     services.polkit-gnome.enable = true;
     programs.librewolf.enable = true;
 
-    xdg.configFile.mpd.source = ../../../../.config/mpd;
     xdg.configFile.rmpc.source = ../../../../.config/rmpc;
     xdg.configFile.zellij.source = ../../../../.config/zellij;
 
