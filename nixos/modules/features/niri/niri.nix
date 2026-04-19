@@ -23,6 +23,7 @@
         outputs = {};
         # TODO: more niri startup
         spawn-at-startup = [
+          "waybar"
           "mako"
           "mpdris2-rs"
         ];
