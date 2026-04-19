@@ -46,10 +46,8 @@
       xwayland-satellite
       yazi
       zellij
-      zoxide
     ];
 
-    programs.fish.enable = true;
     programs.gh.enable = true;
     programs.git = {
       enable = true;
@@ -66,7 +64,6 @@
     services.polkit-gnome.enable = true;
     programs.librewolf.enable = true;
 
-    xdg.configFile.fish.source = ../../../../.config/fish;
     xdg.configFile.mpd.source = ../../../../.config/mpd;
     xdg.configFile.rmpc.source = ../../../../.config/rmpc;
     xdg.configFile.zellij.source = ../../../../.config/zellij;
