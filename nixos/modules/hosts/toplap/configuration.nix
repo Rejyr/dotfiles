@@ -16,7 +16,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     networking.hostName = "toplap";
-    networking.networkmanager.enable = true;
+    networking.wireless.iwd.enable = true;
 
     time.timeZone = "America/New_York";
     i18n.defaultLocale = "en_US.UTF-8";
@@ -47,6 +47,11 @@
 
     nixpkgs.config.allowUnfree = true;
 
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+
     programs.niri = {
       enable = true;
       package = selfpkgs.niri;
@@ -68,6 +73,9 @@
       neovim
       python3
       uv
+      bluetui
+      impala
+      wiremix
     ];
 
     fonts.packages = with pkgs; [

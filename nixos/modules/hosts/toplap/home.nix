@@ -19,6 +19,7 @@
       bat
       bluez
       btop
+      cliphist
       dust
       eza
       fd
