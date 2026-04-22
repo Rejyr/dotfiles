@@ -15,6 +15,11 @@
   };
 
   flake.homeModules.rejyrModule = {pkgs, ...}: {
+    imports = [
+      self.homeModules.git
+      self.homeModules.mpd
+    ];
+
     home.packages = with pkgs; [
       bat
       bluez
@@ -27,12 +32,10 @@
       gammastep
       imv
       jq
-      mpc
       mpv
       noto-fonts
       playerctl
       ripgrep
-      rmpc
       rsync
       rustup
       swaybg
@@ -47,40 +50,9 @@
       zellij
     ];
 
-    programs.gh.enable = true;
-    programs.git = {
-      enable = true;
-      signing.format = null;
-      settings = {
-        user = {
-          name = "Jerry Wang";
-          email = "jerrylwang123@gmail.com";
-          init.defaultBranch = "main";
-        };
-      };
-    };
-
-    services.mpd = {
-      enable = true;
-      musicDirectory = "~/Music";
-      extraConfig = ''
-        audio_output {
-          type "pipewire"
-          name "My PipeWire Output"
-        }
-        audio_output {
-          type "fifo"
-          name "my_fifo"
-          path "/tmp/mpd.fifo"
-          format "44100:16:2"
-        }
-      '';
-    };
-    services.mpdris2-rs.enable = true;
     services.polkit-gnome.enable = true;
     programs.librewolf.enable = true;
 
-    xdg.configFile.rmpc.source = ../../../../.config/rmpc;
     xdg.configFile.zellij.source = ../../../../.config/zellij;
 
     home.stateVersion = "24.11";
