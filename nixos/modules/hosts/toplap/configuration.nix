@@ -83,6 +83,7 @@
       selfpkgs.swaylock
       selfpkgs.waybar
       selfpkgs.zathura
+      selfpkgs.zellij
       bash
       neovim
       python3

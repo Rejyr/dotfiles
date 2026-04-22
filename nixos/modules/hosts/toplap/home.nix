@@ -47,13 +47,10 @@
       xdg-desktop-portal-gnome
       xwayland-satellite
       yazi
-      zellij
     ];
 
     services.polkit-gnome.enable = true;
     programs.librewolf.enable = true;
-
-    xdg.configFile.zellij.source = ../../../../.config/zellij;
 
     home.stateVersion = "24.11";
   };
