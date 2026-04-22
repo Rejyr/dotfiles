@@ -3,11 +3,19 @@
   inputs,
   ...
 }: {
+  flake.nixosConfigurations.toplap = inputs.nixpkgs.lib.nixosSystem {
+    modules = [
+      self.nixosModules.toplapModule
+      self.nixosModules.myHomeManager
+    ];
+  };
+
   flake.nixosModules.toplapModule = {pkgs, ...}: let
     selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
   in {
     imports = [
       self.nixosModules.toplapHardware
+      inputs.nvf.nixosModules.default
       self.nixosModules.nvf
       self.nixosModules.fish
       self.nixosModules.audio
