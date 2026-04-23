@@ -10,11 +10,9 @@
   }: {
     config = {
       extraPackages = with pkgs; [
-        cliphist
         gammastep
         swaybg
         swayidle
-        wl-clipboard
         xdg-desktop-portal-gnome
         xwayland-satellite
       ];

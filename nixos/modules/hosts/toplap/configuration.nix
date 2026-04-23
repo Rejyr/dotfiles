@@ -62,6 +62,9 @@
       rustup
       uv
 
+      cliphist
+      wl-clipboard
+
       imv
       mpv
       playerctl
