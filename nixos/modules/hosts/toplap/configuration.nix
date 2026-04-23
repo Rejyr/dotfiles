@@ -24,6 +24,7 @@
       self.nixosModules.keyboard
       self.nixosModules.networking
       self.nixosModules.powerManagement
+      self.nixosModules.shellTools
       self.nixosModules.tzLocale
     ];
 
@@ -58,7 +59,12 @@
       bash
       neovim
       python3
+      rustup
       uv
+
+      imv
+      mpv
+      playerctl
     ];
 
     nix.gc = {

@@ -31,35 +31,6 @@
       self.homeModules.mpd
     ];
 
-    home.packages = with pkgs; [
-      bat
-      bluez
-      btop
-      cliphist
-      dust
-      eza
-      fd
-      fzf
-      gammastep
-      imv
-      jq
-      mpv
-      noto-fonts
-      playerctl
-      ripgrep
-      rsync
-      rustup
-      swaybg
-      swayidle
-      unrar
-      unzip
-      uv
-      wl-clipboard
-      xdg-desktop-portal-gnome
-      xwayland-satellite
-      yazi
-    ];
-
     services.polkit-gnome.enable = true;
     programs.librewolf.enable = true;
 
