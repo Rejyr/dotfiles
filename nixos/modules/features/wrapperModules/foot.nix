@@ -13,7 +13,7 @@
         main = {
           term = "foot";
           font = "IosevkaNF:size=16, Noto Color Emoji:size=16";
-          shell = "${lib.getExe pkgs.fish}";
+          shell = "nu";
           pad = "8x8";
         };
         key-bindings = {
