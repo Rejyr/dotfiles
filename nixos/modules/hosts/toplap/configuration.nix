@@ -24,6 +24,7 @@
         self.nixosModules.bootloader
         self.nixosModules.clipboard
         self.nixosModules.fonts
+        self.nixosModules.geoclue2
         self.nixosModules.keyboard
         self.nixosModules.networking
         self.nixosModules.powerManagement

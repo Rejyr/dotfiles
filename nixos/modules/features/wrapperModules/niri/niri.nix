@@ -10,11 +10,14 @@
       lib,
       ...
     }:
+    let
+      selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+    in
     {
       config = {
         extraPackages = with pkgs; [
           brightnessctl
-          gammastep
+          selfpkgs.gammastep
           swaybg
           swayidle
           xdg-desktop-portal-gnome
@@ -39,6 +42,7 @@
               "waybar"
               "mako"
               "mpdris2-rs"
+              "gammastep"
             ];
             spawn-sh-at-startup = [
               "swaybg -m fill -i ~/dotfiles/wallpapers/wallpaper.jpg"
