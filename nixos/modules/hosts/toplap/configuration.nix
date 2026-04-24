@@ -30,6 +30,7 @@
         self.nixosModules.powerManagement
         self.nixosModules.shellTools
         self.nixosModules.tzLocale
+        self.nixosModules.udevExtraRules
       ];
 
       my_bootloader_config = {
