@@ -15,8 +15,6 @@
   in {
     imports = [
       self.nixosModules.toplapHardware
-      inputs.nvf.nixosModules.default
-      self.nixosModules.nvf
       self.nixosModules.fish
       self.nixosModules.audio
       self.nixosModules.bluetooth
@@ -59,7 +57,6 @@
       selfpkgs.zathura
       selfpkgs.zellij
       bash
-      neovim
       python3
       rustup
       uv

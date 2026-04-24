@@ -50,11 +50,7 @@
         prettier
         stylua
       ];
-      settings = {
-        config_directory = ./.;
-        dont_link = true;
-      };
-      binName = "nvim2";
+      settings.config_directory = ./.;
     };
   };
 
