@@ -33,12 +33,12 @@
     {
       imports = [
         self.homeModules.git
+        self.homeModules.librewolf
         self.homeModules.mpd
         self.homeModules.style
       ];
 
       services.polkit-gnome.enable = true;
-      programs.librewolf.enable = true;
 
       home.stateVersion = "24.11";
     };
