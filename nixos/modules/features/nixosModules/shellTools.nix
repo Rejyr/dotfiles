@@ -14,7 +14,7 @@
     {
       environment.systemPackages = with pkgs; [
         bat
-        btop
+        bottom
         dust
         eza
         fd

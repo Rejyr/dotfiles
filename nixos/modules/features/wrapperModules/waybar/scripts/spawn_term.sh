@@ -36,7 +36,7 @@ main() {
     spawn_term impala bottom-left
     ;;
   "cpu")
-    spawn_term btop bottom-left
+    spawn_term btm bottom-left
     ;;
   *)
     return 3
