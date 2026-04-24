@@ -19,7 +19,6 @@
     {
       imports = [
         self.nixosModules.toplapHardware
-        self.nixosModules.fish
         self.nixosModules.audio
         self.nixosModules.bluetooth
         self.nixosModules.fonts
