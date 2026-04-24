@@ -52,6 +52,7 @@
       selfpkgs.foot
       selfpkgs.fuzzel
       selfpkgs.mako
+      selfpkgs.neovim
       selfpkgs.nushell
       selfpkgs.swaylock
       selfpkgs.waybar
