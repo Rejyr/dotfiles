@@ -1,24 +1,78 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+$line_break\
+$python\
+$character"""
+
 continuation_prompt = "[.](bright-black) "
 
 [character]
-success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
+success_symbol = "[ν](bold green)"
+error_symbol = "[ν](bold red)"
 vimcmd_symbol = "[<](bold green)"
 vimcmd_visual_symbol = "[<](bold yellow)"
 vimcmd_replace_symbol = "[<](bold purple)"
 vimcmd_replace_one_symbol = "[<](bold purple)"
 
+[directory]
+fish_style_pwd_dir_length = 1
+truncation_length = 1
+read_only = " ro"
+
 [git_commit]
 tag_symbol = " tag "
 
 [git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218)( $ahead_behind$stashed)]($style) "
+style = "cyan"
+# conflicted = "="
+# untracked = "?"
+# modified = "!"
+# staged = "+"
+# stashed = '\$'
+# renamed = "r"
+# deleted = "x"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "="
+
 ahead = ">"
 behind = "<"
 diverged = "<>"
-renamed = "r"
-deleted = "x"
+
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bright-black"
+symbol = "git "
+truncation_symbol = "..."
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
+detect_extensions = []
+detect_files = []
+symbol = "py "
 
 [aws]
 symbol = "aws "
@@ -73,9 +127,6 @@ symbol = "deno "
 format = "via [$symbol($version )(target $tfm )]($style)"
 symbol = ".NET "
 
-[directory]
-read_only = " ro"
-
 [docker_context]
 symbol = "docker "
 
@@ -100,10 +151,6 @@ truncation_symbol = "..."
 
 [gcloud]
 symbol = "gcp "
-
-[git_branch]
-symbol = "git "
-truncation_symbol = "..."
 
 [gleam]
 symbol = "gleam "
@@ -269,9 +316,6 @@ symbol = "pulumi "
 
 [purescript]
 symbol = "purs "
-
-[python]
-symbol = "py "
 
 [quarto]
 symbol = "quarto "

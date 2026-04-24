@@ -4,7 +4,6 @@ $env.VISUAL = "nvim"
 $env.EDITOR = "nvim"
 
 alias blctl = bluetoothctl
-alias clf = clear; fastfetch
 alias n = nvim
 alias nf = nvim (fzf)
 alias rc = rmpc
@@ -18,3 +17,5 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
 zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
 carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+
+fastfetch
