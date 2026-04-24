@@ -34,6 +34,7 @@
       imports = [
         self.homeModules.git
         self.homeModules.mpd
+        self.homeModules.style
       ];
 
       services.polkit-gnome.enable = true;
