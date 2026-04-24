@@ -13,6 +13,7 @@
     {
       config = {
         extraPackages = with pkgs; [
+          brightnessctl
           gammastep
           swaybg
           swayidle

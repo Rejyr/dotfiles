@@ -129,6 +129,7 @@
               ""
               ""
             ];
+            tooltip = false;
           };
           "custom/clipboard" = {
             format = " ";
