@@ -21,6 +21,7 @@
         self.nixosModules.toplapHardware
         self.nixosModules.audio
         self.nixosModules.bluetooth
+        self.nixosModules.clipboard
         self.nixosModules.fonts
         self.nixosModules.keyboard
         self.nixosModules.networking
@@ -67,13 +68,6 @@
         python3
         rustup
         uv
-
-        cliphist
-        wl-clipboard
-
-        imv
-        mpv
-        playerctl
       ];
 
       nix.gc = {

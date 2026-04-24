@@ -25,6 +25,11 @@
         unrar
         unzip
         yazi
+
+        # TODO: make media specific config for shellTools
+        imv
+        mpv
+        playerctl
       ];
     };
 }
