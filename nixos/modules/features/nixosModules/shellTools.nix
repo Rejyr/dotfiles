@@ -2,26 +2,29 @@
   self,
   inputs,
   ...
-}: {
-  flake.nixosModules.shellTools = {
-    config,
-    pkgs,
-    lib,
-    ...
-  }: {
-    environment.systemPackages = with pkgs; [
-      bat
-      btop
-      dust
-      eza
-      fd
-      fzf
-      jq
-      ripgrep
-      rsync
-      unrar
-      unzip
-      yazi
-    ];
-  };
+}:
+{
+  flake.nixosModules.shellTools =
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        bat
+        btop
+        dust
+        eza
+        fd
+        fzf
+        jq
+        ripgrep
+        rsync
+        unrar
+        unzip
+        yazi
+      ];
+    };
 }
