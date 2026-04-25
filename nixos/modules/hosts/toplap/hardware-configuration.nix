@@ -12,6 +12,9 @@
       modulesPath,
       ...
     }:
+    let 
+      diskDevice = "/dev/disk/by-uuid/98b17145-b120-45c8-82b8-22da49178e69";
+    in
     {
 
       imports = [
@@ -30,7 +33,7 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        device = diskDevice;
         fsType = "btrfs";
         options = [
           "subvol=root"
@@ -40,7 +43,7 @@
       };
 
       fileSystems."/home" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        device = diskDevice;
         fsType = "btrfs";
         options = [
           "subvol=home"
@@ -50,7 +53,7 @@
       };
 
       fileSystems."/nix" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        device = diskDevice;
         fsType = "btrfs";
         options = [
           "subvol=nix"
@@ -60,7 +63,7 @@
       };
 
       fileSystems."/var/log" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        device = diskDevice;
         fsType = "btrfs";
         options = [
           "subvol=log"
@@ -70,11 +73,11 @@
         neededForBoot = true;
       };
 
-      fileSystems."/persist" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+      fileSystems."/persistent" = {
+        device = diskDevice;
         fsType = "btrfs";
         options = [
-          "subvol=persist"
+          "subvol=persistent"
           "noatime"
           "compress=zstd"
         ];
@@ -82,13 +85,19 @@
       };
 
       fileSystems."/swap" = {
-        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        device = diskDevice;
         fsType = "btrfs";
         options = [
           "subvol=swap"
           "noatime"
         ];
       };
+
+      fileSystems."/boot" =
+        { device = "/dev/disk/by-uuid/780D-32A9";
+          fsType = "vfat";
+          options = [ "fmask=0022" "dmask=0022" ];
+        };
 
       swapDevices = [
         {
