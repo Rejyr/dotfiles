@@ -13,6 +13,7 @@
       ...
     }:
     {
+
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
@@ -29,28 +30,72 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = "/dev/disk/by-uuid/337b2dd3-096c-455d-a565-09e2f36e516e";
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
         fsType = "btrfs";
-        options = [ "subvol=@" ];
-      };
-
-      fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/780D-32A9";
-        fsType = "vfat";
         options = [
-          "fmask=0022"
-          "dmask=0022"
+          "subvol=root"
+          "noatime"
+          "compress=zstd"
         ];
       };
 
-      swapDevices = [ ];
+      fileSystems."/home" = {
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        fsType = "btrfs";
+        options = [
+          "subvol=home"
+          "noatime"
+          "compress=zstd"
+        ];
+      };
 
-      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-      # (the default) this is the recommended approach. When using systemd-networkd it's
-      # still possible to use this option, but it's recommended to use it in conjunction
-      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-      networking.useDHCP = lib.mkDefault true;
-      # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+      fileSystems."/nix" = {
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        fsType = "btrfs";
+        options = [
+          "subvol=nix"
+          "noatime"
+          "compress=zstd"
+        ];
+      };
+
+      fileSystems."/var/log" = {
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        fsType = "btrfs";
+        options = [
+          "subvol=log"
+          "noatime"
+          "compress=zstd"
+        ];
+        neededForBoot = true;
+      };
+
+      fileSystems."/persist" = {
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        fsType = "btrfs";
+        options = [
+          "subvol=persist"
+          "noatime"
+          "compress=zstd"
+        ];
+        neededForBoot = true;
+      };
+
+      fileSystems."/swap" = {
+        device = "/dev/disk/by-uuid/4f28b788-fbd7-409b-b607-f5e84aed063f";
+        fsType = "btrfs";
+        options = [
+          "subvol=swap"
+          "noatime"
+        ];
+      };
+
+      swapDevices = [
+        {
+          device = "/swap/swapfile";
+          size = 16 * 1024;
+        }
+      ];
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
