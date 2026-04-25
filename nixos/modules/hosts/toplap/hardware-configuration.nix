@@ -12,11 +12,7 @@
       modulesPath,
       ...
     }:
-    let 
-      diskDevice = "/dev/disk/by-uuid/98b17145-b120-45c8-82b8-22da49178e69";
-    in
     {
-
       imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
@@ -33,7 +29,7 @@
       boot.extraModulePackages = [ ];
 
       fileSystems."/" = {
-        device = diskDevice;
+        device = "/dev/disk/by-uuid/2c211f3e-d372-4882-bf1f-63b04b46d8cd";
         fsType = "btrfs";
         options = [
           "subvol=root"
@@ -43,7 +39,7 @@
       };
 
       fileSystems."/home" = {
-        device = diskDevice;
+        device = "/dev/disk/by-uuid/2c211f3e-d372-4882-bf1f-63b04b46d8cd";
         fsType = "btrfs";
         options = [
           "subvol=home"
@@ -53,7 +49,7 @@
       };
 
       fileSystems."/nix" = {
-        device = diskDevice;
+        device = "/dev/disk/by-uuid/2c211f3e-d372-4882-bf1f-63b04b46d8cd";
         fsType = "btrfs";
         options = [
           "subvol=nix"
@@ -62,30 +58,8 @@
         ];
       };
 
-      fileSystems."/var/log" = {
-        device = diskDevice;
-        fsType = "btrfs";
-        options = [
-          "subvol=log"
-          "noatime"
-          "compress=zstd"
-        ];
-        neededForBoot = true;
-      };
-
-      fileSystems."/persistent" = {
-        device = diskDevice;
-        fsType = "btrfs";
-        options = [
-          "subvol=persistent"
-          "noatime"
-          "compress=zstd"
-        ];
-        neededForBoot = true;
-      };
-
       fileSystems."/swap" = {
-        device = diskDevice;
+        device = "/dev/disk/by-uuid/2c211f3e-d372-4882-bf1f-63b04b46d8cd";
         fsType = "btrfs";
         options = [
           "subvol=swap"
@@ -93,11 +67,14 @@
         ];
       };
 
-      fileSystems."/boot" =
-        { device = "/dev/disk/by-uuid/780D-32A9";
-          fsType = "vfat";
-          options = [ "fmask=0022" "dmask=0022" ];
-        };
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/780D-32A9";
+        fsType = "vfat";
+        options = [
+          "fmask=0022"
+          "dmask=0022"
+        ];
+      };
 
       swapDevices = [
         {
