@@ -175,6 +175,7 @@ later(function()
     formatters_by_ft = {
       lua = { 'stylua' },
       nix = { 'nixfmt' },
+      python = { 'autopep8' },
       toml = { 'taplo' },
     },
     format_on_save = {
