@@ -45,6 +45,7 @@
               "gammastep"
             ];
             spawn-sh-at-startup = [
+              "swayidle -w before-sleep 'playerctl pause; swaylock -f'"
               "swaybg -m fill -i ~/dotfiles/wallpapers/wallpaper.jpg"
               "wl-paste --watch cliphist store"
             ];
