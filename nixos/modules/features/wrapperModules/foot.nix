@@ -24,7 +24,9 @@
             scrollback-down-half-page = "Control+d";
           };
           colors-dark = {
-            alpha = 1.0;
+            alpha = 0.70;
+            alpha-mode = "default";
+            blur = "yes";
             background = "2d353b";
             foreground = "d3c6aa";
             flash = "e67e80";

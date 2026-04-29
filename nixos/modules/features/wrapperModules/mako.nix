@@ -24,7 +24,7 @@
 
           font = "IosevkaNF 12";
 
-          background-color = "#2d353be0";
+          background-color = "#2d353b70";
           text-color = "#d3c6aae0";
           border-color = "#a7c080e0";
           progress-color = "over #dbbc7fe0";

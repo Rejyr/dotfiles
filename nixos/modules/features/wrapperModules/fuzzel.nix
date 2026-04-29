@@ -28,7 +28,7 @@
             lines = 5;
           };
           colors = {
-            background = "2d353be0";
+            background = "2d353b70";
             text = "d3c6aad0";
             prompt = "d3c6aad0";
             placeholder = "d3c6aaa0";

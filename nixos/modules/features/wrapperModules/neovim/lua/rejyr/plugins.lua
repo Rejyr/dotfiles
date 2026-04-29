@@ -21,6 +21,9 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 -- colorscheme
+vim.g.everforest_background = 'medium'
+vim.g.everforest_ui_contrast = 'high'
+vim.g.everforest_transparent_background = 2
 vim.cmd 'colorscheme everforest'
 vim.cmd 'set background=dark'
 

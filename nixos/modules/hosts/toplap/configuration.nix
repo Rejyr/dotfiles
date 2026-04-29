@@ -73,6 +73,7 @@
         selfpkgs.zellij
         bash
         nixfmt
+        libnotify
         python3
         rustup
         uv

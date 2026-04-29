@@ -69,7 +69,21 @@
             };
             layer-rules = [
               {
-                matches = [ { namespace = "^launcher$"; } ];
+                matches = [
+                  { namespace = "^launcher$"; }
+                  { namespace = "^notifications$"; }
+                  { namespace = "^waybar$"; }
+                ];
+                background-effect = {
+                  blur = true;
+                  xray = false;
+                };
+              }
+              {
+                matches = [
+                  { namespace = "^launcher$"; }
+                  { namespace = "^notifications$"; }
+                ];
                 shadow.on = yes;
               }
               {
@@ -144,19 +158,10 @@
 
               {
                 clip-to-geometry = true;
-                opacity = 0.90;
-              }
-              {
-                matches = [
-                  { app-id = "librewolf"; }
-                ];
-                opacity = 1.0;
-              }
-              {
-                matches = [
-                  { is-floating = true; }
-                ];
-                opacity = 0.95;
+                background-effect = {
+                  blur = true;
+                  xray = false;
+                };
               }
               {
                 matches = [
@@ -189,7 +194,6 @@
 
               shadow = {
                 on = yes;
-                draw-behind-window = true;
                 softness = 10;
                 spread = 5;
                 offset = _: {
@@ -198,7 +202,7 @@
                     y = 5;
                   };
                 };
-                color = "#000a";
+                color = "#0007";
               };
 
               struts = {
