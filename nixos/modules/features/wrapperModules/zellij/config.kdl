@@ -2,6 +2,8 @@ web_client {
     font "monospace"
 }
 
+default_shell "nu"
+
 theme "everforest-dark"
 simplified_ui true
 pane_frames false
