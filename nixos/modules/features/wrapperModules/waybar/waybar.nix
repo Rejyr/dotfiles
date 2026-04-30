@@ -39,7 +39,7 @@
             "custom/powermenu"
           ];
           "custom/launcher" = {
-            format = " ";
+            format = " ";
             tooltip = false;
             on-click = "fuzzel";
           };
