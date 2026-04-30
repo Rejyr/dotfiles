@@ -1,5 +1,6 @@
 $env.config.show_banner = false
 $env.config.table.mode = "psql"
+$env.config.completions.algorithm = "fuzzy"
 $env.VISUAL = "nvim"
 $env.EDITOR = "nvim"
 
@@ -16,6 +17,5 @@ mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 atuin init nu | save -f ($nu.data-dir | path join "vendor/autoload/atuin.nu")
 zoxide init nushell | save -f ($nu.data-dir | path join "vendor/autoload/zoxide.nu")
-carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
 
 fastfetch

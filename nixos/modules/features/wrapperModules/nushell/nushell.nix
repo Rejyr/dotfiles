@@ -14,7 +14,6 @@
       config = {
         extraPackages = with pkgs; [
           atuin
-          carapace
           starship
           zoxide
         ];
