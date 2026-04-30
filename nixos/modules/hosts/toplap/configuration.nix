@@ -29,6 +29,7 @@
         self.nixosModules.networking
         self.nixosModules.powerManagement
         self.nixosModules.shellTools
+        self.nixosModules.texlive
         self.nixosModules.tzLocale
         self.nixosModules.udevExtraRules
       ];
