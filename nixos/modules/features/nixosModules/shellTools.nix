@@ -11,25 +11,35 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.shellTools;
+      selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
+    in
     {
-      environment.systemPackages = with pkgs; [
-        bat
-        bottom
-        dust
-        eza
-        fd
-        fzf
-        jq
-        ripgrep
-        rsync
-        unrar
-        unzip
-        yazi
+      options.myFeatures.shellTools = {
+        enable = lib.mkEnableOption "Shell Tools";
+      };
 
-        # TODO: make media specific config for shellTools
-        imv
-        mpv
-        playerctl
-      ];
+      config = lib.mkIf cfg.enable {
+        environment.systemPackages = with pkgs; [
+          selfpkgs.fastfetch
+          selfpkgs.neovim
+          selfpkgs.nushell
+          selfpkgs.zellij
+
+          bat
+          bottom
+          dust
+          eza
+          fd
+          fzf
+          jq
+          ripgrep
+          rsync
+          unrar
+          unzip
+          yazi
+        ];
+      };
     };
 }

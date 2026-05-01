@@ -11,10 +11,19 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.clipboard;
+    in
     {
-      environment.systemPackages = with pkgs; [
-        cliphist
-        wl-clipboard
-      ];
+      options.myFeatures.clipboard = {
+        enable = lib.mkEnableOption "Clipboard";
+      };
+
+      config = lib.mkIf cfg.enable {
+        environment.systemPackages = with pkgs; [
+          cliphist
+          wl-clipboard
+        ];
+      };
     };
 }

@@ -20,6 +20,7 @@
           selfpkgs.gammastep
           swaybg
           swayidle
+          selfpkgs.swaylock
           xdg-desktop-portal-gnome
           xwayland-satellite
         ];

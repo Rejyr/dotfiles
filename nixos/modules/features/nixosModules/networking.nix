@@ -11,11 +11,20 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.networking;
+    in
     {
-      networking.wireless.iwd.enable = true;
+      options.myFeatures.networking = {
+        enable = lib.mkEnableOption "Networking";
+      };
 
-      environment.systemPackages = with pkgs; [
-        impala
-      ];
+      config = lib.mkIf cfg.enable {
+        networking.wireless.iwd.enable = true;
+
+        environment.systemPackages = with pkgs; [
+          impala
+        ];
+      };
     };
 }

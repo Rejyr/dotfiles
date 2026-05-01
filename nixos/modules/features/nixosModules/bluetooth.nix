@@ -11,14 +11,23 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.bluetooth;
+    in
     {
-      hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = true;
+      options.myFeatures.bluetooth = {
+        enable = lib.mkEnableOption "Bluetooth";
       };
 
-      environment.systemPackages = with pkgs; [
-        bluetui
-      ];
+      config = lib.mkIf cfg.enable {
+        hardware.bluetooth = {
+          enable = true;
+          powerOnBoot = true;
+        };
+
+        environment.systemPackages = with pkgs; [
+          bluetui
+        ];
+      };
     };
 }

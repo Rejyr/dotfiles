@@ -11,14 +11,23 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.audio;
+    in
     {
-      services.pipewire = {
-        enable = true;
-        pulse.enable = true;
+      options.myFeatures.audio = {
+        enable = lib.mkEnableOption "Audio";
       };
 
-      environment.systemPackages = with pkgs; [
-        wiremix
-      ];
+      config = lib.mkIf cfg.enable {
+        services.pipewire = {
+          enable = true;
+          pulse.enable = true;
+        };
+
+        environment.systemPackages = with pkgs; [
+          wiremix
+        ];
+      };
     };
 }

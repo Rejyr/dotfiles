@@ -11,9 +11,18 @@
       lib,
       ...
     }:
+    let
+      cfg = config.myFeatures.geoclue2;
+    in
     {
-      location.provider = "geoclue2";
+      options.myFeatures.geoclue2 = {
+        enable = lib.mkEnableOption "Geoclue";
+      };
 
-      services.geoclue2.enable = true;
+      config = lib.mkIf cfg.enable {
+        location.provider = "geoclue2";
+
+        services.geoclue2.enable = true;
+      };
     };
 }

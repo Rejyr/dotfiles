@@ -12,29 +12,21 @@
   };
 
   flake.nixosModules.toplapModule =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     let
       selfpkgs = self.packages."${pkgs.stdenv.hostPlatform.system}";
     in
     {
       imports = [
         self.nixosModules.toplapHardware
-        self.nixosModules.audio
-        self.nixosModules.bluetooth
-        self.nixosModules.bootloader
-        self.nixosModules.clipboard
-        self.nixosModules.fonts
-        self.nixosModules.geoclue2
-        self.nixosModules.keyboard
-        self.nixosModules.networking
-        self.nixosModules.powerManagement
-        self.nixosModules.shellTools
-        self.nixosModules.texlive
-        self.nixosModules.tzLocale
-        self.nixosModules.udevExtraRules
+        self.nixosModules.systemGroup
+        self.nixosModules.desktopGroup
       ];
 
-      myFeatures.bootloader = {
+      myFeatureGroups.system.enable = true;
+      myFeatureGroups.desktop.enable = true;
+
+      myFeatures.bootloader = lib.mkForce {
         enable = true;
         extraEntries = ''
           /Windows
@@ -57,25 +49,9 @@
 
       nixpkgs.config.allowUnfree = true;
 
-      programs.niri = {
-        enable = true;
-        package = selfpkgs.niri;
-      };
-
       environment.systemPackages = with pkgs; [
-        selfpkgs.fastfetch
-        selfpkgs.foot
-        selfpkgs.fuzzel
-        selfpkgs.mako
-        selfpkgs.neovim
-        selfpkgs.nushell
-        selfpkgs.swaylock
-        selfpkgs.waybar
-        selfpkgs.zathura
-        selfpkgs.zellij
         bash
         nixfmt
-        libnotify
         python3
         rustup
         uv
