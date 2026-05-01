@@ -12,11 +12,11 @@
       ...
     }:
     let
-      cfg = config.my_bootloader_config;
+      cfg = config.myConfig.bootloader;
     in
     {
-      # TODO: proper naming/path
-      options.my_bootloader_config = {
+      options.myConfig.bootloader = {
+        enable = lib.mkEnableOption "Limine Bootloader";
         extraEntries = lib.mkOption {
           description = "boot.loader.limine.extraEntries";
           default = "";
@@ -34,7 +34,7 @@
         };
       };
 
-      config = {
+      config = lib.mkIf cfg.enable {
         boot.loader.limine = {
           enable = true;
           extraEntries = cfg.extraEntries;

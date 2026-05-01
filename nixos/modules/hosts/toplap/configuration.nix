@@ -34,7 +34,8 @@
         self.nixosModules.udevExtraRules
       ];
 
-      my_bootloader_config = {
+      myConfig.bootloader = {
+        enable = true;
         extraEntries = ''
           /Windows
               protocol: efi
