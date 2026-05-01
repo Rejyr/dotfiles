@@ -12,10 +12,10 @@
       ...
     }:
     let
-      cfg = config.myConfig.bootloader;
+      cfg = config.myFeatures.bootloader;
     in
     {
-      options.myConfig.bootloader = {
+      options.myFeatures.bootloader = {
         enable = lib.mkEnableOption "Limine Bootloader";
         extraEntries = lib.mkOption {
           description = "boot.loader.limine.extraEntries";

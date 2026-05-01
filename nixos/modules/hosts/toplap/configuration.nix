@@ -34,7 +34,7 @@
         self.nixosModules.udevExtraRules
       ];
 
-      myConfig.bootloader = {
+      myFeatures.bootloader = {
         enable = true;
         extraEntries = ''
           /Windows
