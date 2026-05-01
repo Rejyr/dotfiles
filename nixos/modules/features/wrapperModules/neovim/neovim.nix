@@ -19,7 +19,10 @@
             conform-nvim
             everforest
             mini-nvim
+            nui-nvim
             nvim-lspconfig
+            nvim-navbuddy
+            nvim-navic
             nvim-treesitter.withAllGrammars
             quicker-nvim
             rainbow-delimiters-nvim

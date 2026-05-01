@@ -86,12 +86,13 @@ local groups = {
   },
   {
     keys = '<leader>s',
-    desc = '+search',
+    desc = '+search/outline',
     mappings = {
       { '<leader>sg', '<cmd>Pick grep_live<cr>', { desc = 'Grep' } },
       { '<leader>sh', '<cmd>Pick history<cr>', { desc = 'Command History' } },
       { '<leader>sm', '<cmd>Pick marks<cr>', { desc = 'Jump to Mark' } },
       { '<leader>sw', '<cmd>Pick diagnostic<cr>', { desc = 'Diagnostics' } },
+      { '<leader>so', '<cmd>Navbuddy<cr>', { desc = 'Outline' } },
     },
   },
   {

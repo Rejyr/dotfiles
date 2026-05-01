@@ -208,3 +208,16 @@ end)
 later(function()
   require('quicker').setup()
 end)
+
+-- navbuddy/outline
+later(function()
+  require('nvim-navbuddy').setup {
+    window = {
+      border = vim.g.border,
+      size = '80%',
+    },
+    lsp = {
+      auto_attach = true,
+    },
+  }
+end)
