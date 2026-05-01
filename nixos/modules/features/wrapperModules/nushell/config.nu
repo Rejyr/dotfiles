@@ -3,6 +3,7 @@ $env.config.table.mode = "psql"
 $env.config.completions.algorithm = "fuzzy"
 $env.VISUAL = "nvim"
 $env.EDITOR = "nvim"
+$env.MANPAGER = "nvim +Man!"
 
 alias blctl = bluetoothctl
 alias n = nvim
