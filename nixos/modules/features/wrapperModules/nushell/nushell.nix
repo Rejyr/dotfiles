@@ -14,12 +14,19 @@
       config = {
         extraPackages = with pkgs; [
           atuin
+          nu_scripts
           starship
           zoxide
         ];
         env.STARSHIP_CONFIG = ./starship.toml;
-        "config.nu".path = ./config.nu;
-        "config.nu".content = "";
+        "config.nu".content =
+          let
+            preConfig = ''
+              let nu_scripts_outPath = "${pkgs.nu_scripts.outPath}"
+            '';
+            postConfig = "";
+          in
+          preConfig + (builtins.readFile ./config.nu) + postConfig;
       };
     };
 
