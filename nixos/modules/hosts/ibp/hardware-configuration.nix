@@ -1,0 +1,91 @@
+{
+  self,
+  inputs,
+  ...
+}:
+{
+  flake.nixosModules.ibpHardware =
+    {
+      config,
+      lib,
+      pkgs,
+      modulesPath,
+      ...
+    }:
+
+    {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+
+      boot.initrd.availableKernelModules = [
+        "xhci_pci"
+        "ahci"
+        "nvme"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
+
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/0e069315-686e-4b5d-bba9-e5576973713c";
+        fsType = "btrfs";
+        options = [
+          "subvol=root"
+          "noatime"
+          "compress=zstd"
+        ];
+      };
+
+      fileSystems."/home" = {
+        device = "/dev/disk/by-uuid/0e069315-686e-4b5d-bba9-e5576973713c";
+        fsType = "btrfs";
+        options = [
+          "subvol=home"
+          "noatime"
+          "compress=zstd"
+        ];
+      };
+
+      fileSystems."/nix" = {
+        device = "/dev/disk/by-uuid/0e069315-686e-4b5d-bba9-e5576973713c";
+        fsType = "btrfs";
+        options = [
+          "subvol=nix"
+          "noatime"
+          "compress=zstd"
+        ];
+      };
+
+      fileSystems."/swap" = {
+        device = "/dev/disk/by-uuid/0e069315-686e-4b5d-bba9-e5576973713c";
+        fsType = "btrfs";
+        options = [
+          "subvol=swap"
+          "noatime"
+        ];
+      };
+
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/741E-E2B2";
+        fsType = "vfat";
+        options = [
+          "fmask=0022"
+          "dmask=0022"
+        ];
+      };
+
+      swapDevices = [
+        {
+          device = "/swap/swapfile";
+          size = 32 * 1024;
+        }
+      ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+}
